@@ -6,21 +6,29 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function account()
+
+    /**
+     *  Displays the login or register form
+     *
+     */
+    public function loginOrRegister()
     {
         return view("");
     }
 
-    public function create()
+    /**
+     *  Stores user information in the database
+     *
+     */
+    public function store(Request $request)
     {
         return view("");
     }
 
-    public function store()
-    {
-        return view("");
-    }
-
+    /**
+     *  Authenticates login information with the database
+     *
+     */
     public function connect()
     {
         return view("");
