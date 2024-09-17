@@ -1,6 +1,5 @@
 <x-layout>
     <header>
-
     </header>
     <main>
         <h2>Log-in</h2>
