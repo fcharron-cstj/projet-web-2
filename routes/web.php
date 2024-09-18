@@ -6,20 +6,17 @@ use Illuminate\Support\Facades\Route;
 
 //Home
 
-Route::get('/', [SiteController::class, 'home'])->name("homepage");
+Route::get('/', [SiteController::class, 'home'])->name("site.home")->middleware('auth');
 
 //User
+Route::get('/user', [UserController::class, 'loginOrRegister'])->name("user.loginOrRegister")->middleware('guest');
 
-Route::get('/account', [UserController::class, 'account'])->name("account");
+Route::post('/user-store', [UserController::class, 'store'])->name("user.store")->middleware('guest');
 
-Route::get('/account/create', [UserController::class, 'create'])->name("account.create");
-
-Route::post('/account/store', [UserController::class, 'store'])->name("account.store");
-
-Route::get('/account/connect', [UserController::class, 'connect'])->name("account.connect");
+Route::post('/user-connect', [UserController::class, 'authentication'])->name("user.authenticate")->middleware('guest');
 
 //Admin
 
-Route::get('/admin', [UserController::class, 'admin'])->name("admin.panel");
+Route::get('/admin', [UserController::class, 'admin'])->name("admin.home");
 
 Route::get('/admin/create', [UserController::class, 'create'])->name("admin.create");
