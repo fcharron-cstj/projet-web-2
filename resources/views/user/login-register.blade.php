@@ -4,7 +4,7 @@
     <main>
         <h2>Log-in</h2>
         <div class="form">
-            <form action="{{ route('user.connect') }}" method="POST">
+            <form action="{{ route('user.authenticate') }}" method="POST">
                 @csrf
                 <label for="email">Email</label>
 
@@ -19,10 +19,22 @@
                 <a href=""> Don't have an account? </a>
             </p>
         </div>
-        <h2>Log-in</h2>
+        <h2>Register</h2>
         <div class="form">
             <form action="{{ route('user.store') }}" method="POST">
                 @csrf
+
+
+                <label for="first_name">First name</label>
+
+                <input id="username" name="first_name" type="text" autocomplete="given-name"
+                    value="{{ old('first_name') }}">
+
+                <label for="last_name">Last name</label>
+
+                <input id="last_name" name="last_name" type="text" autocomplete="family-name"
+                    value="{{ old('last_name') }}">
+
                 <label for="email">Email</label>
 
                 <input id="email" name="email" type="email" autocomplete="email" value="{{ old('email') }}" />
