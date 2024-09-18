@@ -90,4 +90,19 @@ class UserController extends Controller
             ->intended(route('site.home'))
             ->with('success', "Welcome back!");
     }
+
+    /**
+     * Destroys the session
+     *
+     */
+    public function disconnect(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect()
+            ->route('user.loginOrRegister');
+    }
 }
