@@ -1,5 +1,5 @@
 <main>
-    <h1>Create an activity</h1>
+    <h1>Create a schedule</h1>
     <div class="form">
         <form action="{{ route('activity.store') }}" method="POST">
             @csrf
@@ -16,6 +16,10 @@
             <label for="date">Date</label>
 
             <input type="date" name="name" id="date" value="{{ old('date') }}">
+
+            <label for="artists">Artists</label>
+
+            <input type="text" name="artists" id="artists">
 
             <button type="submit">Create</button>
         </form>

@@ -1,5 +1,5 @@
 <main>
-    <h1>Update an activity</h1>
+    <h1>Update a schedule</h1>
     <div class="form">
         <form action="{{ route('activity.update') }}" method="POST">
             @csrf
@@ -18,6 +18,10 @@
             <label for="date">Date</label>
 
             <input type="date" name="name" id="date" value="{{ old('date') }}">
+
+            <label for="artists">Artists</label>
+
+            <input type="text" name="artists" id="artists" value="{{ old('artists') }}">
 
             <button type="submit">Edit</button>
         </form>
