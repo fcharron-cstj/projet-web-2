@@ -1,7 +1,7 @@
 <main>
     <h1>Update an activity</h1>
     <div class="form">
-        <form action="{{ route('activity.update') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('activity.update') }}" method="POST">
             @csrf
 
             <input type="hidden" name="id" value="{{ $activity->id }}">
