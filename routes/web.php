@@ -50,7 +50,7 @@ Route::get('/article/show/{id}', [ArticleController::class], 'show')->name("arti
 
 Route::get('/article/create', [ArticleController::class], 'create')->name("article.create")->middleware("auth");
 
-Route::get('/article/store', [ArticleController::class], 'store')->name("article.store")->middleware("auth");
+Route::post('/article/store', [ArticleController::class], 'store')->name("article.store")->middleware("auth");
 
 Route::get('/article/edit/{titre}', [ArticleController::class], 'edit')->name("article.edit")->middleware("auth");
 
@@ -66,13 +66,15 @@ Route::get('/reservation/destroy', [ReservationController::class], 'destroy')->n
 
 
 //Admin
-Route::get('/admin', [AdministratorController::class], 'index')->name("admin.index")->middleware("auth");
+Route::get('/admin', [AdministratorController::class], 'adminPanel')->name("adminPanel")->middleware("auth");
 
 Route::get('/admin/create', [AdministratorController::class], 'create')->name("admin.create")->middleware("auth");
 
-Route::get('/admin/store', [AdministratorController::class], 'store')->name("admin.store")->middleware("auth");
+Route::post('/admin/store', [AdministratorController::class], 'store')->name("admin.store")->middleware("auth");
 
-Route::post('/admin/edit', [AdministratorController::class], 'edit')->name("admin.edit")->middleware("auth");
+Route::get('/admin/edit/{id}', [AdministratorController::class], 'edit')->name("admin.edit")->middleware("auth");
+
+/* Route::post('/admin/edit', [AdministratorController::class], 'edit')->name("admin.edit")->middleware("auth"); */
 
 Route::post('/admin/update', [AdministratorController::class], 'update')->name("admin.update")->middleware("auth");
 
