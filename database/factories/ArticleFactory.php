@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Role>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Article>
  */
-class RoleFactory extends Factory
+class ArticleFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -16,6 +16,9 @@ class RoleFactory extends Factory
      */
     public function definition(): array
     {
-
+        return [
+            'title' => fake()->title(),
+            'description' => fake()->sentence(20)
+        ];
     }
 }
