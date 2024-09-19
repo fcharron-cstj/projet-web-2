@@ -1,0 +1,43 @@
+// Buttons
+@mixin btn {
+    border-radius: 40px;
+    padding: 3px 20px 1px;
+    font-family: $font-primary;
+    font-size: 28px;
+    @media (min-width:768px) {
+        font-size: 20px;
+         .rsv {
+            font-size: 33px;
+         }
+    }
+    @media (min-width:1200px) {
+        font-size: 25px;
+         .rsv {
+            font-size: 35px;
+         } 
+    }
+}
+
+.btn-pink-green {
+    @include btn;
+    background-color: $pink;
+    color: $green; 
+}
+
+.btn-green-pink {
+    @include btn;
+    background-color: $green;
+    color: $pink; 
+}
+
+.btn-blue-pink {
+    @include btn;
+    background-color: $blue;
+    color: $pink;  
+}
+
+.btn-purple-green {
+    @include btn;
+    background-color: $purple;
+    color: $green; 
+}
