@@ -14,11 +14,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $roles = [['title' => 'admin'], ['title' => 'user']];
+        $this->call([
 
-        collect($roles)->each(function ($roles) {
-            Role::factory()->create($roles);
-        });
-        User::factory(1)->create();
+            UserSeeder::class,
+            ArticleSeeder::class,
+            ActivitySeeder::class
+        ]);
     }
 }
