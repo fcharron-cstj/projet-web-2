@@ -18,7 +18,8 @@ class ArticleFactory extends Factory
     {
         return [
             'title' => fake()->title(),
-            'description' => fake()->sentence(20)
+            'description' => fake()->sentence(20),
+            'media' => "https://placehold.co/600x400"
         ];
     }
 }
