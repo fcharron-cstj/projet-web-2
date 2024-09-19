@@ -4,3 +4,28 @@ body {
     background-color: $black;
     font-family: $font-primary;
 }
+
+.logo {
+    font-family: $logo;
+    font-size: 90px;
+    color: $blue;
+    @media (min-width:768px) {
+        font-size: 56px;
+    }
+    @media (min-width: 1200px) {
+        font-size: 71px;
+    }
+}
+
+.green-text {
+    color: $green;
+}
+.blue-text {
+    color: $blue;
+}
+.purple-text{
+    color: $purple;
+} 
+.pink-text{
+    color: $pink;
+}

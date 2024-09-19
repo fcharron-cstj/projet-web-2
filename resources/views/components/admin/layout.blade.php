@@ -6,12 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.typekit.net/dmc2smn.css">
     <link rel="stylesheet" href="{{asset("css/style.css")}}">
-    <title>{{ $title ?? 'Nova' }}</title>
+    <title>PJWEB2</title>
 </head>
 <body>
-    <x-nav>
+    <x-admin.nav>
 {{$slot}}
     <script src="{{asset("js/main.js")}}"></script>
-    <x-footer>
 </body>
 </html>
