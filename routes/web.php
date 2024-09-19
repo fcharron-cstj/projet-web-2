@@ -32,15 +32,15 @@ Route::get("/logout", [UserController::class, "disconnect"])->name('logout')->mi
 
 
 //Activity
-Route::get('/activity/create', [ActivityController::class], 'create')->name("activity.create")->middleware("auth");
+Route::get('/schedule/create', [ActivityController::class], 'create')->name("schedule.create")->middleware("auth");
 
-Route::get('/activity/store', [ActivityController::class], 'store')->name("activity.store")->middleware("auth");
+Route::get('/schedule/store', [ActivityController::class], 'store')->name("schedule.store")->middleware("auth");
 
-Route::post('/activity/edit', [ActivityController::class], 'edit')->name("activity.edit")->middleware("auth");
+Route::post('/schedule/edit', [ActivityController::class], 'edit')->name("schedule.edit")->middleware("auth");
 
-Route::post('/activity/update', [ActivityController::class], 'update')->name("activity.update")->middleware("auth");
+Route::post('/schedule/update', [ActivityController::class], 'update')->name("schedule.update")->middleware("auth");
 
-Route::post('/activity/destroy', [ActivityController::class], 'destroy')->name("activity.destroy")->middleware("auth");
+Route::post('/schedule/destroy', [ActivityController::class], 'destroy')->name("schedule.destroy")->middleware("auth");
 
 
 //Article
