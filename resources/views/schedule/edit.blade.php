@@ -1,8 +1,10 @@
 <main>
-    <h1>Create an activity</h1>
+    <h1>Update a schedule</h1>
     <div class="form">
-        <form action="{{ route('activity.store') }}" method="POST">
+        <form action="{{ route('activity.update') }}" method="POST">
             @csrf
+
+            <input type="hidden" name="id" value="{{ $activity->id }}">
 
             <label for="title">Title</label>
 
@@ -17,7 +19,11 @@
 
             <input type="date" name="name" id="date" value="{{ old('date') }}">
 
-            <button type="submit">Create</button>
+            <label for="artists">Artists</label>
+
+            <input type="text" name="artists" id="artists" value="{{ old('artists') }}">
+
+            <button type="submit">Edit</button>
         </form>
     </div>
 </main>

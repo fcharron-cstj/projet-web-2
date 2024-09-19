@@ -16,9 +16,9 @@ class ArticleSeeder extends Seeder
         Article::factory()->create([
             'id' => 1,
             'title' => 'Article 1',
-            'description' => 'Description of Article 1',
+            'description' => 'Description of Article 1'
         ]);
 
-        Article::factory()->create(5);
+        /* Article::factory()->create(5); */
     }
 }
