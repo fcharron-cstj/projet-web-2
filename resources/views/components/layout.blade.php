@@ -9,9 +9,8 @@
     <title>{{ $title ?? 'Nova' }}</title>
 </head>
 <body>
-    <x-nav>
-{{$slot}}
-    <script src="{{asset("js/main.js")}}"></script>
-    <x-footer>
+    <x-nav />
+    {{ $slot }}
+    <script src="{{ asset('js/main.js') }}"></script>
 </body>
 </html>

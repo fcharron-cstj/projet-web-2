@@ -3,5 +3,5 @@
     <h1>hello</h1>
     <a href="{{route('user.logout')}}">Log out</a>
 </div>
-    <x-footer>
+    <x-footer />
 </x-layout>
