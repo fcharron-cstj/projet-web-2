@@ -9,7 +9,7 @@
     <title>PJWEB2</title>
 </head>
 <body>
-    <x-admin.nav>
+    <x-nav>
 {{$slot}}
     <script src="{{asset("js/main.js")}}"></script>
 </body>
