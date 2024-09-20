@@ -88,7 +88,7 @@ class AdministratorController extends Controller
 
 
     /**
-     * Handle the modification of an admin
+     * Handle the modification of an user
      *
      * @param Request $request
      */
@@ -129,7 +129,18 @@ class AdministratorController extends Controller
                 ->with('succes', "The account of " . $user->first_name . " " . $user->last_name . "has been modified");
     }
 
-    public function destroy(){
+    /**
+     * Handle the deletion of an user
+     *
+     * @param Request $request
+     */
+    public function destroy(Request $request){
+        $user = User::findOrFail($request->id);
 
+        User::destroy($user->id);
+
+        return redirect()
+                ->route('home')
+                ->with('succes_deleting_account', "The account has been deleted");
     }
 }
