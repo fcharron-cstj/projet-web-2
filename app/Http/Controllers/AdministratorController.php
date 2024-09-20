@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Models\Schedule;
 use App\Models\User;
 use Illuminate\Container\Attributes\Auth;
 use Illuminate\Http\Request;
@@ -60,8 +61,8 @@ class AdministratorController extends Controller
         ]);
 
         $admin = User::findOrFail($validated["id"]);
-        $admin->first_name = $validated["first_name"] ?? now();
-        $admin->last_name = $validated["last_name"] ?? now();
+        $admin->first_name = $validated["first_name"];
+        $admin->last_name = $validated["last_name"];
         $admin->email = $validated["email"];
         $admin->password = Hash::make($validated["password"]);
 
@@ -84,14 +85,46 @@ class AdministratorController extends Controller
         ]);
     }
 
-    /* Méthode en POST
 
-    public function edit(Request $request){
-        return view("admin.edit", [
-            "admin" => User::findOrFail()
-        ])
-    } */
+    /**
+     * Handle the modification of an admin
+     *
+     * @param Request $request
+     */
+    public function update(Request $request){
 
+        $validated = $request->validate([
+            "id" => "required",
+            "first_name" => "required|max:255",
+            "last_name" => "required|max:255",
+            "email" => "required|unique:users,email|email",
+            "password" => "required|min:8",
+            "password_confirmation" => "required|same:password"
+        ], [
+            "id.required" => "This account doesn't exist",
+            "first_name.required" => "First name is required",
+            "first_name.max" => "First name must be below :max characters",
+            "last_name.required" => "Last name is required",
+            "last_name.max" => "Last name must be below :max characters",
+            "email.required" => "Email is required",
+            "email.unique" => "This email is already chosen. Please log-in or choose another email",
+            "email.email" => "Email is incorrect. Please enter a valid email",
+            "password.required" => "The password is required",
+            "password.min" => "Your password must be at least :min characters",
+            "password_confirmation.required" => "Please confirm your password",
+            "password_confirmation.same" => "The password couldn't be confirmed"
+        ]);
 
+        $user = User::findOrFail($validated["id"]);
+        $user->first_name = $validated["first_name"];
+        $user->last_name = $validated["last_name"];
+        $user->email = $validated["email"];
+        $user->password = Hash::make($validated["password"]);
 
+        $user->save();
+
+        return redirect()
+                ->route('')
+                ->with('succes', "The account of " . $user->first_name . " " . $user->last_name . "has been modified");
+    }
 }
