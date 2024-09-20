@@ -12,7 +12,7 @@ class UserController extends Controller
 {
 
     /**
-     *  Displays the login or register form
+     *  Displays the login and/or register form
      *
      */
     public function loginOrRegister()
@@ -21,8 +21,38 @@ class UserController extends Controller
     }
 
     /**
+     *  Authenticates login information with the database
+     *
+     *  @param Request $request
+     */
+    public function authentication(Request $request)
+    {
+        $validated = $request->validate([
+            "email" => "required|email",
+            "password" => "required|min:8"
+        ], [
+            "email.required" => "Please enter your email address",
+            "email.email" => "Email is invalid",
+            "password.required" => "Password is required",
+            "password.min" => "Your password must be at least :min characters."
+        ]);
+
+        if (! Auth::attempt($validated)) {
+            return back()
+                ->with('error', "Information entered is incorrect. Please try again.");
+        }
+
+        $request->session()->regenerate();
+
+        return redirect()
+            ->intended(route('site.home'))
+            ->with('success', "Welcome back!");
+    }
+
+    /**
      *  Stores user information in the database
      *
+     *  @param Request $request
      */
     public function store(Request $request)
     {
@@ -64,36 +94,56 @@ class UserController extends Controller
     }
 
     /**
-     *  Authenticates login information with the database
+     * Displays the form to modify an user
      *
+     * @param integer $id
      */
-    public function authentication(Request $request)
-    {
+    public function edit(int $id){
+        return view('user.edit', [
+            'user' => User::findOrFail($id)
+        ]);
+    }
+
+    public function update(Request $request){
         $validated = $request->validate([
-            "email" => "required|email",
-            "password" => "required|min:8"
+            "id" => "required",
+            "first_name" => "required|max:255",
+            "last_name" => "required|max:255",
+            "email" => "required|unique:users,email|email",
+            "password" => "required|min:8",
+            "password_confirmation" => "required|same:password"
         ], [
-            "email.required" => "Please enter your email address",
-            "email.email" => "Email is invalid",
-            "password.required" => "Password is required",
-            "password.min" => "Your password must be at least :min characters."
+            "id.required" => "The user doesn't exist",
+            "first_name.required" => "Full name is required",
+            "first_name.max" => "First name must be below :max characters",
+            "last_name.required" => "Full name is required",
+            "last_name.max" => "Last name must be below :max characters",
+            "email.required" => "Email is required",
+            "email.unique" => "This email is already chosen. Please log-in or choose another email",
+            "email.email" => "Email is incorrect",
+            "password.required" => "The password is required",
+            "password.min" => "Your password must be at least :min characters",
+            "password_confirmation.required" => "Please confirm your password",
+            "password_confirmation.same" => "Password confirmation is incorrect"
         ]);
 
-        if (! Auth::attempt($validated)) {
-            return back()
-                ->with('error', "Information entered is incorrect. Please try again.");
-        }
+        $user = User::findOrFail($validated['id']);
+        $user->first_name = $validated["first_name"];
+        $user->last_name = $validated["last_name"];
+        $user->email = $validated["email"];
+        $user->password = Hash::make($validated["password"]);
 
-        $request->session()->regenerate();
+        $user->save();
 
         return redirect()
-            ->intended(route('site.home'))
-            ->with('success', "Welcome back!");
+                ->route('user.show', ['id' => $user->id])
+                ->with('succes_account_modification', "The user " . $user->first_name . " " . $user->last_name . " has been modified");
     }
 
     /**
      * Destroys the session
      *
+     * @param Request $request
      */
     public function disconnect(Request $request)
     {

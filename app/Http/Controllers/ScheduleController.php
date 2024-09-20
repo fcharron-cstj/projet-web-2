@@ -10,54 +10,95 @@ use Illuminate\Support\Facades\Storage;
 class ActivityController extends Controller
 {
     /**
-     * Displays the form for creating an activity
+     * Displays the form for creating a schedule
      *
      */
-    public function create() {}
+    public function create() {
+        return view('schedule.create', [
+            "schedules" => Schedule::all()
+        ]);
+    }
 
     /**
-     * Stores an activity in the database
+     * Stores a schedule
      *
+     * @param Request $request
      */
     public function store(Request $request)
     {
         $validated = $request->validate([
             "activity" => "required|max:255",
-            "date" => "required|date",
-            "artists" => "required|max:255",
+            "date" => "required|date"
         ], [
-            //TODO error messages
+            "activity.required" => "Please enter an activity",
+            "activity.max" => "The activity must have less than :max characters",
+            "date.required" => "Please select a valid date",
+            "date.date" => "The date must be a valid date format"
         ]);
 
         $schedule = new Schedule();
         $schedule->activity = $validated["activity"];
-        $schedule->description = $validated["description"];
-
-        //TODO Artists
+        $schedule->date = $validated["date"];
 
         $schedule->save();
 
         return redirect()
-            ->route('admin.panel')
+            ->route('adminPanel')
             ->with('success', "Schedule added successfully");
     }
 
     /**
-     *  Displays the form for editing an activity
+     * Displays the form for editing a schedule
      *
+     * @param integer $id
      */
-
-    public function edit() {}
-
-    /**
-     * Updates an activity from the database
-     *
-     */
-    public function update() {}
+    public function edit(int $id) {
+        return view('schedule.edit', [
+            "schedule" => Schedule::findOrFail($id)
+        ]);
+    }
 
     /**
-     * Deletes an activity from the database
+     * Updates a schedule
      *
+     * @param Request $request
      */
-    public function destroy() {}
+    public function update(Request $request) {
+        $validated = $request->validate([
+            "id" => "required",
+            "activity" => "required|max:255",
+            "date" => "required|date"
+        ], [
+            "id.required" => "The schedule doesn't exist",
+            "activity.required" => "Please enter an activity",
+            "activity.max" => "The activity must have less than :max characters",
+            "date.required" => "Please select a valid date",
+            "date.date" => "The date must be a valid date format"
+        ]);
+
+        $schedule = Schedule::findOrFail($validated["id"]);
+        $schedule->activity = $validated["activity"];
+        $schedule->date = $validated["date"];
+
+        $schedule->save();
+
+        return redirect()
+                ->route('adminPanel')
+                ->with('succes_schedule', "The schedule has been modified");
+    }
+
+    /**
+     * Deletes a schedule
+     *
+     * @param Request $request
+     */
+    public function destroy(Request $request) {
+        $schedule = Schedule::findOrFail($request->id);
+
+        Schedule::destroy($schedule->id);
+
+        return redirect()
+                ->route('adminPanel')
+                ->with('succes_deleting_schedule', "The schedule has been deleted");
+    }
 }
