@@ -10,44 +10,52 @@ use Illuminate\Support\Facades\Storage;
 class ActivityController extends Controller
 {
     /**
-     * Displays the form for creating an activity
+     * Displays the form for creating a schedule
      *
      */
-    public function create() {}
+    public function create() {
+        return view('schedule.create', [
+            "schedules" => Schedule::all()
+        ]);
+    }
 
     /**
-     * Stores an activity in the database
+     * Stores a schedule in the database
      *
      */
     public function store(Request $request)
     {
         $validated = $request->validate([
             "activity" => "required|max:255",
-            "date" => "required|date",
-            "artists" => "required|max:255",
+            "date" => "required|date"
         ], [
-            //TODO error messages
+            "activity.required" => "Please enter an activity",
+            "activity.max" => "The activity must have less than :max characters",
+            "date.required" => "Please select a valid date",
+            "date.date" => "The date must be a valid date format"
         ]);
 
         $schedule = new Schedule();
         $schedule->activity = $validated["activity"];
-        $schedule->description = $validated["description"];
-
-        //TODO Artists
+        $schedule->date = $validated["date"];
 
         $schedule->save();
 
         return redirect()
-            ->route('admin.panel')
+            ->route('adminPanel')
             ->with('success', "Schedule added successfully");
     }
 
     /**
-     *  Displays the form for editing an activity
+     * Displays the form for editing a schedule
      *
+     * @param integer $id
      */
-
-    public function edit() {}
+    public function edit(int $id) {
+        return view('schedule.edit', [
+            "schedule" => Schedule::findOrFail($id)
+        ]);
+    }
 
     /**
      * Updates an activity from the database
