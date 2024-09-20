@@ -14,7 +14,7 @@
         @auth
         <a class="btn-blue-pink" href="{{ route('logout') }}">Logout</a>
         @else
-        <a class="btn-blue-pink" href="{{ route('login') }}">Login</a>
+        <a class="btn-blue-pink" href="{{ route('loginOrRegister') }}">Login</a>
         @endauth
         <a class="btn-pink-green" href="#">Buy Tickets</a>
     </div>

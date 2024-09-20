@@ -1,0 +1,13 @@
+.nav-desktop {
+    display: none;
+    @media (min-width:768px) {
+        display: flex;
+    }
+}
+
+.nav-mobile {
+    display: flex;
+    @media (min-width:768px) {
+        display: none;
+    }
+}
