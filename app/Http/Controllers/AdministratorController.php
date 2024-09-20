@@ -60,13 +60,14 @@ class AdministratorController extends Controller
             "role_id" => "The role is invalid"
         ]);
 
-        $admin = User::findOrFail($validated["id"]);
-        $admin->first_name = $validated["first_name"];
-        $admin->last_name = $validated["last_name"];
-        $admin->email = $validated["email"];
-        $admin->password = Hash::make($validated["password"]);
+        $user = User::findOrFail($validated["id"]);
+        $user->first_name = $validated["first_name"];
+        $user->last_name = $validated["last_name"];
+        $user->email = $validated["email"];
+        $user->password = Hash::make($validated["password"]);
+        $user->role_id = $validated["role_id"];
 
-        $admin->save();
+        $user->save();
 
         return redirect()
                 ->route("admin.index")
@@ -126,5 +127,9 @@ class AdministratorController extends Controller
         return redirect()
                 ->route('')
                 ->with('succes', "The account of " . $user->first_name . " " . $user->last_name . "has been modified");
+    }
+
+    public function destroy(){
+
     }
 }
