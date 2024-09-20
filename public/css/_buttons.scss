@@ -6,15 +6,18 @@
     font-size: 28px;
     @media (min-width:768px) {
         font-size: 20px;
-         .rsv {
+         .rsv .all-articles {
             font-size: 33px;
          }
     }
     @media (min-width:1200px) {
         font-size: 25px;
-         .rsv {
+         .rsv .all-articles {
             font-size: 35px;
          } 
+    }
+    @media (min-width:1200px) {
+        font-size: 35px;
     }
 }
 

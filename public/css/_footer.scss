@@ -1,0 +1,91 @@
+#footer {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    height: 675px;
+    background-color: $pink;
+    @media (min-width:768px) {
+        flex-direction: column;
+        height: 440 px;
+    }
+    @media (min-width:1024px) {
+        height: 480px ;
+    } 
+    @media (min-width:1920px) {
+        height: 760px;
+    }
+    #footer-top {
+        margin: 20px 66px;
+        @media (min-width:768px) {
+            width: 33%;
+            margin: 20px 40px;
+        }
+        @media (min-width:1024px) {
+            margin: 48px 95px;
+        }
+        @media (min-width:1200px) {
+            margin: 48px 120px;
+        }
+        @media (min-width:1200px) {
+            margin: 140px 240px;
+        }
+
+        #logo-footer {
+            color: $blue;
+            font-size: 90px;
+            @media (min-width:1920px) {
+                font-size: 100px;
+            }
+            
+            .txt-secondary-footer {
+                margin-top: 8px;
+                font-size: 18px;
+                @media (min-width:1920px) {
+                    font-size: 25px;
+                }
+            }
+            .txt-primary-footer {
+                margin-top: 32px;
+                font-size: 38px; 
+                @media (min-width:1920px) {
+                    font-size: 45px;
+                } 
+            }
+            #icon {
+                margin-top: 16px;
+                justify-content: space-around;
+                .icon {
+                    height: 40px;
+                    width: 40px;
+                    @media (min-width:1920px) {
+                        height: 55px;
+                        width: 55px;
+                    } 
+                }
+            }
+        }
+    }
+    #map {
+        height: 240px;
+        width: 100vw;
+        @media (min-width:768px) {
+            width: 67%;
+        }
+        @media (min-width:1900px) {
+            height:  760px;
+        }
+    } 
+}
+
+/*@media (min-width:768px) {
+    
+}
+@media (min-width:1024px) {
+
+}
+@media (min-width:1200px) {
+
+}
+@media (min-width:1920px) {
+
+}*/
