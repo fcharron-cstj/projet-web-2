@@ -1,7 +1,25 @@
+.logo {
+    align-self: center;
+    font-family: $logo;
+    font-size: 90px;
+    color: $blue;
+    margin: 0;
+    @media (min-width:768px) {
+        align-self: baseline;
+        margin-left: 30px;
+        font-size: 56px;
+    }
+    @media (min-width: 1200px) {
+        font-size: 71px;
+    }
+}
+
 .nav-desktop {
     display: none;
+    justify-content: space-between;
     @media (min-width:768px) {
         display: flex;
+        height: 60px;
     }
 }
 
@@ -11,3 +29,29 @@
         display: none;
     }
 }
+
+.div-nav-links {
+    margin-top: 18px;
+    margin-right: 30px;
+}
+
+.nav-links {
+    margin-right: 30px;
+}
+
+.btn-login-logout {
+    margin-right: 15px;
+}
+
+/*@media (min-width:768px) {
+    
+}
+@media (min-width:1024px) {
+
+}
+@media (min-width:1200px) {
+
+}
+@media (min-width:1920px) {
+
+}*/

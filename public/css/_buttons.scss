@@ -1,9 +1,10 @@
 // Buttons
 @mixin btn {
     border-radius: 40px;
-    padding: 3px 20px 1px;
+    padding: 2px 20px 0px;
     font-family: $font-primary;
     font-size: 28px;
+    text-decoration: none;
     @media (min-width:768px) {
         font-size: 20px;
          .rsv .all-articles {

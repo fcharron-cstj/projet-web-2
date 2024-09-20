@@ -1,21 +1,12 @@
-body {
+body,html {
     width: 100%;
+    max-width: 100%;
+    margin: 0;
     box-sizing: border-box;
     background-color: $black;
     font-family: $font-primary;
     color: $blue;
-}
-
-.logo {
-    font-family: $logo;
-    font-size: 90px;
-    color: $blue;
-    @media (min-width:768px) {
-        font-size: 56px;
-    }
-    @media (min-width: 1200px) {
-        font-size: 71px;
-    }
+    overflow-x: hidden;
 }
 
 .green-text {
