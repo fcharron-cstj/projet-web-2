@@ -22,6 +22,7 @@ class ActivityController extends Controller
     /**
      * Stores a schedule
      *
+     * @param Request $request
      */
     public function store(Request $request)
     {
@@ -82,13 +83,22 @@ class ActivityController extends Controller
         $schedule->save();
 
         return redirect()
-                ->route('home')
+                ->route('adminPanel')
                 ->with('succes_schedule', "The schedule has been modified");
     }
 
     /**
-     * Deletes an activity
+     * Deletes a schedule
      *
+     * @param Request $request
      */
-    public function destroy() {}
+    public function destroy(Request $request) {
+        $schedule = Schedule::findOrFail($request->id);
+
+        Schedule::destroy($schedule->id);
+
+        return redirect()
+                ->route('adminPanel')
+                ->with('succes_deleting_schedule', "The schedule has been deleted");
+    }
 }
