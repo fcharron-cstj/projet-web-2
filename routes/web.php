@@ -6,7 +6,6 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\UserController;
-use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 //Home
@@ -14,11 +13,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [SiteController::class, 'home'])->name("home")->middleware('guest');
 
 //User
+
 Route::get('/user', [UserController::class, 'loginOrRegister'])->name('loginOrRegister')->middleware('guest');
 
-Route::post('/user', [UserController::class, 'store'])->name("user.store")->middleware('guest');
+Route::post('/user/store', [UserController::class, 'store'])->name("user.store")->middleware('guest');
 
-Route::post('/user', [UserController::class, 'authentication'])->name("user.authenticate")->middleware('guest');
+Route::post('/user/connect', [UserController::class, 'authentication'])->name("user.authenticate")->middleware('guest');
 
 Route::post('/user/show', [UserController::class, 'show'])->name("user.show")->middleware('auth');
 
@@ -30,8 +30,8 @@ Route::post('user/destroy', [UserController::class, "destroy"])->name("user.dest
 
 Route::get("/logout", [UserController::class, "disconnect"])->name('logout')->middleware("auth");
 
-
 //Activity
+
 Route::get('/schedule/create', [ActivityController::class], 'create')->name("schedule.create")->middleware("auth");
 
 Route::get('/schedule/store', [ActivityController::class], 'store')->name("schedule.store")->middleware("auth");
@@ -44,6 +44,7 @@ Route::post('/schedule/destroy', [ActivityController::class], 'destroy')->name("
 
 
 //Article
+
 Route::get('/article', [ArticleController::class], 'index')->name("article.index")->middleware("guest");
 
 Route::get('/article/show/{id}', [ArticleController::class], 'show')->name("article.show")->middleware("guest");
@@ -58,14 +59,14 @@ Route::post('/article/update', [ArticleController::class], 'update')->name("arti
 
 Route::post('/article/destroy', [ArticleController::class], 'destroy')->name("article.destroy")->middleware("auth");
 
-
 //Reservation
+
 Route::get('/reservation/store', [ReservationController::class], 'store')->name("reservation.store")->middleware("auth");
 
 Route::get('/reservation/destroy', [ReservationController::class], 'destroy')->name("reservation.destroy")->middleware("auth");
 
-
 //Admin
+
 Route::get('/admin', [AdministratorController::class], 'adminPanel')->name("adminPanel")->middleware("auth");
 
 Route::get('/admin/create', [AdministratorController::class], 'create')->name("admin.create")->middleware("auth");
@@ -77,6 +78,3 @@ Route::get('/admin/edit/{id}', [AdministratorController::class], 'edit')->name("
 /* Route::post('/admin/edit', [AdministratorController::class], 'edit')->name("admin.edit")->middleware("auth"); */
 
 Route::post('/admin/update', [AdministratorController::class], 'update')->name("admin.update")->middleware("auth");
-
-
-

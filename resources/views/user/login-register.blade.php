@@ -24,7 +24,6 @@
             <form action="{{ route('user.store') }}" method="POST">
                 @csrf
 
-
                 <label for="first_name">First name</label>
 
                 <input id="username" name="first_name" type="text" autocomplete="given-name"
