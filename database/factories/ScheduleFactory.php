@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Activity>
  */
-class ActivityFactory extends Factory
+class ScheduleFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -16,10 +16,6 @@ class ActivityFactory extends Factory
      */
     public function definition(): array
     {
-        return [
-            'title' => fake()->title(),
-            'description' => fake()->sentence(20),
-            'date' => fake()->date()
-        ];
+        return [];
     }
 }

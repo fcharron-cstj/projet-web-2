@@ -16,10 +16,6 @@ class ArticleFactory extends Factory
      */
     public function definition(): array
     {
-        return [
-            'title' => fake()->title(),
-            'description' => fake()->sentence(20),
-            'media' => "https://placehold.co/600x400"
-        ];
+        return [];
     }
 }

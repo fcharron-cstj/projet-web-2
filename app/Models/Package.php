@@ -6,14 +6,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Role extends Model
+class Package extends Model
 {
     use HasFactory;
 
     public $timestamps = false;
 
-    public function user(): HasMany
+    public function reservation(): HasMany
     {
-        return $this->hasMany(User::class);
+        return $this->hasMany(Reservation::class);
     }
 }

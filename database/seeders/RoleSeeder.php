@@ -19,7 +19,5 @@ class RoleSeeder extends Seeder
         Role::factory()->create([
             "title" => "client"
         ]);
-
-        /* Role::factory()->create(2); */
     }
 }

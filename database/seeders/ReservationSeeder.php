@@ -2,21 +2,23 @@
 
 namespace Database\Seeders;
 
-use App\Models\Schedule;
+use App\Models\Reservation;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class ScheduleSeeder extends Seeder
+class ReservationSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Schedule::factory()->create([
+        Reservation::factory()->create([
             'id' => 1,
-            'activity' => 'Schedule 1',
-            'date' => now(),
+            'arrival' => now(),
+            'departing' => now(),
+            'package_id' => 1,
+            'user_id' => 1,
         ]);
     }
 }

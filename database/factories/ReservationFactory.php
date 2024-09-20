@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Role>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Reservation>
  */
-class RoleFactory extends Factory
+class ReservationFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -16,6 +16,8 @@ class RoleFactory extends Factory
      */
     public function definition(): array
     {
-        return [];
+        return [
+            //
+        ];
     }
 }
