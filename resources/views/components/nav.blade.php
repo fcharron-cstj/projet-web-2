@@ -12,9 +12,9 @@
         <a class="nav-links purple-text" href="">Articles</a>
         <a class="nav-links pink-text" href="#">Contact</a>
         @auth
-        <a class="btn-blue-pink" href="{{ route('logout') }}">Logout</a>
+        <a class="btn-blue-pink btn-login-logout" href="{{ route('logout') }}">Logout</a>
         @else
-        <a class="btn-blue-pink" href="{{ route('loginOrRegister') }}">Login</a>
+        <a class="btn-blue-pink btn-login-logout" href="{{ route('loginOrRegister') }}">Login</a>
         @endauth
         <a class="btn-pink-green" href="#">Buy Tickets</a>
     </div>
