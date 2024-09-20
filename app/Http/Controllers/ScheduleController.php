@@ -20,7 +20,7 @@ class ActivityController extends Controller
     }
 
     /**
-     * Stores a schedule in the database
+     * Stores a schedule
      *
      */
     public function store(Request $request)
@@ -58,13 +58,36 @@ class ActivityController extends Controller
     }
 
     /**
-     * Updates an activity from the database
+     * Updates a schedule
      *
+     * @param Request $request
      */
-    public function update() {}
+    public function update(Request $request) {
+        $validated = $request->validate([
+            "id" => "required",
+            "activity" => "required|max:255",
+            "date" => "required|date"
+        ], [
+            "id.required" => "The schedule doesn't exist",
+            "activity.required" => "Please enter an activity",
+            "activity.max" => "The activity must have less than :max characters",
+            "date.required" => "Please select a valid date",
+            "date.date" => "The date must be a valid date format"
+        ]);
+
+        $schedule = Schedule::findOrFail($validated["id"]);
+        $schedule->activity = $validated["activity"];
+        $schedule->date = $validated["date"];
+
+        $schedule->save();
+
+        return redirect()
+                ->route('home')
+                ->with('succes_schedule', "The schedule has been modified");
+    }
 
     /**
-     * Deletes an activity from the database
+     * Deletes an activity
      *
      */
     public function destroy() {}
