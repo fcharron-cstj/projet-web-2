@@ -12,12 +12,18 @@ class Reservation extends Model
 
     public $timestamps = false;
 
-    public function user(): BelongsTo
+    /**
+     * Relation many-to-one with the model User
+     */
+    public function user()
     {
         return $this->belongsTo(User::class);
     }
 
-    public function package(): BelongsTo
+    /**
+     * Relation many-to-one with the model Package
+     */
+    public function package()
     {
         return $this->belongsTo(Package::class);
     }
