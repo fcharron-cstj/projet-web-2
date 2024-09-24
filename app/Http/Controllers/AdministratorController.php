@@ -59,7 +59,7 @@ class AdministratorController extends Controller
             "password.min" => "Your password must be at least :min characters",
             "password_confirmation.required" => "Please confirm your password",
             "password_confirmation.same" => "The password couldn't be confirmed",
-            "role_id" => "The role is invalid"
+            "role_id.required" => "The role is invalid"
         ]);
 
         $user = User::findOrFail($validated["id"]);
