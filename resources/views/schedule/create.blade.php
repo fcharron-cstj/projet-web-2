@@ -4,14 +4,9 @@
         <form action="{{ route('activity.store') }}" method="POST">
             @csrf
 
-            <label for="title">Title</label>
+            <label for="activity">activity</label>
 
-            <input type="text" name="title" id="title" value="{{ old('title') }}">
-
-
-            <label for="description">Description</label>
-
-            <input type="text" name="description" id="description" value="{{ old('description') }}">
+            <input type="text" name="activity" id="activity" value="{{ old('activity') }}">
 
             <label for="date">Date</label>
 

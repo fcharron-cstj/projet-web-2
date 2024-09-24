@@ -8,12 +8,12 @@
 
             <label for="title">Title</label>
 
-            <input type="text" name="title" id="title" value="{{ old('title') }}">
+            <input type="text" name="title" id="title" value="{{ $article->title }}">
 
 
             <label for="description">Description</label>
 
-            <input type="text" name="description" id="description" value="{{ old('description') }}">
+            <input type="text" name="description" id="description" value="{{ $article->description }}">
 
             <label for="image">Image</label>
 

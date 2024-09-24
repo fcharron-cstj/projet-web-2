@@ -7,21 +7,19 @@
 
             <input type="hidden" name="id" value="{{ $schedule->id }}">
 
-            <label for="title">Title</label>
 
-            <input type="text" name="title" id="title" value="{{ old('title') }}">
+            <label for="activity">activity</label>
 
-            <label for="description">Description</label>
-
-            <input type="text" name="description" id="description" value="{{ old('description') }}">
+            <input type="text" name="activity" id="activity" value="{{ $schedule->activity }}">
 
             <label for="date">Date</label>
 
-            <input type="date" name="name" id="date" value="{{ old('date') }}">
+            <input type="date" name="name" id="date"
+                value="{{ date_format(date_create($schedule->date), 'Y-m-d') }}">
 
             <label for="artists">Artists</label>
 
-            <input type="text" name="artists" id="artists" value="{{ old('artists') }}">
+            <input type="text" name="artists" id="artists">
 
             <button type="submit">Edit</button>
         </form>

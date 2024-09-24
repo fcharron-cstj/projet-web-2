@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Article;
 use App\Models\Schedule;
 use App\Models\User;
-use Illuminate\Container\Attributes\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -82,10 +81,10 @@ class AdministratorController extends Controller
      *
      * @param integer $id
      */
-    public function edit(int $id)
+    public function edit(Request $request)
     {
         return view("admin.edit", [
-            "user" => User::findOrFail($id)
+            "user" => User::findOrFail($request->id)
         ]);
     }
 
