@@ -79,7 +79,7 @@ class AdministratorController extends Controller
     /**
      * Show the edit page of an user
      *
-     * @param integer $id
+     * 
      */
     public function edit(Request $request)
     {
