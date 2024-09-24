@@ -71,7 +71,7 @@ class AdministratorController extends Controller
 
         return redirect()
                 ->route("admin.index")
-                ->with("succes_account_creation", "Account registration succeeded!");
+                ->with("success_account_creation", "Account registration succeeded!");
 
     }
 
@@ -126,7 +126,7 @@ class AdministratorController extends Controller
 
         return redirect()
                 ->route('')
-                ->with('succes', "The account of " . $user->first_name . " " . $user->last_name . "has been modified");
+                ->with('success', "The account of " . $user->first_name . " " . $user->last_name . "has been modified");
     }
 
     /**
@@ -141,6 +141,6 @@ class AdministratorController extends Controller
 
         return redirect()
                 ->route('home')
-                ->with('succes_deleting_account', "The account has been deleted");
+                ->with('success_deleting_account', "The account has been deleted");
     }
 }
