@@ -160,13 +160,14 @@ body, html {
 #footer {
   text-align: center;
   height: 600px;
+  width: 100%;
   background-color: #C80E76;
 }
 @media (min-width: 768px) {
   #footer {
     display: flex;
     flex-direction: row;
-    height: 440 px;
+    height: 440px;
   }
 }
 @media (min-width: 1024px) {
@@ -176,32 +177,34 @@ body, html {
 }
 @media (min-width: 1920px) {
   #footer {
-    height: 760px;
+    height: 600px;
   }
 }
-#footer #footer-top {
-  margin: 20px 66px;
+
+#footer-top {
+  flex: 0 0 33%;
+  margin: 20px;
+}
+@media (min-width: 1920px) {
+  #footer-top {
+    flex-basis: 45%;
+    margin: 140px 20px;
+  }
+}
+
+#map {
+  flex: 1;
+  height: 200px;
+  overflow: hidden;
 }
 @media (min-width: 768px) {
-  #footer #footer-top {
-    width: 33%;
-    margin: 20px 40px;
+  #map {
+    height: 100%;
   }
 }
-@media (min-width: 1024px) {
-  #footer #footer-top {
-    margin: 48px 95px;
-  }
-}
-@media (min-width: 1200px) {
-  #footer #footer-top {
-    margin: 48px 120px;
-  }
-}
-@media (min-width: 1200px) {
-  #footer #footer-top {
-    margin: 140px 240px;
-  }
+#map iframe {
+  width: 100%;
+  height: 100%;
 }
 
 #logo-footer {
@@ -210,17 +213,54 @@ body, html {
   font-family: "brushberry-sans-one", sans-serif;
   margin: 0 100px 8px;
 }
+@media (min-width: 768px) {
+  #logo-footer {
+    margin-top: 24px;
+  }
+}
+@media (min-width: 768px) {
+  #logo-footer {
+    margin-top: 48px;
+  }
+}
 @media (min-width: 1920px) {
   #logo-footer {
+    margin-top: 70px;
     font-size: 100px;
   }
 }
 
 #icons {
   display: flex;
-  margin: 12px 80px 30px 80px;
+  margin: 24px 80px 30px 80px;
   justify-content: space-around;
   margin-top: 12px;
+}
+@media (min-width: 400px) {
+  #icons {
+    margin: 24px 150px 30px 150px;
+    gap: 16px;
+  }
+}
+@media (min-width: 768px) {
+  #icons {
+    margin: 24px 50px 30px 50px;
+  }
+}
+@media (min-width: 1024px) {
+  #icons {
+    margin: 24px 100px 30px 100px;
+  }
+}
+@media (min-width: 1200px) {
+  #icons {
+    margin: 24px 125px 30px 125px;
+  }
+}
+@media (min-width: 1900px) {
+  #icons {
+    margin: 24px 245px 30px 245px;
+  }
 }
 #icons .icon {
   height: 40px;
@@ -251,22 +291,6 @@ body, html {
 @media (min-width: 1920px) {
   .txt-primary-footer {
     font-size: 45px;
-  }
-}
-
-#mapDiv {
-  display: flex;
-  width: 100vw;
-}
-@media (min-width: 768px) {
-  #mapDiv {
-    width: 67%;
-    height: 480px;
-  }
-}
-@media (min-width: 1900px) {
-  #mapDiv {
-    height: 760px;
   }
 }
 
