@@ -62,7 +62,7 @@ Route::post('/articles/destroy', [ArticleController::class, 'destroy'])->name("a
 
 //Reservation
 
-Route::get('/reservation/store', [ReservationController::class, 'store'])->name("reservation.store")->middleware("auth");
+Route::post('/reservation/store', [ReservationController::class, 'store'])->name("reservation.store")->middleware("auth");
 
 Route::get('/reservation/destroy', [ReservationController::class, 'destroy'])->name("reservation.destroy")->middleware("auth");
 

@@ -11,9 +11,11 @@ class ReservationController extends Controller
      * Stores a reservation in the database
      * 
      */
-    public function store()
+    public function store(Request $request)
     {
         //TODO
+
+        dd($request['bought-tickets']);
 
         // $reservation = new Reservation();
         // $reservation->activity = $validated["activity"];
