@@ -15,9 +15,23 @@ class PackageSeeder extends Seeder
     {
         Package::factory()->create([
             'id' => 0,
-            'title' => 'packagetitle',
-            'description' => 'packagedescription',
-            'price' => 23.33,
+            'title' => 'Regular Entry',
+            'description' => 'Acess to the site and scenes',
+            'price' => 25,
+
+        ]);
+        Package::factory()->create([
+            'id' => 0,
+            'title' => 'Da Vinci',
+            'description' => 'Welcome drink, Surprise gift',
+            'price' => 40,
+
+        ]);
+        Package::factory()->create([
+            'id' => 0,
+            'title' => 'VIP',
+            'description' => 'Open bar · Food · Seats in vip lodge',
+            'price' => 190,
 
         ]);
     }
