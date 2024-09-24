@@ -12,7 +12,10 @@ class Package extends Model
 
     public $timestamps = false;
 
-    public function reservation(): HasMany
+    /**
+     * Relation one-to-many with the model Reservation
+     */
+    public function reservations()
     {
         return $this->hasMany(Reservation::class);
     }

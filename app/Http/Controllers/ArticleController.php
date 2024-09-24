@@ -32,7 +32,7 @@ class ArticleController extends Controller
     }
 
     /**
-     * Displays the form for creating an activity
+     * Displays the form for creating an article
      *
      */
     public function create()
@@ -41,7 +41,7 @@ class ArticleController extends Controller
     }
 
     /**
-     * Stores an activity in the database
+     * Handle the addition of an article
      *
      * @param Request $request
      */
@@ -77,26 +77,75 @@ class ArticleController extends Controller
         $article->save();
 
         return redirect()
-            ->route('admin.panel')
+            ->route('adminPanel')
             ->with('success', "Article added successfully");
     }
 
     /**
-     * Displays the form for editing an activity
+     * Displays the form for editing an article
      *
      * @param integer $id
      */
-    public function edit(int $id) {}
+    public function edit(int $id) {
+        return view('article.edit', [
+            "article" => Article::findOrFail($id)
+        ]);
+    }
 
     /**
-     * Updates an activity from the database
+     * Handle the modification of an article
      *
+     * @param Request $request
      */
-    public function update() {}
+    public function update(Request $request) {
+        //TODO add validation for last_edited and created_by | Maybe remove both section if using timestamp
+        $validated = $request->validate([
+            "id" => "required",
+            "title" => "required|max:255",
+            "description" => "required|max:499",
+            "media" => "nullable|mimes:png,jpg,jpeg,webp"
+            /* "last_edited" => "required",
+            "created_by" => "required|max:255" */
+        ], [
+            "id.required" => "The article doesn't exist",
+            "title.required" => "The title is required",
+            "title.max" => "The title must have a maximum of :max characters",
+            "description.required" => "A description is required",
+            "description.max" => "The description must have a maximum of :max characters",
+            "media.required" => "A media is required",
+            "media.mimes" => "The media must have a valid format (png, jpg, jpeg, webp)"
+        ]);
+
+        $article = Article::findOrFail($validated["id"]);
+        $article->title = $validated["title"];
+        $article->description = $validated["description"];
+
+        if ($request->hasFile('media')) {
+
+            Storage::putFile('public/uploads', $request->media);
+
+            $article->media = "/storage/uploads/" . $request->media->hashName();
+        }
+
+        $article->save();
+
+        return redirect()
+            ->route('adminPanel')
+            ->with('success', "Article added successfully");
+    }
 
     /**
-     * Deletes an activity from the database
+     * Handle the suppression of an article
      *
+     * @param Request $request
      */
-    public function destroy() {}
+    public function destroy(Request $request) {
+        $article = Article::findOrFail($request->id);
+
+        Article::destroy($article->id);
+
+        return redirect()
+                ->route("adminPanel")
+                ->with("success_article_suppression", "Article deleted successfully");
+    }
 }

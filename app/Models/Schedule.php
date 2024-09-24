@@ -10,4 +10,11 @@ class Schedule extends Model
     use HasFactory;
 
     public $timestamps = false;
+
+    /**
+     * Relation many-to-many with the model Artist
+     */
+    public function artists(){
+        return $this->belongsToMany(Artist::class);
+    }
 }
