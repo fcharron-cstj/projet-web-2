@@ -394,4 +394,14 @@ body, html {
 }
 @media (min-width:1920px) {
 
-}*//*# sourceMappingURL=style.css.map */
+}*/
+.tickets {
+  height: 680px;
+  margin: 75px 25px;
+}
+.tickets .ticket-option {
+  width: 100%;
+  border: 1px solid #C80E76;
+  border-radius: 16px;
+  margin-bottom: 30px;
+}/*# sourceMappingURL=style.css.map */
