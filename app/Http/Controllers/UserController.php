@@ -45,7 +45,7 @@ class UserController extends Controller
         $request->session()->regenerate();
 
         return redirect()
-            ->intended(route('site.home'))
+            ->intended(route('home'))
             ->with('success', "Welcome back!");
     }
 
@@ -80,7 +80,7 @@ class UserController extends Controller
         $user->first_name = $validated["first_name"];
         $user->last_name = $validated["last_name"];
         $user->email = $validated["email"];
-        $user->role_id = Role::where('title', 'user')->first()->id;
+        $user->role_id = Role::where('title', 'client')->first()->id;
 
         $user->password = Hash::make($validated["password"]);
 
@@ -89,7 +89,7 @@ class UserController extends Controller
         Auth::login($user);
 
         return redirect()
-            ->route('site.home')
+            ->route('home')
             ->with('success', "Registered successfully");
     }
 
@@ -98,13 +98,15 @@ class UserController extends Controller
      *
      * @param integer $id
      */
-    public function edit(int $id){
+    public function edit(int $id)
+    {
         return view('user.edit', [
             'user' => User::findOrFail($id)
         ]);
     }
 
-    public function update(Request $request){
+    public function update(Request $request)
+    {
         $validated = $request->validate([
             "id" => "required",
             "first_name" => "required|max:255",
@@ -136,8 +138,8 @@ class UserController extends Controller
         $user->save();
 
         return redirect()
-                ->route('user.show', ['id' => $user->id])
-                ->with('succes_account_modification', "The user " . $user->first_name . " " . $user->last_name . " has been modified");
+            ->route('user.show', ['id' => $user->id])
+            ->with('succes_account_modification', "The user " . $user->first_name . " " . $user->last_name . " has been modified");
     }
 
     /**

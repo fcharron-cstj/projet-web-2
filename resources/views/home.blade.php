@@ -5,16 +5,21 @@
     {{-- REMOVE --}}
 
     <div class="container">
-
         <section class="schedule">
+            <h1>Music & arts festival</h1>
+            <p>A festival to discover new artists</p>
+            <img src="" alt="">
             @foreach ($schedules as $schedule)
                 <div class="schedule">
+                    <p>{{ date_format(date_create($schedule->date), 'w F') }}</p>
                     <p>{{ $schedule->activity }}</p>
-                    <p>{{ $schedule->date }}</p>
                 </div>
             @endforeach
+            <a href="{{ route('article.index') }}">Articles</a>
+            <a href="#tickets">Buy Tickets</a>
         </section>
         <section class="tickets">
+            <h2 id="tickets">Tickets</h2>
             <div class="ticket-option">
                 <p>General entry</p>
                 <p>Access to the size and scenes</p>

@@ -8,11 +8,11 @@
                 @csrf
                 <label for="email">Email</label>
 
-                <input id="email" name="email" type="email" autocomplete="email" value="{{ old('email') }}" />
+                <input id="loginemail" name="email" type="email" autocomplete="email" value="{{ old('email') }}" />
 
                 <label for="password"> Password </label>
 
-                <input id="password" name="password" type="password" autocomplete="current-password" />
+                <input id="loginpassword" name="password" type="password" autocomplete="current-password" />
                 <button type="submit">Login in</button>
             </form>
             <p>
@@ -36,11 +36,12 @@
 
                 <label for="email">Email</label>
 
-                <input id="email" name="email" type="email" autocomplete="email" value="{{ old('email') }}" />
+                <input id="registeremail" name="email" type="email" autocomplete="email"
+                    value="{{ old('email') }}" />
 
                 <label for="password"> Password </label>
 
-                <input id="password" name="password" type="password" autocomplete="current-password" />
+                <input id="registerpassword" name="password" type="password" autocomplete="current-password" />
 
                 <label for="confirm-password">Password confirmation</label>
 
