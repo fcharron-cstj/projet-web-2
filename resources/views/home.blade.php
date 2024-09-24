@@ -38,8 +38,10 @@
                     <p>{{ $article->description }}</p>
                     <p>{{ $article->date }}</p>
                     <img src="{{ $article->media }}" alt="">
+                    <a href="{{ route('article.show', ['id' => $article->id]) }}">More info</a>
                 </article>
             @endforeach
+            <a href="{{ route('article.index') }}">View all articles</a>
         </section>
     </div>
     <x-footer />

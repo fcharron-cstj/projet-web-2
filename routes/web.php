@@ -32,49 +32,49 @@ Route::get("/logout", [UserController::class, "disconnect"])->name('logout')->mi
 
 //Activity
 
-Route::get('/schedule/create', [ActivityController::class], 'create')->name("schedule.create")->middleware("auth");
+Route::get('/schedules/create', [ActivityController::class], 'create')->name("schedule.create")->middleware("auth");
 
-Route::get('/schedule/store', [ActivityController::class], 'store')->name("schedule.store")->middleware("auth");
+Route::get('/schedules/store', [ActivityController::class], 'store')->name("schedule.store")->middleware("auth");
 
-Route::post('/schedule/edit', [ActivityController::class], 'edit')->name("schedule.edit")->middleware("auth");
+Route::post('/schedules/edit', [ActivityController::class], 'edit')->name("schedule.edit")->middleware("auth");
 
-Route::post('/schedule/update', [ActivityController::class], 'update')->name("schedule.update")->middleware("auth");
+Route::post('/schedules/update', [ActivityController::class], 'update')->name("schedule.update")->middleware("auth");
 
-Route::post('/schedule/destroy', [ActivityController::class], 'destroy')->name("schedule.destroy")->middleware("auth");
-
+Route::post('/schedules/destroy', [ActivityController::class], 'destroy')->name("schedule.destroy")->middleware("auth");
 
 //Article
 
-Route::get('/article', [ArticleController::class], 'index')->name("article.index")->middleware("guest");
+Route::get('/articles', [ArticleController::class, 'index'])->name("article.index")->middleware("guest");
 
-Route::get('/article/show/{id}', [ArticleController::class], 'show')->name("article.show")->middleware("guest");
+Route::get('/article/show/{id}', [ArticleController::class, 'show'])->name("article.show")->middleware("guest");
 
-Route::get('/article/create', [ArticleController::class], 'create')->name("article.create")->middleware("auth");
+Route::get('/articles/create', [ArticleController::class, 'create'])->name("article.create")->middleware("auth");
 
-Route::post('/article/store', [ArticleController::class], 'store')->name("article.store")->middleware("auth");
+Route::post('/articles/store', [ArticleController::class, 'store'])->name("article.store")->middleware("auth");
 
-Route::get('/article/edit/{titre}', [ArticleController::class], 'edit')->name("article.edit")->middleware("auth");
+Route::get('/articles/edit/{id}', [ArticleController::class, 'edit'])->name("article.edit")->middleware("auth");
 
-Route::post('/article/update', [ArticleController::class], 'update')->name("article.update")->middleware("auth");
+Route::post('/articles/update', [ArticleController::class, 'update'])->name("article.update")->middleware("auth");
 
-Route::post('/article/destroy', [ArticleController::class], 'destroy')->name("article.destroy")->middleware("auth");
+Route::post('/articles/destroy', [ArticleController::class, 'destroy'])->name("article.destroy")->middleware("auth");
+
 
 //Reservation
 
-Route::get('/reservation/store', [ReservationController::class], 'store')->name("reservation.store")->middleware("auth");
+Route::get('/reservation/store', [ReservationController::class, 'store'])->name("reservation.store")->middleware("auth");
 
-Route::get('/reservation/destroy', [ReservationController::class], 'destroy')->name("reservation.destroy")->middleware("auth");
+Route::get('/reservation/destroy', [ReservationController::class, 'destroy'])->name("reservation.destroy")->middleware("auth");
 
 //Admin
 
-Route::get('/admin', [AdministratorController::class], 'adminPanel')->name("adminPanel")->middleware("auth");
+Route::get('/admin', [AdministratorController::class, 'adminPanel'])->name("adminPanel")->middleware("auth");
 
-Route::get('/admin/create', [AdministratorController::class], 'create')->name("admin.create")->middleware("auth");
+Route::get('/admin/create', [AdministratorController::class, 'create'])->name("admin.create")->middleware("auth");
 
-Route::post('/admin/store', [AdministratorController::class], 'store')->name("admin.store")->middleware("auth");
+Route::post('/admin/store', [AdministratorController::class, 'store'])->name("admin.store")->middleware("auth");
 
-Route::get('/admin/edit/{id}', [AdministratorController::class], 'edit')->name("admin.edit")->middleware("auth");
+Route::get('/admin/edit/{id}', [AdministratorController::class, 'edit'])->name("admin.edit")->middleware("auth");
 
 /* Route::post('/admin/edit', [AdministratorController::class], 'edit')->name("admin.edit")->middleware("auth"); */
 
-Route::post('/admin/update', [AdministratorController::class], 'update')->name("admin.update")->middleware("auth");
+Route::post('/admin/update', [AdministratorController::class, 'update'])->name("admin.update")->middleware("auth");

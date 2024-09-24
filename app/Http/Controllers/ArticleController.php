@@ -12,7 +12,8 @@ class ArticleController extends Controller
      * Displays the list of all the articles
      *
      */
-    public function index(){
+    public function index()
+    {
         return view('article.index', [
             'articles' => Article::all()
         ]);
@@ -23,7 +24,8 @@ class ArticleController extends Controller
      *
      * @param integer $id
      */
-    public function show(int $id){
+    public function show(int $id)
+    {
         return view('article.show', [
             'article' => Article::findOrFail($id)
         ]);
@@ -33,7 +35,8 @@ class ArticleController extends Controller
      * Displays the form for creating an activity
      *
      */
-    public function create() {
+    public function create()
+    {
         return view('article.create');
     }
 
@@ -83,9 +86,7 @@ class ArticleController extends Controller
      *
      * @param integer $id
      */
-    public function edit(int $id) {
-
-    }
+    public function edit(int $id) {}
 
     /**
      * Updates an activity from the database
