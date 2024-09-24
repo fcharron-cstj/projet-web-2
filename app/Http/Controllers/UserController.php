@@ -45,7 +45,7 @@ class UserController extends Controller
         $request->session()->regenerate();
 
         return redirect()
-            ->intended(route('site.home'))
+            ->intended(route('home'))
             ->with('success', "Welcome back!");
     }
 
