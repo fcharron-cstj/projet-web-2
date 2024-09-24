@@ -20,20 +20,37 @@
         </section>
         <section class="tickets">
             <h2 id="tickets">Tickets</h2>
-            <div class="ticket-option">
+            <div class="ticket-option 1">
                 <p>General entry</p>
                 <p>Access to the size and scenes</p>
                 <p>25$</p>
+                <span class="ticket-add">+</span>
             </div>
-            <div class="ticket-option">
+            <div class="ticket-option 2">
                 <p>Da Vinci</p>
                 <p>Welcome drink, surprise gift</p>
                 <p>40$</p>
+                <span class="ticket-add">+</span>
             </div>
-            <div class="ticket-option">
+            <div class="ticket-option 3">
                 <p>VIP</p>
                 <p>Open bar, Food, Seats in VIP lodge</p>
                 <p>190$</p>
+                <span class="ticket-add">+</span>
+            </div>
+            <div class="cart">
+                <p>Total</p>
+                <ul class="tickets-total">
+                    <li>General entry 0x</li>
+                    <li>Da Vinci 0x</li>
+                    <li>VIP 0x</li>
+                </ul>
+                <p class="total-price">0$</p>
+                <form action="{{ route('reservation.store') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="bought-tickets" value="" id="bought-tickets">
+                    <button type="submit">Purchase Tickets</button>
+                </form>
             </div>
         </section>
         <section class="articles">
@@ -50,4 +67,5 @@
         </section>
     </div>
     <x-footer />
+    <script src="{{ asset('js/reservations.js') }}"></script>
 </x-layout>
