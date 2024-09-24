@@ -14,7 +14,6 @@ class ArtistSeeder extends Seeder
     public function run(): void
     {
         Artist::factory()->create([
-            'id' => 0,
             'name' => 'artistname'
         ]);
     }

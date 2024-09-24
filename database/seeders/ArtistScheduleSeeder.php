@@ -14,7 +14,6 @@ class ArtistScheduleSeeder extends Seeder
     public function run(): void
     {
         ArtistSchedule::factory()->create([
-            'id' => 0,
             'schedule_id' => 1,
             'artist_id' => 1,
         ]);

@@ -14,7 +14,6 @@ class ReservationSeeder extends Seeder
     public function run(): void
     {
         Reservation::factory()->create([
-            'id' => 1,
             'arrival' => now(),
             'departing' => now(),
             'package_id' => 1,
