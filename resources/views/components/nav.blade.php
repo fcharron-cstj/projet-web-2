@@ -7,14 +7,14 @@
         <p class="logo">NOVA</p>
     </div>
     <div class="div-nav-links">
-        <a class="nav-links green-text" href="#">Home</a>
-        <a class="nav-links blue-text" href="#">Festival</a>
-        <a class="nav-links purple-text" href="">Articles</a>
-        <a class="nav-links pink-text" href="#">Contact</a>
+        <a class="nav-links green-text" href="{{ route('home') }}">Home</a>
+        <a class="nav-links blue-text" href="#schedule">Festival</a>
+        <a class="nav-links purple-text" href="{{ route('article.index') }}">Articles</a>
+        <a class="nav-links pink-text" href="#contact">Contact</a>
         @auth
-        <a class="btn-blue-pink btn-login-logout" href="{{ route('logout') }}">Logout</a>
+            <a class="btn-blue-pink btn-login-logout" href="{{ route('logout') }}">Logout</a>
         @else
-        <a class="btn-blue-pink btn-login-logout" href="{{ route('loginOrRegister') }}">Login</a>
+            <a class="btn-blue-pink btn-login-logout" href="{{ route('loginOrRegister') }}">Login</a>
         @endauth
         <a class="btn-pink-green" href="#">Buy Tickets</a>
     </div>
@@ -23,7 +23,7 @@
 <nav class="nav-mobile">
     <div class="div-logo-brg">
         <p class="logo">NOVA</p>
-        <img src="{{asset("medias/list.png")}}" alt="">
+        <img src="{{ asset('medias/list.png') }}" alt="">
     </div>
 
     <div class="div-nav-links">
