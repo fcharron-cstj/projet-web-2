@@ -15,15 +15,15 @@ class ArticleSeeder extends Seeder
     {
         Article::factory()->create([
             'id' => 1,
-            'title' => 'Article 1',
-            'description' => 'Description of Article 1',
-            'media' => 'https://placehold.co/600x400',
+            'title' => 'Live Doodle artist!',
+            'description' => 'Saturday at 3 live performer Alec...',
+            'media' => asset('medias/doodle_artist.jpg'),
         ]);
         Article::factory()->create([
             'id' => 2,
-            'title' => 'Article 2',
-            'description' => 'Description of Article 2',
-            'media' => 'https://placehold.co/600x400',
+            'title' => 'graphitis by the main scene',
+            'description' => 'Music, dance.. and graphitis!',
+            'media' => asset('medias/graphiti_artist.jpg'),
         ]);
     }
 }
