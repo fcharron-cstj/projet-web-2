@@ -1,15 +1,15 @@
 <main>
     <h1>Update a schedule</h1>
     <div class="form">
-        <form action="{{ route('activity.update') }}" method="POST">
+        <form action="{{ route('schedule.update') }}" method="POST">
+
             @csrf
 
-            <input type="hidden" name="id" value="{{ $activity->id }}">
+            <input type="hidden" name="id" value="{{ $schedule->id }}">
 
             <label for="title">Title</label>
 
             <input type="text" name="title" id="title" value="{{ old('title') }}">
-
 
             <label for="description">Description</label>
 

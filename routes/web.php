@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\ActivityController;
+use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\AdministratorController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ReservationController;
@@ -31,17 +31,17 @@ Route::post('user/destroy', [UserController::class, "destroy"])->name("user.dest
 
 Route::get("/logout", [UserController::class, "disconnect"])->name('logout')->middleware("auth");
 
-//Activity
+//Schedule
 
-Route::get('/schedules/create', [ActivityController::class], 'create')->name("schedule.create")->middleware(admin::class);
+Route::get('/schedules/create', [ScheduleController::class, 'create'])->name("schedule.create")->middleware(admin::class);
 
-Route::get('/schedules/store', [ActivityController::class], 'store')->name("schedule.store")->middleware(admin::class);
+Route::get('/schedules/store', [ScheduleController::class, 'store'])->name("schedule.store")->middleware(admin::class);
 
-Route::post('/schedules/edit', [ActivityController::class], 'edit')->name("schedule.edit")->middleware(admin::class);
+Route::post('/schedules/edit', [ScheduleController::class, 'edit'])->name("schedule.edit")->middleware(admin::class);
 
-Route::post('/schedules/update', [ActivityController::class], 'update')->name("schedule.update")->middleware(admin::class);
+Route::post('/schedules/update', [ScheduleController::class, 'update'])->name("schedule.update")->middleware(admin::class);
 
-Route::post('/schedules/destroy', [ActivityController::class], 'destroy')->name("schedule.destroy")->middleware(admin::class);
+Route::post('/schedules/destroy', [ScheduleController::class, 'destroy'])->name("schedule.destroy")->middleware(admin::class);
 
 //Article
 
@@ -74,7 +74,7 @@ Route::get('/admin/create', [AdministratorController::class, 'create'])->name("a
 
 Route::post('/admin/store', [AdministratorController::class, 'store'])->name("admin.store")->middleware(admin::class);
 
-Route::post('/admin/edit', [AdministratorController::class], 'edit')->name("admin.edit")->middleware(admin::class);
+Route::post('/admin/edit', [AdministratorController::class, 'edit'])->name("admin.edit")->middleware(admin::class);
 
 Route::post('/admin/update', [AdministratorController::class, 'update'])->name("admin.update")->middleware(admin::class);
 

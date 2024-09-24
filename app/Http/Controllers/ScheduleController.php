@@ -7,13 +7,14 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class ActivityController extends Controller
+class ScheduleController extends Controller
 {
     /**
      * Displays the form for creating a schedule
      *
      */
-    public function create() {
+    public function create()
+    {
         return view('schedule.create', [
             "schedules" => Schedule::all()
         ]);
@@ -52,9 +53,10 @@ class ActivityController extends Controller
      *
      * @param integer $id
      */
-    public function edit(int $id) {
+    public function edit(Request $request)
+    {
         return view('schedule.edit', [
-            "schedule" => Schedule::findOrFail($id)
+            "schedule" => Schedule::findOrFail($request->id)
         ]);
     }
 
@@ -63,7 +65,8 @@ class ActivityController extends Controller
      *
      * @param Request $request
      */
-    public function update(Request $request) {
+    public function update(Request $request)
+    {
         $validated = $request->validate([
             "id" => "required",
             "activity" => "required|max:255",
@@ -83,8 +86,8 @@ class ActivityController extends Controller
         $schedule->save();
 
         return redirect()
-                ->route('adminPanel')
-                ->with('succes_schedule', "The schedule has been modified");
+            ->route('adminPanel')
+            ->with('succes_schedule', "The schedule has been modified");
     }
 
     /**
@@ -92,13 +95,14 @@ class ActivityController extends Controller
      *
      * @param Request $request
      */
-    public function destroy(Request $request) {
+    public function destroy(Request $request)
+    {
         $schedule = Schedule::findOrFail($request->id);
 
         Schedule::destroy($schedule->id);
 
         return redirect()
-                ->route('adminPanel')
-                ->with('succes_deleting_schedule', "The schedule has been deleted");
+            ->route('adminPanel')
+            ->with('succes_deleting_schedule', "The schedule has been deleted");
     }
 }
