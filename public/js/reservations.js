@@ -25,12 +25,12 @@ function updateCart(option, id, price) {
     document.querySelector(".total-price").innerHTML = totalprice + "$";
 
     document.querySelector("#bought-tickets").value =
-        "General : " +
+        "General " +
         totaltickets[0] +
         ", " +
-        "Vinci :" +
+        "Vinci " +
         totaltickets[1] +
         ", " +
-        "VIP :" +
+        "VIP " +
         totaltickets[2];
 }
