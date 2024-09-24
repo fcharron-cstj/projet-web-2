@@ -1,9 +1,11 @@
 <footer id="footer">
     <div class="footer-top">
         <p id="logo-footer">NOVA</p>
-        <p class="txt-secondary-footer font2 green-text">Discovering talents since 2021</p>
+        <p class="txt-secondary-footer font2 green-text">Discovering talents</p>
+        <p class="txt-secondary-footer font2 green-text">since 2021</p>
         <p class="txt-primary-footer font1 blue-text">Find Us</p>
-        <p class="txt-secondary-footer font2 green-text">Mont-Tremblant, Qc, Canada</p>
+        <p class="txt-secondary-footer font2 green-text">Mont-Tremblant,</p>
+        <p class="txt-secondary-footer font2 green-text"> Qc, Canada</p>
         <p class="txt-primary-footer font1 blue-text">Follow the fun!</p>
         <div id="icons">
             <img class="icon" src="{{asset("medias/instagram.png")}}" alt="instagram-icon">
