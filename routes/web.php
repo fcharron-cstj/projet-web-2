@@ -6,11 +6,12 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\UserController;
+use App\Http\Middleware\admin;
 use Illuminate\Support\Facades\Route;
 
 //Home
 
-Route::get('/', [SiteController::class, 'home'])->name("home")->middleware('guest');
+Route::get('/', [SiteController::class, 'home'])->name("home");
 
 //User
 
@@ -67,14 +68,16 @@ Route::get('/reservation/destroy', [ReservationController::class, 'destroy'])->n
 
 //Admin
 
-Route::get('/admin', [AdministratorController::class, 'adminPanel'])->name("adminPanel")->middleware("auth");
 
-Route::get('/admin/create', [AdministratorController::class, 'create'])->name("admin.create")->middleware("auth");
 
-Route::post('/admin/store', [AdministratorController::class, 'store'])->name("admin.store")->middleware("auth");
+Route::get('/admin', [AdministratorController::class, 'adminPanel'])->name("adminPanel")->middleware(admin::class);
 
-Route::get('/admin/edit/{id}', [AdministratorController::class, 'edit'])->name("admin.edit")->middleware("auth");
+Route::get('/admin/create', [AdministratorController::class, 'create'])->name("admin.create");
 
-/* Route::post('/admin/edit', [AdministratorController::class], 'edit')->name("admin.edit")->middleware("auth"); */
+Route::post('/admin/store', [AdministratorController::class, 'store'])->name("admin.store");
 
-Route::post('/admin/update', [AdministratorController::class, 'update'])->name("admin.update")->middleware("auth");
+Route::get('/admin/edit/{id}', [AdministratorController::class, 'edit'])->name("admin.edit");
+
+Route::post('/admin/edit', [AdministratorController::class], 'edit')->name("admin.edit");
+
+Route::post('/admin/update', [AdministratorController::class, 'update'])->name("admin.update");

@@ -15,8 +15,9 @@ class AdministratorController extends Controller
      * Show the admin page
      *
      */
-    public function adminPanel(){
-        return view("admin-pannel", [
+    public function adminPanel()
+    {
+        return view("admin.admin-panel", [
             "users" => User::all(),
             "schedules" => Schedule::all(),
             "articles" => Article::all()
@@ -27,7 +28,8 @@ class AdministratorController extends Controller
      * Show the user creation form with the possibility to choose a role
      *
      */
-    public function create(){
+    public function create()
+    {
         return view("admin.create");
     }
 
@@ -36,7 +38,8 @@ class AdministratorController extends Controller
      *
      * @param Request $request
      */
-    public function store(Request $request){
+    public function store(Request $request)
+    {
 
         $validated = $request->validate([
             "first_name" => "required|max:255",
@@ -70,9 +73,8 @@ class AdministratorController extends Controller
         $user->save();
 
         return redirect()
-                ->route("admin.index")
-                ->with("success_account_creation", "Account registration succeeded!");
-
+            ->route("admin.index")
+            ->with("success_account_creation", "Account registration succeeded!");
     }
 
     /**
@@ -80,7 +82,8 @@ class AdministratorController extends Controller
      *
      * @param integer $id
      */
-    public function edit(int $id){
+    public function edit(int $id)
+    {
         return view("admin.edit", [
             "user" => User::findOrFail($id)
         ]);
@@ -92,7 +95,8 @@ class AdministratorController extends Controller
      *
      * @param Request $request
      */
-    public function update(Request $request){
+    public function update(Request $request)
+    {
 
         $validated = $request->validate([
             "id" => "required",
@@ -125,8 +129,8 @@ class AdministratorController extends Controller
         $user->save();
 
         return redirect()
-                ->route('')
-                ->with('success', "The account of " . $user->first_name . " " . $user->last_name . "has been modified");
+            ->route('')
+            ->with('success', "The account of " . $user->first_name . " " . $user->last_name . "has been modified");
     }
 
     /**
@@ -134,13 +138,14 @@ class AdministratorController extends Controller
      *
      * @param Request $request
      */
-    public function destroy(Request $request){
+    public function destroy(Request $request)
+    {
         $user = User::findOrFail($request->id);
 
         User::destroy($user->id);
 
         return redirect()
-                ->route('home')
-                ->with('success_deleting_account', "The account has been deleted");
+            ->route('home')
+            ->with('success_deleting_account', "The account has been deleted");
     }
 }
