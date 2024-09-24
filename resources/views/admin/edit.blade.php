@@ -1,6 +1,6 @@
 <x-layout>
     <div class="form">
-        <form action="{{ route('admin.store') }}" method="POST">
+        <form action="{{ route('admin.update') }}" method="POST">
             @csrf
 
             <input type="hidden" name="id" value="{{ $user->id }}">
