@@ -49,7 +49,7 @@
                 <form action="{{ route('reservation.store') }}" method="POST">
                     @csrf
                     <input type="hidden" name="bought-tickets" value="" id="bought-tickets">
-                    <button type="submit">Buy</button>
+                    <button type="submit">Purchase Tickets</button>
                 </form>
             </div>
         </section>
