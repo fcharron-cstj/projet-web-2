@@ -17,7 +17,9 @@ class PackageFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'title' => fake()->word(),
+            'description' => fake()->sentence(rand(5,20)),
+            'price' => fake()->randomFloat(2,20,200)
         ];
     }
 }

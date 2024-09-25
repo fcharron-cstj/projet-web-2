@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Package;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +19,10 @@ class ReservationFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'arrival' => fake()->date(),
+            'departing' => fake()->date(),
+            'user_id' => User::inRandomOrder()->first()->id,
+            'package_id' => Package::inRandomOrder()->first()->id
         ];
     }
 }
