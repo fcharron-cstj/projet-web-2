@@ -8,8 +8,8 @@ use Illuminate\Http\Request;
 class ReservationController extends Controller
 {
     /**
-     * Stores a reservation in the database
-     * 
+     * Handle the addition of a reservation
+     *
      */
     public function store(Request $request)
     {
@@ -26,5 +26,14 @@ class ReservationController extends Controller
         // return redirect()
         //     ->route('adminPanel')
         //     ->with('success', "reservation added successfully");
+    }
+
+    /**
+     * Handle the modificaiton of a reservation
+     *
+     * @param Request $request
+     */
+    public function update(Request $request){
+
     }
 }
