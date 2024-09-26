@@ -4,9 +4,15 @@
             @foreach ($users as $user)
                 @if ($user->role_id == 1)
                     <div class="admin">
-                        <p>{{ $user->first_name }} {{ $user->last_name }}</p>
+                        {{-- For testing --}}
+                       {{--  <p>
+                            <a href="{{route('user.show', ['id' => $user->id])}}" style="text-decoration: none; cursor: pointer; color:#44FFF9">
+                                {{ $user->first_name }} {{ $user->last_name }}
+                            </a>
+                        </p> --}}
+                        <p>{{$user->first_name }} {{$user->last_name}}</p>
                         <p>{{ $user->email }}</p>
-                        <a href="{{ route('admin.edit', ['id' => $user->id]) }}">EDIT</a>
+                        <a href="{{ route('admin.edit', ['id' => $user->id]) }}" style="color:#44FFF9">EDIT</a>
                         <form action="{{ route('admin.destroy') }}" method="post">
                             @csrf
                             <input type="hidden" name="id" value="{{ $user->id }}">
@@ -17,9 +23,15 @@
 
                 @if ($user->role_id == 2)
                     <div class="user">
-                        <p>{{ $user->first_name }} {{ $user->last_name }}</p>
+                        {{-- For testing --}}
+                        {{-- <p>
+                            <a href="{{route('user.show', ['id' => $user->id])}}" style="text-decoration: none; cursor: pointer; color:#44FFF9">
+                                {{ $user->first_name }} {{ $user->last_name }}
+                            </a>
+                        </p> --}}
+                        <p>{{$user->first_name }} {{$user->last_name}}</p>
                         <p>{{ $user->email }}</p>
-                        <a href="{{ route('admin.edit', ['id' => $user->id]) }}">EDIT</a>
+                        <a href="{{ route('admin.edit', ['id' => $user->id]) }}" style="color:#44FFF9">EDIT</a>
                         <form action="{{ route('admin.destroy') }}" method="post">
                             @csrf
                             <input type="hidden" name="id" value="{{ $user->id }}">
@@ -37,7 +49,7 @@
                     <p>{{ $article->description }}</p>
                     <p>{{ $article->date }}</p>
                     <img src="{{ $article->media }}" alt="">
-                    <a href="{{ route('article.edit', ['id' => $article->id]) }}">Edit</a>
+                    <a href="{{ route('article.edit', ['id' => $article->id]) }}" style="color:#44FFF9">Edit</a>
                     <form action="{{ route('article.destroy') }}" method="post">
                         @csrf
                         <input type="hidden" name="id" value="{{ $article->id }}">
@@ -52,8 +64,8 @@
                 <div>
                     <p>{{ $schedule->activity }}</p>
                     <p>{{ $schedule->date }}</p>
-                    <a href="{{ route('schedule.edit', ['id' => $schedule->id]) }}">EDIT</a>
-                    <form action="{{ route('schedule.destroy') }}" method="post">
+                    <a href="{{ route('schedules.edit', ['id' => $schedule->id]) }}" style="color:#44FFF9">EDIT</a>
+                    <form action="{{ route('schedules.destroy') }}" method="post">
                         @csrf
                         <input type="hidden" name="id" value="{{ $schedule->id }}">
                         <button type="submit">Delete</button>
