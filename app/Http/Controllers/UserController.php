@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Reservation;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -98,10 +99,11 @@ class UserController extends Controller
      *
      * @param integer $id
      */
-    public function edit(int $id)
+    public function show($id)
     {
-        return view('user.edit', [
-            'user' => User::findOrFail($id)
+        return view('user.show', [
+            'user' => User::findOrFail($id),
+            'reservations' => Reservation::with('Package')->where('user_id', $id)->get()
         ]);
     }
 

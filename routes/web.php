@@ -21,9 +21,9 @@ Route::post('/user/store', [UserController::class, 'store'])->name("user.store")
 
 Route::post('/user/connect', [UserController::class, 'authentication'])->name("user.authenticate")->middleware('guest');
 
-Route::post('/user/show', [UserController::class, 'show'])->name("user.show")->middleware('auth');
+Route::get('/user/show/{id}', [UserController::class, 'show'])->name("user.show")->middleware('auth');
 
-Route::post('/user/edit', [UserController::class, 'edit'])->name("user.edit")->middleware('auth');
+// Route::post('/user/edit', [UserController::class, 'profile'])->name("user.edit")->middleware('auth');
 
 Route::post('/user/update', [UserController::class, "update"])->name("user.update")->middleware('auth');
 
