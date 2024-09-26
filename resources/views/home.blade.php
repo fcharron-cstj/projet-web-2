@@ -24,24 +24,27 @@
             <a class="btn-blue-pink" href="#tickets">Buy Tickets</a>
         </section>
         <img class="changingImg" src="{{ asset('medias/doodle_artist.jpg') }}" alt="doodle artist img">
-        
+
         <section class="tickets">
             <h2 id="tickets">Tickets</h2>
             <div class="ticket-option 1">
                 <p>General entry</p>
                 <span class="ticket-add">+</span>
+                <span class="ticket-add">-</span>
                 <p>Access to the size and scenes</p>
                 <p>25$</p>
             </div>
             <div class="ticket-option 2">
                 <p>Da Vinci</p>
                 <span class="ticket-add">+</span>
+                <span class="ticket-add">-</span>
                 <p>Welcome drink, surprise gift</p>
                 <p>40$</p>
             </div>
             <div class="ticket-option 3">
                 <p>VIP</p>
                 <span class="ticket-add">+</span>
+                <span class="ticket-add">-</span>
                 <p>Open bar, Food, Seats in VIP lodge</p>
                 <p>190$</p>
             </div>
@@ -52,7 +55,7 @@
                     <li>Da Vinci 0x</li>
                     <li>VIP 0x</li>
                 </ul>
-                
+
                 <p class="total-price">0$</p>
                 <form action="{{ route('reservation.store') }}" method="POST">
                     @csrf

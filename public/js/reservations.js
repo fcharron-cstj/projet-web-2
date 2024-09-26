@@ -1,39 +1,34 @@
 //Reservations
 let totalprice = 0;
-let totaltickets = { 0: 0, 1: 0, 2: 0 };
+let totaltickets = [0, 0, 0];
+let options = {
+    1: ["General entry", 0, 25],
+    2: ["Da Vinci", 1, 40],
+    3: ["VIP", 2, 190],
+};
 document.querySelectorAll(".ticket-add").forEach(function (add) {
     add.addEventListener("click", function (event) {
         event.preventDefault();
         let click = event.target.parentNode.classList;
 
-        // if (click.contains("1") && event.target.innerHTML == "+") {
-        //     updateCart("General entry", 0, 25);
-        // }
-        // if (click.contains("2") && event.target.innerHTML == "+") {
-        //     updateCart("Da Vinci", 1, 40);
-        // }
-        // if (click.contains("3") && event.target.innerHTML == "+") {
-        //     updateCart("VIP", 2, 190);
-        // }
-        if (click.contains("1") && event.target.innerHTML == "+") {
-            updateCart("General entry", 0, -25, false);
-        }
-        if (click.contains("2") && event.target.innerHTML == "+") {
-            updateCart("Da Vinci", 1, -40, false);
-        }
-        if (click.contains("3") && event.target.innerHTML == "+") {
-            updateCart("VIP", 2, -190, false);
+        for (let i = 0; i < 3; i++) {
+            if (click.contains(i + 1)) {
+                let btn = event.target.innerHTML;
+                btn == "+" ? updateCart(options[i + 1]) : 0;
+                btn == "-" ? updateCart(options[i + 1], false) : 0;
+            }
         }
     });
 });
-
-function updateCart(option, id, price, add = true) {
-    totalprice += price;
-    add ? (totaltickets[id] += 1) : (totaltickets[id] -= 1);
-    document.querySelector(".tickets-total").children[id].innerHTML =
-        option + " " + totaltickets[id] + "x, ";
-    document.querySelector(".total-price").innerHTML = totalprice + "$";
-
+function updateCart(option, add = true) {
+    if (totaltickets[option[1]] == 0 && add == false) {
+        return 0;
+    }
+    add ? (totalprice += option[2]) : (totalprice -= option[2]);
+    add ? (totaltickets[option[1]] += 1) : (totaltickets[option[1]] -= 1);
+    document.querySelector(".tickets-total").children[option[1]].innerHTML =
+        option[0] + " " + totaltickets[option[1]] + "x, ";
+    document.querySelector(".total-price").innerHTML = totalprice + " $";
     document.querySelector("#bought-tickets-1").value = totaltickets[0];
     document.querySelector("#bought-tickets-2").value = totaltickets[1];
     document.querySelector("#bought-tickets-3").value = totaltickets[2];
