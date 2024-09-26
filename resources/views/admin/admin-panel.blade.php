@@ -6,11 +6,7 @@
                     <div class="admin">
                         <p>{{ $user->first_name }} {{ $user->last_name }}</p>
                         <p>{{ $user->email }}</p>
-                        <form action="{{ route('admin.edit') }}" method="post">
-                            @csrf
-                            <input type="hidden" name="id" value="{{ $user->id }}">
-                            <button type="submit">Edit</button>
-                        </form>
+                        <a href="{{ route('admin.edit', ['id' => $user->id]) }}">EDIT</a>
                         <form action="{{ route('admin.destroy') }}" method="post">
                             @csrf
                             <input type="hidden" name="id" value="{{ $user->id }}">
@@ -23,11 +19,7 @@
                     <div class="user">
                         <p>{{ $user->first_name }} {{ $user->last_name }}</p>
                         <p>{{ $user->email }}</p>
-                        <form action="{{ route('admin.edit') }}" method="post">
-                            @csrf
-                            <input type="hidden" name="id" value="{{ $user->id }}">
-                            <button type="submit">Edit</button>
-                        </form>
+                        <a href="{{ route('admin.edit', ['id' => $user->id]) }}">EDIT</a>
                         <form action="{{ route('admin.destroy') }}" method="post">
                             @csrf
                             <input type="hidden" name="id" value="{{ $user->id }}">
@@ -60,11 +52,7 @@
                 <div>
                     <p>{{ $schedule->activity }}</p>
                     <p>{{ $schedule->date }}</p>
-                    <form action="{{ route('schedule.edit') }}" method="post">
-                        @csrf
-                        <input type="hidden" name="id" value="{{ $schedule->id }}">
-                        <button type="submit">Edit</button>
-                    </form>
+                    <a href="{{ route('schedule.edit', ['id' => $schedule->id]) }}">EDIT</a>
                     <form action="{{ route('schedule.destroy') }}" method="post">
                         @csrf
                         <input type="hidden" name="id" value="{{ $schedule->id }}">

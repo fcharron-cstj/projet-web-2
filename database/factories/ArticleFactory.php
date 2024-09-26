@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -20,8 +21,8 @@ class ArticleFactory extends Factory
         return [
             'title' => fake()->title(),
             'description' => fake()->sentence($rand),
-            'date' => fake()->date(),
-            'media' => "https://placehold.co/600x400"
+            'media' => "https://placehold.co/600x400",
+            'created_by' => User::inRandomOrder()->first()->id
         ];
     }
 }

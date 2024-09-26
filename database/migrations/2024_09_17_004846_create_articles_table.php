@@ -15,8 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string("title");
             $table->longText("description");
-            $table->timestamp("date");
             $table->string("media");
+            $table->integer("created_by");
+            $table->timestamps();
         });
     }
 

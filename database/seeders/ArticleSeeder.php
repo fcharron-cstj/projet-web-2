@@ -14,16 +14,16 @@ class ArticleSeeder extends Seeder
     public function run(): void
     {
         Article::factory()->create([
-            'id' => 1,
             'title' => 'Live Doodle artist!',
             'description' => 'Saturday at 3 live performer Alec...',
             'media' => asset('medias/doodle_artist.jpg'),
+            'created_by' => 1
         ]);
         Article::factory()->create([
-            'id' => 2,
             'title' => 'graphitis by the main scene',
             'description' => 'Music, dance.. and graphitis!',
             'media' => asset('medias/graphiti_artist.jpg'),
+            'created_by' => 2
         ]);
     }
 }

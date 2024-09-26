@@ -77,14 +77,14 @@ class AdministratorController extends Controller
     }
 
     /**
-     * Show the edit page of an user
+     * Displays the edit form of an user
      *
-     * @param Request $request
+     * @param integer $id
      */
-    public function edit(Request $request)
+    public function edit(int $id)
     {
         return view("admin.edit", [
-            "user" => User::findOrFail($request->id)
+            "user" => User::findOrFail($id)
         ]);
     }
 
