@@ -23,18 +23,20 @@
 <nav class="nav-mobile">
     <div class="div-logo-brg">
         <p class="logo">NOVA</p>
-        <img src="{{ asset('medias/list.png') }}" alt="">
+        <img id="burger-menu" src="{{ asset('medias/list.png') }}" alt="Menu">
     </div>
-
-    <div class="div-nav-links">
+    <div class="div-nav-links" id="mobile-menu">
         <div class="upper-nav-mobile">
-            <a class="nav-links green-text" href="">Home</a>
-            <a class="nav-links blue-text" href="">Festival</a>
-            <a class="nav-links purple-text" href="">Articles</a>
-            <a class="nav-links pink-text" href="">Contact</a>
-        </div>
-        <div class="lower-nav-btn">
-            <a class="btn-blue-pink" href="">Login</a>
+            <img id="close-menu" src="{{ asset('medias/x.png') }}" alt="Close Menu">
+            <a class="nav-links green-text" href="{{ route('home') }}">Home</a>
+            <a class="nav-links blue-text" href="#schedule">Festival</a>
+            <a class="nav-links purple-text" href="{{ route('article.index') }}">Articles</a>
+            <a class="nav-links pink-text" href="#contact">Contact</a>
+            @auth
+            <a class="btn-blue-pink btn-login-logout nav-mobile-log" href="{{ route('logout') }}">Logout</a>
+        @else
+            <a class="btn-blue-pink btn-login-logout nav-mobile-log" href="{{ route('loginOrRegister') }}">Login</a>
+        @endauth
         </div>
     </div>
 </nav>
