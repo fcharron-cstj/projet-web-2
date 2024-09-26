@@ -362,6 +362,7 @@ body, html {
 #burger-menu {
   width: 30px;
   height: auto;
+  margin-right: 20px;
   cursor: pointer;
 }
 
@@ -377,6 +378,7 @@ body, html {
   width: 80vw;
   background-color: rgba(0, 0, 0, 0.753);
   border-left: 3px solid #44FFF9;
+  border-bottom: 3px solid #44FFF9;
 }
 #mobile-menu.active {
   display: flex;
