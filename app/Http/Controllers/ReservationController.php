@@ -45,4 +45,18 @@ class ReservationController extends Controller
             ->route('user.show', ['id' => $request->user()->id])
             ->with('success', "Reservation added successfully");
     }
+
+    /**
+     * Handle the supression of a reservation
+     * 
+     * @param Request $request
+     */
+    public function destroy(Request $request) 
+    {
+        $reservation = Reservation::findOrFail($request->id);
+        
+        return redirect()
+            ->route('admin.pannel')
+            ->with('success_deleting_reservation', "The reservation has been deleted successfully");
+    }
 }
