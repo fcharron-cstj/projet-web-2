@@ -4,19 +4,24 @@
     <a href="{{ route('logout') }}">Log out</a>
     {{-- REMOVE --}}
 
+    <header id="headerHome">
+        <video id="videoPlayer" loop autoplay muted>
+            <source src="{{ asset('medias/nova.mp4') }}" type="video/mp4">
+        </video>
+    </header>
     <div class="container">
-        <section class="schedule">
-            <h1>Music & arts festival</h1>
-            <p>A festival to discover new artists</p>
+        <section id="schedule">
+            <h1 class="title">Music & arts festival</h1>
+            <p class="text">A festival to discover new artists</p>
             <img src="" alt="">
             @foreach ($schedules as $schedule)
                 <div class="schedule">
-                    <p>{{ date_format(date_create($schedule->date), 'w F') }}</p>
-                    <p>{{ $schedule->activity }}</p>
+                    <p class="sub-title">{{ date_format(date_create($schedule->date), 'w F') }}</p>
+                    <p class="text">{{ $schedule->activity }}</p>
                 </div>
             @endforeach
-            <a href="{{ route('article.index') }}">Articles</a>
-            <a href="#tickets">Buy Tickets</a>
+            <a class="btn-green-pink" href="{{ route('article.index') }}">Articles</a>
+            <a class="btn-blue-pink" href="#tickets">Buy Tickets</a>
         </section>
         <section class="tickets">
             <h2 id="tickets">Tickets</h2>
