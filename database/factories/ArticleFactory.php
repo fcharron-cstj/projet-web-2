@@ -16,6 +16,12 @@ class ArticleFactory extends Factory
      */
     public function definition(): array
     {
-        return [];
+        $rand = rand(10, 200);
+        return [
+            'title' => fake()->title(),
+            'description' => fake()->sentence($rand),
+            'date' => fake()->date(),
+            'media' => "https://placehold.co/600x400"
+        ];
     }
 }

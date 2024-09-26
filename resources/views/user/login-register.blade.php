@@ -8,11 +8,13 @@
                 @csrf
                 <label for="email">Email</label>
 
-                <input id="email" name="email" type="email" autocomplete="email" value="{{ old('email') }}" />
+                <x-forms.error champ="email"/>
+                <input id="loginemail" name="email" type="email" autocomplete="email" value="{{ old('email') }}" />
 
                 <label for="password"> Password </label>
 
-                <input id="password" name="password" type="password" autocomplete="current-password" />
+                <x-forms.error champ="password"/>
+                <input id="loginpassword" name="password" type="password" autocomplete="current-password" />
                 <button type="submit">Login in</button>
             </form>
             <p>
@@ -26,24 +28,30 @@
 
                 <label for="first_name">First name</label>
 
+                <x-forms.error champ="first_name"/>
                 <input id="username" name="first_name" type="text" autocomplete="given-name"
                     value="{{ old('first_name') }}">
 
                 <label for="last_name">Last name</label>
 
+                <x-forms.error champ="last_name"/>
                 <input id="last_name" name="last_name" type="text" autocomplete="family-name"
                     value="{{ old('last_name') }}">
 
                 <label for="email">Email</label>
 
-                <input id="email" name="email" type="email" autocomplete="email" value="{{ old('email') }}" />
+                <x-forms.error champ="email"/>
+                <input id="registeremail" name="email" type="email" autocomplete="email"
+                    value="{{ old('email') }}" />
 
                 <label for="password"> Password </label>
 
-                <input id="password" name="password" type="password" autocomplete="current-password" />
+                <x-forms.error champ="password"/>
+                <input id="registerpassword" name="password" type="password" autocomplete="current-password" />
 
                 <label for="confirm-password">Password confirmation</label>
 
+                <x-forms.error champ="password_confirmation"/>
                 <input id="password_confirmation" name="password_confirmation" type="password"
                     value="{{ old('password_confirmation') }}">
 

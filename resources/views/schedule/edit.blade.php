@@ -1,27 +1,29 @@
 <main>
     <h1>Update a schedule</h1>
     <div class="form">
-        <form action="{{ route('activity.update') }}" method="POST">
+        <form action="{{ route('schedule.update') }}" method="POST">
+
             @csrf
 
-            <input type="hidden" name="id" value="{{ $activity->id }}">
-
-            <label for="title">Title</label>
-
-            <input type="text" name="title" id="title" value="{{ old('title') }}">
+            <x-forms.error champ="id"/>
+            <input type="hidden" name="id" value="{{ $schedule->id }}">
 
 
-            <label for="description">Description</label>
+            <label for="activity">activity</label>
 
-            <input type="text" name="description" id="description" value="{{ old('description') }}">
+            <x-forms.error champ="activity"/>
+            <input type="text" name="activity" id="activity" value="{{ $schedule->activity }}">
 
             <label for="date">Date</label>
 
-            <input type="date" name="name" id="date" value="{{ old('date') }}">
+            <x-forms.error champ="name"/>
+            <input type="date" name="name" id="date"
+                value="{{ date_format(date_create($schedule->date), 'Y-m-d') }}">
 
             <label for="artists">Artists</label>
 
-            <input type="text" name="artists" id="artists" value="{{ old('artists') }}">
+            <x-forms.error champ="artists"/>
+            <input type="text" name="artists" id="artists">
 
             <button type="submit">Edit</button>
         </form>

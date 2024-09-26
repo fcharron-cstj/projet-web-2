@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Artist;
+use App\Models\Schedule;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +19,8 @@ class ArtistScheduleFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'artist_id' => Artist::inRandomOrder()->first()->id,
+            'schedule_id' => Schedule::inRandomOrder()->first()->id
         ];
     }
 }
