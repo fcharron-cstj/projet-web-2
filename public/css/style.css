@@ -580,4 +580,51 @@ body, html {
   .changingImg {
     display: none;
   }
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+form a {
+  color: #C1FF72;
+  text-decoration: underline;
+  font-family: "shantell-sans-bouncy", sans-serif;
+}
+form input {
+  color: #8C52FF;
+  font-size: 20px;
+  background-color: white;
+  border: 1px solid #44FFF9;
+  padding: 0px 10px;
+  height: 24px;
+  border-radius: 10px;
+  width: calc(100% - 22px);
+  font-family: "anchor-web", sans-serif;
+}
+form label {
+  font-size: 24px;
+  color: #C1FF72;
+}
+
+@media (min-width: 592px) {
+  form {
+    width: 50%;
+  }
+}
+@media (min-width: 768px) {
+  form {
+    width: 30%;
+  }
+}
+@media (min-width: 1200px) {
+  form {
+    width: 20%;
+  }
 }/*# sourceMappingURL=style.css.map */
