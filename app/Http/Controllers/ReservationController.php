@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Reservation;
+use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
 
 class ReservationController extends Controller
@@ -13,13 +14,7 @@ class ReservationController extends Controller
      */
     public function store(Request $request)
     {
-        //TODO
-
-        $ticket1 = $request['bought_tickets_1'];
-        $ticket2 = $request['bought_tickets_2'];
-        $ticket3 = $request['bought_tickets_3'];
-
-        dd($ticket1, $ticket2, $ticket3);
+        //TODO add dates
 
         $validated = $request->validate([
             "bought_tickets_1" => "required|numeric|max:20",
@@ -27,20 +22,28 @@ class ReservationController extends Controller
             "bought_tickets_3" => "required|numeric|max:20",
         ], [
             "required" => "No ticket selected",
-            "max" => "The title must have a maximum of :max characters",
-            "numeric" => "A description is required",
-
+            "max" => "You selected too many tickets",
+            "numeric" => "Error occured, try again later.",
         ]);
 
-        // $reservation = new Reservation();
-        // $reservation->activity = $validated["activity"];
-        // $reservation->date = $validated["date"];
+        $count = 0;
+        foreach ($validated as $value) {
+            $count += 1;
+            if ($value != 0) {
+                for ($i = 0; $i < $value; $i++) {
+                    $reservation = new Reservation();
+                    $reservation->arrival = now();
+                    $reservation->departing = now();
+                    $reservation->package_id = $count;
+                    $reservation->user_id = $request->user()->id;
+                    $reservation->save();
+                }
+            }
+        }
 
-        // $reservation->save();
-
-        // return redirect()
-        //     ->route('adminPanel')
-        //     ->with('success', "reservation added successfully");
+        return redirect()
+            ->route('user.show', ['id' => $request->user()->id])
+            ->with('success', "Reservation added successfully");
     }
 
     /**
@@ -48,7 +51,5 @@ class ReservationController extends Controller
      *
      * @param Request $request
      */
-    public function update(Request $request){
-
-    }
+    public function update(Request $request) {}
 }
