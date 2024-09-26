@@ -21,7 +21,7 @@
     }
 }
 
-.title {
+.title-schedule {
     font-size: 35px;
     @media (min-width:768px) {
         font-size: 30px;
@@ -34,7 +34,7 @@
     }
 }
 
-.sub-title {
+.sub-title-schedule {
     font-size: 30px;
     @media (min-width:768px) {
         font-size: 26px;
@@ -47,7 +47,7 @@
     }
 }
 
-.text {
+.text-schedule {
     font-size: 20px;
     color: $green;
     @media (min-width:768px) {
@@ -58,5 +58,12 @@
     }
     @media (min-width:1920px) {
         font-size: 35px;
+    }
+}
+
+.changingImg {
+    max-height: 580px;
+    @media (min-width:768px) {
+        display: none;
     }
 }
