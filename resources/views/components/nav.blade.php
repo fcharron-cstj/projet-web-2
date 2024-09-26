@@ -16,7 +16,7 @@
         @else
             <a class="btn-blue-pink btn-login-logout" href="{{ route('loginOrRegister') }}">Login</a>
         @endauth
-        <a class="btn-pink-green" href="#">Buy Tickets</a>
+        <a class="btn-pink-green buy-tickets" href="#">Buy Tickets</a>
     </div>
 </nav>
 

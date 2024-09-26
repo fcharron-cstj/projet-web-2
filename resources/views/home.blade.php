@@ -1,14 +1,15 @@
 <x-layout>
 
-    {{-- REMOVE - for testing --}}
-    <a href="{{ route('logout') }}">Log out</a>
-    {{-- REMOVE --}}
-
     <header id="headerHome">
-        <video id="videoPlayer" loop autoplay muted>
+        <video id="videoPlayer" loop muted>
             <source src="{{ asset('medias/nova.mp4') }}" type="video/mp4">
         </video>
+        <button id="playPauseBtn" class="play-pause-btn">
+            <i class="bi bi-play" id="playPauseIcon"></i>
+        </button>
     </header>
+    
+    
     <div class="container">
         <section id="schedule">
             <h1 class="title-schedule">Music & arts festival</h1>
