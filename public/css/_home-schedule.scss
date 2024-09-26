@@ -1,0 +1,69 @@
+#schedule {
+    height: 690px;
+    width: 100%;
+    background-color: $pink;
+    padding: 16px 10px;
+    @media (min-width:768px) {
+        height: 470px;
+        padding: 20px 35px;
+    }
+    @media (min-width:1024px) {
+        height: 540px;
+        padding: 55px 160px;
+    }
+    @media (min-width:1200px) {
+        height: 615px;
+        padding: 35px 100px;
+    }
+    @media (min-width:1920px) {
+        height: 975px;
+        padding: 100px 300px;
+    }
+}
+
+.title-schedule {
+    font-size: 35px;
+    @media (min-width:768px) {
+        font-size: 30px;
+    }
+    @media (min-width:1200px) {
+        font-size: 35px;
+    }
+    @media (min-width:1920px) {
+        font-size: 50px;
+    }
+}
+
+.sub-title-schedule {
+    font-size: 30px;
+    @media (min-width:768px) {
+        font-size: 26px;
+    }
+    @media (min-width:1200px) {
+        font-size: 32px;
+    }
+    @media (min-width:1920px) {
+        font-size: 40px;
+    }
+}
+
+.text-schedule {
+    font-size: 20px;
+    color: $green;
+    @media (min-width:768px) {
+        font-size: 18 px;
+    }
+    @media (min-width:1200px) {
+        font-size: 25px;
+    }
+    @media (min-width:1920px) {
+        font-size: 35px;
+    }
+}
+
+.changingImg {
+    max-height: 580px;
+    @media (min-width:768px) {
+        display: none;
+    }
+}

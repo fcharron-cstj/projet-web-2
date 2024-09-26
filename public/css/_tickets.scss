@@ -1,0 +1,35 @@
+.tickets {
+    height: 680px;
+    margin: 75px 25px;
+    @media (min-width:768px) {
+    
+    }
+    @media (min-width:1024px) {
+    
+    }
+    @media (min-width:1200px) {
+    
+    }
+    @media (min-width:1920px) {
+    
+    }
+    .ticket-option {
+        width: 100%;
+        border: 1px solid $pink;
+        border-radius: 16px;
+        margin-bottom: 30px;
+        @media (min-width:768px) {
+    
+        }
+        @media (min-width:1024px) {
+        
+        }
+        @media (min-width:1200px) {
+        
+        }
+        @media (min-width:1920px) {
+        
+        }
+    }
+
+}
