@@ -45,11 +45,4 @@ class ReservationController extends Controller
             ->route('user.show', ['id' => $request->user()->id])
             ->with('success', "Reservation added successfully");
     }
-
-    /**
-     * Handle the modificaiton of a reservation
-     *
-     * @param Request $request
-     */
-    public function update(Request $request) {}
 }
