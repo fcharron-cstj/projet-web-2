@@ -21,7 +21,7 @@ class UserController extends Controller
     }
 
     /**
-     *  Authenticates login information with the database
+     *  Authenticates the login information
      *
      *  @param Request $request
      */
@@ -50,7 +50,7 @@ class UserController extends Controller
     }
 
     /**
-     *  Stores user information in the database
+     *  Handle the creation of a user
      *
      *  @param Request $request
      */
@@ -143,7 +143,7 @@ class UserController extends Controller
     }
 
     /**
-     * Destroys the session
+     * Handle the disconnection of an user
      *
      * @param Request $request
      */

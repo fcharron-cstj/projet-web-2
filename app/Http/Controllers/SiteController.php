@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 
 class SiteController extends Controller
 {
+    /**
+     * Displays the home page of the site
+     */
     public function home()
     {
         return view("home", [

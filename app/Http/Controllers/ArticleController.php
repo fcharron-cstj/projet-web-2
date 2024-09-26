@@ -130,7 +130,7 @@ class ArticleController extends Controller
         $article->save();
 
         return redirect()
-            ->route('adminPanel')
+            ->route('admin.panel')
             ->with('success', "Article added successfully");
     }
 

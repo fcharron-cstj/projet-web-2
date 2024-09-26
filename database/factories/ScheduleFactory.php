@@ -16,6 +16,8 @@ class ScheduleFactory extends Factory
      */
     public function definition(): array
     {
-        return [];
+        return [
+            'activity' => fake()->word()
+        ];
     }
 }

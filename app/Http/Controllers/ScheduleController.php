@@ -21,7 +21,7 @@ class ScheduleController extends Controller
     }
 
     /**
-     * Stores a schedule
+     * Handle the addition of a schedule
      *
      * @param Request $request
      */
@@ -61,7 +61,7 @@ class ScheduleController extends Controller
     }
 
     /**
-     * Updates a schedule
+     * Handle the modification of a schedule
      *
      * @param Request $request
      */
@@ -91,7 +91,7 @@ class ScheduleController extends Controller
     }
 
     /**
-     * Deletes a schedule
+     * Handle the suppression of a schedule
      *
      * @param Request $request
      */
