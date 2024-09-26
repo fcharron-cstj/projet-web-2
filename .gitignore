@@ -19,3 +19,5 @@ yarn-error.log
 /.idea
 /.vscode
 /.zed
+/public/css/style.css
+/public/css/style.css.map
