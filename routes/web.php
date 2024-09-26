@@ -3,10 +3,12 @@
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\AdministratorController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\admin;
+use App\Models\Artist;
 use Illuminate\Support\Facades\Route;
 
 //Home
@@ -33,15 +35,15 @@ Route::get("/logout", [UserController::class, "disconnect"])->name('logout')->mi
 
 //Schedule
 
-Route::get('/schedules/create', [ScheduleController::class, 'create'])->name("schedule.create")->middleware(admin::class);
+Route::get('/schedules/create', [ScheduleController::class, 'create'])->name("schedules.create")->middleware(admin::class);
 
-Route::get('/schedules/store', [ScheduleController::class, 'store'])->name("schedule.store")->middleware(admin::class);
+Route::get('/schedules/edit', [ScheduleController::class, 'edit'])->name("schedules.edit")->middleware(admin::class);
 
-Route::get('/schedules/edit', [ScheduleController::class, 'edit'])->name("schedule.edit")->middleware(admin::class);
+Route::post('/schedules/store', [ScheduleController::class, 'store'])->name("schedules.store")->middleware(admin::class);
 
-Route::post('/schedules/update', [ScheduleController::class, 'update'])->name("schedule.update")->middleware(admin::class);
+Route::post('/schedules/update', [ScheduleController::class, 'update'])->name("schedules.update")->middleware(admin::class);
 
-Route::post('/schedules/destroy', [ScheduleController::class, 'destroy'])->name("schedule.destroy")->middleware(admin::class);
+Route::post('/schedules/destroy', [ScheduleController::class, 'destroy'])->name("schedules.destroy")->middleware(admin::class);
 
 //Article
 
@@ -79,3 +81,8 @@ Route::get('/admin/edit/{id}', [AdministratorController::class, 'edit'])->name("
 Route::post('/admin/update', [AdministratorController::class, 'update'])->name("admin.update")->middleware(admin::class);
 
 Route::post('/admin/destroy', [AdministratorController::class, 'destroy'])->name("admin.destroy")->middleware(admin::class);
+
+
+//Artist
+
+Route::post('/artist/store', [ArtistController::class, 'store'])->name("artist.store")->middleware(admin::class);
