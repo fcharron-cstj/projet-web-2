@@ -48,7 +48,9 @@
                 <p class="total-price">0$</p>
                 <form action="{{ route('reservation.store') }}" method="POST">
                     @csrf
-                    <input type="hidden" name="bought-tickets" value="" id="bought-tickets">
+                    <input type="hidden" name="bought_tickets_1" value="" id="bought-tickets-1">
+                    <input type="hidden" name="bought_tickets_2" value="" id="bought-tickets-2">
+                    <input type="hidden" name="bought_tickets_3" value="" id="bought-tickets-3">
                     <button type="submit">Purchase Tickets</button>
                 </form>
             </div>

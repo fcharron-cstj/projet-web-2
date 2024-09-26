@@ -24,13 +24,7 @@ function updateCart(option, id, price) {
         option + " " + totaltickets[id] + "x, ";
     document.querySelector(".total-price").innerHTML = totalprice + "$";
 
-    document.querySelector("#bought-tickets").value =
-        "General " +
-        totaltickets[0] +
-        ", " +
-        "Vinci " +
-        totaltickets[1] +
-        ", " +
-        "VIP " +
-        totaltickets[2];
+    document.querySelector("#bought-tickets-1").value = totaltickets[0];
+    document.querySelector("#bought-tickets-2").value = totaltickets[1];
+    document.querySelector("#bought-tickets-3").value = totaltickets[2];
 }
