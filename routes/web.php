@@ -23,7 +23,7 @@ Route::post('/user/connect', [UserController::class, 'authentication'])->name("u
 
 Route::get('/user/show/{id}', [UserController::class, 'show'])->name("user.show")->middleware('auth');
 
-// Route::post('/user/edit', [UserController::class, 'profile'])->name("user.edit")->middleware('auth');
+Route::get('/user/edit', [UserController::class, 'edit'])->name("user.edit")->middleware('auth');
 
 Route::post('/user/update', [UserController::class, "update"])->name("user.update")->middleware('auth');
 
@@ -37,7 +37,7 @@ Route::get('/schedules/create', [ScheduleController::class, 'create'])->name("sc
 
 Route::get('/schedules/store', [ScheduleController::class, 'store'])->name("schedule.store")->middleware(admin::class);
 
-Route::post('/schedules/edit', [ScheduleController::class, 'edit'])->name("schedule.edit")->middleware(admin::class);
+Route::get('/schedules/edit', [ScheduleController::class, 'edit'])->name("schedule.edit")->middleware(admin::class);
 
 Route::post('/schedules/update', [ScheduleController::class, 'update'])->name("schedule.update")->middleware(admin::class);
 
@@ -74,7 +74,7 @@ Route::get('/admin/create', [AdministratorController::class, 'create'])->name("a
 
 Route::post('/admin/store', [AdministratorController::class, 'store'])->name("admin.store")->middleware(admin::class);
 
-Route::post('/admin/edit', [AdministratorController::class, 'edit'])->name("admin.edit")->middleware(admin::class);
+Route::get('/admin/edit/{id}', [AdministratorController::class, 'edit'])->name("admin.edit")->middleware(admin::class);
 
 Route::post('/admin/update', [AdministratorController::class, 'update'])->name("admin.update")->middleware(admin::class);
 
