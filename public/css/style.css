@@ -307,17 +307,16 @@ body, html {
 
 }*/
 .logo {
-  align-self: center;
   font-family: "brushberry-sans-one", sans-serif;
   font-size: 90px;
   color: #44FFF9;
-  margin: 0;
+  margin: 0 auto;
+  text-align: center;
 }
 @media (min-width: 768px) {
   .logo {
-    align-self: baseline;
-    margin-left: 30px;
     font-size: 56px;
+    margin-left: 30px;
   }
 }
 @media (min-width: 1200px) {
@@ -340,6 +339,11 @@ body, html {
 .nav-mobile {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  z-index: 999;
 }
 @media (min-width: 768px) {
   .nav-mobile {
@@ -347,10 +351,45 @@ body, html {
   }
 }
 
+.div-logo-brg {
+  display: flex;
+  align-self: flex-start;
+  align-items: center;
+  width: 100%;
+  padding: 0 15px;
+}
+
+#burger-menu {
+  width: 30px;
+  height: auto;
+  cursor: pointer;
+}
+
 .div-nav-links {
-  margin-top: 18px;
-  margin-right: 30px;
   height: 100vh;
+  right: 0;
+}
+
+#mobile-menu {
+  display: none;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  width: 80vw;
+  background-color: rgba(0, 0, 0, 0.753);
+  border-left: 3px solid #44FFF9;
+}
+#mobile-menu.active {
+  display: flex;
+}
+
+.upper-nav-mobile {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  margin-left: 30px;
+}
+.upper-nav-mobile a {
+  margin-top: 20px;
 }
 
 #close-menu {
@@ -358,6 +397,7 @@ body, html {
   width: 22px;
   align-self: flex-start;
   margin: 20px 20px 75px 25vw;
+  cursor: pointer;
 }
 
 .nav-links {
@@ -381,6 +421,10 @@ body, html {
   }
 }
 
+.btn-login-logout {
+  max-width: -moz-max-content;
+  max-width: max-content;
+}
 @media (min-width: 768px) {
   .btn-login-logout {
     margin-right: 15px;
@@ -394,80 +438,6 @@ body, html {
 
 .nav-mobile-log {
   margin-top: 100px !important;
-}
-
-@media (min-width: 768px) {
-  .nav-mobile {
-    display: none;
-  }
-}
-.div-logo-brg {
-  display: flex;
-  align-self: flex-start;
-  align-items: center;
-  width: 100%;
-  padding: 0 15px;
-}
-
-.logo {
-  font-family: "brushberry-sans-one", sans-serif;
-  font-size: 90px;
-  color: #44FFF9;
-  margin: 0 auto;
-  text-align: center;
-}
-@media (min-width: 768px) {
-  .logo {
-    font-size: 56px;
-    margin-left: 30px;
-  }
-}
-@media (min-width: 1200px) {
-  .logo {
-    font-size: 71px;
-  }
-}
-
-#burger-menu {
-  width: 30px;
-  height: auto;
-  cursor: pointer;
-}
-
-.nav-mobile {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-@media (min-width: 768px) {
-  .nav-mobile {
-    display: none;
-  }
-}
-
-#mobile-menu {
-  display: none;
-  align-items: center;
-  transition: all 0.3s ease-in-out;
-  width: 80vw;
-  background-color: rgba(0, 0, 0, 0.596);
-  border-left: 3px solid #44FFF9;
-}
-
-#mobile-menu.active {
-  display: flex;
-}
-
-.upper-nav-mobile {
-  display: flex;
-  flex-direction: column;
-  align-self: flex-start;
-  margin-left: 30px;
-}
-.upper-nav-mobile a {
-  margin-top: 20px;
 }
 
 .tickets {
