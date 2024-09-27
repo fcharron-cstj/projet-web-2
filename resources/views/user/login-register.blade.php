@@ -3,14 +3,14 @@
     </header>
     <main>
         <h2>Log-in</h2>
-        <!-- Display of success messages -->
+        <!-- Displays success messages -->
         @if (session('success'))
             <div class="alert alert-success">
                 {{ session('success') }}
             </div>
         @endif
 
-        <!-- Display of error messages -->
+        <!-- Displays error messages -->
         @if (session('error'))
             <div class="alert alert-danger">
                 {{ session('error') }}
