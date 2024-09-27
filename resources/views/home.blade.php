@@ -1,15 +1,14 @@
 <x-layout>
 
     <header id="headerHome">
-        <video id="videoPlayer" loop muted>
+        <video id="videoPlayer" poster="{{ asset('medias/poster.png') }}" loop muted>
             <source src="{{ asset('medias/nova.mp4') }}" type="video/mp4">
         </video>
         <button id="playPauseBtn" class="play-pause-btn">
             <i class="bi bi-play" id="playPauseIcon"></i>
         </button>
     </header>
-    
-    
+
     <div class="container">
         <section id="schedule">
             <h1 class="title-schedule">Music & arts festival</h1>
@@ -58,11 +57,26 @@
                 </ul>
 
                 <p class="total-price">0$</p>
+
+                <!-- Display of success messages -->
+                @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
+                <!-- Display of error messages -->
+                @if (session('error'))
+                    <div class="alert alert-danger">
+                        {{ session('error') }}
+                    </div>
+                @endif
                 <form action="{{ route('reservation.store') }}" method="POST">
                     @csrf
                     <label for="arrival_date">Arrival Date: </label>
+                    <x-forms.error champ="arrival_date" />
                     <input name="arrival_date" type="date" min="2025-04-04" max="2025-04-06">
                     <label for="leave_date">Leave Date: </label>
+                    <x-forms.error champ="leave_date" />
                     <input name="leave_date" type="date" min="2025-04-04" max="2025-04-06">
                     <input type="hidden" name="bought_tickets_1" value="" id="bought-tickets-1">
                     <input type="hidden" name="bought_tickets_2" value="" id="bought-tickets-2">

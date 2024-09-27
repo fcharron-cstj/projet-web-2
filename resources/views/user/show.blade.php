@@ -3,6 +3,19 @@
     </header>
     <main>
         <h2>Update your profile</h2>
+        <!-- Display of success messages -->
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        <!-- Display of error messages -->
+        @if (session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        @endif
         <div class="form">
             <form action="{{ route('user.update') }}" method="POST">
                 @csrf
@@ -34,9 +47,9 @@
                     <p>{{ $reservation->user->first_name . ' ' . $reservation->user->last_name }}</p>
                     <p>{{ 'from ' . date('d/m/Y', strtotime($reservation->arrival)) . ' to ' . date('d/m/Y', strtotime($reservation->departing)) }}
                     </p>
-                    <form action="{{route('admin.destroy')}}" method="POST">
+                    <form action="{{ route('admin.destroy') }}" method="POST">
                         @csrf
-                        <input type="hidden" name="id" value="{{$reservation->id}}">
+                        <input type="hidden" name="id" value="{{ $reservation->id }}">
                         <input type="submit" value="Delete">
                     </form>
                 </div>
