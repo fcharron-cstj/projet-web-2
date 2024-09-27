@@ -1,7 +1,7 @@
 <main>
     <h1>Update a schedule</h1>
     <div class="form">
-        <form action="{{ route('schedule.update') }}" method="POST">
+        <form action="{{ route('schedules.update') }}" method="POST">
 
             @csrf
 
@@ -22,8 +22,12 @@
 
             <label for="artists">Artists</label>
 
-            <x-forms.error champ="artists"/>
-            <input type="text" name="artists" id="artists">
+            <x-forms.error champ="artist"/>
+            <select name="artist" id="artist">
+                @foreach ( $artists as $artist )
+                    <option value="{{$artist->id}}">{{$artist->name}}</option>
+                @endforeach
+            </select>
 
             <button type="submit">Edit</button>
         </form>

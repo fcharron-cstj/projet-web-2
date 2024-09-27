@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Artist;
 use App\Models\Schedule;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -16,7 +17,8 @@ class ScheduleController extends Controller
     public function create()
     {
         return view('schedule.create', [
-            "schedules" => Schedule::all()
+            "schedules" => Schedule::all(),
+            "artists" => Artist::all()
         ]);
     }
 
@@ -29,12 +31,14 @@ class ScheduleController extends Controller
     {
         $validated = $request->validate([
             "activity" => "required|max:255",
-            "date" => "required|date"
+            "date" => "required|date",
+            "artist" => "required"
         ], [
             "activity.required" => "Please enter an activity",
             "activity.max" => "The activity must have less than :max characters",
             "date.required" => "Please select a valid date",
-            "date.date" => "The date must be a valid date format"
+            "date.date" => "The date must be a valid date format",
+            "artist.required" => "Please select an artist or create a new one"
         ]);
 
         $schedule = new Schedule();
@@ -44,7 +48,7 @@ class ScheduleController extends Controller
         $schedule->save();
 
         return redirect()
-            ->route('adminPanel')
+            ->route('admin.panel')
             ->with('success', "Schedule added successfully");
     }
 
@@ -56,7 +60,8 @@ class ScheduleController extends Controller
     public function edit(Request $request)
     {
         return view('schedule.edit', [
-            "schedule" => Schedule::findOrFail($request->id)
+            "schedule" => Schedule::findOrFail($request->id),
+            "artists" => Artist::all()
         ]);
     }
 

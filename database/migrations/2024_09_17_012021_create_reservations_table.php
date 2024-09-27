@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->timestamp("arrival")->nullable();
             $table->timestamp("departing")->nullable();
-            $table->foreignId("user_id")->constrained()->onDelete('cascade');
+            $table->foreignId("user_id")->constrained();
             $table->foreignId("package_id")->constrained();
         });
     }
