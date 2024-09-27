@@ -6,6 +6,7 @@ form {
     display: flex;
     flex-direction: column;
     width: 90%;
+    margin: 0 auto;
     a {
         color: $green;
         text-decoration: underline;
@@ -27,23 +28,36 @@ form {
         color: $green;
     }
 }
-.form-title {
-}
 
-@media (min-width: 592px) {
-    form {
+//TODO : fix the form and background
+
+.login-register {
+    background-image: url("/medias/fireworks.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.form-container {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    width: 90%;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    @media (min-width: 592px) {
+        width: 60%;
+    }
+
+    @media (min-width: 768px) {
         width: 50%;
     }
-}
 
-@media (min-width: 768px) {
-    form {
+    @media (min-width: 1024px) {
         width: 30%;
-    }
-}
-
-@media (min-width: 1200px) {
-    form {
-        width: 20%;
     }
 }
