@@ -48,15 +48,17 @@ class ReservationController extends Controller
 
     /**
      * Handle the supression of a reservation
-     * 
+     *
      * @param Request $request
      */
-    public function destroy(Request $request) 
+    public function destroy(Request $request)
     {
         $reservation = Reservation::findOrFail($request->id);
-        
+
+        Reservation::destroy($reservation->id);
+
         return redirect()
-            ->route('admin.pannel')
+            ->route('user.show', ['id' => $reservation->user_id])
             ->with('success_deleting_reservation', "The reservation has been deleted successfully");
     }
 }

@@ -92,7 +92,7 @@ class ScheduleController extends Controller
 
         return redirect()
             ->route('adminPanel')
-            ->with('succes_schedule', "The schedule has been modified");
+            ->with('succes_updating_schedule', "The schedule has been modified");
     }
 
     /**
@@ -107,7 +107,7 @@ class ScheduleController extends Controller
         Schedule::destroy($schedule->id);
 
         return redirect()
-            ->route('adminPanel')
+            ->route('admin.panel')
             ->with('succes_deleting_schedule', "The schedule has been deleted");
     }
 }
