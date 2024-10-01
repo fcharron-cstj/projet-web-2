@@ -440,6 +440,28 @@ body, html {
   }
 }
 
+.nav-links {
+  position: relative;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.nav-links::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -1px;
+  width: 0;
+  height: 2px;
+  background-color: currentColor;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-links:hover::after {
+  width: 100%;
+  left: 0;
+}
+
 .btn-login-logout {
   max-width: -moz-max-content;
   max-width: max-content;
@@ -661,22 +683,22 @@ textarea:focus,
 input:focus {
   outline-style: none;
   outline-color: transparent;
-  border: 2px solid #C1FF72;
+  border: 2px solid #C1FF72 !important;
   box-shadow: #C1FF72 0 0 10px;
 }
 
-form {
+.form-auth {
   display: flex;
   flex-direction: column;
   width: 90%;
   margin: 0 auto;
 }
-form a {
+.form-auth a {
   color: #C1FF72;
   text-decoration: underline;
   font-family: "shantell-sans-bouncy", sans-serif;
 }
-form input {
+.form-auth input {
   color: #8C52FF;
   font-size: 20px;
   background-color: white;
@@ -687,7 +709,7 @@ form input {
   width: calc(100% - 22px);
   font-family: "anchor-web", sans-serif;
 }
-form label {
+.form-auth label {
   font-size: 24px;
   color: #C1FF72;
 }
@@ -719,7 +741,7 @@ form label {
     margin-top: 0px;
   }
 }
-.form-container {
+.form-container-auth {
   background: rgba(255, 255, 255, 0.08);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(4px);
@@ -733,17 +755,68 @@ form label {
   margin: 0 auto;
 }
 @media (min-width: 592px) {
-  .form-container {
+  .form-container-auth {
     width: 60%;
   }
 }
 @media (min-width: 768px) {
-  .form-container {
+  .form-container-auth {
     width: 50%;
   }
 }
 @media (min-width: 1024px) {
-  .form-container {
+  .form-container-auth {
     width: 30%;
   }
+}
+
+.dashboard {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+.dashboard .delete-btn {
+  width: 60px;
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px;
+}
+.dashboard .reservations {
+  width: 15%;
+}
+.dashboard .form-container {
+  padding: 20px;
+  border: 2px solid #44FFF9;
+  border-radius: 15px;
+}
+.dashboard .form-container h1,
+.dashboard .form-container h2,
+.dashboard .form-container h3 {
+  color: #C80E76;
+}
+.dashboard .form-container form {
+  display: flex;
+  flex-direction: column;
+}
+.dashboard .form-container form a {
+  color: #C1FF72;
+  text-decoration: underline;
+  font-family: "shantell-sans-bouncy", sans-serif;
+}
+.dashboard .form-container form input {
+  color: #8C52FF;
+  font-size: 20px;
+  background-color: white;
+  border: 2px solid #44FFF9;
+  padding: 0px 10px;
+  height: 24px;
+  border-radius: 10px;
+  width: calc(100% - 22px);
+  font-family: "anchor-web", sans-serif;
+}
+.dashboard .form-container form label {
+  font-size: 24px;
+  color: #C1FF72;
 }/*# sourceMappingURL=style.css.map */
