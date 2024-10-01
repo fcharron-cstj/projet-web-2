@@ -1,4 +1,25 @@
 <x-layout>
+    <header>
+    </header>
+    <main>
+        <h2>Log-in</h2>
+        <!-- Displays success messages -->
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        <!-- Displays error messages -->
+        @if (session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        @endif
+        <div class="form">
+            <form action="{{ route('user.authenticate') }}" method="POST">
+                @csrf
+                <label for="email">Email</label>
     <main class="login-register">
         <div class="form-container">
             <h2>Log-in</h2>

@@ -3,6 +3,19 @@
     </header>
     <main>
         <h2>Update your profile</h2>
+        <!-- Display of success messages -->
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        <!-- Display of error messages -->
+        @if (session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        @endif
         <div class="form">
             <form action="{{ route('user.update') }}" method="POST">
                 @csrf
