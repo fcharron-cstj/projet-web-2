@@ -59,7 +59,6 @@
                     <input id="last_name" name="last_name" type="text" autocomplete="family-name"
                         value="{{ $user->last_name }}">
 
-
                     <button type="submit" class="btn-pink-green">Update</button>
                 </form>
             </div>

@@ -33,3 +33,17 @@ function updateCart(option, add = true) {
     document.querySelector("#bought-tickets-2").value = totaltickets[1];
     document.querySelector("#bought-tickets-3").value = totaltickets[2];
 }
+
+function scrollToElement(element) {
+    element.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+document.querySelector("#buy-tickets").addEventListener(
+    "click",
+    (e) => {
+        e.preventDefault();
+        console.log(e);
+        scrollToElement(document.querySelector(e.target.getAttribute("href")));
+    },
+    true
+);
