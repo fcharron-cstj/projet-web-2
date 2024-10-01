@@ -464,21 +464,49 @@ body, html {
 }
 @media (min-width: 768px) {
   .buy-tickets {
-    margin-right: 35px;
-  }
-}
-@media (min-width: 1024px) {
-  .buy-tickets {
-    margin-right: 160px;
+    margin-right: 20px;
   }
 }
 @media (min-width: 1200px) {
   .buy-tickets {
-    margin-right: 95px;
+    margin-right: 24px;
   }
 }
 @media (min-width: 1920px) {
   .buy-tickets {
+    margin-right: 40px;
+  }
+}
+
+.client-icon {
+  width: 25px;
+  height: 27px;
+  margin-bottom: 40px;
+}
+@media (min-width: 768px) {
+  .client-icon {
+    width: 21px;
+    height: 22px;
+    margin-right: 35px;
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 1024px) {
+  .client-icon {
+    margin-right: 160px;
+  }
+}
+@media (min-width: 1200px) {
+  .client-icon {
+    width: 25px;
+    height: 27px;
+    margin-right: 95px;
+  }
+}
+@media (min-width: 1920px) {
+  .client-icon {
+    width: 28px;
+    height: 30px;
     margin-right: 300px;
   }
 }
