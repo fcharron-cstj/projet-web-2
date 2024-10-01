@@ -1,5 +1,12 @@
 <main>
     <h1>Update an article</h1>
+
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
     <div class="form">
         <form action="{{ route('article.update') }}" method="POST" enctype="multipart/form-data">
             @csrf

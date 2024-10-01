@@ -6,12 +6,6 @@
                 </div>
             @endif
     
-            <!-- Displays error messages -->
-            @if (session('error'))
-                <div class="alert alert-danger">
-                    {{ session('error') }}
-                </div>
-            @endif
         <video id="videoPlayer" poster="{{ asset('medias/poster.png') }}" loop muted>
             <source src="{{ asset('medias/nova.mp4') }}" type="video/mp4">
         </video>
@@ -38,21 +32,21 @@
 
         <section class="tickets">
             <h2 id="tickets">Tickets</h2>
-            <div class="ticket-option 1">
+            <div class="ticket-option option1">
                 <p>General entry</p>
                 <span class="ticket-add">+</span>
                 <span class="ticket-add">-</span>
                 <p>Access to the size and scenes</p>
                 <p>25$</p>
             </div>
-            <div class="ticket-option 2">
+            <div class="ticket-option option2">
                 <p>Da Vinci</p>
                 <span class="ticket-add">+</span>
                 <span class="ticket-add">-</span>
                 <p>Welcome drink, surprise gift</p>
                 <p>40$</p>
             </div>
-            <div class="ticket-option 3">
+            <div class="ticket-option option3">
                 <p>VIP</p>
                 <span class="ticket-add">+</span>
                 <span class="ticket-add">-</span>
@@ -104,6 +98,7 @@
                     <p>{{ $article->date }}</p>
                     <img src="{{ $article->media }}" alt="">
                     <a href="{{ route('article.show', ['id' => $article->id]) }}">More info</a>
+
                 </article>
             @endforeach
             <a href="{{ route('article.index') }}">View all articles</a>

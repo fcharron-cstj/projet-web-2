@@ -525,7 +525,21 @@ body, html {
 }
 .tickets {
   height: 680px;
-  margin: 75px 25px;
+}
+@media (min-width: 768px) {
+  .tickets {
+    height: 535px;
+  }
+}
+@media (min-width: 1024px) {
+  .tickets {
+    height: 616px;
+  }
+}
+@media (min-width: 1920px) {
+  .tickets {
+    height: 98px;
+  }
 }
 .tickets .ticket-option {
   width: 100%;

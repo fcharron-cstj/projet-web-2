@@ -10,12 +10,6 @@
             </div>
         @endif
 
-        <!-- Display of error messages -->
-        @if (session('error'))
-            <div class="alert alert-danger">
-                {{ session('error') }}
-            </div>
-        @endif
         <div class="form">
             <form action="{{ route('user.update') }}" method="POST">
                 @csrf
