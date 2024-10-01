@@ -1,4 +1,9 @@
 .tickets {
+    display: flex;
+    flex-direction: column;
+    h2 {
+        color: $green;
+    }
     height: 680px;
     @media (min-width:768px) {
         height: 535px;
@@ -12,9 +17,18 @@
     @media (min-width:1920px) {
         height: 98px;
     }
+    #option1 {
+        border: 1px solid $pink;
+    }
+    #option2 {
+        border: 1px solid $purple;
+    }
+    #option3 {
+        border: 1px solid $green;
+    }
     .ticket-option {
         width: 100%;
-        border: 1px solid $pink;
+        
         border-radius: 16px;
         margin-bottom: 30px;
         @media (min-width:768px) {
@@ -30,5 +44,7 @@
         
         }
     }
-
+    .ticket-add {
+        cursor: pointer;
+    }
 }

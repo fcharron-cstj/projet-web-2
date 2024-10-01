@@ -1,11 +1,11 @@
 <x-layout>
     <header id="headerHome">
         @if (session('success'))
-                <div class="alert alert-success">
-                    {{ session('success') }}
-                </div>
-            @endif
-    
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+
         <video id="videoPlayer" poster="{{ asset('medias/poster.png') }}" loop muted>
             <source src="{{ asset('medias/nova.mp4') }}" type="video/mp4">
         </video>
@@ -32,27 +32,48 @@
 
         <section class="tickets">
             <h2 id="tickets">Tickets</h2>
-            <div class="ticket-option option1">
+            <div id="option1" class="ticket-option-1">
+              <div>
                 <p>General entry</p>
-                <span class="ticket-add">+</span>
-                <span class="ticket-add">-</span>
-                <p>Access to the size and scenes</p>
+                <div>
+                  <span class="ticket-add" data-option="1">-</span>
+                  <span class="ticket-add" data-option="1">+</span>
+                </div>
+              </div>
+              <div>
+                <p>Access to the site and scenes</p>
                 <p>25$</p>
+              </div>
             </div>
-            <div class="ticket-option option2">
+          
+            <div id="option2" class="ticket-option-2">
+              <div>
                 <p>Da Vinci</p>
-                <span class="ticket-add">+</span>
-                <span class="ticket-add">-</span>
+                <div>
+                  <span class="ticket-add" data-option="2">+</span>
+                  <span class="ticket-add" data-option="2">-</span>
+                </div>
+              </div>
+              <div>
                 <p>Welcome drink, surprise gift</p>
                 <p>40$</p>
+              </div>
             </div>
-            <div class="ticket-option option3">
+          
+            <div id="option3" class="ticket-option-3">
+              <div>
                 <p>VIP</p>
-                <span class="ticket-add">+</span>
-                <span class="ticket-add">-</span>
+                <div>
+                  <span class="ticket-add" data-option="3">+</span>
+                  <span class="ticket-add" data-option="3">-</span>
+                </div>
+              </div>
+              <div>
                 <p>Open bar, Food, Seats in VIP lodge</p>
                 <p>190$</p>
+              </div>
             </div>
+            
             <div class="cart">
                 <p>Total</p>
                 <ul class="tickets-total">
@@ -96,7 +117,7 @@
                     <p>{{ $article->title }}</p>
                     <p>{{ $article->description }}</p>
                     <p>{{ $article->date }}</p>
-                    <img src="{{ $article->media }}" alt="media of {{$article->title}}">
+                    <img src="{{ $article->media }}" alt="media of {{ $article->title }}">
                     <a href="{{ route('article.show', ['id' => $article->id]) }}">More info</a>
 
                 </article>
