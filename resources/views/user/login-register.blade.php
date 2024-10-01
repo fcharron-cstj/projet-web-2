@@ -15,10 +15,11 @@
 
                     <x-forms.error champ="password" />
                     <input id="loginpassword" name="password" type="password" autocomplete="current-password" />
+
                     <button type="submit" class="btn-green-pink">Log-in</button>
                 </form>
                 <p>
-                    <a href="#" id="no-account"> Don't have an account? </a>
+                    <a href="#" id="no-account" class="form-link"> Don't have an account? </a>
                 </p>
             </div>
         </div>
@@ -57,10 +58,10 @@
                     <input id="password_confirmation" name="password_confirmation" type="password"
                         value="{{ old('password_confirmation') }}">
 
-                    <button type="submit" class="btn-green-pink">Create your account</button>
+                    <button type="submit" class="btn-green-pink">Create account</button>
                 </form>
                 <p>
-                    <a href="#" id="has-account"> Already have an account? </a>
+                    <a href="#" id="has-account" class="form-link"> Already have an account? </a>
                 </p>
             </div>
         </div>
