@@ -42,7 +42,6 @@ document.querySelector("#buy-tickets").addEventListener(
     "click",
     (e) => {
         e.preventDefault();
-        console.log(e);
         scrollToElement(document.querySelector(e.target.getAttribute("href")));
     },
     true
