@@ -658,7 +658,8 @@ body, html {
 }
 
 textarea:focus,
-input:focus {
+input:focus,
+select:focus {
   outline-style: none;
   outline-color: transparent;
   border: 2px solid #C1FF72;
@@ -676,7 +677,7 @@ form a {
   text-decoration: underline;
   font-family: "shantell-sans-bouncy", sans-serif;
 }
-form input {
+form input, form select {
   color: #8C52FF;
   font-size: 20px;
   background-color: white;
@@ -748,22 +749,38 @@ form label {
   }
 }
 
-.schedule {
-  flex-direction: row;
-  justify-content: space-evenly;
-  margin-top: 10rem;
+.schedule-container {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
 }
-.schedule h1, .schedule h2 {
+.schedule-container .form-container {
+  margin: 0;
+}
+.schedule-container .schedule {
+  margin-top: 10rem;
+  padding: 1rem;
+}
+.schedule-container .schedule:nth-child(2) {
+  height: 10%;
+}
+.schedule-container .schedule .form {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.schedule-container .schedule h1,
+.schedule-container .schedule h2 {
   padding: 0 1rem;
 }
-.schedule .schedule-section {
+.schedule-container .schedule .schedule-section {
   padding: 1rem;
   height: 100%;
 }
-.schedule label {
+.schedule-container .schedule label {
   margin-bottom: 0.5rem;
-  text-align: center;
 }
-.schedule input, .schedule select {
+.schedule-container .schedule input,
+.schedule-container .schedule select {
   margin-bottom: 1.5rem;
 }/*# sourceMappingURL=style.css.map */

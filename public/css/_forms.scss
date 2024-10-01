@@ -1,5 +1,6 @@
 textarea:focus,
-input:focus {
+input:focus,
+select:focus {
     outline-style: none;
     outline-color: transparent;
     border: 2px solid $green;
@@ -15,7 +16,7 @@ form {
         text-decoration: underline;
         font-family: $font-secondary;
     }
-    input {
+    input,select {
         color: $purple;
         font-size: 20px;
         background-color: white;
