@@ -20,59 +20,71 @@
             <form action="{{ route('user.authenticate') }}" method="POST">
                 @csrf
                 <label for="email">Email</label>
+    <main class="login-register">
+        <div class="form-container">
+            <h2>Log-in</h2>
+            <div class="form">
+                <form action="{{ route('user.authenticate') }}" method="POST">
+                    @csrf
+                    <label for="email">Email</label>
 
-                <x-forms.error champ="email" />
-                <input id="loginemail" name="email" type="email" autocomplete="email" value="{{ old('email') }}" />
+                    <x-forms.error champ="email" />
+                    <input id="loginemail" name="email" type="email" autocomplete="email"
+                        value="{{ old('email') }}" />
 
-                <label for="password"> Password </label>
+                    <label for="password"> Password </label>
 
-                <x-forms.error champ="password" />
-                <input id="loginpassword" name="password" type="password" autocomplete="current-password" />
-                <button type="submit" class="btn-green-pink">Log-in</button>
-            </form>
-            <p>
-                <a href=""> Don't have an account? </a>
-            </p>
+                    <x-forms.error champ="password" />
+                    <input id="loginpassword" name="password" type="password" autocomplete="current-password" />
+                    <button type="submit" class="btn-green-pink">Log-in</button>
+                </form>
+                <p>
+                    <a href=""> Don't have an account? </a>
+                </p>
+            </div>
         </div>
-        <h2>Register</h2>
-        <div class="form">
-            <form action="{{ route('user.store') }}" method="POST">
-                @csrf
+        <div class="form-container">
+            <h2>Register</h2>
+            <div class="form">
+                <form action="{{ route('user.store') }}" method="POST">
+                    @csrf
 
-                <label for="first_name">First name</label>
+                    <label for="first_name">First name</label>
 
-                <x-forms.error champ="first_name" />
-                <input id="username" name="first_name" type="text" autocomplete="given-name"
-                    value="{{ old('first_name') }}">
+                    <x-forms.error champ="first_name" />
+                    <input id="username" name="first_name" type="text" autocomplete="given-name"
+                        value="{{ old('first_name') }}">
 
-                <label for="last_name">Last name</label>
+                    <label for="last_name">Last name</label>
 
-                <x-forms.error champ="last_name" />
-                <input id="last_name" name="last_name" type="text" autocomplete="family-name"
-                    value="{{ old('last_name') }}">
+                    <x-forms.error champ="last_name" />
+                    <input id="last_name" name="last_name" type="text" autocomplete="family-name"
+                        value="{{ old('last_name') }}">
 
-                <label for="email">Email</label>
+                    <label for="email">Email</label>
 
-                <x-forms.error champ="email" />
-                <input id="registeremail" name="email" type="email" autocomplete="email"
-                    value="{{ old('email') }}" />
+                    <x-forms.error champ="email" />
+                    <input id="registeremail" name="email" type="email" autocomplete="email"
+                        value="{{ old('email') }}" />
 
-                <label for="password"> Password </label>
+                    <label for="password"> Password </label>
 
-                <x-forms.error champ="password" />
-                <input id="registerpassword" name="password" type="password" autocomplete="current-password" />
+                    <x-forms.error champ="password" />
+                    <input id="registerpassword" name="password" type="password" autocomplete="current-password" />
 
-                <label for="confirm-password">Password confirmation</label>
+                    <label for="confirm-password">Password confirmation</label>
 
-                <x-forms.error champ="password_confirmation" />
-                <input id="password_confirmation" name="password_confirmation" type="password"
-                    value="{{ old('password_confirmation') }}">
+                    <x-forms.error champ="password_confirmation" />
+                    <input id="password_confirmation" name="password_confirmation" type="password"
+                        value="{{ old('password_confirmation') }}">
 
-                <button type="submit" class="btn-green-pink">Create your account</button>
-            </form>
-            <p>
-                <a href=""> Already have an account? </a>
-            </p>
+                    <button type="submit" class="btn-green-pink">Create your account</button>
+                </form>
+                <p>
+                    <a href=""> Already have an account? </a>
+                </p>
+            </div>
         </div>
     </main>
+    <script src="{{ asset('js/authform.js') }}"></script>
 </x-layout>

@@ -51,11 +51,12 @@ Route::get('/articles', [ArticleController::class, 'index'])->name("article.inde
 
 Route::get('/article/show/{id}', [ArticleController::class, 'show'])->name("article.show");
 
+Route::get('/articles/edit/{id}', [ArticleController::class, 'edit'])->name("article.edit")->middleware(admin::class);
+
 Route::get('/articles/create', [ArticleController::class, 'create'])->name("article.create")->middleware(admin::class);
 
 Route::post('/articles/store', [ArticleController::class, 'store'])->name("article.store")->middleware(admin::class);
 
-Route::get('/articles/edit/{id}', [ArticleController::class, 'edit'])->name("article.edit")->middleware(admin::class);
 
 Route::post('/articles/update', [ArticleController::class, 'update'])->name("article.update")->middleware(admin::class);
 
@@ -66,7 +67,7 @@ Route::post('/articles/destroy', [ArticleController::class, 'destroy'])->name("a
 
 Route::post('/reservation/store', [ReservationController::class, 'store'])->name("reservation.store")->middleware("auth");
 
-Route::get('/reservation/destroy', [ReservationController::class, 'destroy'])->name("reservation.destroy")->middleware("auth");
+Route::post('/reservation/destroy', [ReservationController::class, 'destroy'])->name("reservation.destroy")->middleware("auth");
 
 //Admin
 

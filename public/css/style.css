@@ -392,7 +392,6 @@ body, html {
 #mobile-menu {
   display: none;
   align-items: center;
-  transition: all 0.3s ease-in-out;
   width: 80vw;
   background-color: rgba(0, 0, 0, 0.753);
   border-left: 3px solid #44FFF9;
@@ -484,6 +483,18 @@ body, html {
   }
 }
 
+.slidein {
+  animation: slideIn 0.4s ease-in-out;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
 .tickets {
   height: 680px;
   margin: 75px 25px;
@@ -655,6 +666,7 @@ form {
   display: flex;
   flex-direction: column;
   width: 90%;
+  margin: 0 auto;
 }
 form a {
   color: #C1FF72;
@@ -677,18 +689,38 @@ form label {
   color: #C1FF72;
 }
 
+.login-register {
+  background-image: url("/medias/fireworks.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.form-container {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  width: 90%;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
 @media (min-width: 592px) {
-  form {
-    width: 50%;
+  .form-container {
+    width: 60%;
   }
 }
 @media (min-width: 768px) {
-  form {
-    width: 30%;
+  .form-container {
+    width: 50%;
   }
 }
-@media (min-width: 1200px) {
-  form {
-    width: 20%;
+@media (min-width: 1024px) {
+  .form-container {
+    width: 30%;
   }
 }/*# sourceMappingURL=style.css.map */
