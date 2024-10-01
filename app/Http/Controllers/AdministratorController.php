@@ -108,7 +108,7 @@ class AdministratorController extends Controller
             "last_name.required" => "Last name is required",
             "last_name.max" => "Last name must be below :max characters",
             "email.required" => "Email is required",
-            "email.unique" => "This email is already chosen. Please log-in or choose another email",
+            "email.unique" => "This email is already chosen. Please enter another email",
             "email.email" => "Email is incorrect. Please enter a valid email"
         ]);
 
