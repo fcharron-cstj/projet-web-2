@@ -1,17 +1,17 @@
 <x-layout>
     <header id="headerHome">
         @if (session('success'))
-                <div class="alert alert-success">
-                    {{ session('success') }}
-                </div>
-            @endif
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
 
-            <!-- Displays error messages -->
-            @if (session('error'))
-                <div class="alert alert-danger">
-                    {{ session('error') }}
-                </div>
-            @endif
+        <!-- Displays error messages -->
+        @if (session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        @endif
         <video id="videoPlayer" poster="{{ asset('medias/poster.png') }}" loop muted>
             <source src="{{ asset('medias/nova.mp4') }}" type="video/mp4">
         </video>
@@ -32,7 +32,7 @@
                 </div>
             @endforeach
             <a class="btn-green-pink" href="{{ route('article.index') }}">Articles</a>
-            <a class="btn-blue-pink" href="#tickets">Buy Tickets</a>
+            <a class="btn-blue-pink" href="#tickets" id="buy-tickets">Buy Tickets</a>
         </section>
         <img class="changingImg" src="{{ asset('medias/doodle_artist.jpg') }}" alt="doodle artist img">
 
@@ -102,7 +102,7 @@
                     <p>{{ $article->title }}</p>
                     <p>{{ $article->description }}</p>
                     <p>{{ $article->date }}</p>
-                    <img src="{{ $article->media }}" alt="media of {{$article->title}}">
+                    <img src="{{ $article->media }}" alt="media of {{ $article->title }}">
                     <a href="{{ route('article.show', ['id' => $article->id]) }}">More info</a>
                 </article>
             @endforeach

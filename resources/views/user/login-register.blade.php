@@ -16,10 +16,10 @@
         </div>
     @endif
     <main class="login-register">
-        <div class="form-container login">
+        <div class="form-container-auth login">
             <h2>Log-in</h2>
             <div class="form">
-                <form action="{{ route('user.authenticate') }}" method="POST">
+                <form action="{{ route('user.authenticate') }}" method="POST" class="form-auth">
                     @csrf
                     <label for="email">Email</label>
 
@@ -39,10 +39,10 @@
                 </p>
             </div>
         </div>
-        <div class="form-container register">
+        <div class="form-container-auth register">
             <h2>Register</h2>
             <div class="form">
-                <form action="{{ route('user.store') }}" method="POST">
+                <form action="{{ route('user.store') }}" method="POST" class="form-auth">
                     @csrf
 
                     <label for="first_name">First name</label>
