@@ -37,7 +37,7 @@ Route::get("/logout", [UserController::class, "disconnect"])->name('logout')->mi
 
 Route::get('/schedules/create', [ScheduleController::class, 'create'])->name("schedules.create")->middleware(admin::class);
 
-Route::get('/schedules/edit', [ScheduleController::class, 'edit'])->name("schedules.edit")->middleware(admin::class);
+Route::get('/schedules/edit/{id}', [ScheduleController::class, 'edit'])->name("schedules.edit")->middleware(admin::class);
 
 Route::post('/schedules/store', [ScheduleController::class, 'store'])->name("schedules.store")->middleware(admin::class);
 
