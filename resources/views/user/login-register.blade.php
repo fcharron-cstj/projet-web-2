@@ -1,6 +1,6 @@
 <x-layout>
     <main class="login-register">
-        <div class="form-container">
+        <div class="form-container login">
             <h2>Log-in</h2>
             <div class="form">
                 <form action="{{ route('user.authenticate') }}" method="POST">
@@ -18,11 +18,11 @@
                     <button type="submit" class="btn-green-pink">Log-in</button>
                 </form>
                 <p>
-                    <a href=""> Don't have an account? </a>
+                    <a href="#" id="no-account"> Don't have an account? </a>
                 </p>
             </div>
         </div>
-        <div class="form-container">
+        <div class="form-container register">
             <h2>Register</h2>
             <div class="form">
                 <form action="{{ route('user.store') }}" method="POST">
@@ -60,7 +60,7 @@
                     <button type="submit" class="btn-green-pink">Create your account</button>
                 </form>
                 <p>
-                    <a href=""> Already have an account? </a>
+                    <a href="#" id="has-account"> Already have an account? </a>
                 </p>
             </div>
         </div>
