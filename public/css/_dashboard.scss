@@ -1,0 +1,50 @@
+.dashboard {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: space-between;
+    .delete-btn {
+        width: 60px;
+        background-color: red;
+        color: white;
+        border: none;
+        padding: 5px;
+    }
+    .reservations {
+        width: 15%;
+    }
+    .form-container {
+        padding: 20px;
+        border: 2px solid $blue;
+        border-radius: 15px;
+        h1,
+        h2,
+        h3 {
+            color: $pink;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            a {
+                color: $green;
+                text-decoration: underline;
+                font-family: $font-secondary;
+            }
+            input {
+                color: $purple;
+                font-size: 20px;
+                background-color: white;
+                border: 2px solid $blue;
+                padding: 0px 10px;
+                height: 24px;
+                border-radius: 10px;
+                width: calc(100% - 22px);
+                font-family: $font-primary;
+            }
+            label {
+                font-size: 24px;
+                color: $green;
+            }
+        }
+    }
+}

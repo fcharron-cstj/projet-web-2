@@ -2,10 +2,10 @@ textarea:focus,
 input:focus {
     outline-style: none;
     outline-color: transparent;
-    border: 2px solid $green;
+    border: 2px solid $green !important;
     box-shadow: $green 0 0 10px;
 }
-form {
+.form-auth {
     display: flex;
     flex-direction: column;
     width: 90%;
@@ -31,8 +31,6 @@ form {
         color: $green;
     }
 }
-
-//TODO : fix the form and background
 
 .login-register {
     background-image: url("/medias/fireworks.webp");
@@ -63,7 +61,7 @@ form {
     @media (min-width: 1024px) {
     }
 }
-.form-container {
+.form-container-auth {
     background: rgba(255, 255, 255, 0.08);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(4px);

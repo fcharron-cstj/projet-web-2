@@ -32,3 +32,16 @@ function updateCart(option, add = true) {
         option[0] + " " + totaltickets[option[1]] + "x, ";
     document.querySelector(".total-price").innerHTML = totalprice + " $";
 }
+
+function scrollToElement(element) {
+    element.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+document.querySelector("#buy-tickets").addEventListener(
+    "click",
+    (e) => {
+        e.preventDefault();
+        scrollToElement(document.querySelector(e.target.getAttribute("href")));
+    },
+    true
+);
