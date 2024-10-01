@@ -1,26 +1,43 @@
-.schedule{
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin-top: 10rem;
+.schedule-container {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
 
-    h1,h2{
-        padding: 0 1rem;
+    .form-container {
+        margin: 0;
+
     }
-
-    .schedule-section{
+    .schedule {
+        margin-top: 10rem;
         padding: 1rem;
-        height: 100%;
+
+        &:nth-child(2){
+            height: 10%;
+        }
+
+        .form{
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+        }
+
+        h1,
+        h2 {
+            padding: 0 1rem;
+        }
+
+        .schedule-section {
+            padding: 1rem;
+            height: 100%;
+        }
+
+        label {
+            margin-bottom: 0.5rem;
+        }
+
+        input,
+        select {
+            margin-bottom: 1.5rem;
+        }
     }
-
-    label{
-        margin-bottom: .5rem;
-        text-align: center;
-    }
-
-    input,select{
-        margin-bottom: 1.5rem;
-    }
-
-
 }
-

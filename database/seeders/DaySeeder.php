@@ -2,20 +2,22 @@
 
 namespace Database\Seeders;
 
-use App\Models\ArtistSchedule;
+use App\Models\Day;
+use App\Models\Schedule;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class ArtistScheduleSeeder extends Seeder
+class ScheduleSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        ArtistSchedule::factory()->create([
-            'schedule_id' => 1,
-            'artist_id' => 1,
+        Day::factory()->create([
+            'id' => 1,
+            'activity' => 'Schedule 1',
+            'date' => now(),
         ]);
     }
 }
