@@ -1,8 +1,10 @@
 .tickets {
     display: flex;
     flex-direction: column;
+    align-items: center;
     h2 {
         color: $green;
+        
     }
     height: 680px;
     @media (min-width:768px) {
@@ -17,18 +19,17 @@
     @media (min-width:1920px) {
         height: 98px;
     }
-    #option1 {
+    .ticket-option-1 {
         border: 1px solid $pink;
     }
-    #option2 {
+    .ticket-option-2 {
         border: 1px solid $purple;
     }
-    #option3 {
+    .ticket-option-3 {
         border: 1px solid $green;
     }
     .ticket-option {
         width: 100%;
-        
         border-radius: 16px;
         margin-bottom: 30px;
         @media (min-width:768px) {

@@ -526,6 +526,7 @@ body, html {
 .tickets {
   display: flex;
   flex-direction: column;
+  align-items: center;
   height: 680px;
 }
 .tickets h2 {
@@ -546,13 +547,13 @@ body, html {
     height: 98px;
   }
 }
-.tickets #option1 {
+.tickets .ticket-option-1 {
   border: 1px solid #C80E76;
 }
-.tickets #option2 {
+.tickets .ticket-option-2 {
   border: 1px solid #8C52FF;
 }
-.tickets #option3 {
+.tickets .ticket-option-3 {
   border: 1px solid #C1FF72;
 }
 .tickets .ticket-option {

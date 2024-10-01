@@ -32,7 +32,7 @@
 
         <section class="tickets">
             <h2 id="tickets">Tickets</h2>
-            <div id="option1" class="ticket-option-1">
+            <div class="ticket-option-1 ticket-option">
               <div>
                 <p>General entry</p>
                 <div>
@@ -46,7 +46,7 @@
               </div>
             </div>
           
-            <div id="option2" class="ticket-option-2">
+            <div class="ticket-option-2 ticket-option">
               <div>
                 <p>Da Vinci</p>
                 <div>
@@ -60,7 +60,7 @@
               </div>
             </div>
           
-            <div id="option3" class="ticket-option-3">
+            <div class="ticket-option-3 ticket-option">
               <div>
                 <p>VIP</p>
                 <div>
@@ -73,7 +73,7 @@
                 <p>190$</p>
               </div>
             </div>
-            
+
             <div class="cart">
                 <p>Total</p>
                 <ul class="tickets-total">
