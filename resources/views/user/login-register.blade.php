@@ -21,7 +21,7 @@
                 @csrf
                 <label for="email">Email</label>
     <main class="login-register">
-        <div class="form-container">
+        <div class="form-container login">
             <h2>Log-in</h2>
             <div class="form">
                 <form action="{{ route('user.authenticate') }}" method="POST">
@@ -36,14 +36,15 @@
 
                     <x-forms.error champ="password" />
                     <input id="loginpassword" name="password" type="password" autocomplete="current-password" />
+
                     <button type="submit" class="btn-green-pink">Log-in</button>
                 </form>
                 <p>
-                    <a href=""> Don't have an account? </a>
+                    <a href="#" id="no-account" class="form-link"> Don't have an account? </a>
                 </p>
             </div>
         </div>
-        <div class="form-container">
+        <div class="form-container register">
             <h2>Register</h2>
             <div class="form">
                 <form action="{{ route('user.store') }}" method="POST">
@@ -78,10 +79,10 @@
                     <input id="password_confirmation" name="password_confirmation" type="password"
                         value="{{ old('password_confirmation') }}">
 
-                    <button type="submit" class="btn-green-pink">Create your account</button>
+                    <button type="submit" class="btn-green-pink">Create account</button>
                 </form>
                 <p>
-                    <a href=""> Already have an account? </a>
+                    <a href="#" id="has-account" class="form-link"> Already have an account? </a>
                 </p>
             </div>
         </div>
