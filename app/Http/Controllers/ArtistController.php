@@ -10,6 +10,8 @@ class ArtistController extends Controller
      * Handle the addition of a new artist
      *
      * @param Request $request
+     *
+     * Done
      */
     public function store(Request $request){
         $validated = $request->validate([

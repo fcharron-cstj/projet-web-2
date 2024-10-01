@@ -13,6 +13,7 @@ class ScheduleController extends Controller
     /**
      * Displays the form for creating a schedule
      *
+     * Done
      */
     public function create()
     {
@@ -26,6 +27,8 @@ class ScheduleController extends Controller
      * Handle the addition of a schedule
      *
      * @param Request $request
+     *
+     * Done
      */
     public function store(Request $request)
     {
@@ -36,7 +39,7 @@ class ScheduleController extends Controller
         ], [
             "activity.required" => "Please enter an activity",
             "activity.max" => "The activity must have less than :max characters",
-            "date.required" => "Please select a valid date",
+            "date.required" => "Please select a date",
             "date.date" => "The date must be a valid date format",
             "artist.required" => "Please select an artist or create a new one"
         ]);
@@ -75,23 +78,26 @@ class ScheduleController extends Controller
         $validated = $request->validate([
             "id" => "required",
             "activity" => "required|max:255",
-            "date" => "required|date"
+            "date" => "required|date",
+            "artist" => "required"
         ], [
             "id.required" => "The schedule doesn't exist",
             "activity.required" => "Please enter an activity",
             "activity.max" => "The activity must have less than :max characters",
             "date.required" => "Please select a valid date",
-            "date.date" => "The date must be a valid date format"
+            "date.date" => "The date must be a valid date format",
+            "artist.required" => "Please select an artist or create a new one"
         ]);
 
         $schedule = Schedule::findOrFail($validated["id"]);
         $schedule->activity = $validated["activity"];
         $schedule->date = $validated["date"];
+        $schedule->artist = $validated["artist"];
 
         $schedule->save();
 
         return redirect()
-            ->route('adminPanel')
+            ->route('admin.panel')
             ->with('succes_updating_schedule', "The schedule has been modified");
     }
 

@@ -96,7 +96,7 @@
                     <p>{{ $article->title }}</p>
                     <p>{{ $article->description }}</p>
                     <p>{{ $article->date }}</p>
-                    <img src="{{ $article->media }}" alt="">
+                    <img src="{{ $article->media }}" alt="media of {{$article->title}}">
                     <a href="{{ route('article.show', ['id' => $article->id]) }}">More info</a>
 
                 </article>

@@ -701,7 +701,10 @@ body, html {
 
 textarea:focus,
 input:focus {
-  outline: none;
+  outline-style: none;
+  outline-color: transparent;
+  border: 2px solid #C1FF72;
+  box-shadow: #C1FF72 0 0 10px;
 }
 
 form {
@@ -719,7 +722,7 @@ form input {
   color: #8C52FF;
   font-size: 20px;
   background-color: white;
-  border: 1px solid #44FFF9;
+  border: 2px solid #44FFF9;
   padding: 0px 10px;
   height: 24px;
   border-radius: 10px;
@@ -736,10 +739,30 @@ form label {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  min-height: calc(100vh - 60px);
+  padding-top: 120px;
 }
-
+.login-register .register {
+  display: none;
+}
+.login-register .form-link {
+  color: #C1FF72;
+  font-family: "shantell-sans-bouncy", sans-serif;
+  margin: auto;
+}
+.login-register button {
+  display: block;
+  width: 100%;
+  margin: auto;
+  margin-top: 20px;
+}
+@media (min-width: 768px) {
+  .login-register {
+    margin-top: 0px;
+  }
+}
 .form-container {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
@@ -765,4 +788,24 @@ form label {
   .form-container {
     width: 30%;
   }
+}
+
+.schedule {
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 10rem;
+}
+.schedule h1, .schedule h2 {
+  padding: 0 1rem;
+}
+.schedule .schedule-section {
+  padding: 1rem;
+  height: 100%;
+}
+.schedule label {
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+.schedule input, .schedule select {
+  margin-bottom: 1.5rem;
 }/*# sourceMappingURL=style.css.map */
