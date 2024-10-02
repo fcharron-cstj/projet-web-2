@@ -14,7 +14,8 @@ class Day extends Model
     /**
      * Relation many-to-many with the model Activity
      */
-    public function activity(){
-        return $this->belongsToMany(Activity::class);
+    public function activity()
+    {
+        return $this->belongsToMany(Activity::class, 'Schedule');
     }
 }
