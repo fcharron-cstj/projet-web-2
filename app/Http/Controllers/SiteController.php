@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
-use App\Models\Schedule;
+use App\Models\Day;
 use Illuminate\Http\Request;
 
 class SiteController extends Controller
@@ -14,7 +14,7 @@ class SiteController extends Controller
     public function home()
     {
         return view("home", [
-            "schedules" => Schedule::get(),
+            "days" => Day::with('Activity')->get()->all(),
             "articles" => Article::get()->all(),
         ]);
     }

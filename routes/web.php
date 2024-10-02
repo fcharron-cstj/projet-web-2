@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\AdministratorController;
 use App\Http\Controllers\ArticleController;
@@ -33,17 +34,17 @@ Route::post('user/destroy', [UserController::class, "destroy"])->name("user.dest
 
 Route::get("/logout", [UserController::class, "disconnect"])->name('logout')->middleware("auth");
 
-//Schedule
+//Activity
 
-Route::get('/schedules/create', [ScheduleController::class, 'create'])->name("schedules.create")->middleware(admin::class);
+Route::get('/activity/create', [ActivityController::class, 'create'])->name("activity.create")->middleware(admin::class);
 
-Route::get('/schedules/edit/{id}', [ScheduleController::class, 'edit'])->name("schedules.edit")->middleware(admin::class);
+Route::get('/activity/edit/{id}', [ActivityController::class, 'edit'])->name("activity.edit")->middleware(admin::class);
 
-Route::post('/schedules/store', [ScheduleController::class, 'store'])->name("schedules.store")->middleware(admin::class);
+Route::post('/activity/store', [ActivityController::class, 'store'])->name("activity.store")->middleware(admin::class);
 
-Route::post('/schedules/update', [ScheduleController::class, 'update'])->name("schedules.update")->middleware(admin::class);
+Route::post('/activity/update', [ActivityController::class, 'update'])->name("activity.update")->middleware(admin::class);
 
-Route::post('/schedules/destroy', [ScheduleController::class, 'destroy'])->name("schedules.destroy")->middleware(admin::class);
+Route::post('/activity/destroy', [ActivityController::class, 'destroy'])->name("activity.destroy")->middleware(admin::class);
 
 //Article
 
@@ -82,8 +83,3 @@ Route::get('/admin/edit/{id}', [AdministratorController::class, 'edit'])->name("
 Route::post('/admin/update', [AdministratorController::class, 'update'])->name("admin.update")->middleware(admin::class);
 
 Route::post('/admin/destroy', [AdministratorController::class, 'destroy'])->name("admin.destroy")->middleware(admin::class);
-
-
-//Artist
-
-Route::post('/artist/store', [ArtistController::class, 'store'])->name("artist.store")->middleware(admin::class);

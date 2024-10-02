@@ -6,6 +6,7 @@ use App\Models\Role;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Notifications\Action;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,11 +19,11 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,
             UserSeeder::class,
             ArticleSeeder::class,
-            ScheduleSeeder::class,
+            DaySeeder::class,
             PackageSeeder::class,
-            ArtistSeeder::class,
+            ActivitySeeder::class,
             ReservationSeeder::class,
-            ArtistScheduleSeeder::class,
+            ScheduleSeeder::class,
         ]);
     }
 }

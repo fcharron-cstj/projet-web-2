@@ -7,7 +7,7 @@ use App\Models\Schedule;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class ScheduleSeeder extends Seeder
+class DaySeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,13 +15,13 @@ class ScheduleSeeder extends Seeder
     public function run(): void
     {
         Day::factory()->create([
-            'date' => '4 Avril'
+            'date' => now()->addDays(1)->format('Y-m-d')
         ]);
         Day::factory()->create([
-            'date' => '5 Avril'
+            'date' => now()->addDays(2)->format('Y-m-d')
         ]);
         Day::factory()->create([
-            'date' => '6 Avril'
+            'date' => now()->addDays(3)->format('Y-m-d')
         ]);
     }
 }

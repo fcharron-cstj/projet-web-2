@@ -5,12 +5,12 @@
                 @if ($user->role_id == 1)
                     <div class="admin">
                         {{-- For testing --}}
-                       {{--  <p>
+                        {{--  <p>
                             <a href="{{route('user.show', ['id' => $user->id])}}" style="text-decoration: none; cursor: pointer; color:#44FFF9">
                                 {{ $user->first_name }} {{ $user->last_name }}
                             </a>
                         </p> --}}
-                        <p>{{$user->first_name }} {{$user->last_name}}</p>
+                        <p>{{ $user->first_name }} {{ $user->last_name }}</p>
                         <p>{{ $user->email }}</p>
                         <a href="{{ route('admin.edit', ['id' => $user->id]) }}" style="color:#44FFF9">EDIT</a>
                         <form action="{{ route('admin.destroy') }}" method="post">
@@ -29,7 +29,7 @@
                                 {{ $user->first_name }} {{ $user->last_name }}
                             </a>
                         </p> --}}
-                        <p>{{$user->first_name }} {{$user->last_name}}</p>
+                        <p>{{ $user->first_name }} {{ $user->last_name }}</p>
                         <p>{{ $user->email }}</p>
                         <a href="{{ route('admin.edit', ['id' => $user->id]) }}" style="color:#44FFF9">EDIT</a>
                         <form action="{{ route('admin.destroy') }}" method="post">
@@ -60,14 +60,14 @@
         </section>
 
         <section class="schedule">
-            @foreach ($schedules as $schedule)
+            @foreach ($activities as $activity)
                 <div>
-                    <p>{{ $schedule->activity }}</p>
-                    <p>{{ $schedule->date }}</p>
-                    <a href="{{ route('schedules.edit', ['id' => $schedule->id]) }}" style="color:#44FFF9">EDIT</a>
-                    <form action="{{ route('schedules.destroy') }}" method="post">
+                    <p>{{ $activity->title }}</p>
+                    <p>{{ $activity->hour }}</p>
+                    <a href="{{ route('activities.edit', ['id' => $activity->id]) }}" style="color:#44FFF9">EDIT</a>
+                    <form action="{{ route('activities.destroy') }}" method="post">
                         @csrf
-                        <input type="hidden" name="id" value="{{ $schedule->id }}">
+                        <input type="hidden" name="id" value="{{ $activity->id }}">
                         <button type="submit">Delete</button>
                     </form>
                 </div>
