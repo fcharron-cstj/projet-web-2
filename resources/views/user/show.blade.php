@@ -14,6 +14,9 @@
                 </div>
             @endif
 
+        <div class="form">
+            <form action="{{ route('user.update') }}" method="POST">
+                @csrf
             <!-- Display of error messages -->
             @if (session('error'))
                 <div class="alert alert-danger">
@@ -59,9 +62,25 @@
                     <input id="last_name" name="last_name" type="text" autocomplete="family-name"
                         value="{{ $user->last_name }}">
 
-                    <button type="submit" class="btn-pink-green">Update</button>
-                </form>
-            </div>
+
+                <button type="submit">Update</button>
+            </form>
         </div>
+        <section class="reservations">
+            <h2>Reservations</h2>
+            @foreach ($reservations as $reservation)
+                <div class="reservation">
+                    <p>{{ $reservation->package->title }}</p>
+                    <p>{{ $reservation->user->first_name . ' ' . $reservation->user->last_name }}</p>
+                    <p>{{ 'from ' . date('d/m/Y', strtotime($reservation->arrival)) . ' to ' . date('d/m/Y', strtotime($reservation->departing)) }}
+                    </p>
+                    <form action="{{ route('reservation.destroy') }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="id" value="{{ $reservation->id }}">
+                        <input type="submit" value="Delete">
+                    </form>
+                </div>
+            @endforeach
+        </section>
     </main>
 </x-layout>

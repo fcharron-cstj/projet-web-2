@@ -2,18 +2,18 @@
 
 namespace Database\Seeders;
 
-use App\Models\Artist;
+use App\Models\Activity;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class ArtistSeeder extends Seeder
+class ActivitySeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Artist::factory()->create([
+        Activity::factory()->create([
             'name' => 'artistname'
         ]);
     }

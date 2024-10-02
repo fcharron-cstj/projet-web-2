@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Artist>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Activity>
  */
-class ArtistFactory extends Factory
+class DayFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,7 +17,7 @@ class ArtistFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->name()
+            'date' => fake()->date()
         ];
     }
 }

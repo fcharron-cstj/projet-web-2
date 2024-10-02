@@ -2,10 +2,12 @@
 
 namespace Database\Factories;
 
+use App\Models\Activity;
+use App\Models\Day;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Activity>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
 class ScheduleFactory extends Factory
 {
@@ -17,7 +19,8 @@ class ScheduleFactory extends Factory
     public function definition(): array
     {
         return [
-            'activity' => fake()->word()
+            'activity_id' => Activity::inRandomOrder()->first()->id,
+            'day_id' => Day::inRandomOrder()->first()->id
         ];
     }
 }

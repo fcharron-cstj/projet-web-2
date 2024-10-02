@@ -6,12 +6,6 @@
             </div>
         @endif
 
-        <!-- Displays error messages -->
-        @if (session('error'))
-            <div class="alert alert-danger">
-                {{ session('error') }}
-            </div>
-        @endif
         <video id="videoPlayer" poster="{{ asset('medias/poster.png') }}" loop muted>
             <source src="{{ asset('medias/nova.mp4') }}" type="video/mp4">
         </video>
@@ -38,27 +32,48 @@
 
         <section class="tickets">
             <h2 id="tickets">Tickets</h2>
-            <div class="ticket-option 1">
+            <div class="ticket-option-1 ticket-option">
+              <div>
                 <p>General entry</p>
-                <span class="ticket-add">+</span>
-                <span class="ticket-add">-</span>
-                <p>Access to the size and scenes</p>
+                <div>
+                  <span class="ticket-add" data-option="1">-</span>
+                  <span class="ticket-add" data-option="1">+</span>
+                </div>
+              </div>
+              <div>
+                <p>Access to the site and scenes</p>
                 <p>25$</p>
+              </div>
             </div>
-            <div class="ticket-option 2">
+          
+            <div class="ticket-option-2 ticket-option">
+              <div>
                 <p>Da Vinci</p>
-                <span class="ticket-add">+</span>
-                <span class="ticket-add">-</span>
+                <div>
+                  <span class="ticket-add" data-option="2">+</span>
+                  <span class="ticket-add" data-option="2">-</span>
+                </div>
+              </div>
+              <div>
                 <p>Welcome drink, surprise gift</p>
                 <p>40$</p>
+              </div>
             </div>
-            <div class="ticket-option 3">
+          
+            <div class="ticket-option-3 ticket-option">
+              <div>
                 <p>VIP</p>
-                <span class="ticket-add">+</span>
-                <span class="ticket-add">-</span>
+                <div>
+                  <span class="ticket-add" data-option="3">+</span>
+                  <span class="ticket-add" data-option="3">-</span>
+                </div>
+              </div>
+              <div>
                 <p>Open bar, Food, Seats in VIP lodge</p>
                 <p>190$</p>
+              </div>
             </div>
+
             <div class="cart">
                 <p>Total</p>
                 <ul class="tickets-total">
@@ -104,6 +119,7 @@
                     <p>{{ $article->date }}</p>
                     <img src="{{ $article->media }}" alt="media of {{ $article->title }}">
                     <a href="{{ route('article.show', ['id' => $article->id]) }}">More info</a>
+
                 </article>
             @endforeach
             <a href="{{ route('article.index') }}">View all articles</a>

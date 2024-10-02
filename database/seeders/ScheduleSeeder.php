@@ -14,9 +14,8 @@ class ScheduleSeeder extends Seeder
     public function run(): void
     {
         Schedule::factory()->create([
-            'id' => 1,
-            'activity' => 'Schedule 1',
-            'date' => now(),
+            'schedule_id' => 1,
+            'artist_id' => 1,
         ]);
     }
 }

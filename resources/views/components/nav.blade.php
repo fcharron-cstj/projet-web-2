@@ -19,10 +19,10 @@
         <a class="btn-pink-green buy-tickets" href="#tickets">Buy Tickets</a>
         @auth
             <a href="{{ route('user.show', ['id' => auth()->user()->id]) }}"><img
-                    src="{{ asset('medias/person-fill.png') }}" alt="Account"></a>
+                class="client-icon" src="{{ asset('medias/person-fill.png') }}" alt="Account"></a>
         @else
             <a href="{{ route('loginOrRegister') }}"><img
-                    src="{{ asset('medias/person-fill.png') }}" alt="Account"></a>
+                class="client-icon" src="{{ asset('medias/person-fill.png') }}" alt="Account"></a>
         @endauth
     </div>
 </nav>
@@ -37,10 +37,10 @@
             <img id="close-menu" src="{{ asset('medias/x.png') }}" alt="Close Menu">
             @auth
                 <a href="{{ route('user.show', ['id' => auth()->user()->id]) }}"><img
-                        src="{{ asset('medias/person-fill.png') }}" alt="Account"></a>
+                    class="client-icon" src="{{ asset('medias/person-fill.png') }}" alt="Account"></a>
             @else
                 <a href="{{ route('loginOrRegister') }}"><img
-                        src="{{ asset('medias/person-fill.png') }}" alt="Account"></a>
+                    class="client-icon" src="{{ asset('medias/person-fill.png') }}" alt="Account"></a>
             @endauth
             <a class="nav-links green-text" href="{{ route('home') }}">Home</a>
             <a class="nav-links blue-text" href="#schedule">Festival</a>
