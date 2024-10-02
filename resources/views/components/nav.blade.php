@@ -8,15 +8,15 @@
     </div>
     <div class="div-nav-links">
         <a class="nav-links green-text" href="{{ route('home') }}">Home</a>
-        <a class="nav-links blue-text" href="#schedule">Festival</a>
+        <a class="nav-links blue-text" href="/#schedule">Festival</a>
         <a class="nav-links purple-text" href="{{ route('article.index') }}">Articles</a>
-        <a class="nav-links pink-text" href="#footer">Contact</a>
+        <a class="nav-links pink-text" href="/#footer">Contact</a>
         @auth
             <a class="btn-blue-pink btn-login-logout" href="{{ route('logout') }}">Logout</a>
         @else
             <a class="btn-blue-pink btn-login-logout" href="{{ route('loginOrRegister') }}">Login</a>
         @endauth
-        <a class="btn-pink-green buy-tickets" href="#tickets">Buy Tickets</a>
+        <a class="btn-pink-green buy-tickets" href="/#tickets">Buy Tickets</a>
         @auth
             <a href="{{ route('user.show', ['id' => auth()->user()->id]) }}"><img
                 class="client-icon" src="{{ asset('medias/person-fill.png') }}" alt="Account"></a>
