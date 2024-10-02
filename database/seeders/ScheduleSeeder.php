@@ -13,10 +13,20 @@ class ScheduleSeeder extends Seeder
      */
     public function run(): void
     {
-        // Maybe delete this seeder, might be not necessary
-        Schedule::factory()->create([
-            'activity_id' => 1,
-            'day_id' => 1,
-        ]);
+        for ($i = 1; $i <= 36; $i++) {
+            if ($i <= 12) {
+                $day = 1;
+            }
+            if ($i > 12 && $i <= 24) {
+                $day = 2;
+            }
+            if ($i > 24 && $i <= 36) {
+                $day = 3;
+            }
+            Schedule::factory()->create([
+                'activity_id' => $i,
+                'day_id' => $day,
+            ]);
+        }
     }
 }

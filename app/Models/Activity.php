@@ -9,6 +9,8 @@ class Activity extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     /**
      * Relation one-to-many with the model Day
      */
