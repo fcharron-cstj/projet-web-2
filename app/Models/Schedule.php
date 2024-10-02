@@ -12,16 +12,18 @@ class Schedule extends Model
     public $timestamps = false;
 
     /**
-     * Relation many to many with model Day
+     * Relation one to one with model Day
      */
-    public function day() {
+    public function day()
+    {
         return $this->belongsTo(Day::class);
     }
 
     /**
-     *  Relation many to many with model Activity
+     *  Relation one to one with model Activity
      */
-    public function activity() {
+    public function activity()
+    {
         return $this->belongsTo(Activity::class);
     }
 }
