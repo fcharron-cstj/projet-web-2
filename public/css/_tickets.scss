@@ -1,24 +1,38 @@
 .tickets {
     display: flex;
     flex-direction: column;
-    align-items: center;
     h2 {
         color: $green;
-        
+        align-self: center;
+        font-size: 35px;
+        margin: 40px 0;
+        @media (min-width: 768px) {
+            font-size: 38 px;
+            margin: 105px 0 50px;
+        }
+        @media (min-width: 1024px) {
+            margin: 105px 0 50px;
+        }
+        @media (min-width: 1200px) {
+            font-size: 45px;
+            margin-top: 180px;
+        }
+        @media (min-width: 1920px) {
+            font-size: 60px;
+            margin: 100px 0 50px;
+        }
     }
     height: 680px;
-    @media (min-width:768px) {
+    @media (min-width: 768px) {
         height: 535px;
     }
-    @media (min-width:1024px) {
-        height:  616px;
+    @media (min-width: 1024px) {
+        height: 616px;
     }
-    @media (min-width:1200px) {
-    
-    }
-    @media (min-width:1920px) {
+    @media (min-width: 1920px) {
         height: 98px;
     }
+    
     .ticket-option-1 {
         border: 1px solid $pink;
     }
@@ -28,24 +42,71 @@
     .ticket-option-3 {
         border: 1px solid $green;
     }
+
     .ticket-option {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         width: 100%;
         border-radius: 16px;
         margin-bottom: 30px;
-        @media (min-width:768px) {
-    
+        height: 130px;
+        div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0px;
         }
-        @media (min-width:1024px) {
-        
+        @media (min-width: 768px) {
+            height: 160px;
         }
-        @media (min-width:1200px) {
-        
+        @media (min-width: 1200px) {
+            height: 225px;
         }
-        @media (min-width:1920px) {
-        
+        span {
+            font-size: 30px;
+            margin-right: 15px;
+            color: $green;
         }
     }
     .ticket-add {
         cursor: pointer;
+    }
+    #tickets-container {
+        margin: 0 25px;
+        align-items: stretch;
+    }
+
+    .ticket-description {
+        font-family: $font-secondary;
+        font-size: 17px;
+        color: $green;
+        padding-right: 40px;
+        margin-left: 15px;
+        margin-top: 0;
+    }
+
+    .ticket-price {
+        font-size: 35px;
+        margin-right: 15px;
+        margin-top: 25px;
+    }
+    .ticket-title{
+        color: $blue;
+        font-size: 35px;
+        margin: 10px 15px;
+        @media (min-width: 768px) {
+            font-size: 30px;
+        }
+        @media (min-width: 1024px) {
+            font-size: 35px;
+        }
+        @media (min-width: 1200px) {
+            font-size: 40px;
+            margin: 20px 20px;
+        }
+        @media (min-width: 1920px) {
+            font-size: 45px;
+        }
     }
 }

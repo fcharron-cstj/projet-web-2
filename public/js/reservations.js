@@ -30,7 +30,10 @@ function updateCart(option, add = true) {
 
     document.querySelector(".tickets-total").children[option[1]].innerHTML =
         option[0] + " " + totaltickets[option[1]] + "x, ";
+
     document.querySelector(".total-price").innerHTML = totalprice + " $";
+
+    document.querySelector(`.ticket-count[data-option="${option[1] + 1}"]`).innerHTML = totaltickets[option[1]];
 }
 
 function scrollToElement(element) {

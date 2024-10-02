@@ -548,11 +548,36 @@ body, html {
 .tickets {
   display: flex;
   flex-direction: column;
-  align-items: center;
   height: 680px;
 }
 .tickets h2 {
   color: #C1FF72;
+  align-self: center;
+  font-size: 35px;
+  margin: 40px 0;
+}
+@media (min-width: 768px) {
+  .tickets h2 {
+    font-size: 38 px;
+    margin: 105px 0 50px;
+  }
+}
+@media (min-width: 1024px) {
+  .tickets h2 {
+    margin: 105px 0 50px;
+  }
+}
+@media (min-width: 1200px) {
+  .tickets h2 {
+    font-size: 45px;
+    margin-top: 180px;
+  }
+}
+@media (min-width: 1920px) {
+  .tickets h2 {
+    font-size: 60px;
+    margin: 100px 0 50px;
+  }
 }
 @media (min-width: 768px) {
   .tickets {
@@ -579,12 +604,80 @@ body, html {
   border: 1px solid #C1FF72;
 }
 .tickets .ticket-option {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100%;
   border-radius: 16px;
   margin-bottom: 30px;
+  height: 130px;
+}
+.tickets .ticket-option div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0px;
+}
+@media (min-width: 768px) {
+  .tickets .ticket-option {
+    height: 160px;
+  }
+}
+@media (min-width: 1200px) {
+  .tickets .ticket-option {
+    height: 225px;
+  }
+}
+.tickets .ticket-option span {
+  font-size: 30px;
+  margin-right: 15px;
+  color: #C1FF72;
 }
 .tickets .ticket-add {
   cursor: pointer;
+}
+.tickets #tickets-container {
+  margin: 0 25px;
+  align-items: stretch;
+}
+.tickets .ticket-description {
+  font-family: "shantell-sans-bouncy", sans-serif;
+  font-size: 17px;
+  color: #C1FF72;
+  padding-right: 40px;
+  margin-left: 15px;
+  margin-top: 0;
+}
+.tickets .ticket-price {
+  font-size: 35px;
+  margin-right: 15px;
+  margin-top: 25px;
+}
+.tickets .ticket-title {
+  color: #44FFF9;
+  font-size: 35px;
+  margin: 10px 15px;
+}
+@media (min-width: 768px) {
+  .tickets .ticket-title {
+    font-size: 30px;
+  }
+}
+@media (min-width: 1024px) {
+  .tickets .ticket-title {
+    font-size: 35px;
+  }
+}
+@media (min-width: 1200px) {
+  .tickets .ticket-title {
+    font-size: 40px;
+    margin: 20px 20px;
+  }
+}
+@media (min-width: 1920px) {
+  .tickets .ticket-title {
+    font-size: 45px;
+  }
 }
 
 #videoPlayer {

@@ -80,13 +80,13 @@
             </div>
 
             <div class="cart">
-                <p>Total</p>
                 <ul class="tickets-total">
                     <li>General entry 0x</li>
                     <li>Da Vinci 0x</li>
                     <li>VIP 0x</li>
                 </ul>
-
+                
+                <p>Total</p>
                 <p class="total-price">0$</p>
 
                 <!-- Display of success messages -->
