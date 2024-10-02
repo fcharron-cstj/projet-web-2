@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Activity;
 use App\Models\Article;
 use App\Models\Schedule;
 use App\Models\User;
@@ -18,7 +19,7 @@ class AdministratorController extends Controller
     {
         return view("admin.admin-panel", [
             "users" => User::all(),
-            "schedules" => Schedule::all(),
+            "activities" => Activity::with('Day')->get()->all(),
             "articles" => Article::all()
         ]);
     }
@@ -73,7 +74,7 @@ class AdministratorController extends Controller
 
         return redirect()
             ->route("admin.index")
-            ->with("success_account_creation", "Account registration succeeded!");
+            ->with("success", "Account registration succeeded!");
     }
 
     /**
@@ -121,7 +122,7 @@ class AdministratorController extends Controller
 
         return redirect()
             ->route('admin.panel')
-            ->with('success_modification_account', "The account of " . $user->first_name . " " . $user->last_name . " has been modified");
+            ->with('success', "The account of " . $user->first_name . " " . $user->last_name . " has been modified");
     }
 
     /**
@@ -137,6 +138,6 @@ class AdministratorController extends Controller
 
         return redirect()
             ->route('admin.panel')
-            ->with('success_deleting_account', "The account has been deleted");
+            ->with('success', "The account has been deleted");
     }
 }
