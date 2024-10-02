@@ -13,9 +13,10 @@ class ScheduleSeeder extends Seeder
      */
     public function run(): void
     {
+        // Maybe delete this seeder, might be not necessary
         Schedule::factory()->create([
-            'schedule_id' => 1,
-            'artist_id' => 1,
+            'activity_id' => 1,
+            'day_id' => 1,
         ]);
     }
 }

@@ -15,9 +15,13 @@ class ScheduleSeeder extends Seeder
     public function run(): void
     {
         Day::factory()->create([
-            'id' => 1,
-            'activity' => 'Schedule 1',
-            'date' => now(),
+            'date' => '4 Avril'
+        ]);
+        Day::factory()->create([
+            'date' => '5 Avril'
+        ]);
+        Day::factory()->create([
+            'date' => '6 Avril'
         ]);
     }
 }

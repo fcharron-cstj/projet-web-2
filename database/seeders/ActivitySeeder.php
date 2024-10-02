@@ -13,8 +13,6 @@ class ActivitySeeder extends Seeder
      */
     public function run(): void
     {
-        Activity::factory()->create([
-            'name' => 'artistname'
-        ]);
+        Activity::factory(20)->create();
     }
 }
