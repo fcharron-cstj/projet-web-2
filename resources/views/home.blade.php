@@ -19,10 +19,15 @@
             <h1 class="title-schedule">Music & arts festival</h1>
             <p class="text-schedule">A festival to discover new artists</p>
             <img src="" alt="">
-            @foreach ($schedules as $schedule)
+            @foreach ($days as $day)
                 <div class="schedule">
-                    <p class="sub-title-schedule">{{ date_format(date_create($schedule->date), 'w F') }}</p>
-                    <p class="text-schedule">{{ $schedule->activity }}</p>
+                    <p class="sub-title-schedule">{{ date_format(date_create($day->date), 'w F') }}</p>
+
+                    <p class="text-schedule">
+                        @foreach ($day->Activity as $activity)
+                            {{ $activity->artists . ' -' }}
+                        @endforeach
+                    </p>
                 </div>
             @endforeach
             <a class="btn-green-pink" href="{{ route('article.index') }}">Articles</a>
@@ -33,45 +38,45 @@
         <section class="tickets">
             <h2 id="tickets">Tickets</h2>
             <div class="ticket-option-1 ticket-option">
-              <div>
-                <p>General entry</p>
                 <div>
-                  <span class="ticket-add" data-option="1">-</span>
-                  <span class="ticket-add" data-option="1">+</span>
+                    <p>General entry</p>
+                    <div>
+                        <span class="ticket-add" data-option="1">-</span>
+                        <span class="ticket-add" data-option="1">+</span>
+                    </div>
                 </div>
-              </div>
-              <div>
-                <p>Access to the site and scenes</p>
-                <p>25$</p>
-              </div>
+                <div>
+                    <p>Access to the site and scenes</p>
+                    <p>25$</p>
+                </div>
             </div>
-          
+
             <div class="ticket-option-2 ticket-option">
-              <div>
-                <p>Da Vinci</p>
                 <div>
-                  <span class="ticket-add" data-option="2">+</span>
-                  <span class="ticket-add" data-option="2">-</span>
+                    <p>Da Vinci</p>
+                    <div>
+                        <span class="ticket-add" data-option="2">+</span>
+                        <span class="ticket-add" data-option="2">-</span>
+                    </div>
                 </div>
-              </div>
-              <div>
-                <p>Welcome drink, surprise gift</p>
-                <p>40$</p>
-              </div>
+                <div>
+                    <p>Welcome drink, surprise gift</p>
+                    <p>40$</p>
+                </div>
             </div>
-          
+
             <div class="ticket-option-3 ticket-option">
-              <div>
-                <p>VIP</p>
                 <div>
-                  <span class="ticket-add" data-option="3">+</span>
-                  <span class="ticket-add" data-option="3">-</span>
+                    <p>VIP</p>
+                    <div>
+                        <span class="ticket-add" data-option="3">+</span>
+                        <span class="ticket-add" data-option="3">-</span>
+                    </div>
                 </div>
-              </div>
-              <div>
-                <p>Open bar, Food, Seats in VIP lodge</p>
-                <p>190$</p>
-              </div>
+                <div>
+                    <p>Open bar, Food, Seats in VIP lodge</p>
+                    <p>190$</p>
+                </div>
             </div>
 
             <div class="cart">
