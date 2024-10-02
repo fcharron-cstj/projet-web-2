@@ -11,7 +11,9 @@ class Day extends Model
 
     public $timestamps = false;
 
-
+    /**
+     * Relation many-to-many with the model Activity
+     */
     public function activity(){
         return $this->belongsToMany(Activity::class);
     }

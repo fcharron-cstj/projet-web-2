@@ -9,6 +9,9 @@ class Activity extends Model
 {
     use HasFactory;
 
+    /**
+     * Relation many-to-many with the model Day
+    */
     public function days(){
         return $this->belongsToMany(Day::class);
     }
