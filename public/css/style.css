@@ -918,4 +918,8 @@ select:focus {
 .dashboard .form-container form label {
   font-size: 24px;
   color: #C1FF72;
+}
+
+.article article img {
+  width: 400px;
 }/*# sourceMappingURL=style.css.map */

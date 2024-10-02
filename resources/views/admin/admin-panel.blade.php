@@ -64,8 +64,8 @@
                 <div>
                     <p>{{ $activity->title }}</p>
                     <p>{{ $activity->hour }}</p>
-                    <a href="{{ route('activities.edit', ['id' => $activity->id]) }}" style="color:#44FFF9">EDIT</a>
-                    <form action="{{ route('activities.destroy') }}" method="post">
+                    <a href="{{ route('activity.edit', ['id' => $activity->id]) }}" style="color:#44FFF9">EDIT</a>
+                    <form action="{{ route('activity.destroy') }}" method="post">
                         @csrf
                         <input type="hidden" name="id" value="{{ $activity->id }}">
                         <button type="submit">Delete</button>
