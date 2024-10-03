@@ -19,7 +19,7 @@ class ActivityFactory extends Factory
         return [
             'title' => fake()->name(),
             'artists' => fake()->name(),
-            'hour' => fake()->date("H"),
+            'date' => fake()->date("Y-m-d"),
             'media' => "https://placehold.co/600x400"
         ];
     }
