@@ -1134,17 +1134,17 @@ select:focus {
   color: #C1FF72;
 }
 
-.articles-container {
+.articles-list .articles-container {
   display: flex;
   flex-wrap: wrap;
 }
-.articles-container article {
+.articles-list .articles-container article {
   position: relative;
   width: 225px;
   margin: 0 auto;
   height: 200px;
 }
-.articles-container article .article-overlay {
+.articles-list .articles-container article .article-overlay {
   position: absolute;
   z-index: 2;
   background-color: rgba(0, 0, 0, 0.5);
@@ -1157,10 +1157,10 @@ select:focus {
   bottom: -3px;
   border-radius: 0px 0px 25px 25px;
 }
-.articles-container article .article-overlay * {
+.articles-list .articles-container article .article-overlay * {
   margin: 0;
 }
-.articles-container article img {
+.articles-list .articles-container article img {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -1169,19 +1169,60 @@ select:focus {
   border: #C80E76 solid 2px;
   border-radius: 25px;
 }
-.articles-container article h2 {
+.articles-list .articles-container article h2 {
   color: #C1FF72;
   font-family: "anchor-web", sans-serif;
   font-size: 30px;
   text-align: left;
 }
-.articles-container article p {
+.articles-list .articles-container article p {
   color: #C80E76;
   font-family: "shantell-sans-bouncy", sans-serif;
   font-size: 14px;
   text-align: left;
 }
-.articles-container article a {
+.articles-list .articles-container article a {
   color: #C1FF72;
   font-size: 20px;
+}
+
+.datepicker-main {
+  color: #C80E76;
+  background-color: #141010;
+}
+.datepicker-main * {
+  font-family: "shantell-sans-bouncy", sans-serif;
+}
+
+.day {
+  background-color: rgb(194, 194, 194);
+}
+
+.datepicker-cell.disabled {
+  color: #858585;
+  background-color: black;
+}
+
+.focused {
+  background-color: rgb(194, 194, 194) !important;
+  color: #C80E76;
+}
+
+.range-start {
+  background-color: rgb(90, 92, 255) !important;
+  color: aqua !important;
+}
+
+.range-end {
+  background-color: rgb(90, 92, 255) !important;
+  color: aqua !important;
+}
+
+.range {
+  background-color: rgb(90, 92, 255) !important;
+  color: aqua !important;
+}
+
+.day :not(.disabled):hover {
+  background-color: white !important;
 }/*# sourceMappingURL=style.css.map */

@@ -11,7 +11,7 @@ document.querySelectorAll(".ticket-add").forEach(function (add) {
         event.preventDefault();
         let optionId = parseInt(event.target.getAttribute("data-option"));
         let btn = event.target.innerHTML;
-        
+
         if (btn === "+") {
             updateCart(options[optionId]);
         } else if (btn === "-") {
@@ -24,8 +24,8 @@ function updateCart(option, add = true) {
     if (totaltickets[option[1]] === 0 && !add) {
         return;
     }
-    
-    add ? totalprice += option[2] : totalprice -= option[2];
+
+    add ? (totalprice += option[2]) : (totalprice -= option[2]);
     add ? totaltickets[option[1]]++ : totaltickets[option[1]]--;
 
     document.querySelector(".tickets-total").children[option[1]].innerHTML =
@@ -33,7 +33,9 @@ function updateCart(option, add = true) {
 
     document.querySelector(".total-price").innerHTML = totalprice + " $";
 
-    document.querySelector(`.ticket-count[data-option="${option[1] + 1}"]`).innerHTML = totaltickets[option[1]];
+    document.querySelector(
+        `.ticket-count[data-option="${option[1] + 1}"]`
+    ).innerHTML = totaltickets[option[1]];
 }
 
 function scrollToElement(element) {
