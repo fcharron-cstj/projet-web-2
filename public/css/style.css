@@ -1159,4 +1159,84 @@ article p {
 article a {
   color: #C1FF72;
   font-size: 20px;
+}
+
+.activity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5rem 35px 0;
+}
+.activity .activity-container {
+  width: 100%;
+  text-align: center;
+}
+.activity .activity-container h1 {
+  color: #C1FF72;
+}
+.activity .activity-container #day-of-week {
+  color: #C80E76;
+  font-family: "shantell-sans-bouncy", sans-serif;
+  margin-bottom: 4px;
+}
+.activity .activity-container .day-information {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.activity .activity-container .day-information p {
+  padding: 0;
+  margin: 0;
+}
+.activity .activity-container .day-information .day {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.activity .activity-container .day-information .day .arrow {
+  color: #C1FF72;
+  cursor: pointer;
+}
+.activity .activity-container article {
+  margin-bottom: 1rem;
+}
+.activity .activity-container article img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  border-color: #8C52FF;
+}
+.activity .activity-container article .activity-info-container {
+  border-radius: 0 0 25px 25px;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  background-color: #141010;
+  /* background-color: gray; */
+  z-index: 2;
+  padding: 1rem;
+  width: 248px;
+  box-sizing: border-box;
+  top: 133px;
+  left: 1px;
+}
+.activity .activity-container article .activity-info-container span {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.activity .activity-container article .activity-info-container p {
+  margin: 0;
+  color: #44FFF9;
+}
+.activity .activity-container article .activity-info-container p:first-child {
+  color: #C1FF72;
+}
+.activity .activity-container .read-more {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  color: #C1FF72;
+  text-decoration: none;
 }/*# sourceMappingURL=style.css.map */
