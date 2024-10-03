@@ -369,6 +369,7 @@ body, html {
   align-items: center;
   width: 100%;
   padding: 0 15px;
+  margin-bottom: 100px;
 }
 
 #burger-menu {
@@ -962,11 +963,25 @@ select:focus {
   margin-bottom: 1.5rem;
 }
 
+.welcome {
+  color: #C80E76 !important;
+  font-size: 20px;
+}
+
 .dashboard {
   display: flex;
-  width: 80%;
+  width: 90%;
+  flex-direction: column;
   margin: 0 auto;
   justify-content: space-between;
+  gap: 100px;
+}
+@media (min-width: 592px) {
+  .dashboard {
+    width: 80%;
+    flex-direction: row;
+    gap: 0;
+  }
 }
 .dashboard .delete-btn {
   width: 60px;
@@ -976,7 +991,13 @@ select:focus {
   padding: 5px;
 }
 .dashboard .reservations {
-  width: 15%;
+  width: 100%;
+}
+.dashboard .reservations-container h1 {
+  color: #C1FF72;
+}
+.dashboard .reservations-container p {
+  color: #C1FF72;
 }
 .dashboard .form-container {
   padding: 20px;
@@ -1113,13 +1134,17 @@ select:focus {
   color: #C1FF72;
 }
 
-article {
+.articles-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.articles-container article {
   position: relative;
-  width: 100%;
+  width: 225px;
   margin: 0 auto;
   height: 200px;
 }
-article .article-overlay {
+.articles-container article .article-overlay {
   position: absolute;
   z-index: 2;
   background-color: rgba(0, 0, 0, 0.5);
@@ -1132,10 +1157,10 @@ article .article-overlay {
   bottom: -3px;
   border-radius: 0px 0px 25px 25px;
 }
-article .article-overlay * {
+.articles-container article .article-overlay * {
   margin: 0;
 }
-article img {
+.articles-container article img {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -1144,19 +1169,19 @@ article img {
   border: #C80E76 solid 2px;
   border-radius: 25px;
 }
-article h2 {
+.articles-container article h2 {
   color: #C1FF72;
   font-family: "anchor-web", sans-serif;
   font-size: 30px;
   text-align: left;
 }
-article p {
+.articles-container article p {
   color: #C80E76;
   font-family: "shantell-sans-bouncy", sans-serif;
   font-size: 14px;
   text-align: left;
 }
-article a {
+.articles-container article a {
   color: #C1FF72;
   font-size: 20px;
 }/*# sourceMappingURL=style.css.map */
