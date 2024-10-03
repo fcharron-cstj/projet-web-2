@@ -29,6 +29,7 @@
 
 <nav class="nav-mobile">
     <div class="div-logo-brg">
+        <div></div>
         <p class="logo">NOVA</p>
         <img id="burger-menu" src="{{ asset('medias/list.png') }}" alt="Menu">
     </div>

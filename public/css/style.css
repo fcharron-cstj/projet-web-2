@@ -311,7 +311,9 @@ body, html {
   font-size: 90px;
   color: #44FFF9;
   margin: 0 auto;
-  text-align: center;
+  align-self: center;
+  height: -moz-min-content;
+  height: min-content;
 }
 @media (min-width: 768px) {
   .logo {
@@ -344,7 +346,18 @@ body, html {
 @media (min-width: 768px) {
   .nav-desktop {
     display: flex;
+    align-items: center;
     height: 60px;
+  }
+}
+@media (min-width: 1024px) {
+  .nav-desktop {
+    display: flex;
+  }
+}
+@media (min-width: 1200) {
+  .nav-desktop {
+    height: 70px;
   }
 }
 
@@ -364,9 +377,8 @@ body, html {
 }
 
 .div-logo-brg {
-  display: flex;
-  align-self: flex-start;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   width: 100%;
   padding: 0 15px;
 }
@@ -374,6 +386,8 @@ body, html {
 #burger-menu {
   width: 30px;
   height: auto;
+  align-self: center;
+  justify-self: end;
   margin-right: 20px;
   cursor: pointer;
 }
@@ -420,6 +434,8 @@ body, html {
 }
 
 .nav-links {
+  position: relative;
+  text-decoration: none;
   font-size: 35px;
 }
 @media (min-width: 768px) {
@@ -438,12 +454,6 @@ body, html {
   .nav-links {
     font-size: 40px;
   }
-}
-
-.nav-links {
-  position: relative;
-  font-size: 24px;
-  text-decoration: none;
 }
 
 .nav-links::after {
@@ -617,6 +627,7 @@ body, html {
     display: flex;
     flex-direction: row;
     gap: 25px;
+    margin: 0 35px;
   }
 }
 @media (min-width: 1024px) {
@@ -627,9 +638,10 @@ body, html {
 @media (min-width: 1200px) {
   .tickets #tickets-container {
     gap: 45px;
+    margin: 0 100px;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1920px) {
   .tickets #tickets-container {
     gap: 75px;
     margin: 0 305px;
@@ -722,22 +734,33 @@ body, html {
 .tickets .cart {
   margin: 0 25px;
   align-items: stretch;
+  padding-bottom: 40px;
 }
 @media (min-width: 768px) {
   .tickets .cart {
+    margin: 0 35px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
+    padding-bottom: 75px;
   }
 }
 @media (min-width: 1024px) {
   .tickets .cart {
     margin: 0 165px;
+    padding-bottom: 50px;
   }
 }
 @media (min-width: 1200px) {
   .tickets .cart {
+    padding-bottom: 70px;
+    margin: 0 100px;
+  }
+}
+@media (min-width: 1920px) {
+  .tickets .cart {
+    padding-bottom: 145px;
     margin: 0 305px;
   }
 }
@@ -1098,7 +1121,30 @@ select:focus {
   font-size: 38px;
   color: #C1FF72;
   text-align: center;
-  padding-top: 45px;
+  margin: 0;
+  padding: 40px 0 40px;
+}
+@media (min-width: 768px) {
+  .articles > h2:first-child {
+    padding: 50px 0 30px;
+  }
+}
+@media (min-width: 1024px) {
+  .articles > h2:first-child {
+    padding: 65px 0 50px;
+  }
+}
+@media (min-width: 1200px) {
+  .articles > h2:first-child {
+    padding: 70px 0 50px;
+    font-size: 45px;
+  }
+}
+@media (min-width: 1920px) {
+  .articles > h2:first-child {
+    padding: 110px 0 90px;
+    font-size: 60px;
+  }
 }
 .articles > a {
   display: block;
@@ -1107,33 +1153,41 @@ select:focus {
   margin: 60px auto;
 }
 .articles .article-container {
-  width: 80%;
-  margin: 0 auto;
+  margin: 0 25px;
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 25px;
   height: 100%;
 }
 @media (min-width: 768px) {
   .articles .article-container {
     flex-direction: row;
+    margin: 0 50px;
+    gap: 45px;
   }
 }
 @media (min-width: 1024px) {
   .articles .article-container {
-    width: 70%;
+    margin: 0 160px;
   }
 }
 @media (min-width: 1200px) {
   .articles .article-container {
-    width: 90%;
+    margin: 0 100px;
+    gap: 100px;
+  }
+}
+@media (min-width: 1920px) {
+  .articles .article-container {
+    margin: 0 300px;
+    gap: 185px;
   }
 }
 .articles .article-container article {
   position: relative;
   width: 100%;
-  margin: 0 auto;
   height: 200px;
+  margin: 0;
 }
 @media (min-width: 768px) {
   .articles .article-container article {
@@ -1142,20 +1196,18 @@ select:focus {
 }
 @media (min-width: 1200px) {
   .articles .article-container article {
-    width: 25%;
     height: 430px;
   }
 }
 @media (min-width: 1920px) {
   .articles .article-container article {
-    width: 20%;
     height: 450px;
   }
 }
 .articles .article-container article .article-overlay {
   position: absolute;
   z-index: 2;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.8);
   width: calc(94% + 2px);
   padding: 3%;
   color: #C1FF72;
@@ -1186,6 +1238,31 @@ select:focus {
 }
 .articles .article-container article a {
   color: #C1FF72;
+}
+.articles #btn-see-all-articles {
+  display: flex;
+  justify-content: center;
+  padding: 55px 0 40px;
+}
+@media (min-width: 768px) {
+  .articles #btn-see-all-articles {
+    padding: 40px 0 30px;
+  }
+}
+@media (min-width: 1024px) {
+  .articles #btn-see-all-articles {
+    padding: 60px 0 50px;
+  }
+}
+@media (min-width: 1200px) {
+  .articles #btn-see-all-articles {
+    padding: 60px 0 70px;
+  }
+}
+@media (min-width: 1920px) {
+  .articles #btn-see-all-articles {
+    padding: 105px 0 140px;
+  }
 }
 
 article {
