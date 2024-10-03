@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string("title");
             $table->string("artists");
-            $table->string("hour");
+            $table->date("date");
             $table->string("media");
         });
     }
