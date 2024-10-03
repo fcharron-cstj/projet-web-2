@@ -548,7 +548,6 @@ body, html {
 .tickets {
   display: flex;
   flex-direction: column;
-  height: 680px;
 }
 .tickets h2 {
   color: #C1FF72;
@@ -576,22 +575,6 @@ body, html {
 @media (min-width: 1920px) {
   .tickets h2 {
     font-size: 60px;
-    margin: 100px 0 50px;
-  }
-}
-@media (min-width: 768px) {
-  .tickets {
-    height: 535px;
-  }
-}
-@media (min-width: 1024px) {
-  .tickets {
-    height: 616px;
-  }
-}
-@media (min-width: 1920px) {
-  .tickets {
-    height: 98px;
   }
 }
 .tickets .ticket-option-1 {
@@ -610,23 +593,12 @@ body, html {
   width: 100%;
   border-radius: 16px;
   margin-bottom: 30px;
-  height: 130px;
 }
 .tickets .ticket-option div {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 0px;
-}
-@media (min-width: 768px) {
-  .tickets .ticket-option {
-    height: 160px;
-  }
-}
-@media (min-width: 1200px) {
-  .tickets .ticket-option {
-    height: 225px;
-  }
 }
 .tickets .ticket-option span {
   font-size: 30px;
@@ -639,6 +611,29 @@ body, html {
 .tickets #tickets-container {
   margin: 0 25px;
   align-items: stretch;
+}
+@media (min-width: 768px) {
+  .tickets #tickets-container {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+  }
+}
+@media (min-width: 1024px) {
+  .tickets #tickets-container {
+    margin: 0 165px;
+  }
+}
+@media (min-width: 1200px) {
+  .tickets #tickets-container {
+    gap: 45px;
+  }
+}
+@media (min-width: 1200px) {
+  .tickets #tickets-container {
+    gap: 75px;
+    margin: 0 305px;
+  }
 }
 .tickets .ticket-description {
   font-family: "shantell-sans-bouncy", sans-serif;
@@ -677,6 +672,51 @@ body, html {
 @media (min-width: 1920px) {
   .tickets .ticket-title {
     font-size: 45px;
+  }
+}
+.tickets .lower-ticket-section {
+  margin: 0px 15px;
+  height: 70px;
+}
+.tickets .lower-ticket-section p:first-child {
+  font-family: "shantell-sans-bouncy", sans-serif;
+  font-size: 17px;
+  color: #C1FF72;
+  margin: 0 20px 0 0;
+}
+@media (min-width: 1200px) {
+  .tickets .lower-ticket-section p:first-child {
+    font-size: 20px;
+  }
+}
+@media (min-width: 1024px) {
+  .tickets .lower-ticket-section p:first-child {
+    margin: 0 30px 0 0;
+  }
+}
+@media (min-width: 1920px) {
+  .tickets .lower-ticket-section p:first-child {
+    margin-right: 60px;
+    font-size: 24px;
+  }
+}
+.tickets .lower-ticket-section p:nth-of-type(2) {
+  font-family: "anchor-web", sans-serif;
+  font-size: 35px;
+}
+@media (min-width: 1200px) {
+  .tickets .lower-ticket-section p:nth-of-type(2) {
+    font-size: 38px;
+  }
+}
+@media (min-width: 1920px) {
+  .tickets .lower-ticket-section p:nth-of-type(2) {
+    font-size: 42px;
+  }
+}
+@media (min-width: 1920px) {
+  .tickets span {
+    font-size: 38px !important;
   }
 }
 

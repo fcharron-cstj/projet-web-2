@@ -37,54 +37,54 @@
 
         <section class="tickets">
             <h2 id="tickets">Tickets</h2>
-            <div class="ticket-option-1 ticket-option">
-                <div>
-                    <p>General entry</p>
+            <div id="tickets-container">
+                <div class="ticket-option-1 ticket-option">
                     <div>
-                        <span class="ticket-add" data-option="1">-</span>
-                        <span class="ticket-add" data-option="1">+</span>
+                        <p class="ticket-title">General Entry</p>
+                        <div>
+                            <span class="ticket-add" data-option="1">-</span>
+                            <span class="ticket-count" data-option="1">0</span> <!-- Ticket count -->
+                            <span class="ticket-add" data-option="1">+</span>
+                        </div>
+                    </div>
+                    <div class="lower-ticket-section">
+                        <p>Access to the site and scenes</p>
+                        <p>25$</p>
                     </div>
                 </div>
-                <div>
-                    <p>Access to the site and scenes</p>
-                    <p>25$</p>
-                </div>
-            </div>
-
-            <div class="ticket-option-2 ticket-option">
-                <div>
-                    <p>Da Vinci</p>
+            
+                <div class="ticket-option-2 ticket-option">
                     <div>
-                        <span class="ticket-add" data-option="2">+</span>
-                        <span class="ticket-add" data-option="2">-</span>
+                        <p class="ticket-title">Da Vinci</p>
+                        <div>
+                            <span class="ticket-add" data-option="2">-</span>
+                            <span class="ticket-count" data-option="2">0</span> <!-- Ticket count -->
+                            <span class="ticket-add" data-option="2">+</span>
+                        </div>
+                    </div>
+                    <div class="lower-ticket-section">
+                        <p>Welcome drink, surprise gift</p>
+                        <p>40$</p>
                     </div>
                 </div>
-                <div>
-                    <p>Welcome drink, surprise gift</p>
-                    <p>40$</p>
-                </div>
-            </div>
-
-            <div class="ticket-option-3 ticket-option">
-                <div>
-                    <p>VIP</p>
+            
+                <div class="ticket-option-3 ticket-option">
                     <div>
-                        <span class="ticket-add" data-option="3">+</span>
-                        <span class="ticket-add" data-option="3">-</span>
+                        <p class="ticket-title">VIP</p>
+                        <div>
+                            <span class="ticket-add" data-option="3">-</span>
+                            <span class="ticket-count" data-option="3">0</span> <!-- Ticket count -->
+                            <span class="ticket-add" data-option="3">+</span>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <p>Open bar, Food, Seats in VIP lodge</p>
-                    <p>190$</p>
+                    <div class="lower-ticket-section">
+                        <p>Open bar, Food, Seats in VIP lodge</p>
+                        <p>190$</p>
+                    </div>
                 </div>
             </div>
 
             <div class="cart">
-                <ul class="tickets-total">
-                    <li>General entry 0x</li>
-                    <li>Da Vinci 0x</li>
-                    <li>VIP 0x</li>
-                </ul>
 
                 <p>Total</p>
                 <p class="total-price">0$</p>

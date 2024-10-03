@@ -11,7 +11,7 @@ document.querySelectorAll(".ticket-add").forEach(function (add) {
         event.preventDefault();
         let optionId = parseInt(event.target.getAttribute("data-option"));
         let btn = event.target.innerHTML;
-        
+
         if (btn === "+") {
             updateCart(options[optionId]);
         } else if (btn === "-") {
@@ -28,23 +28,8 @@ function updateCart(option, add = true) {
     add ? totalprice += option[2] : totalprice -= option[2];
     add ? totaltickets[option[1]]++ : totaltickets[option[1]]--;
 
-    document.querySelector(".tickets-total").children[option[1]].innerHTML =
-        option[0] + " " + totaltickets[option[1]] + "x, ";
-
     document.querySelector(".total-price").innerHTML = totalprice + " $";
 
+    // Update the ticket count displayed between the + and - buttons
     document.querySelector(`.ticket-count[data-option="${option[1] + 1}"]`).innerHTML = totaltickets[option[1]];
 }
-
-function scrollToElement(element) {
-    element.scrollIntoView({ behavior: "smooth", block: "start" });
-}
-
-document.querySelector("#buy-tickets").addEventListener(
-    "click",
-    (e) => {
-        e.preventDefault();
-        scrollToElement(document.querySelector(e.target.getAttribute("href")));
-    },
-    true
-);
