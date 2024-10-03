@@ -25,5 +25,11 @@ class ArticleSeeder extends Seeder
             'media' => 'medias/graphiti_artist.jpg',
             'created_by' => 2
         ]);
+        Article::factory()->create([
+            'title' => 'Fire dancers',
+            'description' => 'fire and dancers.. yep!',
+            'media' => 'medias/fire-dancer.webp',
+            'created_by' => 1
+        ]);
     }
 }

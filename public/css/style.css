@@ -1013,6 +1013,103 @@ select:focus {
   color: #C1FF72;
 }
 
-.article article img {
-  width: 400px;
+.articles {
+  background-image: url("/medias/fireworks.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.articles h2 {
+  font-size: 38px;
+  color: #C1FF72;
+  text-align: center;
+  padding-top: 45px;
+}
+.articles a {
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 60px auto;
+}
+
+.article-container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  height: 100%;
+}
+@media (min-width: 768px) {
+  .article-container {
+    flex-direction: row;
+  }
+}
+@media (min-width: 1024px) {
+  .article-container {
+    width: 70%;
+  }
+}
+@media (min-width: 1200px) {
+  .article-container {
+    width: 90%;
+  }
+}
+.article-container article {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  height: 200px;
+}
+@media (min-width: 768px) {
+  .article-container article {
+    height: 330px;
+  }
+}
+@media (min-width: 1200px) {
+  .article-container article {
+    width: 25%;
+    height: 430px;
+  }
+}
+@media (min-width: 1920px) {
+  .article-container article {
+    width: 20%;
+    height: 450px;
+  }
+}
+.article-container article .article-overlay {
+  position: absolute;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: calc(94% + 2px);
+  padding: 3%;
+  color: #C1FF72;
+  display: flex;
+  flex-direction: column;
+  bottom: -3px;
+  border-radius: 0px 0px 25px 25px;
+}
+.article-container article .article-overlay * {
+  margin: 0;
+}
+.article-container article img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: #C80E76 solid 2px;
+  border-radius: 25px;
+}
+.article-container article h3 {
+  color: #C1FF72;
+  font-size: 24px;
+}
+.article-container article p {
+  color: #C80E76;
+  font-family: "shantell-sans-bouncy", sans-serif;
+}
+.article-container article a {
+  color: #C1FF72;
 }/*# sourceMappingURL=style.css.map */

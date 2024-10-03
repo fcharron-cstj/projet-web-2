@@ -85,7 +85,7 @@
                     <li>Da Vinci 0x</li>
                     <li>VIP 0x</li>
                 </ul>
-                
+
                 <p>Total</p>
                 <p class="total-price">0$</p>
 
@@ -117,17 +117,20 @@
             </div>
         </section>
         <section class="articles">
-            @foreach ($articles as $article)
-                <article>
-                    <p>{{ $article->title }}</p>
-                    <p>{{ $article->description }}</p>
-                    <p>{{ $article->date }}</p>
-                    <img src="{{ $article->media }}" alt="media of {{ $article->title }}">
-                    <a href="{{ route('article.show', ['id' => $article->id]) }}">More info</a>
-
-                </article>
-            @endforeach
-            <a href="{{ route('article.index') }}">View all articles</a>
+            <h2>Articles</h2>
+            <div class="article-container">
+                @foreach ($articles as $article)
+                    <article>
+                        <img src="{{ $article->media }}" alt="media of {{ $article->title }}">
+                        <div class="article-overlay">
+                            <h3>{{ $article->title }}</h3>
+                            <p>{{ $article->description }}</p>
+                            <a href="{{ route('article.show', ['id' => $article->id]) }}">Read more</a>
+                        </div>
+                    </article>
+                @endforeach
+            </div>
+            <a href="{{ route('article.index') }}" class="btn-blue-pink">View all articles</a>
         </section>
     </div>
     <x-footer />
