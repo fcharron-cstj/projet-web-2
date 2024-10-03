@@ -17,19 +17,19 @@ class ActivitySeeder extends Seeder
             Activity::factory()->create([
                 'title' => 'Singer',
                 'artists' => 'Meeko',
-                'date' => '2025-04-04',
+                'date' => '2024-10-03 10:51:06',
                 'media' => 'medias/ai-festival-img.webp'
             ]);
             Activity::factory()->create([
                 'title' => 'Singer',
                 'artists' => 'Meeko',
-                'date' => '2025-04-05',
+                'date' => '2024-10-04 21:51:06',
                 'media' => 'medias/ai-festival-img.webp'
             ]);
             Activity::factory()->create([
                 'title' => 'Singer',
                 'artists' => 'Meeko',
-                'date' => '2025-04-06',
+                'date' => '2024-10-05 05:51:06',
                 'media' => 'medias/ai-festival-img.webp'
             ]);
         }
