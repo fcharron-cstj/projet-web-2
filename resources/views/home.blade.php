@@ -52,7 +52,7 @@
                         <p>25$</p>
                     </div>
                 </div>
-            
+
                 <div class="ticket-option-2 ticket-option">
                     <div>
                         <p class="ticket-title">Da Vinci</p>
@@ -67,7 +67,7 @@
                         <p>40$</p>
                     </div>
                 </div>
-            
+
                 <div class="ticket-option-3 ticket-option">
                     <div>
                         <p class="ticket-title">VIP</p>
@@ -85,23 +85,21 @@
             </div>
 
             <div class="cart">
+                <div id="form-tickets">
+                    <!-- Display of success messages -->
+                    @if (session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+                    <!-- Display of error messages -->
+                    @if (session('error'))
+                        <div class="alert alert-danger">
+                            {{ session('error') }}
+                        </div>
+                    @endif
 
-                <p>Total</p>
-                <p class="total-price">0$</p>
-
-                <!-- Display of success messages -->
-                @if (session('success'))
-                    <div class="alert alert-success">
-                        {{ session('success') }}
-                    </div>
-                @endif
-                <!-- Display of error messages -->
-                @if (session('error'))
-                    <div class="alert alert-danger">
-                        {{ session('error') }}
-                    </div>
-                @endif
-                <form action="{{ route('reservation.store') }}" method="POST">
+                    <form action="{{ route('reservation.store') }}" method="POST">
                     @csrf
                     <label for="arrival_date">Arrival Date: </label>
                     <x-forms.error champ="arrival_date" />
@@ -114,6 +112,11 @@
                     <input type="hidden" name="bought_tickets_3" value="" id="bought-tickets-3">
                     <button type="submit">Purchase Tickets</button>
                 </form>
+                </div>
+                <div id="ticket-total">
+                    <p>Total : &nbsp; </p>
+                    <p class="total-price">0$</p>
+                </div>
             </div>
         </section>
         <section class="articles">

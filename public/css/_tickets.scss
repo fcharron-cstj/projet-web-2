@@ -141,4 +141,36 @@
             font-size: 38px!important;
         }
     }
+    .cart {
+        margin: 0 25px;
+        align-items: stretch;
+        @media (min-width: 768px) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
+        }
+        @media (min-width: 1024px) {
+            margin: 0 165px;
+        }
+        @media (min-width: 1200px) {
+
+            margin: 0 305px;
+        }
+        p {
+            color: $green;
+            font-family: $font-secondary;
+            font-size:x-large;
+        }
+        .total-price {
+            color: $blue;
+            font-family: $font-primary;
+            font-size: x-large;
+        }
+
+        #ticket-total {
+            display: flex;
+
+        }
+    }
 }

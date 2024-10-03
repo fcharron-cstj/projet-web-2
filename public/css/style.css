@@ -719,6 +719,41 @@ body, html {
     font-size: 38px !important;
   }
 }
+.tickets .cart {
+  margin: 0 25px;
+  align-items: stretch;
+}
+@media (min-width: 768px) {
+  .tickets .cart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+}
+@media (min-width: 1024px) {
+  .tickets .cart {
+    margin: 0 165px;
+  }
+}
+@media (min-width: 1200px) {
+  .tickets .cart {
+    margin: 0 305px;
+  }
+}
+.tickets .cart p {
+  color: #C1FF72;
+  font-family: "shantell-sans-bouncy", sans-serif;
+  font-size: x-large;
+}
+.tickets .cart .total-price {
+  color: #44FFF9;
+  font-family: "anchor-web", sans-serif;
+  font-size: x-large;
+}
+.tickets .cart #ticket-total {
+  display: flex;
+}
 
 #videoPlayer {
   margin-left: 50vw;
