@@ -4,12 +4,23 @@ namespace App\Http\Controllers;
 
 use App\Models\Artist;
 use App\Models\Activity;
+use App\Models\Day;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class ActivityController extends Controller
 {
+    /**
+     * Displays all the activities
+     */
+    public function index(){
+        return view('activity.index', [
+            "activities" => Activity::all(),
+            "days" => Day::all()
+        ]);
+    }
+
     /**
      * Displays the form for creating a Activity
      *

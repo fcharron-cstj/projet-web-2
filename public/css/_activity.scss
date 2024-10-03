@@ -1,0 +1,94 @@
+.activity {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5rem 35px 0;
+
+    .activity-container {
+        width: 100%;
+        text-align: center;
+
+        h1 {
+            color: $green;
+        }
+
+        #day-of-week {
+            color: $pink;
+            font-family: $font-secondary;
+            margin-bottom: 4px;
+        }
+
+        .day-information {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+
+            p {
+                padding: 0;
+                margin: 0;
+            }
+
+            .day {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                .arrow {
+                    color: $green;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        article {
+            margin-bottom: 1rem;
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                box-sizing: border-box;
+                border-color: $purple;
+            }
+
+            .activity-info-container {
+                border-radius: 0 0 25px 25px;
+                display: flex;
+                justify-content: space-between;
+                position: absolute;
+                background-color: #141010;
+                /* background-color: gray; */
+                z-index: 2;
+                padding: 1rem;
+                width: 248px;
+                box-sizing: border-box;
+                top: 133px;
+                left: 1px;
+
+                span{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+
+                }
+
+                p {
+                    margin: 0;
+                    color: $blue;
+
+                    &:first-child {
+                        color: $green;
+                    }
+                }
+            }
+        }
+
+        .read-more{
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            color: $green;
+            text-decoration: none;
+        }
+    }
+}
