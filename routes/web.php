@@ -38,6 +38,8 @@ Route::get("/logout", [UserController::class, "disconnect"])->name('logout')->mi
 
 Route::get('/activity', [ActivityController::class, 'index'])->name("activity.index")->middleware('guest');
 
+Route::get('/activity/show/{id}', [ActivityController::class, 'show'])->name("activity.show")->middleware('guest');
+
 Route::get('/activity/create', [ActivityController::class, 'create'])->name("activity.create")->middleware(admin::class);
 
 Route::get('/activity/edit/{id}', [ActivityController::class, 'edit'])->name("activity.edit")->middleware(admin::class);
