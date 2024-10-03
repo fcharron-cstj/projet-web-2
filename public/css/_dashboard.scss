@@ -1,8 +1,21 @@
+.welcome {
+    color: $pink !important;
+    font-size: 20px;
+}
 .dashboard {
     display: flex;
-    width: 80%;
+    width: 90%;
+    flex-direction: column;
     margin: 0 auto;
     justify-content: space-between;
+    gap: 100px;
+
+    @media (min-width: 592px) {
+        width: 80%;
+        flex-direction: row;
+        gap: 0;
+    }
+
     .delete-btn {
         width: 60px;
         background-color: red;
@@ -11,7 +24,15 @@
         padding: 5px;
     }
     .reservations {
-        width: 15%;
+        width: 100%;
+    }
+    .reservations-container {
+        h1 {
+            color: $green;
+        }
+        p {
+            color: $green;
+        }
     }
     .form-container {
         padding: 20px;
