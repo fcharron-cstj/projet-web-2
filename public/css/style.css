@@ -381,6 +381,7 @@ body, html {
   grid-template-columns: 1fr 1fr 1fr;
   width: 100%;
   padding: 0 15px;
+  margin-bottom: 100px;
 }
 
 #burger-menu {
@@ -842,6 +843,8 @@ body, html {
 }
 @media (min-width: 768px) {
   #schedule {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     height: 470px;
     padding: 20px 35px;
   }
@@ -923,12 +926,40 @@ body, html {
   }
 }
 
-.changingImg {
+.changing-img-desktop {
+  display: none;
+}
+@media (min-width: 768px) {
+  .changing-img-desktop {
+    display: block;
+    max-height: 30vh;
+  }
+}
+
+.changing-img-mobile {
   max-height: 580px;
 }
 @media (min-width: 768px) {
-  .changingImg {
+  .changing-img-mobile {
     display: none;
+  }
+}
+
+#btn-schedule-mobile {
+  display: block;
+}
+@media (min-width: 768px) {
+  #btn-schedule-mobile {
+    display: none;
+  }
+}
+
+#btn-schedule-desktop {
+  display: none;
+}
+@media (min-width: 768px) {
+  #btn-schedule-desktop {
+    display: flex;
   }
 }
 
@@ -1060,11 +1091,25 @@ select:focus {
   margin-bottom: 1.5rem;
 }
 
+.welcome {
+  color: #C80E76 !important;
+  font-size: 20px;
+}
+
 .dashboard {
   display: flex;
-  width: 80%;
+  width: 90%;
+  flex-direction: column;
   margin: 0 auto;
   justify-content: space-between;
+  gap: 100px;
+}
+@media (min-width: 592px) {
+  .dashboard {
+    width: 80%;
+    flex-direction: row;
+    gap: 0;
+  }
 }
 .dashboard .delete-btn {
   width: 60px;
@@ -1074,7 +1119,13 @@ select:focus {
   padding: 5px;
 }
 .dashboard .reservations {
-  width: 15%;
+  width: 100%;
+}
+.dashboard .reservations-container h1 {
+  color: #C1FF72;
+}
+.dashboard .reservations-container p {
+  color: #C1FF72;
 }
 .dashboard .form-container {
   padding: 20px;
@@ -1159,85 +1210,91 @@ select:focus {
   gap: 25px;
   height: 100%;
 }
-@media (min-width: 768px) {
+@media (min-width: 768px) and (min-width: 768px) {
   .articles .article-container {
     flex-direction: row;
     margin: 0 50px;
     gap: 45px;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 768px) and (min-width: 1024px) {
   .articles .article-container {
     margin: 0 160px;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 768px) and (min-width: 1200px) {
   .articles .article-container {
     margin: 0 100px;
     gap: 100px;
   }
 }
-@media (min-width: 1920px) {
+@media (min-width: 768px) and (min-width: 1920px) {
   .articles .article-container {
     margin: 0 300px;
     gap: 185px;
   }
 }
-.articles .article-container article {
-  position: relative;
-  width: 100%;
-  height: 200px;
-  margin: 0;
-}
 @media (min-width: 768px) {
+  .articles .article-container article {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    margin: 0;
+  }
+}
+@media (min-width: 768px) and (min-width: 768px) and (min-width: 768px) {
   .articles .article-container article {
     height: 330px;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 768px) and (min-width: 768px) and (min-width: 1200px) {
   .articles .article-container article {
     height: 430px;
   }
 }
-@media (min-width: 1920px) {
+@media (min-width: 768px) and (min-width: 768px) and (min-width: 1920px) {
   .articles .article-container article {
     height: 450px;
   }
 }
-.articles .article-container article .article-overlay {
-  position: absolute;
-  z-index: 2;
-  background-color: rgba(0, 0, 0, 0.8);
-  width: calc(94% + 2px);
-  padding: 3%;
-  color: #C1FF72;
-  display: flex;
-  flex-direction: column;
-  bottom: -3px;
-  border-radius: 0px 0px 25px 25px;
+@media (min-width: 768px) and (min-width: 768px) {
+  .articles .article-container article .article-overlay {
+    position: absolute;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: calc(94% + 2px);
+    padding: 3%;
+    color: #C1FF72;
+    display: flex;
+    flex-direction: column;
+    bottom: -3px;
+    border-radius: 0px 0px 25px 25px;
+  }
+  .articles .article-container article .article-overlay * {
+    margin: 0;
+  }
+  .articles .article-container article img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border: #C80E76 solid 2px;
+    border-radius: 25px;
+  }
 }
-.articles .article-container article .article-overlay * {
-  margin: 0;
-}
-.articles .article-container article img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border: #C80E76 solid 2px;
-  border-radius: 25px;
-}
-.articles .article-container article h3 {
-  color: #C1FF72;
-  font-size: 24px;
-}
-.articles .article-container article p {
-  color: #C80E76;
-  font-family: "shantell-sans-bouncy", sans-serif;
-}
-.articles .article-container article a {
-  color: #C1FF72;
+@media (min-width: 768px) and (min-width: 768px) {
+  .articles .article-container article h3 {
+    color: #C1FF72;
+    font-size: 24px;
+  }
+  .articles .article-container article p {
+    color: #C80E76;
+    font-family: "shantell-sans-bouncy", sans-serif;
+  }
+  .articles .article-container article a {
+    color: #C1FF72;
+  }
 }
 .articles #btn-see-all-articles {
   display: flex;
@@ -1391,4 +1448,45 @@ article a {
   margin-bottom: 2rem;
   color: #C1FF72;
   text-decoration: none;
+}
+
+.datepicker-main {
+  color: #C80E76;
+  background-color: #141010;
+}
+.datepicker-main * {
+  font-family: "shantell-sans-bouncy", sans-serif;
+}
+
+.day {
+  background-color: rgb(194, 194, 194);
+}
+
+.datepicker-cell.disabled {
+  color: #858585;
+  background-color: black;
+}
+
+.focused {
+  background-color: rgb(194, 194, 194) !important;
+  color: #C80E76;
+}
+
+.range-start {
+  background-color: rgb(90, 92, 255) !important;
+  color: aqua !important;
+}
+
+.range-end {
+  background-color: rgb(90, 92, 255) !important;
+  color: aqua !important;
+}
+
+.range {
+  background-color: rgb(90, 92, 255) !important;
+  color: aqua !important;
+}
+
+.day :not(.disabled):hover {
+  background-color: white !important;
 }/*# sourceMappingURL=style.css.map */

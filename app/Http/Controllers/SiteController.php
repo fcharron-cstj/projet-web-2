@@ -14,8 +14,8 @@ class SiteController extends Controller
     public function home()
     {
         return view("home", [
-            "days" => Day::with('Activity')->get()->all(),
-            "articles" => Article::get()->all(),
+            "days" => Day::with('Activity')->get(),
+            "articles" => Article::limit(3)->get(),
         ]);
     }
 }

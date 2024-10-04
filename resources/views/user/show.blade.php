@@ -6,7 +6,7 @@
 
 
             <h1>Account</h1>
-            <p>Welcome {{ $user->first_name }} {{ $user->last_name }}</p>
+            <p class="welcome">Welcome {{ $user->first_name }} {{ $user->last_name }}</p>
             <!-- Display of success messages -->
             @if (session('success'))
                 <div class="alert alert-success">
@@ -14,31 +14,32 @@
                 </div>
             @endif
 
-        <div class="form">
-            <form action="{{ route('user.update') }}" method="POST">
-                @csrf
-            <!-- Display of error messages -->
-            @if (session('error'))
-                <div class="alert alert-danger">
-                    {{ session('error') }}
-                </div>
-            @endif
-            <section class="reservations">
-                <h2>Your reservations</h2>
-                @foreach ($reservations as $reservation)
-                    <div class="reservation">
-                        <p>{{ $reservation->package->title }}</p>
-                        <p>{{ $reservation->user->first_name . ' ' . $reservation->user->last_name }}</p>
-                        <p>{{ 'from ' . date('d/m/Y', strtotime($reservation->arrival)) . ' to ' . date('d/m/Y', strtotime($reservation->departing)) }}
-                        </p>
-                        <form action="{{ route('reservation.destroy') }}" method="POST">
-                            @csrf
-                            <input type="hidden" name="id" value="{{ $reservation->id }}">
-                            <input type="submit" value="Delete" class="delete-btn">
-                        </form>
-                    </div>
-                @endforeach
-            </section>
+            <div class="form">
+                <form action="{{ route('user.update') }}" method="POST">
+                    @csrf
+                    <!-- Display of error messages -->
+                    @if (session('error'))
+                        <div class="alert alert-danger">
+                            {{ session('error') }}
+                        </div>
+                    @endif
+                    <section class="reservations">
+                        <h2>Your reservations</h2>
+                        @foreach ($reservations as $reservation)
+                            <div class="reservation">
+                                <p>{{ $reservation->package->title }}</p>
+                                <p>{{ $reservation->user->first_name . ' ' . $reservation->user->last_name }}</p>
+                                <p>{{ 'from ' . date('d/m/Y', strtotime($reservation->arrival)) . ' to ' . date('d/m/Y', strtotime($reservation->departing)) }}
+                                </p>
+                                <form action="{{ route('reservation.destroy') }}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="id" value="{{ $reservation->id }}">
+                                    <input type="submit" value="Delete" class="delete-btn">
+                                </form>
+                            </div>
+                        @endforeach
+                    </section>
+            </div>
         </div>
         <div class="form-container">
             <h2>Update your profile</h2>
@@ -63,24 +64,9 @@
                         value="{{ $user->last_name }}">
 
 
-                <button type="submit">Update</button>
-            </form>
+                    <button type="submit">Update</button>
+                </form>
+            </div>
         </div>
-        <section class="reservations">
-            <h2>Reservations</h2>
-            @foreach ($reservations as $reservation)
-                <div class="reservation">
-                    <p>{{ $reservation->package->title }}</p>
-                    <p>{{ $reservation->user->first_name . ' ' . $reservation->user->last_name }}</p>
-                    <p>{{ 'from ' . date('d/m/Y', strtotime($reservation->arrival)) . ' to ' . date('d/m/Y', strtotime($reservation->departing)) }}
-                    </p>
-                    <form action="{{ route('reservation.destroy') }}" method="POST">
-                        @csrf
-                        <input type="hidden" name="id" value="{{ $reservation->id }}">
-                        <input type="submit" value="Delete">
-                    </form>
-                </div>
-            @endforeach
-        </section>
     </main>
 </x-layout>

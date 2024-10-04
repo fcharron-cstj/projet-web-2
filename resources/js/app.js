@@ -1,1 +1,9 @@
-import './bootstrap';
+import "./bootstrap";
+import "../css/app.css";
+import DateRangePicker from "/node_modules/vanillajs-datepicker/js/DateRangePicker.js";
+const elem = document.getElementById("foo");
+const rangepicker = new DateRangePicker(elem, {
+    minDate: new Date(2025, 3, 4),
+    maxDate: new Date(2025, 3, 6),
+    defaultViewDate: "",
+});

@@ -101,6 +101,11 @@ class UserController extends Controller
      */
     public function show($id)
     {
+        //Verify if the user is the owner of the account
+        if (Auth::user()->id != $id) {
+            return redirect()->route('home');
+        }
+
         return view('user.show', [
             'user' => User::findOrFail($id),
             'reservations' => Reservation::with('Package')->where('user_id', $id)->get()
@@ -113,35 +118,23 @@ class UserController extends Controller
             "id" => "required",
             "first_name" => "required|max:255",
             "last_name" => "required|max:255",
-            "email" => "required|unique:users,email|email",
-            "password" => "required|min:8",
-            "password_confirmation" => "required|same:password"
         ], [
             "id.required" => "The user doesn't exist",
             "first_name.required" => "Full name is required",
             "first_name.max" => "First name must be below :max characters",
             "last_name.required" => "Full name is required",
             "last_name.max" => "Last name must be below :max characters",
-            "email.required" => "Email is required",
-            "email.unique" => "This email is already chosen. Please log-in or choose another email",
-            "email.email" => "Email is incorrect",
-            "password.required" => "The password is required",
-            "password.min" => "Your password must be at least :min characters",
-            "password_confirmation.required" => "Please confirm your password",
-            "password_confirmation.same" => "Password confirmation is incorrect"
         ]);
 
         $user = User::findOrFail($validated['id']);
         $user->first_name = $validated["first_name"];
         $user->last_name = $validated["last_name"];
-        $user->email = $validated["email"];
-        $user->password = Hash::make($validated["password"]);
 
         $user->save();
 
         return redirect()
             ->route('user.show', ['id' => $user->id])
-            ->with('succes_account_modification', "The user " . $user->first_name . " " . $user->last_name . " has been modified");
+            ->with('success', "The user " . $user->first_name . " " . $user->last_name . " has been modified");
     }
 
     /**

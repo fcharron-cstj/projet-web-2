@@ -87,3 +87,7 @@ Route::get('/admin/edit/{id}', [AdministratorController::class, 'edit'])->name("
 Route::post('/admin/update', [AdministratorController::class, 'update'])->name("admin.update")->middleware(admin::class);
 
 Route::post('/admin/destroy', [AdministratorController::class, 'destroy'])->name("admin.destroy")->middleware(admin::class);
+
+Route::get('/test', function () {
+    return view('test');
+});

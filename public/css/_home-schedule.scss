@@ -3,19 +3,21 @@
     width: 100%;
     background-color: $pink;
     padding: 16px 10px;
-    @media (min-width:768px) {
+    @media (min-width: 768px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         height: 470px;
         padding: 20px 35px;
     }
-    @media (min-width:1024px) {
+    @media (min-width: 1024px) {
         height: 540px;
         padding: 55px 160px;
     }
-    @media (min-width:1200px) {
+    @media (min-width: 1200px) {
         height: 615px;
         padding: 35px 100px;
     }
-    @media (min-width:1920px) {
+    @media (min-width: 1920px) {
         height: 975px;
         padding: 100px 300px;
     }
@@ -23,26 +25,26 @@
 
 .title-schedule {
     font-size: 35px;
-    @media (min-width:768px) {
+    @media (min-width: 768px) {
         font-size: 30px;
     }
-    @media (min-width:1200px) {
+    @media (min-width: 1200px) {
         font-size: 35px;
     }
-    @media (min-width:1920px) {
+    @media (min-width: 1920px) {
         font-size: 50px;
     }
 }
 
 .sub-title-schedule {
     font-size: 30px;
-    @media (min-width:768px) {
+    @media (min-width: 768px) {
         font-size: 26px;
     }
-    @media (min-width:1200px) {
+    @media (min-width: 1200px) {
         font-size: 32px;
     }
-    @media (min-width:1920px) {
+    @media (min-width: 1920px) {
         font-size: 40px;
     }
 }
@@ -50,20 +52,42 @@
 .text-schedule {
     font-size: 20px;
     color: $green;
-    @media (min-width:768px) {
+    @media (min-width: 768px) {
         font-size: 18 px;
     }
-    @media (min-width:1200px) {
+    @media (min-width: 1200px) {
         font-size: 25px;
     }
-    @media (min-width:1920px) {
+    @media (min-width: 1920px) {
         font-size: 35px;
     }
 }
 
-.changingImg {
+.changing-img-desktop {
+display: none;
+    @media (min-width: 768px) {
+        display: block;
+        max-height: 30vh; //for dev
+    }
+}
+
+.changing-img-mobile {
     max-height: 580px;
-    @media (min-width:768px) {
+    @media (min-width: 768px) {
         display: none;
+    }
+}
+
+#btn-schedule-mobile {
+    display: block;
+    @media (min-width: 768px) {
+        display: none;
+    }
+}
+
+#btn-schedule-desktop {
+    display: none;
+    @media (min-width: 768px) {
+        display: flex
     }
 }

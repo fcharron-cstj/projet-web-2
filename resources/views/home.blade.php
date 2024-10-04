@@ -16,24 +16,34 @@
 
     <div class="container">
         <section id="schedule">
-            <h1 class="title-schedule">Music & arts festival</h1>
-            <p class="text-schedule">A festival to discover new artists</p>
-            <img src="" alt="">
-            @foreach ($days as $day)
-                <div class="schedule">
-                    <p class="sub-title-schedule">{{ date_format(date_create($day->date), 'w F') }}</p>
-
-                    <p class="text-schedule">
-                        @foreach ($day->Activity as $activity)
-                            {{ $activity->artists . ' -' }}
-                        @endforeach
-                    </p>
+            <div>
+                <h1 class="title-schedule">Music & arts festival</h1>
+                <p class="text-schedule">A festival to discover new artists</p>
+                <img class="changing-img-desktop" src="{{ asset('medias/doodle_artist.jpg') }}" alt="doodle artist img">
+                <div id="btn-schedule-desktop">
+                    <a class="btn-green-pink" href="{{ route('article.index') }}">Articles</a>
+                    <a class="btn-blue-pink" href="#tickets" id="buy-tickets">Buy Tickets</a>
                 </div>
-            @endforeach
-            <a class="btn-green-pink" href="{{ route('article.index') }}">Articles</a>
-            <a class="btn-blue-pink" href="#tickets" id="buy-tickets">Buy Tickets</a>
+            </div>
+            <div>
+                @foreach ($days as $day)
+                    <div class="schedule">
+                        <p class="sub-title-schedule">{{ date_format(date_create($day->date), 'w F') }}</p>
+
+                        <p class="text-schedule">
+                            @foreach ($day->Activity as $activity)
+                                {{ $activity->artists . ' -' }}
+                            @endforeach
+                        </p>
+                    </div>
+                @endforeach
+                <div id="btn-schedule-mobile">
+                    <a class="btn-green-pink" href="{{ route('article.index') }}">Articles</a>
+                    <a class="btn-blue-pink" href="#tickets" id="buy-tickets">Buy Tickets</a>
+                </div>
+            </div>
         </section>
-        <img class="changingImg" src="{{ asset('medias/doodle_artist.jpg') }}" alt="doodle artist img">
+        <img class="changing-img-mobile" src="{{ asset('medias/doodle_artist.jpg') }}" alt="doodle artist img">
 
         <section class="tickets">
             <h2 id="tickets">Tickets</h2>
@@ -139,5 +149,6 @@
         </section>
     </div>
     <x-footer />
-    <script src="{{ asset('js/reservations.js') }}"></script>
+    <script type="module" src="{{ asset('js/reservations.js') }}"></script>
+    @vite('resources/js/app.js')
 </x-layout>
