@@ -110,9 +110,9 @@ Référencement
 
 ## Apport au travail synthèse de chaque membre de l’équipe (qui fait quoi et quand ?) 
 Responsable design : Chloé
-Responsable front-end : Fred
+Responsable front-end/Javascript : Fred
 Responsable back-end : Alex
-Responsable marketing : Eliott
+Responsable marketing : À déterminer
 
 ## Rétroaction globale sur le travail d’équipe (motivation, charge de travail, organisation, problèmes, etc.) 
 Nous avons une bonne dynamique jusqu'à présent. Tout le monde semble motivé. C'est le projet qui marque la fin de notre parcours, et nous avons la chance de bien travailler en équipe. Chacun contribue efficacement, et la charge de travail est répartie de manière équilibrée. Le fait de travailler en classe côte à côte nous aide beaucoup en termes de communication et d'entraide. Pour l'instant, nous n'avons pas rencontré de problèmes majeurs, mais nous savons que maintenir une bonne communication est essentiel pour éviter tout conflit. Notre seul petit tracas est que nous avons tous des manières de travailler différentes, et nous apprenons actuellement, pour la première fois, à ajuster notre travail à celui des autres. Cela nous permet aussi d'apprendre davantage, donc cela nous semble tout à fait convenable.
