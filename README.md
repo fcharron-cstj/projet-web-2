@@ -118,3 +118,5 @@ Responsable front-end/Js : Fred
 Responsable back-end : Alex     
 
 ## Rétroaction globale sur le travail d’équipe (motivation, charge de travail, organisation, problèmes, etc.)  
+
+https://github.com/fcharron-cstj/projet-web-2/blob/master/public/medias/Readme_media/Capture%20d%E2%80%99%C3%A9cran%202024-10-04%20091101.png
