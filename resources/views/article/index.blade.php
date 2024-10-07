@@ -1,5 +1,6 @@
 <x-layout>
     <main>
+        <h1>Articles</h1>
         <section class="articles-list">
             <div class="articles-container">
                 @foreach ($articles as $article)
