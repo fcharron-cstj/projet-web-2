@@ -1477,10 +1477,6 @@ select:focus {
 .activity .activity-container article {
   margin-bottom: 2rem;
 }
-.activity .activity-container article:hover {
-  scale: 1.1;
-  transition: all 0.3s ease-in-out;
-}
 @media (min-width: 1920px) {
   .activity .activity-container article {
     height: 250px;
