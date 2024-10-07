@@ -10,40 +10,36 @@
                             {{ date('l', strtotime($day->date)) }}
                         </p>
                         <div class="activity-day">
-                            <p class="arrow">
+                            <p class="arrow" id="left-arrow"
+                                data-date="{{ date('Y-m-d', strtotime($day->date . ' -1 day')) }}">
                                 &larr;
                             </p>
                             <p>
                                 - {{ date('d', strtotime($day->date)) }} of {{ date('M', strtotime($day->date)) }}
                             </p>
-                            <p class="arrow">
+                            <p class="arrow" id="right-arrow"
+                                data-date="{{ date('Y-m-d', strtotime($day->date . ' +1 day')) }}">
                                 &rarr;
                             </p>
                         </div>
                         @foreach ($activities as $activity)
                             @if (date('d', strtotime($activity->date)) == date('d', strtotime($day->date)))
-                                <a href="{{ route('activity.show', ['id' => $activity->id]) }}">
-                                    <article>
-                                        <img src="{{ $activity->media }}" alt="Media of {{ $activity->artists }}">
-                                        <div class="activity-info-container">
-                                            <span>
-                                                <p>{{ $activity->artists }}</p>
-                                                <p>- {{ $activity->title }}</p>
-                                            </span>
-                                            <p @if ($activity->id % 2 == 0) style="color: #8C52FF" @endif>
-                                                {{ date('H', strtotime($activity->date)) }}h</p>
-                                        </div>
-                                    </article>
-                                </a>
+                                <article>
+                                    <img src="{{ $activity->media }}" alt="Media of {{ $activity->artists }}">
+                                    <div class="activity-info-container">
+                                        <span>
+                                            <p>{{ $activity->artists }}</p>
+                                            <p>- {{ $activity->title }}</p>
+                                        </span>
+                                        <p @if ($activity->id % 2 == 0) style="color: #8C52FF" @endif>
+                                            {{ date('H', strtotime($activity->date)) }}h</p>
+                                    </div>
+                                </article>
                             @endif
                         @endforeach
-                        <a href="#" class="read-more">
-                            Read more about {{ date('l', strtotime($day->date)) }}'s activities
-                        </a>
                     </div>
                 @endforeach
             </div>
-
         </section>
     </main>
 </x-layout>

@@ -777,6 +777,10 @@ html {
   display: flex;
 }
 
+#form-tickets {
+  display: none;
+}
+
 #videoPlayer {
   margin-left: 50vw;
   transform: translate(-50%);
@@ -1195,10 +1199,154 @@ select:focus {
 #article-page h1 {
   color: #C1FF72;
   text-align: center;
+  margin: 0;
+  padding: 40px 0 40px;
 }
-#article-page article {
-  margin: 0 35px 25px 35px;
-  width: auto;
+@media (min-width: 768px) {
+  #article-page h1 {
+    padding: 50px 0 30px;
+  }
+}
+@media (min-width: 1024px) {
+  #article-page h1 {
+    padding: 65px 0 50px;
+  }
+}
+@media (min-width: 1200px) {
+  #article-page h1 {
+    padding: 70px 0 50px;
+    font-size: 45px;
+  }
+}
+@media (min-width: 1920px) {
+  #article-page h1 {
+    padding: 110px 0 90px;
+    font-size: 60px;
+  }
+}
+#article-page > a {
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 60px auto;
+}
+#article-page .article-container {
+  margin: 0 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  height: 100%;
+}
+@media (min-width: 768px) and (min-width: 768px) {
+  #article-page .article-container {
+    flex-direction: row;
+    margin: 0 50px;
+    gap: 45px;
+  }
+}
+@media (min-width: 768px) and (min-width: 1024px) {
+  #article-page .article-container {
+    margin: 0 160px;
+  }
+}
+@media (min-width: 768px) and (min-width: 1200px) {
+  #article-page .article-container {
+    margin: 0 100px;
+    gap: 100px;
+  }
+}
+@media (min-width: 768px) and (min-width: 1920px) {
+  #article-page .article-container {
+    margin: 0 300px;
+    gap: 185px;
+  }
+}
+@media (min-width: 768px) {
+  #article-page .article-container article {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    margin: 0;
+  }
+}
+@media (min-width: 768px) and (min-width: 768px) and (min-width: 768px) {
+  #article-page .article-container article {
+    height: 330px;
+  }
+}
+@media (min-width: 768px) and (min-width: 768px) and (min-width: 1200px) {
+  #article-page .article-container article {
+    height: 430px;
+  }
+}
+@media (min-width: 768px) and (min-width: 768px) and (min-width: 1920px) {
+  #article-page .article-container article {
+    height: 450px;
+  }
+}
+@media (min-width: 768px) and (min-width: 768px) {
+  #article-page .article-container article .article-overlay {
+    position: absolute;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: calc(94% + 2px);
+    padding: 3%;
+    color: #C1FF72;
+    display: flex;
+    flex-direction: column;
+    bottom: -3px;
+    border-radius: 0px 0px 25px 25px;
+  }
+  #article-page .article-container article .article-overlay * {
+    margin: 0;
+  }
+  #article-page .article-container article img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border: #C80E76 solid 2px;
+    border-radius: 25px;
+  }
+}
+@media (min-width: 768px) and (min-width: 768px) {
+  #article-page .article-container article h3 {
+    color: #C1FF72;
+    font-size: 24px;
+  }
+  #article-page .article-container article p {
+    color: #C80E76;
+    font-family: "shantell-sans-bouncy", sans-serif;
+  }
+  #article-page .article-container article a {
+    color: #C1FF72;
+  }
+}
+#article-page #btn-see-all-articles {
+  display: flex;
+  justify-content: center;
+  padding: 55px 0 40px;
+}
+@media (min-width: 768px) {
+  #article-page #btn-see-all-articles {
+    padding: 40px 0 30px;
+  }
+}
+@media (min-width: 1024px) {
+  #article-page #btn-see-all-articles {
+    padding: 60px 0 50px;
+  }
+}
+@media (min-width: 1200px) {
+  #article-page #btn-see-all-articles {
+    padding: 60px 0 70px;
+  }
+}
+@media (min-width: 1920px) {
+  #article-page #btn-see-all-articles {
+    padding: 105px 0 140px;
+  }
 }
 
 .activity {
@@ -1206,6 +1354,7 @@ select:focus {
   flex-direction: column;
   align-items: center;
   margin: 5rem 35px 0;
+  cursor: default;
 }
 @media (min-width: 768px) {
   .activity {
@@ -1284,6 +1433,7 @@ select:focus {
 .activity .activity-container .day-information {
   display: flex;
   flex-direction: column;
+  margin-bottom: 5rem;
 }
 .activity .activity-container .day-information p {
   padding: 0;
@@ -1325,32 +1475,26 @@ select:focus {
     display: none;
   }
 }
-.activity .activity-container a {
-  margin-bottom: 1rem;
+.activity .activity-container article {
+  margin-bottom: 2rem;
 }
-@media (min-width: 1200px) {
-  .activity .activity-container a {
-    margin-bottom: 2rem;
-  }
-}
-@media (min-width: 768px) {
-  .activity .activity-container a article {
-    margin-bottom: 0;
-  }
+.activity .activity-container article:hover {
+  scale: 1.1;
+  transition: all 0.3s ease-in-out;
 }
 @media (min-width: 1920px) {
-  .activity .activity-container a article {
+  .activity .activity-container article {
     height: 250px;
   }
 }
-.activity .activity-container a article img {
+.activity .activity-container article img {
   position: absolute;
   top: 0;
   left: 0;
   box-sizing: border-box;
   border-color: #8C52FF;
 }
-.activity .activity-container a article .activity-info-container {
+.activity .activity-container article .activity-info-container {
   border-radius: 0 0 25px 25px;
   display: flex;
   justify-content: space-between;
@@ -1364,58 +1508,58 @@ select:focus {
   left: 1px;
 }
 @media (min-width: 768px) {
-  .activity .activity-container a article .activity-info-container {
+  .activity .activity-container article .activity-info-container {
     top: 135px;
   }
 }
 @media (min-width: 1200px) {
-  .activity .activity-container a article .activity-info-container {
+  .activity .activity-container article .activity-info-container {
     top: 127px;
   }
 }
 @media (min-width: 1920px) {
-  .activity .activity-container a article .activity-info-container {
-    top: 177px;
+  .activity .activity-container article .activity-info-container {
+    top: 160px;
   }
 }
-.activity .activity-container a article .activity-info-container span {
+.activity .activity-container article .activity-info-container span {
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
-.activity .activity-container a article .activity-info-container p {
+.activity .activity-container article .activity-info-container p {
   color: #44FFF9;
 }
 @media (min-width: 768px) {
-  .activity .activity-container a article .activity-info-container p {
+  .activity .activity-container article .activity-info-container p {
     font-size: 12px;
   }
 }
 @media (min-width: 1200px) {
-  .activity .activity-container a article .activity-info-container p {
+  .activity .activity-container article .activity-info-container p {
     font-size: 1rem;
   }
 }
 @media (min-width: 1920px) {
-  .activity .activity-container a article .activity-info-container p {
+  .activity .activity-container article .activity-info-container p {
     font-size: 24px;
   }
 }
-.activity .activity-container a article .activity-info-container p:first-child {
+.activity .activity-container article .activity-info-container p:first-child {
   color: #C1FF72;
 }
 @media (min-width: 768px) {
-  .activity .activity-container a article .activity-info-container p:first-child {
+  .activity .activity-container article .activity-info-container p:first-child {
     font-size: 14px;
   }
 }
 @media (min-width: 1200px) {
-  .activity .activity-container a article .activity-info-container p:first-child {
+  .activity .activity-container article .activity-info-container p:first-child {
     font-size: 18px;
   }
 }
 @media (min-width: 1920px) {
-  .activity .activity-container a article .activity-info-container p:first-child {
+  .activity .activity-container article .activity-info-container p:first-child {
     font-size: 28px;
   }
 }

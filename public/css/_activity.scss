@@ -3,19 +3,19 @@
     flex-direction: column;
     align-items: center;
     margin: 5rem 35px 0;
+    cursor: default;
 
     @media (min-width: 768px) {
         margin: 0 35px 0;
         max-width: calc(100% - 35px);
-
     }
 
-    @media (min-width: 1024px){
+    @media (min-width: 1024px) {
         max-width: calc(100% - 320px);
         margin: 0 auto;
     }
 
-    @media (min-width: 1200px){
+    @media (min-width: 1200px) {
         max-width: calc(100% - (95px * 2));
     }
 
@@ -29,14 +29,13 @@
             gap: 2rem;
         }
 
-        @media (min-width: 1200px){
+        @media (min-width: 1200px) {
             gap: 4rem;
         }
 
-        @media (min-width: 1920px){
+        @media (min-width: 1920px) {
             max-width: calc(100% - 300px);
         }
-
 
         h1 {
             color: $green;
@@ -45,7 +44,7 @@
                 grid-column: 1/4;
             }
 
-            @media(min-width: 1920px){
+            @media (min-width: 1920px) {
                 font-size: 55px;
             }
         }
@@ -61,11 +60,11 @@
                 font-size: 14px;
             }
 
-            @media (min-width: 1200px){
+            @media (min-width: 1200px) {
                 font-size: 1rem;
             }
 
-            @media (min-width: 1920px){
+            @media (min-width: 1920px) {
                 font-size: 24px;
             }
         }
@@ -73,11 +72,11 @@
         .day-information {
             display: flex;
             flex-direction: column;
+            margin-bottom: 5rem;
 
             p {
                 padding: 0;
                 margin: 0;
-
             }
 
             .activity-day {
@@ -91,15 +90,15 @@
                     border-bottom: 2px solid $green;
                 }
 
-                p{
+                p {
                     @media (min-width: 768px) {
                         font-size: 16px;
                     }
-                    @media (min-width: 1200px){
+                    @media (min-width: 1200px) {
                         font-size: 20px;
                     }
 
-                    @media (min-width: 1920px){
+                    @media (min-width: 1920px) {
                         font-size: 2rem;
                     }
                 }
@@ -114,21 +113,18 @@
                 }
             }
         }
-        a {
-            margin-bottom: 1rem;
-            @media (min-width: 1200px){
-                margin-bottom: 2rem;
-            }
-            article {
 
-                @media (min-width: 768px) {
-                    margin-bottom: 0;
+            article {
+                margin-bottom: 2rem;
+
+                &:hover{
+                    scale: 1.1;
+                    transition: all .3s ease-in-out;
                 }
 
-                @media (min-width: 1920px){
+                @media (min-width: 1920px) {
                     height: 250px;
                 }
-
 
                 img {
                     position: absolute;
@@ -151,16 +147,16 @@
                     top: 133px;
                     left: 1px;
 
-                    @media (min-width: 768px){
+                    @media (min-width: 768px) {
                         top: 135px;
                     }
 
-                    @media (min-width: 1200px){
+                    @media (min-width: 1200px) {
                         top: 127px;
                     }
 
-                    @media (min-width: 1920px){
-                        top: 177px;
+                    @media (min-width: 1920px) {
+                        top: 160px;
                     }
 
                     span {
@@ -172,35 +168,35 @@
                     p {
                         color: $blue;
 
-                        @media (min-width: 768px){
+                        @media (min-width: 768px) {
                             font-size: 12px;
                         }
-                        @media (min-width: 1200px){
+                        @media (min-width: 1200px) {
                             font-size: 1rem;
                         }
 
-                        @media (min-width: 1920px){
+                        @media (min-width: 1920px) {
                             font-size: 24px;
                         }
 
                         &:first-child {
                             color: $green;
-                            @media (min-width: 768px){
+                            @media (min-width: 768px) {
                                 font-size: 14px;
                             }
 
-                            @media (min-width: 1200px){
+                            @media (min-width: 1200px) {
                                 font-size: 18px;
                             }
 
-                            @media (min-width: 1920px){
+                            @media (min-width: 1920px) {
                                 font-size: 28px;
                             }
                         }
                     }
                 }
             }
-        }
+
 
         .read-more {
             display: flex;

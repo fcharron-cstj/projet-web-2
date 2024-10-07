@@ -16,15 +16,13 @@ class ActivityController extends Controller
      */
     public function index(){
         return view('activity.index', [
-            "activities" => Activity::all(),
+            "activities" => Activity::orderBy('date')->get(),
             "days" => Day::all()
         ]);
     }
 
     /**
      * Displays the form for creating a Activity
-     *
-     * Done
      */
     public function create()
     {
@@ -37,8 +35,6 @@ class ActivityController extends Controller
      * Handle the addition of a Activity
      *
      * @param Request $request
-     *
-     * Done
      */
     public function store(Request $request)
     {
