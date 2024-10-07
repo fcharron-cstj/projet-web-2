@@ -750,18 +750,18 @@ body, html {
 @media (min-width: 1024px) {
   .tickets .cart {
     margin: 0 165px;
-    padding-bottom: 50px;
+    padding-bottom: 105px;
   }
 }
 @media (min-width: 1200px) {
   .tickets .cart {
-    padding-bottom: 70px;
+    padding-bottom: 180px;
     margin: 0 100px;
   }
 }
 @media (min-width: 1920px) {
   .tickets .cart {
-    padding-bottom: 145px;
+    padding-bottom: 180px;
     margin: 0 305px;
   }
 }
