@@ -1,4 +1,5 @@
-body,html {
+body,
+html {
     width: 100%;
     max-width: 100%;
     margin: 0;
@@ -15,10 +16,10 @@ body,html {
 .blue-text {
     color: $blue;
 }
-.purple-text{
+.purple-text {
     color: $purple;
-} 
-.pink-text{
+}
+.pink-text {
     color: $pink;
 }
 
