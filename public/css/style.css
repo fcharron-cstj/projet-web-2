@@ -360,6 +360,20 @@ body, html {
     height: 70px;
   }
 }
+.nav-desktop .nav-links::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -1px;
+  width: 0;
+  height: 2px;
+  background-color: currentColor;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+.nav-desktop .nav-links:hover::after {
+  width: 100%;
+  left: 0;
+}
 
 .nav-mobile {
   display: flex;
@@ -381,7 +395,6 @@ body, html {
   grid-template-columns: 1fr 1fr 1fr;
   width: 100%;
   padding: 0 15px;
-  margin-bottom: 100px;
 }
 
 #burger-menu {
@@ -455,22 +468,6 @@ body, html {
   .nav-links {
     font-size: 40px;
   }
-}
-
-.nav-links::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -1px;
-  width: 0;
-  height: 2px;
-  background-color: currentColor;
-  transition: width 0.3s ease, left 0.3s ease;
-}
-
-.nav-links:hover::after {
-  width: 100%;
-  left: 0;
 }
 
 .btn-login-logout {
@@ -1142,7 +1139,7 @@ select:focus {
 }
 .dashboard .delete-btn {
   width: 60px;
-  background-color: red;
+  background-color: #C80E76;
   color: white;
   border: none;
   padding: 5px;
@@ -1351,54 +1348,6 @@ select:focus {
   }
 }
 
-article {
-  position: relative;
-  width: 100%;
-  margin: 0 auto;
-  height: 200px;
-}
-article .article-overlay {
-  position: absolute;
-  z-index: 2;
-  background-color: rgba(0, 0, 0, 0.5);
-  width: calc(94% + 2px);
-  padding: 3%;
-  color: #C1FF72;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  bottom: -3px;
-  border-radius: 0px 0px 25px 25px;
-}
-article .article-overlay * {
-  margin: 0;
-}
-article img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border: #C80E76 solid 2px;
-  border-radius: 25px;
-}
-article h2 {
-  color: #C1FF72;
-  font-family: "anchor-web", sans-serif;
-  font-size: 30px;
-  text-align: left;
-}
-article p {
-  color: #C80E76;
-  font-family: "shantell-sans-bouncy", sans-serif;
-  font-size: 14px;
-  text-align: left;
-}
-article a {
-  color: #C1FF72;
-  font-size: 20px;
-}
-
 .activity {
   display: flex;
   flex-direction: column;
@@ -1518,4 +1467,52 @@ article a {
 
 .day :not(.disabled):hover {
   background-color: white !important;
+}
+
+article {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  height: 200px;
+}
+article .article-overlay {
+  position: absolute;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: calc(94% + 2px);
+  padding: 3%;
+  color: #C1FF72;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  bottom: -3px;
+  border-radius: 0px 0px 25px 25px;
+}
+article .article-overlay * {
+  margin: 0;
+}
+article img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: #C80E76 solid 2px;
+  border-radius: 25px;
+}
+article h2 {
+  color: #C1FF72;
+  font-family: "anchor-web", sans-serif;
+  font-size: 30px;
+  text-align: left;
+}
+article p {
+  color: #C80E76;
+  font-family: "shantell-sans-bouncy", sans-serif;
+  font-size: 14px;
+  text-align: left;
+}
+article a {
+  color: #C1FF72;
+  font-size: 20px;
 }/*# sourceMappingURL=style.css.map */
