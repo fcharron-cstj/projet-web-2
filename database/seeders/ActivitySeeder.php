@@ -13,25 +13,41 @@ class ActivitySeeder extends Seeder
      */
     public function run(): void
     {
+        $hours = rand(0, 23);
+        $minutes = rand(0, 59);
+        $seconds = rand(0, 59);
         for ($i = 0; $i < 12; $i++) {
+
+
             Activity::factory()->create([
                 'title' => 'Singer',
                 'artists' => 'Meeko',
-                'date' => '2024-10-03 10:51:06',
+                'date' => now()->toDateString(). ' ' . $hours . ':' . $minutes . ':' . $seconds,
                 'media' => 'medias/ai-festival-img.webp'
             ]);
+            $hours = rand(0, 23);
+            $minutes = rand(0, 59);
+            $seconds = rand(0, 59);
+
             Activity::factory()->create([
                 'title' => 'Singer',
                 'artists' => 'Meeko',
-                'date' => '2024-10-04 21:51:06',
+                'date' => now()->addDay(1)->toDateString(). ' ' . $hours . ':' . $minutes . ':' . $seconds,
                 'media' => 'medias/ai-festival-img.webp'
             ]);
+            $hours = rand(0, 23);
+            $minutes = rand(0, 59);
+            $seconds = rand(0, 59);
+
             Activity::factory()->create([
                 'title' => 'Singer',
                 'artists' => 'Meeko',
-                'date' => '2024-10-05 05:51:06',
+                'date' => now()->addDay(2)->toDateString(). ' ' . $hours . ':' . $minutes . ':' . $seconds,
                 'media' => 'medias/ai-festival-img.webp'
             ]);
+            $hours = rand(0, 23);
+            $minutes = rand(0, 59);
+            $seconds = rand(0, 59);
         }
     }
 }
