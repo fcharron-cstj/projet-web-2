@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://use.typekit.net/dmc2smn.css">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/css/datepicker-foundation.min.css">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <title>{{ $title ?? 'Nova' }}</title>
 </head>

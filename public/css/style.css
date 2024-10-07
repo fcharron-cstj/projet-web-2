@@ -779,6 +779,10 @@ body, html {
   display: flex;
 }
 
+#form-tickets {
+  display: none;
+}
+
 #videoPlayer {
   margin-left: 50vw;
   transform: translate(-50%);
@@ -1281,6 +1285,7 @@ select:focus {
        object-fit: cover;
     border: #C80E76 solid 2px;
     border-radius: 25px;
+    overflow: hidden;
   }
 }
 @media (min-width: 768px) and (min-width: 768px) {

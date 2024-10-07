@@ -111,19 +111,25 @@
 
                     <form action="{{ route('reservation.store') }}" method="POST">
                         @csrf
-                        <label for="arrival_date">Arrival Date: </label>
-                        <x-forms.error champ="arrival_date" />
-                        <input name="arrival_date" type="date" min="2025-04-04" max="2025-04-06">
-                        <label for="leave_date">Leave Date: </label>
-                        <x-forms.error champ="leave_date" />
-                        <input name="leave_date" type="date" min="2025-04-04" max="2025-04-06">
-                        <input type="hidden" name="bought_tickets_1" value="" id="bought-tickets-1">
-                        <input type="hidden" name="bought_tickets_2" value="" id="bought-tickets-2">
-                        <input type="hidden" name="bought_tickets_3" value="" id="bought-tickets-3">
+
+                        <div id="calendar">
+                            <label for="arrival_date">Arrival Date: </label>
+                            <x-forms.error champ="arrival_date" />
+                            <input type="text" name="arrival_date" autocomplete="off" class="calendar arrival">
+                            <label for="leave_date">Leave Date: </label>
+                            <x-forms.error champ="leave_date" />
+                            <input type="text" name="leave_date" autocomplete="off" class="calendar leave">
+                        </div>
+
+                        <input type="hidden" name="bought_tickets_1" value="0" id="bought-tickets-1">
+                        <input type="hidden" name="bought_tickets_2" value="0" id="bought-tickets-2">
+                        <input type="hidden" name="bought_tickets_3" value="0" id="bought-tickets-3">
                         <button type="submit">Purchase Tickets</button>
                     </form>
                 </div>
                 <div id="ticket-total">
+                    <p class="base-price">Tickets cost : </p>
+                    <p class="extra-price">days extra </p>
                     <p>Total : &nbsp; </p>
                     <p class="total-price">0$</p>
                 </div>

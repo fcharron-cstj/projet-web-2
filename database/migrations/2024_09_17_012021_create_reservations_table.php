@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('reservations', function (Blueprint $table) {
             $table->id();
-            $table->timestamp("arrival")->nullable();
-            $table->timestamp("departing")->nullable();
+            $table->date("arrival")->nullable();
+            $table->date("departing")->nullable();
             $table->foreignId("user_id")->constrained();
             $table->foreignId("package_id")->constrained();
         });
@@ -22,7 +22,7 @@ return new class extends Migration
 
     /**
      * Reverse the migrations.
-     */
+     */ #
     public function down(): void
     {
         //

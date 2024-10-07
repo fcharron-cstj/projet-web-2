@@ -21,7 +21,7 @@
             font-size: 60px;
         }
     }
-    
+
     .ticket-option-1 {
         border: 1px solid $pink;
     }
@@ -75,7 +75,7 @@
             margin: 0 305px;
         }
     }
-     
+
     .ticket-description {
         font-family: $font-secondary;
         font-size: 17px;
@@ -90,7 +90,7 @@
         margin-right: 15px;
         margin-top: 25px;
     }
-    .ticket-title{
+    .ticket-title {
         color: $blue;
         font-size: 35px;
         margin: 10px 15px;
@@ -111,7 +111,7 @@
     .lower-ticket-section {
         margin: 0px 15px;
         height: 70px;
-        p:first-child  {
+        p:first-child {
             font-family: $font-secondary;
             font-size: 17px;
             color: $green;
@@ -140,7 +140,7 @@
     }
     span {
         @media (min-width: 1920px) {
-            font-size: 38px!important;
+            font-size: 38px !important;
         }
     }
     .cart {
@@ -170,7 +170,7 @@
         p {
             color: $green;
             font-family: $font-secondary;
-            font-size:x-large;
+            font-size: x-large;
         }
         .total-price {
             color: $blue;
@@ -180,7 +180,9 @@
 
         #ticket-total {
             display: flex;
-
         }
     }
+}
+#form-tickets {
+    display: none;
 }
