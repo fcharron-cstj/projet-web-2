@@ -1,13 +1,6 @@
-//Homepage
-
-.articles {
-    background-image: url("/medias/fireworks.webp");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-
-    > h2:first-child {
-        font-size: 38px;
+#article-page {
+    margin-top: 100px;
+    h1 {
         color: $green;
         text-align: center;
         margin: 0;
@@ -102,7 +95,6 @@
                         object-fit: cover;
                         border: $pink solid 2px;
                         border-radius: 25px;
-                        overflow: hidden;
 
                         @media (min-width: 768px) {
                         }

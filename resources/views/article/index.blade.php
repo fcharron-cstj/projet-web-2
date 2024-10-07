@@ -1,5 +1,5 @@
 <x-layout>
-    <main>
+    <main id="article-page">
         <h1>Articles</h1>
         <section class="articles-list">
             <div class="articles-container">
@@ -17,4 +17,5 @@
             </div>
         </section>
     </main>
+    <x-footer/>
 </x-layout>
