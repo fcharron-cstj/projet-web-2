@@ -18,7 +18,7 @@
         padding: 35px 150px 35px 100px;
     }
     @media (min-width: 1920px) {
-        padding: 100px 400px 100px 300px;
+        padding: 100px 400px 100px 300px; 
     }
 }
 
@@ -68,16 +68,25 @@
 
 .changing-img-desktop {
 display: none;
+object-fit: cover;
     @media (min-width: 768px) {
         display: block;
-        max-height: 250px;
+        height: 250px;
         width: 65%;
         margin: 22px 0;
+    }
+    @media (min-width: 1200px) {
+        height: 465px;
+    }
+    @media (min-width: 1920px) {
+        height: 490px;
     }
 }
 
 .changing-img-mobile {
-    max-height: 580px;
+    height: 580px;
+    width: 100%;
+    object-fit:cover ;
     @media (min-width: 768px) {
         display: none;
     }
