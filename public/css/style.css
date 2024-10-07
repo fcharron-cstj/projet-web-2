@@ -1616,13 +1616,13 @@ select:focus {
   background-color: white !important;
 }
 
-article {
+.article-container article {
   position: relative;
   width: 100%;
   margin: 0 auto;
   height: 200px;
 }
-article .article-overlay {
+.article-container article .article-overlay {
   position: absolute;
   z-index: 2;
   background-color: rgba(0, 0, 0, 0.5);
@@ -1635,10 +1635,10 @@ article .article-overlay {
   bottom: -3px;
   border-radius: 0px 0px 25px 25px;
 }
-article .article-overlay * {
+.article-container article .article-overlay * {
   margin: 0;
 }
-article img {
+.article-container article img {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -1647,19 +1647,124 @@ article img {
   border: #C80E76 solid 2px;
   border-radius: 25px;
 }
-article h2 {
+.article-container article h2 {
   color: #C1FF72;
   font-family: "anchor-web", sans-serif;
   font-size: 30px;
   text-align: left;
 }
-article p {
+.article-container article p {
   color: #C80E76;
   font-family: "shantell-sans-bouncy", sans-serif;
   font-size: 14px;
   text-align: left;
 }
-article a {
+.article-container article a {
   color: #C1FF72;
   font-size: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+  background-color: #1a1a1a;
+}
+.header a {
+  color: #eaeaea;
+  text-decoration: none;
+  padding: 10px 15px;
+  transition: background-color 0.3s;
+}
+.header a:hover {
+  background-color: #343434;
+}
+
+.admin-panel {
+  font-family: Arial, sans-serif;
+  background-color: #1a1a1a;
+  color: #eaeaea;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.admin-panel section {
+  margin-bottom: 30px;
+}
+.admin-panel section h2 {
+  color: #44fff9;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+.admin-panel section div,
+.admin-panel section article {
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  padding: 15px;
+  margin-bottom: 15px;
+}
+.admin-panel section div p,
+.admin-panel section article p {
+  margin: 5px 0;
+}
+.admin-panel section div a,
+.admin-panel section article a {
+  color: #44fff9;
+  text-decoration: none;
+}
+.admin-panel section div a:hover,
+.admin-panel section article a:hover {
+  text-decoration: underline;
+}
+.admin-panel section div form,
+.admin-panel section article form {
+  margin-top: 10px;
+}
+.admin-panel section div form button,
+.admin-panel section article form button {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.admin-panel section div form button:hover,
+.admin-panel section article form button:hover {
+  background-color: #2275d7;
+}
+.admin-panel .articles-admin {
+  display: none;
+  flex-direction: column;
+}
+.admin-panel .articles-admin .article-admin img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+.admin-panel .schedules-admin {
+  display: none;
+  flex-direction: column;
+}
+.admin-panel .schedules-admin div {
+  padding: 15px;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+.admin-panel .schedules-admin div p {
+  margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+  .admin-panel {
+    padding: 10px;
+  }
+  .admin-panel section {
+    margin-bottom: 20px;
+  }
 }/*# sourceMappingURL=style.css.map */
