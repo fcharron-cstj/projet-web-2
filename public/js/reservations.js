@@ -57,7 +57,6 @@ console.document.querySelectorAll(".day").forEach(function (element) {
     element.addEventListener("click", function () {
         let arrival = document.querySelector(".arrival").value;
         let leave = document.querySelector(".leave").value;
-        console.log(arrival, leave);
     });
 });
 
