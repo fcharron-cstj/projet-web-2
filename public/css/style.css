@@ -930,18 +930,33 @@ body, html {
 
 .changing-img-desktop {
   display: none;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @media (min-width: 768px) {
   .changing-img-desktop {
     display: block;
-    max-height: 250px;
+    height: 250px;
     width: 65%;
     margin: 22px 0;
   }
 }
+@media (min-width: 1200px) {
+  .changing-img-desktop {
+    height: 465px;
+  }
+}
+@media (min-width: 1920px) {
+  .changing-img-desktop {
+    height: 490px;
+  }
+}
 
 .changing-img-mobile {
-  max-height: 580px;
+  height: 580px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @media (min-width: 768px) {
   .changing-img-mobile {

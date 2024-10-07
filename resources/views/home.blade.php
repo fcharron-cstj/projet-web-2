@@ -150,4 +150,5 @@
     </div>
     <x-footer />
     <script src="{{ asset('js/reservations.js') }}"></script>
+    <script src="{{ asset('js/changingImage.js') }}"></script>
 </x-layout>
