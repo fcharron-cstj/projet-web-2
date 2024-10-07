@@ -36,7 +36,7 @@ Route::get("/logout", [UserController::class, "disconnect"])->name('logout')->mi
 
 //Activity
 
-Route::get('/activity', [ActivityController::class, 'index'])->name("activity.index")->middleware('guest');
+Route::get('/activity', [ActivityController::class, 'index'])->name("activity.index");
 
 Route::get('/activity/show/{id}', [ActivityController::class, 'show'])->name("activity.show")->middleware('guest');
 

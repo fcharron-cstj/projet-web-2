@@ -15,10 +15,10 @@
         padding: 55px 160px;
     }
     @media (min-width: 1200px) {
-        padding: 35px 100px;
+        padding: 35px 150px 35px 100px;
     }
     @media (min-width: 1920px) {
-        padding: 100px 300px;
+        padding: 100px 400px 100px 300px;
     }
 }
 
@@ -98,5 +98,8 @@ display: none;
         display: flex;
         justify-content: space-between;
         width: 65%;
+    }
+    @media (min-width: 1200px) {
+        justify-content: space-around;
     }
 }
