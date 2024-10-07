@@ -8,7 +8,7 @@
     </div>
     <div class="div-nav-links">
         <a class="nav-links green-text" href="{{ route('home') }}">Home</a>
-        <a class="nav-links blue-text" href="/#schedule">Festival</a>
+        <a class="nav-links blue-text" href="{{ route('activity.index') }}">Festival</a>
         <a class="nav-links purple-text" href="{{ route('article.index') }}">Articles</a>
         <a class="nav-links pink-text" href="/#footer">Contact</a>
         @auth
@@ -44,7 +44,7 @@
                     class="client-icon" src="{{ asset('medias/person-fill.png') }}" alt="Account"></a>
             @endauth
             <a class="nav-links green-text" href="{{ route('home') }}">Home</a>
-            <a class="nav-links blue-text" href="#schedule">Festival</a>
+            <a class="nav-links blue-text" href="{{ route('activity.index') }}">Festival</a>
             <a class="nav-links purple-text" href="{{ route('article.index') }}">Articles</a>
             <a class="nav-links pink-text" href="#footer">Contact</a>
             @auth

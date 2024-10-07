@@ -17,7 +17,7 @@
     <div class="container">
         <section id="schedule">
             <div>
-                <h1 class="title-schedule">Music & arts festival</h1>
+                <h1 class="title-schedule">Music & arts festival<br>Schedule</h1>
                 <p class="text-schedule">A festival to discover new artists</p>
                 <img class="changing-img-desktop" src="{{ asset('medias/doodle_artist.jpg') }}" alt="doodle artist img">
                 <div id="btn-schedule-desktop">
@@ -149,6 +149,8 @@
         </section>
     </div>
     <x-footer />
+    <script src="{{ asset('js/reservations.js') }}"></script>
+    <script src="{{ asset('js/changingImage.js') }}"></script>
     <script type="module" src="{{ asset('js/reservations.js') }}"></script>
     @vite('resources/js/app.js')
 </x-layout>
