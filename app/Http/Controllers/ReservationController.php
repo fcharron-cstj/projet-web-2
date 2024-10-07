@@ -18,9 +18,9 @@ class ReservationController extends Controller
         $validated = $request->validate([
             "arrival_date" => "required|date",
             "leave_date" => "required|date",
-            "bought_tickets_1" => "required|numeric|max:20",
-            "bought_tickets_2" => "required|numeric|max:20",
-            "bought_tickets_3" => "required|numeric|max:20",
+            "bought_tickets_1" => "required|numeric|max:20|min:0",
+            "bought_tickets_2" => "required|numeric|max:20|min:0",
+            "bought_tickets_3" => "required|numeric|max:20|min:0",
         ], [
             "required" => "Please select a ticket and a date",
             "max" => "You selected too many tickets",
@@ -34,7 +34,7 @@ class ReservationController extends Controller
             if ($value != 0) {
                 for ($i = 0; $i < $value; $i++) {
                     $reservation = new Reservation();
-                    $reservation->arrival = $validated['arrival_date'];
+                    $reservation->arrival = $request->arrival_date;
                     $reservation->departing = $validated['leave_date'];
                     $reservation->package_id = $count;
                     $reservation->user_id = $request->user()->id;
