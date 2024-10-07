@@ -31,5 +31,35 @@ class ArticleSeeder extends Seeder
             'media' => 'medias/fire-dancer.webp',
             'created_by' => 1
         ]);
+        Article::factory()->create([
+            'title' => 'Article title',
+            'description' => 'Article description .dwdsagawgsa ',
+            'media' => 'medias/ai-festival-img.webp',
+            'created_by' => 1
+        ]);
+        Article::factory()->create([
+            'title' => 'Article title',
+            'description' => 'Article description .dwdsagawgsa ',
+            'media' => 'medias/ai-festival-img.webp',
+            'created_by' => 1
+        ]);
+        Article::factory()->create([
+            'title' => 'Article title',
+            'description' => 'Article description .dwdsagawgsa ',
+            'media' => 'medias/ai-festival-img.webp',
+            'created_by' => 1
+        ]);
+        Article::factory()->create([
+            'title' => 'Article title',
+            'description' => 'Article description .dwdsagawgsa ',
+            'media' => 'medias/ai-festival-img.webp',
+            'created_by' => 1
+        ]);
+        Article::factory()->create([
+            'title' => 'Article title',
+            'description' => 'Article description .dwdsagawgsa ',
+            'media' => 'medias/ai-festival-img.webp',
+            'created_by' => 1
+        ]);
     }
 }

@@ -23,19 +23,22 @@
                             </div>
                         </div>
                         @foreach ($activities as $activity)
-                            <a href="{{ route('activity.show', ['id' => $activity->id]) }}">
-                                <article>
-                                    <img src="{{ $activity->media }}" alt="Media of {{ $activity->artists }}">
-                                    <div class="activity-info-container">
-                                        <span>
-                                            <p>{{ $activity->artists }}</p>
-                                            <p>- {{ $activity->title }}</p>
-                                        </span>
-                                        <p @if ($activity->id % 2 == 0) style="color: #8C52FF" @endif>
-                                            {{ date('H', strtotime($activity->date)) }}h</p>
+
+                        @if (date('d', strtotime($activity->date)) == date('d', strtotime($day->date)))
+                        <a href="{{ route('activity.show', ['id' => $activity->id]) }}">
+                            <article>
+                                <img src="{{ $activity->media }}" alt="Media of {{ $activity->artists }}">
+                                <div class="activity-info-container">
+                                    <span>
+                                        <p>{{ $activity->artists }}</p>
+                                        <p>- {{ $activity->title }}</p>
+                                    </span>
+                                    <p @if ($activity->id % 2 == 0) style="color: #8C52FF" @endif>
+                                        {{ date('H', strtotime($activity->date)) }}h</p>
                                     </div>
                                 </article>
                             </a>
+                            @endif
                         @endforeach
                         <a href="#" class="read-more">
                             Read More..
