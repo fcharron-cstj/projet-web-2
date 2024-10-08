@@ -8,11 +8,11 @@
             {{ session('success') }}
         </div>
     @endif
-    <main>
+    <main id="activity-manage">
         <div class="activity-form-container">
             <h2>Create a new activity</h2>
             <div class="form">
-                <form action="{{ route('activity.store') }}" method="POST" class="">
+                <form action="{{ route('activity.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div>
                         <label for="title">Title</label>
@@ -34,7 +34,15 @@
                         <input id="date" name="date" type="date" value="{{ old('date') }}">
                     </div>
 
-                    <div><button type="submit" class="btn-green-pink">Create</button></div>
+                    <div>
+                        <label for="media">Image</label>
+                        <x-forms.error champ="media" />
+                        <input  id="image" name="media" type="file">
+                    </div>
+
+                    <div>
+                        <button type="submit" class="btn-green-pink">Create</button>
+                    </div>
                 </form>
             </div>
         </div>
