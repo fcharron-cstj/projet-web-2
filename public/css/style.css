@@ -1578,9 +1578,13 @@ select:focus {
   margin: 10rem 0 35px;
   width: calc(100% - 35px);
   max-width: 320px;
-  border: 2px solid #44FFF9;
+  border: 1px solid #2b4746;
   border-radius: 10px;
   padding-bottom: 20px;
+  background: rgba(89, 89, 89, 0.14);
+  box-shadow: 0 8px 32px 0 rgba(68, 255, 249, 0.2705882353);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
 }
 #activity-manage .activity-form-container h2 {
   color: #C80E76;
@@ -1613,7 +1617,7 @@ select:focus {
   }
 }
 #activity-manage .activity-form-container form div input {
-  border-radius: 10px;
+  border-radius: 25px;
   color: #8C52FF;
   padding: 4px 10px;
 }
@@ -1719,4 +1723,21 @@ article p {
 article a {
   color: #C1FF72;
   font-size: 20px;
+}
+
+/* Error message */
+.error {
+  padding: 4px 10px;
+  border-radius: 24px;
+  color: #ff005c;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px 0 5px 0;
+}
+.error img {
+  width: 17px;
+  height: 17px;
 }/*# sourceMappingURL=style.css.map */
