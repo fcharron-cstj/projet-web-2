@@ -41,7 +41,9 @@
                             @endif
 
                             @if ($user->role_id == 2)
-                                <div class="user content">
+                                <div class="user content" data-id="{{ $user->id }}"
+                                    data-name="{{ $user->first_name . ' ' . $user->last_name }}"
+                                    data-email="{{ $user->email }}">
                                     <p>{{ $user->first_name }} {{ $user->last_name }}</p>
                                     <p>{{ $user->email }}</p>
                                     <div class="buttons"> <a href="{{ route('admin.edit', ['id' => $user->id]) }}"
@@ -67,7 +69,9 @@
                     </div>
                     <div class="content-container">
                         @foreach ($articles as $article)
-                            <article class="article-admin content">
+                            <article class="article-admin content" article-id="{{ $article->id }}"
+                                data-title="{{ $article->title }}" data-description="{{ $article->description }}"
+                                data-date="{{ $article->date }}">
                                 <p>{{ $article->title }}</p>
                                 <p>{{ $article->description }}</p>
                                 <p>{{ $article->date }}</p>
@@ -93,7 +97,9 @@
                     </div>
                     <div class="content-container">
                         @foreach ($activities as $activity)
-                            <div class="admin-activities content">
+                            <div class="admin-activities content" data-id="{{ $activity->id }}"
+                                data-title="{{ $activity->title }}" data-artists="{{ $activity->artists }}"
+                                data-date="{{ $activity->date }}">
                                 <p>{{ $activity->title }}</p>
                                 <p>{{ $activity->artists }}</p>
                                 <p>{{ date_format(date_create($activity->date), 'H:i:s') }}</p>

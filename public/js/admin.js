@@ -16,7 +16,7 @@ for (let i = 0; i < nav.length; i++) {
 let orderBtn = document.querySelector(".order");
 orderBtn.addEventListener("click", function (e) {
     e.preventDefault();
-    order();
+    order(e);
 });
 
 let sortBtn = document.querySelector(".sort");
@@ -38,19 +38,25 @@ function changeTab(element) {
 function searchFilter() {
     let input = document.getElementById("search");
     let filter = input.value.toUpperCase();
-    let container = document.querySelector(".content-container");
-    let elements = container.children;
+    let containers = document.querySelectorAll(".content-container");
 
-    [...elements].forEach((node) => (node.style.display = "none"));
+    [...containers].forEach((container) => {
+        let elements = container.children;
 
-    let result = [...elements].filter((e) => {
-        return (
-            e.dataset.name.toUpperCase().indexOf(filter) > -1 ||
-            e.dataset.email.toUpperCase().indexOf(filter) > -1
-        );
+        [...elements].forEach((node) => (node.style.display = "none"));
+
+        let result = [...elements].filter((e) => {
+            let resp = false;
+
+            for (d in e.dataset) {
+                if (e.dataset[d].toUpperCase().indexOf(filter) > -1)
+                    resp = e.dataset[d].toUpperCase().indexOf(filter) > -1;
+            }
+            return resp;
+        });
+
+        result.forEach((node) => (node.style.display = "block"));
     });
-
-    result.forEach((node) => (node.style.display = "block"));
 }
 
 function sort() {
@@ -61,9 +67,12 @@ function sort() {
         .sort((a, b) => (a.dataset.id > b.dataset.id ? 1 : -1))
         .forEach((node) => list.appendChild(node));
 }
-function order() {
+function order(e) {
     const lists = document.querySelectorAll(".content-container");
     lists.forEach((list) => {
+        list.classList.contains("list")
+            ? (e.target.src = "/medias/list-icon.png")
+            : (e.target.src = "/medias/grid-icon.png");
         list.classList.toggle("list");
     });
 }
