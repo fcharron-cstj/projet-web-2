@@ -49,8 +49,8 @@ class ActivityController extends Controller
             "title.max" => "The title must have less than :max characters",
             "artists.required" => "Please enter the artist(s)",
             "artist.max" => "Artists must have less than :max characters",
-            "hour.required" => "Please enter the hour",
-            "hour.date" => "The hour must be a valid date format",
+            "hour.required" => "Please select a date and an hour for the activity",
+            "hour.date" => "The hour must be a valid date format (Y-M-D H:M)",
         ]);
 
         $activity = new Activity();
@@ -82,7 +82,7 @@ class ActivityController extends Controller
     public function edit(int $id)
     {
         return view('Activity.edit', [
-            "Activity" => Activity::findOrFail($id),
+            "activity" => Activity::findOrFail($id),
         ]);
     }
 

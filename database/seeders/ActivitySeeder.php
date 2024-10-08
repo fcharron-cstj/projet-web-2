@@ -22,7 +22,7 @@ class ActivitySeeder extends Seeder
             Activity::factory()->create([
                 'title' => 'Singer',
                 'artists' => 'Meeko',
-                'date' => now()->toDateString(). ' ' . $hours . ':' . $minutes . ':' . $seconds,
+                'date' => '2025-04-04'. ' ' . $hours . ':' . $minutes . ':' . $seconds,
                 'media' => 'medias/ai-festival-img.webp'
             ]);
             $hours = rand(0, 23);
@@ -32,7 +32,7 @@ class ActivitySeeder extends Seeder
             Activity::factory()->create([
                 'title' => 'Singer',
                 'artists' => 'Meeko',
-                'date' => now()->addDay(1)->toDateString(). ' ' . $hours . ':' . $minutes . ':' . $seconds,
+                'date' => '2025-04-05'. ' ' . $hours . ':' . $minutes . ':' . $seconds,
                 'media' => 'medias/ai-festival-img.webp'
             ]);
             $hours = rand(0, 23);
@@ -42,7 +42,7 @@ class ActivitySeeder extends Seeder
             Activity::factory()->create([
                 'title' => 'Singer',
                 'artists' => 'Meeko',
-                'date' => now()->addDay(2)->toDateString(). ' ' . $hours . ':' . $minutes . ':' . $seconds,
+                'date' => '2025-04-06'. ' ' . $hours . ':' . $minutes . ':' . $seconds,
                 'media' => 'medias/ai-festival-img.webp'
             ]);
             $hours = rand(0, 23);

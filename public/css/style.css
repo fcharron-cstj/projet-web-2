@@ -1514,23 +1514,74 @@ select:focus {
   text-decoration: none;
 }
 
-.activity-form-container {
+/* Create */
+#activity-manage {
+  display: flex;
+  justify-content: center;
+}
+#activity-manage .activity-form-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 10rem;
+  margin: 10rem 0 35px;
+  width: calc(100% - 35px);
+  max-width: 320px;
+  border: 1px solid #2b4746;
+  border-radius: 10px;
+  padding-bottom: 20px;
+  background: rgba(89, 89, 89, 0.14);
+  box-shadow: 0 8px 32px 0 rgba(68, 255, 249, 0.2705882353);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
 }
-.activity-form-container form {
+#activity-manage .activity-form-container h2 {
+  color: #C80E76;
+  font-size: 28px;
+}
+@media (min-width: 1200px) {
+  #activity-manage .activity-form-container h2 {
+    font-size: 34px;
+  }
+}
+#activity-manage .activity-form-container form {
   display: flex;
   flex-direction: column;
 }
-.activity-form-container form div {
+#activity-manage .activity-form-container form div {
   display: flex;
   flex-direction: column;
   margin-top: 1rem;
 }
-.activity-form-container form div:first-of-type {
+#activity-manage .activity-form-container form div:first-of-type {
   margin-top: 0;
+}
+#activity-manage .activity-form-container form div label {
+  color: #C1FF72;
+  font-size: 24px;
+}
+@media (min-width: 1200px) {
+  #activity-manage .activity-form-container form div label {
+    font-size: 30px;
+  }
+}
+#activity-manage .activity-form-container form div input {
+  border-radius: 25px;
+  color: #8C52FF;
+  padding: 4px 10px;
+}
+#activity-manage .activity-form-container form div button {
+  margin-top: 30px;
+  margin-bottom: 4px;
+}
+@media (min-width: 768px) {
+  #activity-manage .activity-form-container form div button {
+    font-size: 28px;
+  }
+}
+@media (min-width: 1200px) {
+  #activity-manage .activity-form-container form div button {
+    font-size: 34px;
+  }
 }
 
 .datepicker-main {
@@ -1785,14 +1836,34 @@ article a {
   }
 }
 
+/* Error message */
+.error {
+  padding: 4px 10px;
+  border-radius: 24px;
+  color: #ff005c;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px 0 5px 0;
+}
+.error img {
+  width: 17px;
+  height: 17px;
+}
+
 .header {
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 50px;
   background-color: #1a1a1a;
+  margin: 20px 0;
+  border-radius: 5px;
 }
 .header a {
+  border-radius: 10px;
   color: #eaeaea;
   text-decoration: none;
   padding: 10px 15px;
@@ -1803,50 +1874,90 @@ article a {
 }
 
 .admin-panel {
-  font-family: Arial, sans-serif;
-  background-color: #1a1a1a;
+  min-height: calc(100vh - 100px);
+  font-family: "Lexend", sans-serif;
+  background-color: #212121;
   color: #eaeaea;
   margin: 0;
-  display: flex;
-  flex-direction: column;
   padding: 20px;
+}
+@media (min-width: 1200px) {
+  .admin-panel {
+    padding: 0px 10%;
+  }
 }
 .admin-panel section {
   margin-bottom: 30px;
 }
-.admin-panel section h2 {
-  color: #44fff9;
-  margin-bottom: 10px;
-  font-size: 24px;
+.admin-panel section .top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 30px);
+  border-radius: 5px;
+  margin-bottom: 20px;
 }
-.admin-panel section div,
-.admin-panel section article {
+.admin-panel section .top-bar a {
+  color: #44fff9;
+}
+.admin-panel section .content-container {
+  border-radius: 10px;
+  margin: 0;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 220px);
+  gap: 20px;
+  justify-items: center;
+  background-color: #2c2c2c;
+  width: calc(100% - 40px);
+  justify-content: space-around;
+  gap: 80px 20px;
+}
+.admin-panel section h2 {
+  color: #eaeaea;
+  font-size: 24px;
+  margin: 10px;
+}
+.admin-panel section .content {
+  width: 220px;
   background-color: #1a1a1a;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
   padding: 15px;
   margin-bottom: 15px;
+  height: 200px;
+  position: relative;
+  text-wrap: wrap;
 }
-.admin-panel section div p,
-.admin-panel section article p {
+.admin-panel section .content p {
   margin: 5px 0;
 }
-.admin-panel section div a,
-.admin-panel section article a {
+.admin-panel section .content a {
   color: #44fff9;
   text-decoration: none;
 }
-.admin-panel section div a:hover,
-.admin-panel section article a:hover {
+.admin-panel section .content a:hover {
   text-decoration: underline;
 }
-.admin-panel section div form,
-.admin-panel section article form {
-  margin-top: 10px;
+.admin-panel section .content form {
+  margin: 0;
 }
-.admin-panel section div form button,
-.admin-panel section article form button {
-  background-color: #4a90e2;
+.admin-panel section .content .buttons {
+  padding: 4px 0px;
+  position: absolute;
+  left: 0;
+  top: 90%;
+  border-radius: 0px 0px 8px 8px;
+  width: 100%;
+  background-color: #44fff9;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.admin-panel section .content .buttons button,
+.admin-panel section .content .buttons .edit-btn {
+  display: flex;
+  background-color: #44fff9;
   color: white;
   border: none;
   border-radius: 8px;
@@ -1854,38 +1965,27 @@ article a {
   cursor: pointer;
   transition: background-color 0.3s;
 }
-.admin-panel section div form button:hover,
-.admin-panel section article form button:hover {
-  background-color: #2275d7;
+.admin-panel section .content .buttons button img,
+.admin-panel section .content .buttons .edit-btn img {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+}
+.admin-panel section .content .buttons button:hover,
+.admin-panel section .content .buttons .edit-btn:hover {
+  background-color: #ddfffe;
+}
+.admin-panel section .content .buttons a {
+  height: -moz-fit-content;
+  height: fit-content;
 }
 .admin-panel .articles-admin {
-  display: none;
+  background-image: none !important;
+  background-color: rgba(0, 0, 0, 0);
+  display: block;
   flex-direction: column;
 }
 .admin-panel .articles-admin .article-admin img {
   max-width: 100%;
   border-radius: 8px;
-  margin-top: 10px;
-}
-.admin-panel .schedules-admin {
-  display: none;
-  flex-direction: column;
-}
-.admin-panel .schedules-admin div {
-  padding: 15px;
-  background-color: #1a1a1a;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-}
-.admin-panel .schedules-admin div p {
-  margin: 5px 0;
-}
-
-@media (max-width: 768px) {
-  .admin-panel {
-    padding: 10px;
-  }
-  .admin-panel section {
-    margin-bottom: 20px;
-  }
 }/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,17 @@
+/* Error message */
+.error {
+    padding: 4px 10px;
+    border-radius: 24px;
+    color: #ff005c;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    padding: 10px 0 5px 0;
+
+
+    img{
+        width: 17px;
+        height: 17px;
+    }
+}

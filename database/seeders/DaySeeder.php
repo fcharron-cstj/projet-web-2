@@ -15,13 +15,13 @@ class DaySeeder extends Seeder
     public function run(): void
     {
         Day::factory()->create([
-            'date' => now()->format('Y-m-d')
+            'date' => "2025-04-04"
         ]);
         Day::factory()->create([
-            'date' => now()->addDays(1)->format('Y-m-d')
+            'date' => "2025-04-05"
         ]);
         Day::factory()->create([
-            'date' => now()->addDays(2)->format('Y-m-d')
+            'date' => "2025-04-06"
         ]);
     }
 }
