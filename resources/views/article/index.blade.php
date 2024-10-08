@@ -6,7 +6,7 @@
                 @foreach ($articles as $article)
                     <article>
                         <div class="article-overlay">
-                            <h2>{{ $article->title }}</p>
+                            <h2>{{ $article->title }}</h2>
                                 <p>{{ $article->description }}</p>
                                 <p>{{ $article->date }}</p>
                                 <a href="{{ route('article.show', ['id' => $article->id]) }}">Read more</a>

@@ -135,7 +135,7 @@
                 </div>
             </div>
         </section>
-        <section class="articles">
+        <section id="article-home-page" class="articles">
             <h2>Articles</h2>
             <div class="article-container">
                 @foreach ($articles as $article)
