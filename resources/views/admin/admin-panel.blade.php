@@ -8,6 +8,11 @@
                     <a href="#articles">Articles</a>
                     <a href="#activities">Activities</a>
                 </div>
+                <div class="options">
+                    <a href="" class="sort"><img src="{{ asset('medias/sort-icon.png') }}" alt=""></a>
+                    <a href="" class="order"><img src="{{ asset('medias/list-icon.png') }}" alt=""></a>
+                    <input type="text" id="search" onkeyup="searchFilter()" placeholder="Search...">
+                </div>
 
                 <section class="users-admin users">
                     <div class="top-bar">
@@ -17,7 +22,9 @@
                     <div class="content-container">
                         @foreach ($users as $user)
                             @if ($user->role_id == 1)
-                                <div class="admin content">
+                                <div class="admin content" data-id="{{ $user->id }}"
+                                    data-name="{{ $user->first_name . ' ' . $user->last_name }}"
+                                    data-email="{{ $user->email }}">
                                     <p>{{ $user->first_name }} {{ $user->last_name }}</p>
                                     <p>{{ $user->email }}</p>
                                     <div class="buttons"> <a href="{{ route('admin.edit', ['id' => $user->id]) }}"

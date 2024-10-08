@@ -22,3 +22,25 @@ function changeTab(element) {
         }
     });
 }
+function searchFilter() {
+    let input = document.getElementById("search");
+    let filter = input.value.toUpperCase();
+    let container = document.querySelector(".content-container");
+    let elements = container.children;
+
+    [...elements].forEach((node) => (node.style.display = "none"));
+
+    let result = [...elements].filter((e) => {
+        return (
+            e.dataset.name.toUpperCase().indexOf(filter) > -1 ||
+            e.dataset.email.toUpperCase().indexOf(filter) > -1
+        );
+    });
+
+    result.forEach((node) => (node.style.display = "block"));
+}
+const list = document.querySelector(".content-container");
+
+[...list.children]
+    .sort((a, b) => (a.dataset.id > b.dataset.id ? 1 : -1))
+    .forEach((node) => list.appendChild(node));
