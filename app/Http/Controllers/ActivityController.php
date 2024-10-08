@@ -27,7 +27,8 @@ class ActivityController extends Controller
     public function create()
     {
         return view('activity.create', [
-            "activities" => Activity::all()
+            "activities" => Activity::all(),
+            "days" => Day::all()
         ]);
     }
 
