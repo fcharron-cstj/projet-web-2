@@ -82,7 +82,7 @@ class ActivityController extends Controller
     public function edit(int $id)
     {
         return view('Activity.edit', [
-            "Activity" => Activity::findOrFail($id),
+            "activity" => Activity::findOrFail($id),
         ]);
     }
 

@@ -15,7 +15,7 @@
                                 &larr;
                             </p>
                             <p>
-                                - {{ date('d', strtotime($day->date)) }} of {{ date('M', strtotime($day->date)) }}
+                                - {{ date('d', strtotime($day->date)) }} of {{ date('F', strtotime($day->date)) }}
                             </p>
                             <p class="arrow" id="right-arrow"
                                 data-date="{{ date('Y-m-d', strtotime($day->date . ' +1 day')) }}">
@@ -31,7 +31,7 @@
                                             <p>{{ $activity->artists }}</p>
                                             <p>- {{ $activity->title }}</p>
                                         </span>
-                                        <p @if ($activity->id % 2 == 0) style="color: #8C52FF" @endif>
+                                        <p>
                                             {{ date('H', strtotime($activity->date)) }}h</p>
                                     </div>
                                 </article>
