@@ -157,6 +157,7 @@
     <x-footer />
     <script src="{{ asset('js/reservations.js') }}"></script>
     <script src="{{ asset('js/changingImage.js') }}"></script>
+    <script src="{{ asset('js/video.js') }}"></script>
     <script type="module" src="{{ asset('js/reservations.js') }}"></script>
     @vite('resources/js/app.js')
 </x-layout>
