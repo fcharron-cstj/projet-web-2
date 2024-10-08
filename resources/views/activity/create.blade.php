@@ -22,16 +22,16 @@
                     </div>
 
                     <div>
-                        <label for="artist">Artist</label>
-                        <x-forms.error champ="artist" />
-                        <input id="artist" name="artist" type="text" autocomplete="artist"
-                            value="{{ old('artist') }}">
+                        <label for="artists">Artist(s)</label>
+                        <x-forms.error champ="artists" />
+                        <input id="artists" name="artists" type="text" autocomplete="artists"
+                            value="{{ old('artists') }}">
                     </div>
 
                     <div>
-                        <label for="date">Date</label>
-                        <x-forms.error champ="date" />
-                        <input id="date" name="date" type="date" value="{{ old('date') }}">
+                        <label for="hour">Date</label>
+                        <x-forms.error champ="hour" />
+                        <input id="hour" name="hour" type="datetime-local" value="{{ old('hour') }}">
                     </div>
 
                     <div>

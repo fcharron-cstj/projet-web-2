@@ -1,7 +1,8 @@
-@props(["champ"])
+@props(['champ'])
 
 @error($champ)
-    <p>
-        {{$message}}
-    </p>
+    <span class="error">
+        <img src="/medias/error.png" alt="Error">
+        {{ $message }}
+    </span>
 @enderror
