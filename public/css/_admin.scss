@@ -31,11 +31,13 @@ $sidebar-height: 50px;
 }
 
 .options {
+    display: flex;
+    justify-content: space-between;
     * {
         width: 38px;
     }
     #search {
-        width: 100%;
+        width: calc(100% - 140px);
         padding: 10px;
         font-size: 16px;
         border: 2px solid #ccc;

@@ -9,9 +9,9 @@
                     <a href="#activities">Activities</a>
                 </div>
                 <div class="options">
+                    <input type="text" id="search" onkeyup="searchFilter()" placeholder="Search...">
                     <a href="" class="sort"><img src="{{ asset('medias/sort-icon.png') }}" alt=""></a>
                     <a href="" class="order"><img src="{{ asset('medias/list-icon.png') }}" alt=""></a>
-                    <input type="text" id="search" onkeyup="searchFilter()" placeholder="Search...">
                 </div>
 
                 <section class="users-admin users">
