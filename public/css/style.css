@@ -1574,13 +1574,13 @@ select:focus {
   background-color: white !important;
 }
 
-#article-home-page article {
+article {
   position: relative;
   width: 100%;
   margin: 0 auto;
   height: 200px;
 }
-#article-home-page article .article-overlay {
+article .article-overlay {
   position: absolute;
   z-index: 2;
   background-color: rgba(0, 0, 0, 0.8);
@@ -1595,10 +1595,10 @@ select:focus {
   border-left: 2px solid #C80E76;
   border-right: 2px solid #C80E76;
 }
-#article-home-page article .article-overlay * {
+article .article-overlay * {
   margin: 0;
 }
-#article-home-page article img {
+article img {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -1607,29 +1607,31 @@ select:focus {
   border: #C80E76 solid 2px;
   border-radius: 25px;
 }
-#article-home-page article h2 {
+article h2 {
   color: #C1FF72;
   font-family: "anchor-web", sans-serif;
   font-size: 30px;
   text-align: left;
 }
-#article-home-page article p {
+article p {
   color: #C80E76;
   font-family: "shantell-sans-bouncy", sans-serif;
   font-size: 14px;
   text-align: left;
 }
-#article-home-page article a {
+article a {
   color: #C1FF72;
   font-size: 20px;
 }
-#article-home-page .articles {
+
+.articles {
   background-image: url("/medias/fireworks.webp");
+  background-color: rgba(0, 0, 0, 0.3);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
-#article-home-page .articles > h2:first-child {
+.articles > h2:first-child {
   font-size: 38px;
   color: #C1FF72;
   text-align: center;
@@ -1637,34 +1639,34 @@ select:focus {
   padding: 40px 0 40px;
 }
 @media (min-width: 768px) {
-  #article-home-page .articles > h2:first-child {
+  .articles > h2:first-child {
     padding: 50px 0 30px;
   }
 }
 @media (min-width: 1024px) {
-  #article-home-page .articles > h2:first-child {
+  .articles > h2:first-child {
     padding: 65px 0 50px;
   }
 }
 @media (min-width: 1200px) {
-  #article-home-page .articles > h2:first-child {
+  .articles > h2:first-child {
     padding: 70px 0 50px;
     font-size: 45px;
   }
 }
 @media (min-width: 1920px) {
-  #article-home-page .articles > h2:first-child {
+  .articles > h2:first-child {
     padding: 110px 0 90px;
     font-size: 60px;
   }
 }
-#article-home-page .articles > a {
+.articles > a {
   display: block;
   width: -moz-fit-content;
   width: fit-content;
   margin: 60px auto;
 }
-#article-home-page .articles .article-container {
+.articles .article-container {
   margin: 0 25px;
   display: flex;
   flex-direction: column;
@@ -1672,31 +1674,31 @@ select:focus {
   height: 100%;
 }
 @media (min-width: 768px) and (min-width: 768px) {
-  #article-home-page .articles .article-container {
+  .articles .article-container {
     flex-direction: row;
     margin: 0 50px;
     gap: 45px;
   }
 }
 @media (min-width: 768px) and (min-width: 1024px) {
-  #article-home-page .articles .article-container {
+  .articles .article-container {
     margin: 0 160px;
   }
 }
 @media (min-width: 768px) and (min-width: 1200px) {
-  #article-home-page .articles .article-container {
+  .articles .article-container {
     margin: 0 100px;
     gap: 100px;
   }
 }
 @media (min-width: 768px) and (min-width: 1920px) {
-  #article-home-page .articles .article-container {
+  .articles .article-container {
     margin: 0 300px;
     gap: 185px;
   }
 }
 @media (min-width: 768px) {
-  #article-home-page .articles .article-container article {
+  .articles .article-container article {
     position: relative;
     width: 100%;
     height: 200px;
@@ -1704,22 +1706,22 @@ select:focus {
   }
 }
 @media (min-width: 768px) and (min-width: 768px) and (min-width: 768px) {
-  #article-home-page .articles .article-container article {
+  .articles .article-container article {
     height: 330px;
   }
 }
 @media (min-width: 768px) and (min-width: 768px) and (min-width: 1200px) {
-  #article-home-page .articles .article-container article {
+  .articles .article-container article {
     height: 430px;
   }
 }
 @media (min-width: 768px) and (min-width: 768px) and (min-width: 1920px) {
-  #article-home-page .articles .article-container article {
+  .articles .article-container article {
     height: 450px;
   }
 }
 @media (min-width: 768px) and (min-width: 768px) {
-  #article-home-page .articles .article-container article .article-overlay {
+  .articles .article-container article .article-overlay {
     position: absolute;
     z-index: 2;
     background-color: rgba(0, 0, 0, 0.8);
@@ -1731,10 +1733,10 @@ select:focus {
     bottom: -3px;
     border-radius: 0px 0px 25px 25px;
   }
-  #article-home-page .articles .article-container article .article-overlay * {
+  .articles .article-container article .article-overlay * {
     margin: 0;
   }
-  #article-home-page .articles .article-container article img {
+  .articles .article-container article img {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -1745,40 +1747,40 @@ select:focus {
   }
 }
 @media (min-width: 768px) and (min-width: 768px) {
-  #article-home-page .articles .article-container article h3 {
+  .articles .article-container article h3 {
     color: #C1FF72;
     font-size: 24px;
   }
-  #article-home-page .articles .article-container article p {
+  .articles .article-container article p {
     color: #C80E76;
     font-family: "shantell-sans-bouncy", sans-serif;
   }
-  #article-home-page .articles .article-container article a {
+  .articles .article-container article a {
     color: #C1FF72;
   }
 }
-#article-home-page .articles #btn-see-all-articles {
+.articles #btn-see-all-articles {
   display: flex;
   justify-content: center;
   padding: 55px 0 40px;
 }
 @media (min-width: 768px) {
-  #article-home-page .articles #btn-see-all-articles {
+  .articles #btn-see-all-articles {
     padding: 40px 0 30px;
   }
 }
 @media (min-width: 1024px) {
-  #article-home-page .articles #btn-see-all-articles {
+  .articles #btn-see-all-articles {
     padding: 60px 0 50px;
   }
 }
 @media (min-width: 1200px) {
-  #article-home-page .articles #btn-see-all-articles {
+  .articles #btn-see-all-articles {
     padding: 60px 0 70px;
   }
 }
 @media (min-width: 1920px) {
-  #article-home-page .articles #btn-see-all-articles {
+  .articles #btn-see-all-articles {
     padding: 105px 0 140px;
   }
 }
