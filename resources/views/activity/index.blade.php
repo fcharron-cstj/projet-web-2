@@ -23,9 +23,13 @@
                             </p>
                         </div>
                         @foreach ($activities as $activity)
+                       {{--  @if ($activity->id == 37)
+                            @dd($activity->media)
+                        @endif --}}
                             @if (date('d', strtotime($activity->date)) == date('d', strtotime($day->date)))
                                 <article>
-                                    <img src="{{ $activity->media }}" alt="Media of {{ $activity->artists }}">
+
+                                    <img src="{{ $activity->media }}" alt="Media of {{ $activity->title }}">
                                     <div class="activity-info-container">
                                         <span>
                                             <p>{{ $activity->artists }}</p>
