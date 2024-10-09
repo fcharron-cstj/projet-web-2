@@ -42,21 +42,21 @@ class ActivityController extends Controller
         $validated = $request->validate([
             "title" => "required|max:255",
             "artists" => "required|nullable|max:255",
-            "hour" => "required|date",
+            "date" => "required|date",
 
         ], [
             "title.required" => "Please enter the title",
             "title.max" => "The title must have less than :max characters",
             "artists.required" => "Please enter the artist(s)",
             "artist.max" => "Artists must have less than :max characters",
-            "hour.required" => "Please select a date and an hour for the activity",
-            "hour.date" => "The hour must be a valid date format (Y-M-D H:M)",
+            "date.required" => "Please select a date and an hour for the activity",
+            "date.date" => "The date must be a valid date format (Y-M-D H:M)"
         ]);
 
         $activity = new Activity();
         $activity->title = $validated["title"];
         $activity->artists = $validated["artists"];
-        $activity->hour = $validated["hour"];
+        $activity->date = $validated["date"];
 
         if ($request->hasFile('media')) {
 
@@ -64,7 +64,7 @@ class ActivityController extends Controller
 
             $activity->media = "/storage/uploads/" . $request->media->hashName();
         } else {
-            $activity->media = "/public/medias/default-activity.jpg";
+            $activity->media = "medias/ai-festival-img.webp";
         }
 
         $activity->save();
@@ -94,23 +94,25 @@ class ActivityController extends Controller
     public function update(Request $request)
     {
         $validated = $request->validate([
+            "id" => "required",
             "title" => "required|max:255",
             "artists" => "required|nullable|max:255",
-            "hour" => "required|date",
+            "date" => "required|date",
 
         ], [
+            "id.required" => "The activity doesn't exist",
             "title.required" => "Please enter the title",
             "title.max" => "The title must have less than :max characters",
             "artists.required" => "Please enter the artist(s)",
             "artist.max" => "Artists must have less than :max characters",
-            "hour.required" => "Please enter the hour",
-            "hour.date" => "The hour must be a valid date format",
+            "date.required" => "Please select a date and an hour for the activity",
+            "date.date" => "The date must be a valid date format (Y-M-D H:M)"
         ]);
 
         $activity = Activity::findOrFail($validated["id"]);
         $activity->title = $validated["title"];
         $activity->artists = $validated["artists"];
-        $activity->hour = $validated["hour"];
+        $activity->date = $validated["date"];
 
         if ($request->hasFile('media')) {
 
@@ -139,6 +141,6 @@ class ActivityController extends Controller
 
         return redirect()
             ->route('admin.panel')
-            ->with('succes_deleting_Activity', "The Activity has been deleted");
+            ->with('succes', "The Activity has been deleted");
     }
 }
