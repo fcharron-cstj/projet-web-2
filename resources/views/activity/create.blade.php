@@ -29,9 +29,9 @@
                     </div>
 
                     <div>
-                        <label for="hour">Date</label>
-                        <x-forms.error champ="hour" />
-                        <input id="hour" name="hour" type="datetime-local" value="{{ old('hour') }}">
+                        <label for="date">Date</label>
+                        <x-forms.error champ="date" />
+                        <input id="date" name="date" type="datetime-local" value="{{ old('date') }}">
                     </div>
 
                     <div>
