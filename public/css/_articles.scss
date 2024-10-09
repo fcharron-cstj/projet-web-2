@@ -4,7 +4,7 @@
         margin-bottom: 30px;
         color: $green;
         text-align: center;
-        font-size: 30px;
+        font-size: 32px;
 
         @media (min-width: 768px) {
             margin-top: 30px;
@@ -18,8 +18,8 @@
     h2 {
         color: $green;
         font-size: 18px;
-        margin-left: 10px;
-        margin-bottom: 0;
+        /* margin-left: 10px;
+        margin-bottom: 0; */
 
         @media (min-width: 768px) {
             font-size: 30px;
@@ -29,21 +29,18 @@
         }
     }
 
-    .articles-list {
-        width: 100%;
-        padding: 0 35px;
-        gap: 1rem;
+    .article-container {
         display: flex;
         flex-direction: column;
-        .articles-container {
-
-        }
+        padding: 0 35px 30px;
+        gap: 24px;
 
         article {
             height: 170px;
             display: flex;
             align-items: center;
-            margin: 0 35px 20px 35px;
+            border: solid 1px $pink;
+            border-radius: 14px;
 
             @media (min-width: 768px) {
                 display: grid;
@@ -61,52 +58,56 @@
             }
 
             .article-overlay {
-                position: absolute;
-                background-color: rgba(0, 0, 0, 0.8);
-                width: 100%;
-                align-self: flex-end;
+                width: calc(100% - 20px);
+                padding: 10px;
+                border: none;
                 border-radius: 0 0 16px 16px;
+                bottom: 0;
+                div {
+                    padding: 1px;
+                    p {
+                        /* margin-left: 10px; */
+                        font-size: 12px;
+                        font-family: $font-secondary;
+                        color: $pink;
+                        /* margin-top: 5px;
+                        margin-bottom: 10px; */
 
-                p {
-                    margin-left: 10px;
-                    font-family: $font-secondary;
-                    color: $pink;
-                    margin-top: 5px;
-                    margin-bottom: 10px;
+                        @media (min-width: 768px) {
+                            font-size: 15px;
+                        }
 
-                    @media (min-width: 768px) {
-                        font-size: 15px;
+                        @media (min-width: 1200px) {
+                            font-size: 17px;
+                        }
+
+                        @media (min-width: 1920px) {
+                            font-size: 20px;
+                        }
                     }
 
-                    @media (min-width: 1200px) {
-                        font-size: 17px;
-                    }
+                    a {
+                        /* margin: 0 0 10px 10px; */
+                        color: $green;
+                        font-size: 14px;
 
-                    @media (min-width: 1920px) {
-                        font-size: 20px;
-                    }
-                }
+                        @media (min-width: 768px) {
+                            font-size: 20px;
+                        }
 
-                a {
-                    margin: 0 0 10px 10px !important;
-                    color: $green;
-
-                    @media (min-width: 768px) {
-                        font-size: 20px;
-                    }
-
-                    @media (min-width: 1920px) {
-                        font-size: 25px;
+                        @media (min-width: 1920px) {
+                            font-size: 25px;
+                        }
                     }
                 }
             }
 
             img {
-                max-height: 170px;
+                max-height: 100%;
                 width: 100%;
                 object-fit: cover;
                 border-radius: 16px;
-                border: 1px solid $pink;
+                border: none;
             }
         }
     }
