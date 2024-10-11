@@ -8,11 +8,16 @@
                     <a href="#articles">Articles</a>
                     <a href="#activities">Activities</a>
                 </div>
+
                 <div class="options">
                     <input type="text" id="search" onkeyup="searchFilter()" placeholder="Search...">
-                    <a href="" class="sort"><img src="{{ asset('medias/sort-icon.png') }}" alt=""></a>
-                    <form class="sorting-options"></form>
+                    <a href="" class="sort"><img src="{{ asset('medias/sort-icon.png') }}" alt="">
+                    </a>
                     <a href="" class="order"><img src="{{ asset('medias/list-icon.png') }}" alt=""></a>
+                </div>
+                <div class="sort-popout">
+                    <div class="close"> <img src="{{ asset('medias/x-close.svg') }}" alt=""></div>
+                    <form class="sorting-options"></form>
                 </div>
 
                 <section class="users-admin users active">
@@ -101,8 +106,9 @@
                     </div>
                     <div class="content-container">
                         @foreach ($activities as $activity)
-                            <div class="admin-activities content" data-id="{{$activity->id}}" data-title="{{ $activity->title }}"
-                                data-artists="{{ $activity->artists }}" data-date="{{ $activity->date }}">
+                            <div class="admin-activities content" data-id="{{ $activity->id }}"
+                                data-title="{{ $activity->title }}" data-artists="{{ $activity->artists }}"
+                                data-date="{{ $activity->date }}">
                                 <span class="id">{{ $activity->id }}</span>
                                 <p>{{ $activity->title }}</p>
                                 <p>{{ $activity->artists }}</p>
