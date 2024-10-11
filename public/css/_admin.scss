@@ -8,6 +8,8 @@ $border-radius: 8px;
 $shadow: rgba(0, 0, 0, 0.5);
 $sidebar-height: 50px;
 
+
+// Admin Panel Styles
 // Header Styles (Top Sidebar)
 .header {
     display: flex;
@@ -75,7 +77,6 @@ $sidebar-height: 50px;
     scale:1;
 }
 
-// Admin Panel Styles
 .admin-panel {
     min-height: calc(100vh - 100px);
     font-family: "Lexend", sans-serif;

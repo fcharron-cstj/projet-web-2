@@ -1,18 +1,16 @@
-//Homepage
-
-.articles {
+#article-home-page {
     background-image: url("/medias/fireworks.webp");
     background-color: rgba(0, 0, 0, 0.3);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-
-    >h2:first-child {
+    
+    h2:first-child {
         font-size: 38px;
         color: $green;
         text-align: center;
         margin: 0;
-        padding: 40px 0 40px;
+        padding: 90px 0 40px;
 
         @media (min-width: 768px) {
             padding: 50px 0 30px;
@@ -33,12 +31,6 @@
         }
     }
 
-    >a {
-        display: block;
-        width: fit-content;
-        margin: 60px auto;
-    }
-
     .home-article-container {
         margin: 0 25px;
         display: flex;
@@ -47,94 +39,84 @@
         height: 100%;
 
         @media (min-width: 768px) {
-            @media (min-width: 768px) {
-                flex-direction: row;
-                margin: 0 50px;
-                gap: 45px;
-            }
+            flex-direction: row;
+            margin: 0 50px;
+            gap: 45px;
+        }
 
-            @media (min-width: 1024px) {
-                margin: 0 160px;
+        @media (min-width: 1024px) {
+            margin: 0 160px;
+        }
+
+        @media (min-width: 1200px) {
+            margin: 0 100px;
+            gap: 100px;
+        }
+
+        @media (min-width: 1920px) {
+            margin: 0 300px;
+            gap: 185px;
+        }
+
+        article {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            margin: 0;
+            transition: all 0.2s ease-in-out;
+
+            @media (min-width: 768px) {
+                height: 330px;
             }
 
             @media (min-width: 1200px) {
-                margin: 0 100px;
-                gap: 100px;
+                height: 430px;
             }
 
             @media (min-width: 1920px) {
-                margin: 0 300px;
-                gap: 185px;
+                height: 450px;
             }
 
-            article {
-                position: relative;
-                width: 100%;
-                height: 200px;
-                margin: 0;
-                transition: all 0.2s ease-in-out;
+            .article-overlay {
+                position: absolute;
+                left: 2px;
+                z-index: 2;
+                background-color: rgba(0, 0, 0, 0.8);
+                width: 94%;
+                padding: 3%;
+                color: $green;
+                display: flex;
+                flex-direction: column;
+                bottom: -3px;
+                border-radius: 0px 0px 25px 25px;
+                border: none;
 
-                @media (min-width: 768px) {
-                    @media (min-width: 768px) {
-                        height: 330px;
-                    }
-
-                    @media (min-width: 1200px) {
-                        height: 430px;
-                    }
-
-                    @media (min-width: 1920px) {
-                        height: 450px;
-                    }
-
-                    .article-overlay {
-                        position: absolute;
-                        left: 2px;
-                        z-index: 2;
-                        background-color: rgba(0, 0, 0, 0.8);
-                        width: 94%;
-                        padding: 3%;
-                        color: $green;
-                        display: flex;
-                        flex-direction: column;
-                        bottom: -3px;
-                        border-radius: 0px 0px 25px 25px;
-                        border: none;
-
-                        * {
-                            margin: 0;
-                        }
-                    }
-
-                    img {
-                        position: absolute;
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
-                        border-radius: 25px;
-                        border: $pink solid 2px;
-
-                        @media (min-width: 768px) {}
-
-                        @media (min-width: 1200px) {}
-
-                        @media (min-width: 1920px) {}
-                    }
-
-                    h3 {
-                        color: $green;
-                        font-size: 24px;
-                    }
-
-                    p {
-                        color: $pink;
-                        font-family: $font-secondary;
-                    }
-
-                    a {
-                        color: $green;
-                    }
+                * {
+                    margin: 0;
                 }
+            }
+
+            img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 25px;
+                border: $pink solid 2px;
+            }
+
+            h3 {
+                color: $green;
+                font-size: 24px;
+            }
+
+            p {
+                color: $pink;
+                font-family: $font-secondary;
+            }
+
+            a {
+                color: $green;
             }
         }
     }
@@ -164,14 +146,12 @@
     .home-article img:hover {
         border-color: $green;
     }
-
 }
 
 .articles:has(article:hover) article:not(:hover) {
-    filter: blur(2px)
+    filter: blur(1px);
 }
 
 .home-article:hover {
     scale: 1.06;
-
 }
