@@ -67,6 +67,18 @@ article {
 }
 //Homepage
 
+.articles:has(article:hover) article:not(:hover) {
+    filter: blur(2px)
+  }
+.home-article:hover {
+    scale:1.06;
+
+  }
+.home-article img:hover{
+    border-color: $green;
+  }
+
+
 .articles {
     background-image: url("/medias/fireworks.webp");
     background-color: rgba(0, 0, 0, 0.3);
@@ -132,7 +144,7 @@ article {
                 width: 100%;
                 height: 200px;
                 margin: 0;
-
+                transition: all 0.2s ease-in-out;
                 @media (min-width: 768px) {
                     @media (min-width: 768px) {
                         height: 330px;
@@ -148,15 +160,17 @@ article {
 
                     .article-overlay {
                         position: absolute;
+                        left:2px;
                         z-index: 2;
                         background-color: rgba(0, 0, 0, 0.8);
-                        width: calc(94% + 2px);
+                        width: 94%;
                         padding: 3%;
                         color: $green;
                         display: flex;
                         flex-direction: column;
                         bottom: -3px;
                         border-radius: 0px 0px 25px 25px;
+                        border: none;
 
                         * {
                             margin: 0;
@@ -168,7 +182,6 @@ article {
                         width: 100%;
                         height: 100%;
                         object-fit: cover;
-                        border: $pink solid 2px;
                         border-radius: 25px;
 
                         @media (min-width: 768px) {
