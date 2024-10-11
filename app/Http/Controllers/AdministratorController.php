@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Activity;
 use App\Models\Article;
+use App\Models\Role;
 use App\Models\Schedule;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -30,7 +31,9 @@ class AdministratorController extends Controller
      */
     public function create()
     {
-        return view("admin.create");
+        return view("admin.create", [
+            "roles" => Role::all()
+        ]);
     }
 
     /**
@@ -73,7 +76,7 @@ class AdministratorController extends Controller
         $user->save();
 
         return redirect()
-            ->route("admin.index")
+            ->route("admin.panel")
             ->with("success", "Account registration succeeded!");
     }
 
