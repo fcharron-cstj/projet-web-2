@@ -137,7 +137,7 @@
         </section>
         <section id="article-home-page" class="articles">
             <h2>Articles</h2>
-            <div class="article-container">
+            <div class="home-article-container">
                 @foreach ($articles as $article)
                     <article class="home-article">
                         <img src="{{ $article->media }}" alt="media of {{ $article->title }}">
