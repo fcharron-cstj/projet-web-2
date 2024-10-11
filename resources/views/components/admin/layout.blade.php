@@ -12,7 +12,6 @@
 </head>
 
 <body>
-    <x-nav />
     {{ $slot }}
     <script src="{{ asset('js/main.js') }}"></script>
     <script src="{{ asset('js/admin.js') }}"></script>

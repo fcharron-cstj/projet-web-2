@@ -15,13 +15,12 @@
         flex-direction: row;
         gap: 0;
     }
-    .btn-pink-green
-    {
-        margin: 20px;;
+    .btn-pink-green {
+        margin: 20px;
     }
 
     .delete-btn {
-        width: 60px;
+        width: fit-content;
         background-color: $pink;
         color: white;
         border: none;
@@ -39,7 +38,7 @@
         }
     }
     .form-container {
-        height:fit-content;
+        height: fit-content;
         padding: 20px;
         padding-bottom: 60px;
         border: 2px solid $blue;

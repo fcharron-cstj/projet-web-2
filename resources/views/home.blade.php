@@ -115,10 +115,12 @@
                         <div id="calendar">
                             <label for="arrival_date">Arrival Date: </label>
                             <x-forms.error champ="arrival_date" />
-                            <input type="text" name="arrival_date" autocomplete="off" class="calendar arrival">
+                            <input type="text" id="arrival_date" name="arrival_date" autocomplete="off"
+                                class="calendar arrival">
                             <label for="leave_date">Leave Date: </label>
                             <x-forms.error champ="leave_date" />
-                            <input type="text" name="leave_date" autocomplete="off" class="calendar leave">
+                            <input type="text" id="leave_date" name="leave_date" autocomplete="off"
+                                class="calendar leave">
                         </div>
 
                         <input type="hidden" name="bought_tickets_1" value="0" id="bought-tickets-1">
@@ -159,5 +161,5 @@
     <script src="{{ asset('js/changingImage.js') }}"></script>
     <script src="{{ asset('js/video.js') }}"></script>
     <script type="module" src="{{ asset('js/reservations.js') }}"></script>
-    @vite('resources/js/app.js')
+    @vite('resources/js/calendar.js')
 </x-layout>
