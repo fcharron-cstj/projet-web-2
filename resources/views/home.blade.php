@@ -139,7 +139,7 @@
             <h2>Articles</h2>
             <div class="article-container">
                 @foreach ($articles as $article)
-                    <article>
+                    <article class="home-article">
                         <img src="{{ $article->media }}" alt="media of {{ $article->title }}">
                         <div class="article-overlay">
                             <h3>{{ $article->title }}</h3>
