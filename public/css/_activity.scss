@@ -49,30 +49,39 @@
             }
         }
 
-        #day-of-week {
-            color: $pink;
-            font-family: $font-secondary;
-            font-size: 12px;
-            margin-bottom: 4px;
+        .arrow-container{
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            top: 40px;
+            color: $green;
 
-            @media (min-width: 768px) {
-                text-align: start;
-                font-size: 14px;
+            @media(min-width: 768px){
+                display: none;
             }
 
-            @media (min-width: 1200px) {
-                font-size: 1rem;
-            }
+            .arrow {
+                color: $green;
+                cursor: pointer;
 
-            @media (min-width: 1920px) {
-                font-size: 24px;
+                @media (min-width: 768px) {
+                    display: none;
+                }
             }
         }
 
         .day-information {
-            display: flex;
+            display: none;
             flex-direction: column;
             margin-bottom: 5rem;
+
+            @media(min-width: 768px){
+                display: flex;
+            }
+
+            &:nth-of-type(2){
+                display: flex;
+            }
 
             p {
                 padding: 0;
@@ -80,9 +89,9 @@
             }
 
             .activity-day {
-                display: flex;
+                /* display: flex;
                 flex-direction: row;
-                justify-content: space-between;
+                justify-content: center; */
                 margin-bottom: 20px;
 
                 @media (min-width: 768px) {
@@ -90,9 +99,30 @@
                     border-bottom: 2px solid $green;
                 }
 
+                #day-of-week {
+                    color: $pink;
+                    font-family: $font-secondary;
+                    font-size: 12px;
+                    margin-bottom: 4px;
+
+                    @media (min-width: 768px) {
+                        text-align: start;
+                        font-size: 14px;
+                    }
+
+                    @media (min-width: 1200px) {
+                        font-size: 1rem;
+                    }
+
+                    @media (min-width: 1920px) {
+                        font-size: 24px;
+                    }
+                }
+
                 p {
                     @media (min-width: 768px) {
                         font-size: 16px;
+                        text-align: start;
                     }
                     @media (min-width: 1200px) {
                         font-size: 20px;
@@ -103,14 +133,7 @@
                     }
                 }
 
-                .arrow {
-                    color: $green;
-                    cursor: pointer; // Le curseur ne change pas en 320px
 
-                    @media (min-width: 768px) {
-                        display: none;
-                    }
-                }
             }
         }
 
