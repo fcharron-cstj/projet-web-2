@@ -43,7 +43,7 @@
 
     @media (min-width: 1920px) {
         margin: 0 300px;
-        gap: 185px;
+        gap: 60px;
     }
 
     article {
@@ -60,12 +60,7 @@
         @media (min-width: 1200px) {
             height: 340;
         }
-
-        @media (min-width: 1920px) {
-            height: 450px;
-
-        }
-
+        
         &:last-child {
             margin-bottom: 30px;
         }
