@@ -1,7 +1,7 @@
 <x-layout>
     <main id="article-page">
+        <h1>Articles</h1>
         <section class="article-container">
-            <h1>Articles</h1>
             @foreach ($articles as $article)
                 <article>
                     <div class="article-overlay">

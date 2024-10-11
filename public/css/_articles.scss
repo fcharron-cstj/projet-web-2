@@ -1,97 +1,120 @@
-.article-container {
-    h1 {
-        font-size: 38px;
-        color: $green;
-        text-align: center;
-        margin: 0;
-        padding: 100px 0 30px;
-    
-        @media (min-width: 768px) {
-            padding: 50px 0 30px;
-        }
-    
-        @media (min-width: 1024px) {
-            padding: 65px 0 50px;
-        }
-    
-        @media (min-width: 1200px) {
-            padding: 70px 0 50px;
-            font-size: 45px;
-        }
-    
-        @media (min-width: 1920px) {
-            padding: 110px 0 90px;
-            font-size: 60px;
-        }
+h1 {
+    display: flex;
+    color: $green;
+    width: 100%;
+    justify-content: space-around;
+    font-size: 35px;
+    margin: 100px 0 30px;
+    @media (min-width: 768px) {
+        font-size: 38 px;
+        margin: 40px 0 50px;
     }
+    @media (min-width: 1200px) {
+        font-size: 45px;
+        margin-top: 50px;
+    }
+    @media (min-width: 1920px) {
+        font-size: 60px;
+    }
+}
+.article-container {
+    margin: 0 25px;
     display: flex;
     flex-direction: column;
-    padding: 0 35px 30px;
-    gap: 24px;
+    gap: 25px;
+    height: 100%;
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+        margin: 0 50px;
+        gap: 45px;
+    }
+
+    @media (min-width: 1024px) {
+        margin: 0 160px;
+    }
+
+    @media (min-width: 1200px) {
+        margin: 0 100px;
+        gap: 100px;
+    }
+
+    @media (min-width: 1920px) {
+        margin: 0 300px;
+        gap: 185px;
+    }
 
     article {
-        height: 170px;
-        display: flex;
-        align-items: center;
-        border: solid 1px $pink;
-        border-radius: 14px;
+        position: relative;
+        width: 100%;
+        height: 200px;
+        margin: 0;
+        transition: all 0.2s ease-in-out;
 
         @media (min-width: 768px) {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            height: 330px;
+        }
+
+        @media (min-width: 1200px) {
+            height: 430px;
         }
 
         @media (min-width: 1920px) {
-            grid-template-columns: repeat(3, 1fr);
+            height: 450px;
+        }
+
+        &:last-child {
+            margin-bottom: 30px;
         }
 
         .article-overlay {
-            width: calc(100% - 20px);
-            padding: 10px;
-            border-radius: 0 0 16px 16px;
-            bottom: 0;
+            position: absolute;
+            left: 2px;
+            z-index: 2;
+            background-color: rgba(0, 0, 0, 0.8);
+            width: 94%;
+            padding: 3%;
+            color: $green;
+            display: flex;
+            flex-direction: column;
+            bottom: -3px;
+            border-radius: 0px 0px 25px 25px;
+            border: none;
 
-            div {
-                padding: 1px;
-                p {
-                    font-size: 12px;
-                    font-family: $font-secondary;
-                    color: $pink;
+            * {
+                margin: 0;
+            }
 
-                    @media (min-width: 768px) {
-                        font-size: 15px;
-                    }
+            h2 {
+                color: $green;
+                font-size: 24px;
+            }
 
-                    @media (min-width: 1200px) {
-                        font-size: 17px;
-                    }
+            p {
+                color: $pink;
+                font-family: $font-secondary;
+            }
 
-                    @media (min-width: 1920px) {
-                        font-size: 20px;
-                    }
-                }
-
-                a {
-                    color: $green;
-                    font-size: 14px;
-
-                    @media (min-width: 768px) {
-                        font-size: 20px;
-                    }
-
-                    @media (min-width: 1920px) {
-                        font-size: 25px;
-                    }
-                }
+            a {
+                color: $green;
             }
         }
 
         img {
-            max-height: 100%;
+            position: absolute;
             width: 100%;
+            height: 100%;
             object-fit: cover;
-            border-radius: 16px;
-            border: none;
+            border-radius: 25px;
+            border: $pink solid 2px;
         }
     }
+    article:has(article:hover) article:not(:hover) {
+        filter: blur(1px);
+    }
+    
+    .article-container article:hover {
+        scale: 1.06;
+    }
 }
+
