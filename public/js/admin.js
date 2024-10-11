@@ -8,9 +8,10 @@ document.addEventListener("DOMContentLoaded", function (e) {
 });
 
 //TODO: add closing of sorting options
-// document.addEventListener("click", function (e) {
-
-// });
+document.querySelector(".close").addEventListener("click", function (e) {
+    document.querySelector(".sorting-options").classList.toggle("popout");
+    document.querySelector(".close").style.display = "none";
+});
 
 // add click event to each nav item
 
@@ -37,12 +38,14 @@ let sortBtn = document.querySelector(".sort");
 sortBtn.addEventListener("click", function (e) {
     e.preventDefault();
     const sorting_options = document.querySelector(".sorting-options");
+    const collapse_btn = document.querySelector(".close");
 
     let active_tab = document.querySelector(".active");
     let options = active_tab.children.item(1).children.item(0).dataset;
 
     clearSortingOptions();
 
+    collapse_btn.style.display = "block";
     sorting_options.style.display = "flex";
     sorting_options.classList.toggle("popout");
 
@@ -50,21 +53,26 @@ sortBtn.addEventListener("click", function (e) {
         let option_element = document.createElement("input");
         let option_label = document.createElement("label");
         option_label.innerText = option;
+        option_label.style.width = "80%";
         option_element.type = "radio";
         option_element.name = "option";
         option_element.value = option;
         sorting_options.appendChild(option_element);
         sorting_options.appendChild(option_label);
-    };
+    }
 
-    let sorting_options_form = document.querySelectorAll(".sorting-options input[type='radio']");
+    let sorting_options_form = document.querySelectorAll(
+        ".sorting-options input[type='radio']"
+    );
     sorting_options_form.forEach((option) => {
         option.addEventListener("change", function (e) {
             if (option.checked === true) {
                 let chosen_option = option.value;
-                sort(chosen_option, document.querySelector(".active").children.item(1));
+                sort(
+                    chosen_option,
+                    document.querySelector(".active").children.item(1)
+                );
             }
-
         });
     });
 });
@@ -77,8 +85,6 @@ function clearSortingOptions() {
     sorting_options.innerHTML = "";
     sorting_options.style.display = "none";
 }
-
-
 
 /**
  *  Changes the display property of the tab using the name of the nav item clicked
@@ -127,7 +133,6 @@ function searchFilter() {
     });
 }
 
-
 /**
  *  Sorts the content of the admin panel in alphabetic or numerical order from a chosen property
  *
@@ -136,7 +141,7 @@ function searchFilter() {
  */
 function sort(option, active_tab, order = true) {
     [...active_tab.children]
-        .sort((a, b) => eval(a.dataset[option] > b.dataset[option]) ? 1 : -1)
+        .sort((a, b) => (eval(a.dataset[option] > b.dataset[option]) ? 1 : -1))
         .forEach((node) => active_tab.appendChild(node));
 }
 
