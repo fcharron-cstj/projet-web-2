@@ -116,17 +116,23 @@
 
         article {
             margin-bottom: 2rem;
+            position: relative;
+            height: 200px;
 
             @media (min-width: 1920px) {
                 height: 250px;
             }
 
             img {
+                border-radius: 25px;
                 position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
                 top: 0;
                 left: 0;
                 box-sizing: border-box;
-                border-color: $purple;
+                border:2px solid $purple;
             }
 
             .activity-info-container {
@@ -139,7 +145,7 @@
                 padding: 1rem;
                 width: calc(100% - 2px);
                 box-sizing: border-box;
-                top: 133px;
+                bottom: 1px;
                 left: 1px;
 
                 @media (min-width: 768px) {
