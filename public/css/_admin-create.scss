@@ -1,0 +1,85 @@
+/* Create */
+#user-admin-manage {
+    display: flex;
+    justify-content: center;
+
+    .user-admin-form-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 10rem 0 35px;
+        width: calc(100% - 35px);
+        max-width: 320px;
+        border: 1px solid #2b4746;
+        border-radius: 10px;
+        padding-bottom: 20px;
+        background: rgb(89 89 89 / 14%);
+        box-shadow: 0 8px 32px 0 #44fff945;
+        backdrop-filter: blur(4px);
+
+        @media (min-width: 1200px){
+            max-width: 500px;
+        }
+
+        @media (min-width: 1920px){
+            margin-top: 7rem;
+        }
+
+        h2 {
+            color: $pink;
+            font-size: 28px;
+
+            @media (min-width: 1200px) {
+                font-size: 34px;
+                font-size: 48px;
+            }
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+
+            div {
+                display: flex;
+                flex-direction: column;
+                margin-top: 1rem;
+
+                &:first-of-type {
+                    margin-top: 0;
+                }
+
+                label {
+                    color: $green;
+                    font-size: 24px;
+                    @media (min-width: 1200px) {
+                        font-size: 30px;
+                        font-size: 40px;
+                    }
+                }
+
+                input {
+                    border-radius: 25px;
+                    color: $purple;
+                    padding: 4px 10px;
+
+                    @media(min-width: 1200px){
+                        height: 16px;
+                    }
+                }
+
+                button {
+                    margin-top: 30px;
+                    margin-bottom: 4px;
+
+                    @media (min-width: 768px) {
+                        font-size: 28px;
+                    }
+
+                    @media (min-width: 1200px) {
+                        font-size: 34px;
+                    }
+                }
+            }
+        }
+    }
+}
