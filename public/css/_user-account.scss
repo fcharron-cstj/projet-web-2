@@ -15,6 +15,10 @@
         flex-direction: row;
         gap: 0;
     }
+    .btn-pink-green
+    {
+        margin: 20px;;
+    }
 
     .delete-btn {
         width: 60px;
@@ -35,7 +39,9 @@
         }
     }
     .form-container {
+        height:fit-content;
         padding: 20px;
+        padding-bottom: 60px;
         border: 2px solid $blue;
         border-radius: 15px;
         h1,
