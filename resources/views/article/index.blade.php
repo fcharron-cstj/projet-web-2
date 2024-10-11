@@ -1,6 +1,6 @@
 <x-layout>
     <main id="article-page">
-        <h1>Articles</h1>
+        <h1 id="h1-articles">Articles</h1>
         <section class="article-container">
             @foreach ($articles as $article)
                 <article>
