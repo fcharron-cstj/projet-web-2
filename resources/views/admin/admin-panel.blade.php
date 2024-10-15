@@ -37,7 +37,7 @@
                                     <div class="buttons"> <a href="{{ route('admin.edit', ['id' => $user->id]) }}"
                                             class="edit-btn"><img src="{{ asset('medias/admin-edit.svg') }}"
                                                 alt="edit"></a>
-                                        <form action="{{ route('admin.destroy') }}" method="post">
+                                        <form action="{{ route('admin.destroy') }}" method="post" class="delete-btn">
                                             @csrf
                                             <input type="hidden" name="id" value="{{ $user->id }}">
                                             <button type="submit"><img src="{{ asset('medias/admin-trash.svg') }}"
@@ -57,7 +57,7 @@
                                     <div class="buttons"> <a href="{{ route('admin.edit', ['id' => $user->id]) }}"
                                             class="edit-btn"><img src="{{ asset('medias/admin-edit.svg') }}"
                                                 alt="edit"></a>
-                                        <form action="{{ route('admin.destroy') }}" method="post">
+                                        <form action="{{ route('admin.destroy') }}" method="post" class="delete-btn">
                                             @csrf
                                             <input type="hidden" name="id" value="{{ $user->id }}">
                                             <button type="submit"><img src="{{ asset('medias/admin-trash.svg') }}"
@@ -87,7 +87,7 @@
                                 <div class="buttons"> <a href="{{ route('article.edit', ['id' => $article->id]) }}"
                                         class="edit-btn"><img src="{{ asset('medias/admin-edit.svg') }}"
                                             alt="edit"></a>
-                                    <form action="{{ route('article.destroy') }}" method="post">
+                                    <form action="{{ route('article.destroy') }}" method="post" class="delete-btn">
                                         @csrf
                                         <input type="hidden" name="id" value="{{ $article->id }}">
                                         <button type="submit"><img src="{{ asset('medias/admin-trash.svg') }}"
@@ -118,7 +118,8 @@
                                     <a href="{{ route('activity.edit', ['id' => $activity->id]) }}"
                                         class="edit-btn"><img src="{{ asset('medias/admin-edit.svg') }}"
                                             alt="edit"></a>
-                                    <form action="{{ route('activity.destroy') }}" method="post">
+                                    <form action="{{ route('activity.destroy') }}" method="post"
+                                        class="delete-btn">
                                         @csrf
                                         <input type="hidden" name="id" value="{{ $activity->id }}">
                                         <button type="submit"><img src="{{ asset('medias/admin-trash.svg') }}"
@@ -132,5 +133,7 @@
                 </section>
             </div>
         </div>
+        @vite('resources/js/alert_window.js')
+
     </x-admin.layout>
 </main>

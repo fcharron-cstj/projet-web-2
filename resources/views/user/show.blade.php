@@ -68,5 +68,5 @@
             </div>
         </div>
     </main>
+    @vite('resources/js/alert_window.js')
 </x-layout>
-@vite('resources/js/alert_window.js')
