@@ -4,7 +4,6 @@
     <main class="dashboard">
         <div class="reservations-container">
 
-
             <h1>Account</h1>
             <p class="welcome">Welcome {{ $user->first_name }} {{ $user->last_name }}</p>
             <!-- Display of success messages -->
@@ -70,3 +69,4 @@
         </div>
     </main>
 </x-layout>
+@vite('resources/js/alert_window.js')
