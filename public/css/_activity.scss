@@ -319,8 +319,10 @@
 
 
 .activity-item {
-    opacity: 0.1;
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    @media (min-width: 768px) {      
+        opacity: 0.1;
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
 }
 
 .activity-item.visible {
