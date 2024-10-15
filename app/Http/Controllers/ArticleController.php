@@ -47,13 +47,10 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //TODO add validation for last_edited and created_by | Maybe remove both section if using timestamp
         $validated = $request->validate([
             "title" => "required|max:255",
             "description" => "required|max:499",
-            "media" => "nullable|mimes:png,jpg,jpeg,webp"
-            /* "last_edited" => "required",
-            "created_by" => "required|max:255" */
+            "media" => "required|mimes:png,jpg,jpeg,webp"
         ], [
             "title.required" => "The title is required",
             "title.max" => "The title must have a maximum of :max characters",
@@ -66,18 +63,14 @@ class ArticleController extends Controller
         $article = new Article();
         $article->title = $validated["title"];
         $article->description = $validated["description"];
-
-        if ($request->hasFile('media')) {
-
-            Storage::putFile('public/uploads', $request->media);
-
-            $article->media = "/storage/uploads/" . $request->media->hashName();
-        }
+        Storage::putFile('public/uploads', $request->media);
+        $article->media = "/storage/uploads/" . $request->media->hashName();
+        $article->created_by = auth()->user()->id;
 
         $article->save();
 
         return redirect()
-            ->route('adminPanel')
+            ->route('admin.panel')
             ->with('success', "Article added successfully");
     }
 
@@ -98,14 +91,11 @@ class ArticleController extends Controller
      * @param Request $request
      */
     public function update(Request $request) {
-        //TODO add validation for last_edited and created_by | Maybe remove both section if using timestamp
         $validated = $request->validate([
             "id" => "required",
             "title" => "required|max:255",
             "description" => "required|max:499",
-            "media" => "nullable|mimes:png,jpg,jpeg,webp"
-            /* "last_edited" => "required",
-            "created_by" => "required|max:255" */
+            "media" => "required|mimes:png,jpg,jpeg,webp"
         ], [
             "id.required" => "The article doesn't exist",
             "title.required" => "The title is required",
@@ -120,18 +110,14 @@ class ArticleController extends Controller
         $article->title = $validated["title"];
         $article->description = $validated["description"];
 
-        if ($request->hasFile('media')) {
-
-            Storage::putFile('public/uploads', $request->media);
-
-            $article->media = "/storage/uploads/" . $request->media->hashName();
-        }
+        Storage::putFile('public/uploads', $request->media);
+        $article->media = "/storage/uploads/" . $request->media->hashName();
 
         $article->save();
 
         return redirect()
             ->route('admin.panel')
-            ->with('success', "Article added successfully");
+            ->with('success', "Article updated successfully");
     }
 
     /**
@@ -145,7 +131,7 @@ class ArticleController extends Controller
         Article::destroy($article->id);
 
         return redirect()
-                ->route("adminPanel")
-                ->with("success_article_suppression", "Article deleted successfully");
+                ->route("admin.panel")
+                ->with("success", "Article deleted successfully");
     }
 }

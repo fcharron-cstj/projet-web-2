@@ -32,9 +32,9 @@
                     </div>
 
                     <div>
-                        <label for="confirm-password">Confirm password</label>
-                        <x-forms.error champ="confirm-password" />
-                        <input  id="confirm-password" name="confirm-password" type="password" autocomplete="current-password">
+                        <label for="password_confirmation">Confirm password</label>
+                        <x-forms.error champ="password_confirmation" />
+                        <input  id="password_confirmation" name="password_confirmation" type="password" autocomplete="current-password">
                     </div>
 
                     <div>

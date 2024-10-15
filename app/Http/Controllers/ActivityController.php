@@ -41,8 +41,9 @@ class ActivityController extends Controller
     {
         $validated = $request->validate([
             "title" => "required|max:255",
-            "artists" => "required|nullable|max:255",
+            "artists" => "required|max:255",
             "date" => "required|date",
+            "media" => "nullable|mimes:png,jpg,jpeg,webp"
 
         ], [
             "title.required" => "Please enter the title",
@@ -50,7 +51,8 @@ class ActivityController extends Controller
             "artists.required" => "Please enter the artist(s)",
             "artist.max" => "Artists must have less than :max characters",
             "date.required" => "Please select a date and an hour for the activity",
-            "date.date" => "The date must be a valid date format (Y-M-D H:M)"
+            "date.date" => "The date must be a valid date format (Y-M-D H:M)",
+            "media.mimes" => "The media must have a valid format (png, jpg, jpeg, webp)"
         ]);
 
         $activity = new Activity();
@@ -96,8 +98,9 @@ class ActivityController extends Controller
         $validated = $request->validate([
             "id" => "required",
             "title" => "required|max:255",
-            "artists" => "required|nullable|max:255",
+            "artists" => "required|max:255",
             "date" => "required|date",
+            "media" => "nullable|mimes:png,jpg,jpeg,webp"
 
         ], [
             "id.required" => "The activity doesn't exist",
@@ -106,7 +109,8 @@ class ActivityController extends Controller
             "artists.required" => "Please enter the artist(s)",
             "artist.max" => "Artists must have less than :max characters",
             "date.required" => "Please select a date and an hour for the activity",
-            "date.date" => "The date must be a valid date format (Y-M-D H:M)"
+            "date.date" => "The date must be a valid date format (Y-M-D H:M)",
+            "media.mimes" => "The media must have a valid format (png, jpg, jpeg, webp)"
         ]);
 
         $activity = Activity::findOrFail($validated["id"]);
@@ -119,6 +123,8 @@ class ActivityController extends Controller
             Storage::putFile('public/uploads', $request->media);
 
             $activity->media = "/storage/uploads/" . $request->media->hashName();
+        } else {
+            $activity->media = "medias/ai-festival-img.webp";
         }
 
         $activity->save();
