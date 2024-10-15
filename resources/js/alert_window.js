@@ -1,7 +1,4 @@
-import Swal from "/node_modules/sweetalert2/dist/sweetalert2.js";
-// import "/node_modules/sweetalert2/src/sweetalert2.scss";
-
-console.log(Swal);
+import Swal from "sweetalert2";
 
 document.querySelectorAll(".delete-btn").forEach((element) => {
     element.addEventListener("click", (e) => {
@@ -19,6 +16,5 @@ document.querySelectorAll(".delete-btn").forEach((element) => {
                 window.location.replace(e.target.href);
             }
         });
-        console.log(e.target);
     });
 });
