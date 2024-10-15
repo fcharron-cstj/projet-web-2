@@ -1,0 +1,25 @@
+.alert {
+    width: 190px;
+    background-color: #f3f3f3;
+    color: black;
+    position: fixed;
+    height: 100px;
+    padding: 20px;
+    border-radius: 25px;
+    left: 0;
+    bottom: 6px;
+    box-shadow: white 4px 4px;
+    animation: 0.7s ease-out slideInFromLeft forwards;
+    animation-delay: 0.3s;
+    transform: translateX(calc(-100% - 4px));
+    font-size: 20px;
+    z-index: 5;
+}
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
