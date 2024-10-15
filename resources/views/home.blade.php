@@ -1,11 +1,5 @@
 <x-layout>
     <header id="headerHome">
-        @if (session('success'))
-            <div class="alert alert-success">
-                {{ session('success') }}
-            </div>
-        @endif
-
         <video id="videoPlayer" poster="{{ asset('medias/poster.png') }}" loop muted>
             <source src="{{ asset('medias/nova.mp4') }}" type="video/mp4">
         </video>
