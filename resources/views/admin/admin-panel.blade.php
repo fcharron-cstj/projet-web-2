@@ -40,8 +40,10 @@
                                         <form action="{{ route('admin.destroy') }}" method="post">
                                             @csrf
                                             <input type="hidden" name="id" value="{{ $user->id }}">
-                                            <button type="submit"><img src="{{ asset('medias/admin-trash.svg') }}"
-                                                    alt="trash"></button>
+                                            @if ($user->id != auth()->user()->id)
+                                                <button type="submit"><img src="{{ asset('medias/admin-trash.svg') }}"
+                                                        alt="trash"></button>
+                                            @endif
                                         </form>
                                     </div>
                                 </div>
