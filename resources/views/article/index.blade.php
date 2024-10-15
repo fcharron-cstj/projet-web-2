@@ -32,7 +32,7 @@
                             </a>
                         </div>
                     </div>
-                    <img src="{{ asset($article->media) }}" alt="Media of {{$article->title}}">
+                    <img src="{{ asset($article->media) }}" alt="Media of {{ $article->title }}">
                 </article>
             @endforeach
         </section>

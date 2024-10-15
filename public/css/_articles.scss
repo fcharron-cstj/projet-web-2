@@ -65,6 +65,10 @@
             margin-bottom: 30px;
         }
 
+        &:hover {
+            scale: 1.06;
+        }
+
         .article-overlay {
             position: absolute;
             left: 2px;
@@ -105,10 +109,10 @@
             object-fit: cover;
             border-radius: 25px;
             border: $pink solid 2px;
+            &:hover {
+                border-color: $green;
+            }
         }
-    }
-    article:has(article:hover) article:not(:hover) {
-        filter: blur(1px);
     }
     
     .article-container article:hover {
