@@ -22,7 +22,7 @@
         @else
             <a class="btn-blue-pink btn-login-logout" href="{{ route('loginOrRegister') }}">Login</a>
         @endauth
-        <a class="btn-pink-green buy-tickets" href="/#tickets">Buy Tickets</a>
+        <a class="btn-pink-green buy-tickets" href="/#buy-tickets">Buy Tickets</a>
         @auth
             <a href="{{ route('user.show', ['id' => auth()->user()->id]) }}"><img class="client-icon"
                     src="{{ asset('medias/person-fill.png') }}" alt="Account"></a>
@@ -58,6 +58,7 @@
             @else
                 <a class="btn-blue-pink btn-login-logout nav-mobile-log" href="{{ route('loginOrRegister') }}">Login</a>
             @endauth
+            <a class="btn-pink-green buy-tickets btn-nav-mobile" href="/#buy-tickets">Tickets</a>
         </div>
     </div>
 </nav>

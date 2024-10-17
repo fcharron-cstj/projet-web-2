@@ -9,6 +9,7 @@
         <video id="videoPlayer" poster="{{ asset('medias/poster.png') }}" loop muted>
             <source src="{{ asset('medias/nova.mp4') }}" type="video/mp4">
         </video>
+        
         <button id="playPauseBtn" class="play-pause-btn">
             <i class="bi bi-play" id="playPauseIcon"></i>
         </button>
