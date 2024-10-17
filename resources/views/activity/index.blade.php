@@ -11,7 +11,7 @@
                     <div class="day-information" id="day-{{ $day->id }}">
                         <div class="activity-day">
                             <p id="day-of-week">{{ date('l', strtotime($day->date)) }}</p>
-                            <p>- {{ date('d', strtotime($day->date)) }} of {{ date('F', strtotime($day->date)) }}</p>
+                            <p>{{date('jS \of F', strtotime($day->date))}}</p>
                         </div>
                         @foreach ($activities as $activity)
                             @if (date('d', strtotime($activity->date)) == date('d', strtotime($day->date)))
