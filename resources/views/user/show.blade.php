@@ -30,10 +30,10 @@
                                 <p>{{ $reservation->user->first_name . ' ' . $reservation->user->last_name }}</p>
                                 <p>{{ 'from ' . date('d/m/Y', strtotime($reservation->arrival)) . ' to ' . date('d/m/Y', strtotime($reservation->departing)) }}
                                 </p>
-                                <form action="{{ route('reservation.destroy') }}" method="POST">
+                                <form action="{{ route('reservation.destroy') }}" method="POST" class="delete-btn">
                                     @csrf
                                     <input type="hidden" name="id" value="{{ $reservation->id }}">
-                                    <input type="submit" value="Cancel this ticket" class="delete-btn">
+                                    <input type="submit" value="Cancel this ticket">
                                 </form>
                             </div>
                         @endforeach
