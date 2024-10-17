@@ -56,16 +56,16 @@ Route::get('/articles', [ArticleController::class, 'index'])->name("article.inde
 
 Route::get('/article/show/{id}', [ArticleController::class, 'show'])->name("article.show");
 
-Route::get('/articles/edit/{id}', [ArticleController::class, 'edit'])->name("article.edit")->middleware(admin::class);
+Route::get('/article/edit/{id}', [ArticleController::class, 'edit'])->name("article.edit")->middleware(admin::class);
 
-Route::get('/articles/create', [ArticleController::class, 'create'])->name("article.create")->middleware(admin::class);
+Route::get('/article/create', [ArticleController::class, 'create'])->name("article.create")->middleware(admin::class);
 
-Route::post('/articles/store', [ArticleController::class, 'store'])->name("article.store")->middleware(admin::class);
+Route::post('/article/store', [ArticleController::class, 'store'])->name("article.store")->middleware(admin::class);
 
 
-Route::post('/articles/update', [ArticleController::class, 'update'])->name("article.update")->middleware(admin::class);
+Route::post('/article/update', [ArticleController::class, 'update'])->name("article.update")->middleware(admin::class);
 
-Route::post('/articles/destroy', [ArticleController::class, 'destroy'])->name("article.destroy")->middleware(admin::class);
+Route::post('/article/destroy', [ArticleController::class, 'destroy'])->name("article.destroy")->middleware(admin::class);
 
 
 //Reservation
