@@ -61,6 +61,6 @@ class ReservationController extends Controller
 
         return redirect()
             ->route('user.show', ['id' => $reservation->user_id])
-            ->with('success_deleting_reservation', "The reservation has been deleted successfully");
+            ->with('success', "The reservation has been deleted successfully");
     }
 }
