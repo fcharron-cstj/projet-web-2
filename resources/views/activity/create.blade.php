@@ -17,27 +17,36 @@
                     <div>
                         <label for="title">Title</label>
                         <x-forms.error champ="title" />
-                        <input id="title" name="title" type="text" autocomplete="title"
+                        <input name="title" type="text" autocomplete="title"
                             value="{{ old('title') }}" />
                     </div>
 
                     <div>
                         <label for="artists">Artist(s)</label>
                         <x-forms.error champ="artists" />
-                        <input id="artists" name="artists" type="text" autocomplete="artists"
+                        <input name="artists" type="text" autocomplete="artists"
                             value="{{ old('artists') }}">
                     </div>
 
-                    <div>
+                    <div class="date-time">
                         <label for="date">Date</label>
                         <x-forms.error champ="date" />
-                        <input id="date" name="date" type="datetime-local" value="{{ old('date') }}">
+                        <select name="date">
+                            @foreach ($days as $day)
+                                <option value="{{$day->id}}">
+                                    {{ date('F jS Y', strtotime($day->date))}}
+                                </option>
+                            @endforeach
+                        </select>
+                        <label for="hour">Hour</label>
+                        <x-forms.error champ="hour"/>
+                        <input class="hour" type="time" step="3600" name="hour" value="{{old('hour')}}">
                     </div>
 
                     <div>
                         <label for="media">Image</label>
                         <x-forms.error champ="media" />
-                        <input  id="image" name="media" type="file">
+                        <input name="media" type="file">
                     </div>
 
                     <div>
