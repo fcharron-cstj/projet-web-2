@@ -40,6 +40,7 @@ class AdministratorController extends Controller
      * Handle the creation of an user
      *
      * @param Request $request
+     * Done
      */
     public function store(Request $request)
     {
@@ -66,7 +67,7 @@ class AdministratorController extends Controller
             "role_id.required" => "The role is invalid"
         ]);
 
-        $user = User::findOrFail($validated["id"]);
+        $user = new User();
         $user->first_name = $validated["first_name"];
         $user->last_name = $validated["last_name"];
         $user->email = $validated["email"];

@@ -27,7 +27,7 @@
     justify-content: space-between;
     @media (min-width: 768px) {
         display: flex;
-    align-items: center;
+        align-items: center;
         height: 60px;
     }
     @media (min-width: 1024px) {
@@ -46,8 +46,20 @@
         background-color: currentColor;
         transition: width 0.3s ease, left 0.3s ease;
     }
-    
-    .nav-links:hover::after {
+
+    .nav-links:not(.selected):hover::after {
+        width: 100%;
+        left: 0;
+    }
+    .selected::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -1px;
+        height: 2px;
+        background-color: currentColor;
+    }
+    .selected::after {
         width: 100%;
         left: 0;
     }
@@ -141,7 +153,6 @@
         font-size: 40px;
     }
 }
-
 
 .btn-login-logout {
     max-width: max-content;

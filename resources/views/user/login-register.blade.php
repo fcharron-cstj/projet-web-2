@@ -1,20 +1,6 @@
 <x-layout>
     <header>
     </header>
-
-    <!-- Displays success messages -->
-    @if (session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-    @endif
-
-    <!-- Displays error messages -->
-    @if (session('error'))
-        <div class="alert alert-danger">
-            {{ session('error') }}
-        </div>
-    @endif
     <main class="login-register">
         <div class="form-container-auth login">
             <h2>Log-in</h2>

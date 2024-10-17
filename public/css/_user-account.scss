@@ -20,12 +20,15 @@
     }
 
     .delete-btn {
-        width: fit-content;
-        background-color: $pink;
-        color: white;
-        border: none;
-        padding: 5px;
+        * {
+            width: fit-content;
+            background-color: $pink;
+            color: white;
+            border: none;
+            padding: 5px;
+        }
     }
+
     .reservations {
         width: 100%;
     }

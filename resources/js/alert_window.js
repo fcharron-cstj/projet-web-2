@@ -1,7 +1,7 @@
 import Swal from "sweetalert2";
 
-document.querySelectorAll(".delete-btn").forEach((element) => {
-    element.addEventListener("click", (e) => {
+document.querySelectorAll(".delete-btn").forEach((form) => {
+    form.addEventListener("submit", (e) => {
         e.preventDefault();
         Swal.fire({
             title: "Are you sure?",
@@ -13,7 +13,7 @@ document.querySelectorAll(".delete-btn").forEach((element) => {
             confirmButtonText: "Yes, delete it!",
         }).then((result) => {
             if (result.isConfirmed) {
-                window.location.replace(e.target.href);
+                form.submit();
             }
         });
     });
