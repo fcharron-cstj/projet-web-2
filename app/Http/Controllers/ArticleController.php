@@ -10,7 +10,6 @@ class ArticleController extends Controller
 {
     /**
      * Displays the list of all the articles
-     *
      */
     public function index()
     {
@@ -33,7 +32,6 @@ class ArticleController extends Controller
 
     /**
      * Displays the form for creating an article
-     *
      */
     public function create()
     {
@@ -91,6 +89,7 @@ class ArticleController extends Controller
      * Handle the modification of an article
      *
      * @param Request $request
+     * Done
      */
     public function update(Request $request)
     {
@@ -131,6 +130,7 @@ class ArticleController extends Controller
      * Handle the suppression of an article
      *
      * @param Request $request
+     * Done
      */
     public function destroy(Request $request)
     {

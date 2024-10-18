@@ -11,8 +11,8 @@
     width: 90%;
     flex-direction: column;
     margin: 0 auto;
-    justify-content: space-between;
     gap: 50px;
+    height: 100vh;
 
     @media (min-width: 592px) {
         flex-direction: row;
@@ -95,7 +95,7 @@
 
 /*
 @media (min-width:768px) {
-    
+
 }
 @media (min-width:1024px) {
 
