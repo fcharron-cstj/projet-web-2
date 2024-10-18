@@ -1,37 +1,43 @@
-<main>
-    <h1>Update an article</h1>
+<x-layout>
 
+    <!-- Displays success messages -->
     @if (session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
         </div>
     @endif
+    <main id="article-manage">
+        <div class="article-form-container">
+            <h2>Update an article</h2>
+            <div class="form">
+                <form action="{{ route('article.update') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <x-forms.error champ="id" />
+                    <input type="hidden" name="id" value="{{$article->id}}">
+                    <div>
+                        <label for="title">Title</label>
+                        <x-forms.error champ="title" />
+                        <input name="title" type="text"
+                            value="{{ old('title', $article->title) }}" />
+                    </div>
 
-    <div class="form">
-        <form action="{{ route('article.update') }}" method="POST" enctype="multipart/form-data">
-            @csrf
+                    <div>
+                        <label for="description">Description</label>
+                        <x-forms.error champ="description" />
+                        <textarea name="description" rows="6">{{ old('description', $article->description) }}</textarea>
+                    </div>
 
+                    <div>
+                        <label for="media">Image</label>
+                        <x-forms.error champ="media" />
+                        <input name="media" type="file">
+                    </div>
 
-            <x-forms.error champ="id" />
-            <input type="hidden" name="id" value="{{ $article->id }}">
-
-            <label for="title">Title</label>
-
-            <x-forms.error champ="title" />
-            <input type="text" name="title" id="title" value="{{ $article->title }}">
-
-
-            <label for="description">Description</label>
-
-            <x-forms.error champ="description" />
-            <input type="text" name="description" id="description" value="{{ $article->description }}">
-
-            <label for="image">Image</label>
-
-            <x-forms.error champ="image" />
-            <input id="image" name="media" type="file" value="">
-
-            <button type="submit">Edit</button>
-        </form>
-    </div>
-</main>
+                    <div>
+                        <button type="submit" class="btn-green-pink">Update</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</x-layout>

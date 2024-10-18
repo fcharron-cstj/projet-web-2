@@ -44,6 +44,7 @@ class ArticleController extends Controller
      * Handle the addition of an article
      *
      * @param Request $request
+     * Done
      */
     public function store(Request $request)
     {

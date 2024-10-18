@@ -6,8 +6,8 @@
             {{ session('success') }}
         </div>
     @endif
-    <main id="activity-manage">
-        <div class="activity-form-container">
+    <main id="article-manage">
+        <div class="article-form-container">
             <h2>Create a new article</h2>
             <div class="form">
                 <form action="{{ route('article.store') }}" method="POST" enctype="multipart/form-data">
@@ -22,8 +22,7 @@
                     <div>
                         <label for="description">Description</label>
                         <x-forms.error champ="description" />
-                        <input id="description" name="description" type="text" autocomplete="description"
-                            value="{{ old('description') }}">
+                        <textarea name="description" value="{{ old('description') }}" rows="6"></textarea>
                     </div>
 
                     <div>

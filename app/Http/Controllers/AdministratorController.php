@@ -48,7 +48,7 @@ class AdministratorController extends Controller
         $validated = $request->validate([
             "first_name" => "required|max:255",
             "last_name" => "required|max:255",
-            "email" => "required|unique:users,email|email",
+            "email" => "required|unique:users,email|email:strict",
             "password" => "required|min:8",
             "password_confirmation" => "required|same:password",
             "role_id" => "required"
@@ -98,6 +98,7 @@ class AdministratorController extends Controller
      * Handle the modification of an user
      *
      * @param Request $request
+     * Done
      */
     public function update(Request $request)
     {
@@ -105,7 +106,7 @@ class AdministratorController extends Controller
             "id" => "required",
             "first_name" => "required|max:255",
             "last_name" => "required|max:255",
-            "email" => "required|email|unique:users,email," . $request->id
+            "email" => "required|email:strict|unique:users,email," . $request->id
         ], [
             "id.required" => "This account doesn't exist",
             "first_name.required" => "First name is required",
@@ -133,6 +134,7 @@ class AdministratorController extends Controller
      * Handle the deletion of an user
      *
      * @param Request $request
+     * Done but missing success message
      */
     public function destroy(Request $request)
     {
