@@ -14,7 +14,6 @@ class AdministratorController extends Controller
 {
     /**
      * Show the admin page
-     *
      */
     public function adminPanel()
     {
@@ -27,7 +26,6 @@ class AdministratorController extends Controller
 
     /**
      * Show the user creation form with the possibility to choose a role
-     *
      */
     public function create()
     {

@@ -22,7 +22,7 @@ class ActivityController extends Controller
     }
 
     /**
-     * Displays the form for creating a Activity
+     * Displays the form for creating an Activity
      */
     public function create()
     {
@@ -33,7 +33,7 @@ class ActivityController extends Controller
     }
 
     /**
-     * Handle the addition of a Activity
+     * Handle the addition of an Activity
      *
      * @param Request $request
      */
@@ -77,7 +77,7 @@ class ActivityController extends Controller
     }
 
     /**
-     * Displays the form for editing a Activity
+     * Displays the form for editing an Activity
      *
      * @param integer $id
      */
@@ -89,7 +89,7 @@ class ActivityController extends Controller
     }
 
     /**
-     * Handle the modification of a Activity
+     * Handle the modification of an Activity
      *
      * @param Request $request
      */
@@ -135,7 +135,7 @@ class ActivityController extends Controller
     }
 
     /**
-     * Handle the suppression of a Activity
+     * Handle the suppression of an Activity
      *
      * @param Request $request
      */

@@ -14,7 +14,6 @@ class UserController extends Controller
 
     /**
      *  Displays the login and/or register form
-     *
      */
     public function loginOrRegister()
     {
