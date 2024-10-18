@@ -33,7 +33,7 @@
                                 <form action="{{ route('reservation.destroy') }}" method="POST" class="delete-btn">
                                     @csrf
                                     <input type="hidden" name="id" value="{{ $reservation->id }}">
-                                    <input type="submit" value="Cancel this ticket">
+                                    <input class="btn-pink-green" type="submit" value="Cancel this ticket">
                                 </form>
                             </div>
                         @endforeach

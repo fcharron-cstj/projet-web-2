@@ -1,6 +1,10 @@
 .welcome {
     color: $pink !important;
-    font-size: 20px;
+    font-size: 25px;
+    text-align: center;
+    @media (min-width:768px) {
+        text-align: left;
+    }
 }
 .dashboard {
     display: flex;
@@ -8,10 +12,9 @@
     flex-direction: column;
     margin: 0 auto;
     justify-content: space-between;
-    gap: 100px;
+    gap: 50px;
 
     @media (min-width: 592px) {
-        width: 80%;
         flex-direction: row;
         gap: 0;
     }
@@ -31,25 +34,37 @@
 
     .reservations {
         width: 100%;
+        input {
+            margin-left: 0;
+        }
     }
     .reservations-container {
+        margin-top: 65px;
         h1 {
             color: $green;
+            text-align: center;
+            @media (min-width:768px) {
+                text-align: left;
+            }
+        }
+        h2 {
+            margin-top: 40px;
+            font-size: 30px;
         }
         p {
             color: $green;
+            font-size: 25px;
         }
     }
     .form-container {
         height: fit-content;
         padding: 20px;
-        padding-bottom: 60px;
+        padding-bottom: 0px;
         border: 2px solid $blue;
         border-radius: 15px;
-        h1,
-        h2,
-        h3 {
-            color: $pink;
+        h2{
+            color: $blue;
+            text-align: center;
         }
         form {
             display: flex;
@@ -77,3 +92,18 @@
         }
     }
 }
+
+/*
+@media (min-width:768px) {
+    
+}
+@media (min-width:1024px) {
+
+}
+@media (min-width:1200px) {
+
+}
+@media (min-width:1920px) {
+
+}
+*/
