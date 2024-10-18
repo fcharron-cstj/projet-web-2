@@ -163,6 +163,6 @@ class ActivityController extends Controller
 
         return redirect()
             ->route('admin.panel')
-            ->with('succes', "The Activity has been deleted");
+            ->with('success', "The Activity has been deleted");
     }
 }
