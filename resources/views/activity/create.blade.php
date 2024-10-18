@@ -17,15 +17,13 @@
                     <div>
                         <label for="title">Title</label>
                         <x-forms.error champ="title" />
-                        <input name="title" type="text" autocomplete="title"
-                            value="{{ old('title') }}" />
+                        <input name="title" type="text" autocomplete="title" value="{{ old('title') }}" />
                     </div>
 
                     <div>
                         <label for="artists">Artist(s)</label>
                         <x-forms.error champ="artists" />
-                        <input name="artists" type="text" autocomplete="artists"
-                            value="{{ old('artists') }}">
+                        <input name="artists" type="text" autocomplete="artists" value="{{ old('artists') }}">
                     </div>
 
                     <div class="date-time">
@@ -33,14 +31,14 @@
                         <x-forms.error champ="date" />
                         <select name="date">
                             @foreach ($days as $day)
-                                <option value="{{$day->id}}">
-                                    {{ date('F jS Y', strtotime($day->date))}}
+                                <option value="{{ $day->id }}">
+                                    {{ date('F jS Y', strtotime($day->date)) }}
                                 </option>
                             @endforeach
                         </select>
                         <label for="hour">Hour</label>
-                        <x-forms.error champ="hour"/>
-                        <input class="hour" type="time" step="3600" name="hour" value="{{old('hour')}}">
+                        <x-forms.error champ="hour" />
+                        <input class="hour" type="time" name="hour" value="{{ old('hour') }}">
                     </div>
 
                     <div>
