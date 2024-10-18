@@ -29,8 +29,13 @@
         @endauth
         <a class="btn-pink-green buy-tickets" href="/#buy-tickets">Buy Tickets</a>
         @auth
-            <a href="{{ route('user.show', ['id' => auth()->user()->id]) }}"><img class="client-icon"
-                    src="{{ asset('medias/person-fill.png') }}" alt="Account"></a>
+            @if (auth()->user()->role_id == 2)
+                <a href="{{ route('user.show', ['id' => auth()->user()->id]) }}"><img class="client-icon"
+                        src="{{ asset('medias/person-fill.png') }}" alt="Account"></a>
+            @else
+                <a href="{{ route('admin.panel') }}"><img class="client-icon" src="{{ asset('medias/person-fill.png') }}"
+                        alt="Account"></a>
+            @endif
         @else
             <a href="{{ route('loginOrRegister') }}"><img class="client-icon" src="{{ asset('medias/person-fill.png') }}"
                     alt="Account"></a>
