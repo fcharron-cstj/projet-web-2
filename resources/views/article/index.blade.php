@@ -11,21 +11,14 @@
                             </h2>
                         </div>
                         <div>
-                            @if (strlen($article->description) > 25)
-                                <p>
-                                    {{ substr($article->description, 0, 25) }}...
-                                </p>
-                            @else
-                                <p>
-                                    {{ substr($article->description, 0, 25) }}
-                                </p>
-                            @endif
+                            <p>
+                                {{ substr($article->description, 0, 25) }}
+                                @if (strlen($article->description) > 25)
+                                    {{ '...' }}
+                                @endif
+                            </p>
                         </div>
-                        {{-- <p>
-                            {{ date('d',strtotime($article->created_at)) }}
-                            {{ date('M',strtotime($article->created_at)) }}
-                            {{ date('Y',strtotime($article->created_at)) }}
-                        </p> --}}
+
                         <div>
                             <a href="{{ route('article.show', ['id' => $article->id]) }}">
                                 Read more
