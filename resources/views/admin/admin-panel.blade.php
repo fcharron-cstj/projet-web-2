@@ -2,7 +2,11 @@
     <x-admin.layout>
         <div class="admin-panel-container">
             <div class="admin-panel">
-                <h1>Welcome {{ auth()->user()->first_name }} !</h1>
+                <div class="title">
+                    <h1>Welcome {{ auth()->user()->first_name }} !</h1> <a href="{{ route('home') }}">Go back to the site
+                        →</a>
+                </div>
+
                 <div class="header">
                     <a href="#users">Users</a>
                     <a href="#articles">Articles</a>
