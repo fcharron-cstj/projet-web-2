@@ -88,7 +88,11 @@
                                 data-date="{{ $article->date }}">
                                 <span class="id">{{ $article->id }}</span>
                                 <p>{{ $article->title }}</p>
-                                <p>{{ $article->description }}</p>
+                                <p>{{ substr($article->description, 0, 90) }}
+                                    @if (strlen($article->description) > 90)
+                                        {{ '...' }}
+                                    @endif
+                                </p>
                                 <p>{{ $article->date }}</p>
                                 <div class="buttons"> <a href="{{ route('article.edit', ['id' => $article->id]) }}"
                                         class="edit-btn"><img src="{{ asset('medias/admin-edit.svg') }}"
