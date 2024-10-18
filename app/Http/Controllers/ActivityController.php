@@ -14,7 +14,8 @@ class ActivityController extends Controller
     /**
      * Displays all the activities
      */
-    public function index(){
+    public function index()
+    {
         return view('activity.index', [
             "activities" => Activity::orderBy('date')->get(),
             "days" => Day::all()
@@ -42,7 +43,8 @@ class ActivityController extends Controller
         $validated = $request->validate([
             "title" => "required|max:255",
             "artists" => "required|max:255",
-            "date" => "required|date",
+            "date" => "required|numeric",
+            "hour" => 'required|date_format:H:i',
             "media" => "nullable|mimes:png,jpg,jpeg,webp"
 
         ], [
@@ -51,14 +53,19 @@ class ActivityController extends Controller
             "artists.required" => "Please enter the artist(s)",
             "artist.max" => "Artists must have less than :max characters",
             "date.required" => "Please select a date and an hour for the activity",
-            "date.date" => "The date must be a valid date format (Y-M-D H:M)",
+            "hour.required" => "Please select a date and an hour for the activity",
+            "hour.date_format" => "The hour must be a valid format (H:i)",
             "media.mimes" => "The media must have a valid format (png, jpg, jpeg, webp)"
         ]);
+
+        $date = date('Y-m-d', strtotime(Day::findOrFail($validated["date"]))) . ' ' . $validated["hour"];
 
         $activity = new Activity();
         $activity->title = $validated["title"];
         $activity->artists = $validated["artists"];
-        $activity->date = $validated["date"];
+        $activity->date = $date;
+
+
 
         if ($request->hasFile('media')) {
 
@@ -70,6 +77,9 @@ class ActivityController extends Controller
         }
 
         $activity->save();
+
+        //Attach the day to the activity
+        $activity->Day()->attach(Day::findOrFail($validated["date"]));
 
         return redirect()
             ->route('admin.panel')
@@ -84,7 +94,8 @@ class ActivityController extends Controller
     public function edit(int $id)
     {
         return view('Activity.edit', [
-            "activity" => Activity::findOrFail($id),
+            "activity" => Activity::with("Day")->findOrFail($id),
+            "days" => Day::all()
         ]);
     }
 
@@ -96,38 +107,43 @@ class ActivityController extends Controller
     public function update(Request $request)
     {
         $validated = $request->validate([
-            "id" => "required",
+            "id" => "required|numeric",
             "title" => "required|max:255",
             "artists" => "required|max:255",
-            "date" => "required|date",
+            "date" => "required|numeric",
+            "hour" => 'required|date_format:H:i',
             "media" => "nullable|mimes:png,jpg,jpeg,webp"
 
         ], [
-            "id.required" => "The activity doesn't exist",
             "title.required" => "Please enter the title",
             "title.max" => "The title must have less than :max characters",
             "artists.required" => "Please enter the artist(s)",
             "artist.max" => "Artists must have less than :max characters",
             "date.required" => "Please select a date and an hour for the activity",
-            "date.date" => "The date must be a valid date format (Y-M-D H:M)",
+            "hour.required" => "Please select a date and an hour for the activity",
+            "hour.date_format" => "The hour must be a valid format (H:i)",
             "media.mimes" => "The media must have a valid format (png, jpg, jpeg, webp)"
         ]);
+
+        $date = date('Y-m-d', strtotime(Day::findOrFail($validated["date"]))) . ' ' . $validated["hour"];
 
         $activity = Activity::findOrFail($validated["id"]);
         $activity->title = $validated["title"];
         $activity->artists = $validated["artists"];
-        $activity->date = $validated["date"];
+        $activity->date = $date;
 
         if ($request->hasFile('media')) {
 
             Storage::putFile('public/uploads', $request->media);
 
             $activity->media = "/storage/uploads/" . $request->media->hashName();
-        } else {
-            $activity->media = "medias/ai-festival-img.webp";
         }
 
         $activity->save();
+
+        $activity->Day()->detach();
+        //Attach the day to the activity
+        $activity->Day()->attach(Day::findOrFail($validated["date"]));
 
         return redirect()
             ->route('admin.panel')
