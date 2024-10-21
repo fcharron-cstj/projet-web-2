@@ -140,7 +140,15 @@
                         <img src="{{ $article->media }}" alt="media of {{ $article->title }}">
                         <div class="article-overlay">
                             <h3>{{ $article->title }}</h3>
-                            <p>{{ $article->description }}</p>
+                            @if (strlen($article->description) > 25)
+                                <p>
+                                    {{ substr($article->description, 0, 25) }}...
+                                </p>
+                            @else
+                                <p>
+                                    {{ substr($article->description, 0, 25) }}
+                                </p>
+                            @endif
                             <a href="{{ route('article.show', ['id' => $article->id]) }}">Read more</a>
                         </div>
                     </article>
