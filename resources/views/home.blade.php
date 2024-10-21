@@ -46,7 +46,7 @@
                 <div class="ticket-option-1 ticket-option">
                     <div>
                         <p class="ticket-title">General Entry</p>
-                        <div>
+                        <div class="count">
                             <span class="ticket-add" data-option="1">-</span>
                             <span class="ticket-count" data-option="1">0</span> <!-- Ticket count -->
                             <span class="ticket-add" data-option="1">+</span>
@@ -61,7 +61,7 @@
                 <div class="ticket-option-2 ticket-option">
                     <div>
                         <p class="ticket-title">Da Vinci</p>
-                        <div>
+                        <div class="count">
                             <span class="ticket-add" data-option="2">-</span>
                             <span class="ticket-count" data-option="2">0</span> <!-- Ticket count -->
                             <span class="ticket-add" data-option="2">+</span>
@@ -76,7 +76,7 @@
                 <div class="ticket-option-3 ticket-option">
                     <div>
                         <p class="ticket-title">VIP</p>
-                        <div>
+                        <div class="count">
                             <span class="ticket-add" data-option="3">-</span>
                             <span class="ticket-count" data-option="3">0</span> <!-- Ticket count -->
                             <span class="ticket-add" data-option="3">+</span>
