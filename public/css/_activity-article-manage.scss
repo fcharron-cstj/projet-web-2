@@ -20,6 +20,23 @@
         max-width: calc(100% - (95px * 2));
     }
 
+    h1 {
+        color: $green;
+        font-size: 35px;
+        margin-bottom:0 ;
+        @media (min-width: 768px) {
+            font-size: 38px;
+            margin: 40px 0 50px;
+            grid-column: 1/4;
+        }
+        @media (min-width: 1200px) {
+            font-size: 45px;
+            margin-top: 50px;
+        }
+        @media (min-width: 1920px) {
+            font-size: 60px;
+        }
+    }
     .activity-container {
         width: 100%;
         text-align: center;
@@ -38,17 +55,6 @@
             max-width: calc(100% - 300px);
         }
 
-        h1 {
-            color: $green;
-            @media (min-width: 768px) {
-                font-size: 38px;
-                grid-column: 1/4;
-            }
-
-            @media (min-width: 1920px) {
-                font-size: 55px;
-            }
-        }
 
         .arrow-container {
             display: flex;
