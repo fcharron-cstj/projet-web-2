@@ -1,12 +1,3 @@
-// hide tabs on page load except the first one
-
-document.addEventListener("DOMContentLoaded", function (e) {
-    let tabs = document.querySelectorAll("section");
-    for (let i = 1; i < tabs.length; i++) {
-        tabs[i].style.display = "none";
-    }
-});
-
 //TODO: add closing of sorting options
 document.querySelector(".close").addEventListener("click", function (e) {
     document.querySelector(".sorting-options").classList.toggle("popout");
