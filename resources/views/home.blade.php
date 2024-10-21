@@ -149,11 +149,6 @@
                                     {{ substr($article->description, 0, 25) }}
                                 </p>
                             @endif
-                            <p> {{ substr($article->description, 0, 25) }}
-                                @if (strlen($article->description) > 25)
-                                    {{ '...' }}
-                                @endif
-                            </p>
                             <a href="{{ route('article.show', ['id' => $article->id]) }}">Read more</a>
                         </div>
                     </article>
