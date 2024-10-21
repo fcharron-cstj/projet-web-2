@@ -1,8 +1,8 @@
 <x-layout>
     <main>
         <section class="activity">
+            <h1>Festival</h1>
             <div class="activity-container">
-                <h1>Festival</h1>
                 <div class="arrow-container">
                     <p class="arrow" id="left-arrow">&larr;</p>
                     <p class="arrow" id="right-arrow">&rarr;</p>

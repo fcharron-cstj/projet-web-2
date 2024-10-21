@@ -23,7 +23,7 @@
             <div>
                 @foreach ($days as $day)
                     <div class="schedule">
-                        <p class="sub-title-schedule">{{ date_format(date_create($day->date), 'w F') }}</p>
+                        <p class="sub-title-schedule">{{date('F jS', strtotime($day->date))}}</p>
 
                         <p class="text-schedule">
                             @foreach ($day->Activity as $activity)
