@@ -10,6 +10,7 @@ class ReservationController extends Controller
     /**
      * Handle the addition of a reservation
      *
+     * @param Request $request
      */
     public function store(Request $request)
     {

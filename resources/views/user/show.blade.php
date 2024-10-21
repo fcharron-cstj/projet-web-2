@@ -24,19 +24,23 @@
                     @endif
                     <section class="reservations">
                         <h2>Your reservations</h2>
-                        @foreach ($reservations as $reservation)
-                            <div class="reservation">
-                                <p>{{ $reservation->package->title }}</p>
-                                <p>{{ $reservation->user->first_name . ' ' . $reservation->user->last_name }}</p>
-                                <p>{{ 'from ' . date('d/m/Y', strtotime($reservation->arrival)) . ' to ' . date('d/m/Y', strtotime($reservation->departing)) }}
-                                </p>
-                                <form action="{{ route('reservation.destroy') }}" method="POST" class="delete-btn">
-                                    @csrf
-                                    <input type="hidden" name="id" value="{{ $reservation->id }}">
-                                    <input class="btn-pink-green" type="submit" value="Cancel this ticket">
-                                </form>
-                            </div>
-                        @endforeach
+                        @if (count($reservations) == 0)
+                            <p>You don't have any reservation yet.</p>
+                        @else
+                            @foreach ($reservations as $reservation)
+                                <div class="reservation">
+                                    <p>{{ $reservation->package->title }}</p>
+                                    <p>{{ $reservation->user->first_name . ' ' . $reservation->user->last_name }}</p>
+                                    <p>{{ 'from ' . date('d/m/Y', strtotime($reservation->arrival)) . ' to ' . date('d/m/Y', strtotime($reservation->departing)) }}
+                                    </p>
+                                    <form action="{{ route('reservation.destroy') }}" method="POST" class="delete-btn">
+                                        @csrf
+                                        <input type="hidden" name="id" value="{{ $reservation->id }}">
+                                        <input class="btn-pink-green" type="submit" value="Cancel this ticket">
+                                    </form>
+                                </div>
+                            @endforeach
+                        @endif
                     </section>
             </div>
         </div>

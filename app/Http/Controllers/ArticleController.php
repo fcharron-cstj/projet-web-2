@@ -10,7 +10,6 @@ class ArticleController extends Controller
 {
     /**
      * Displays the list of all the articles
-     *
      */
     public function index()
     {
@@ -33,7 +32,6 @@ class ArticleController extends Controller
 
     /**
      * Displays the form for creating an article
-     *
      */
     public function create()
     {
@@ -50,7 +48,7 @@ class ArticleController extends Controller
     {
         $validated = $request->validate([
             "title" => "required|max:255",
-            "description" => "required|max:499",
+            "description" => "required|max:1000",
             "media" => "required|mimes:png,jpg,jpeg,webp"
         ], [
             "title.required" => "The title is required",
@@ -80,7 +78,8 @@ class ArticleController extends Controller
      *
      * @param integer $id
      */
-    public function edit(int $id) {
+    public function edit(int $id)
+    {
         return view('article.edit', [
             "article" => Article::findOrFail($id)
         ]);
@@ -90,20 +89,21 @@ class ArticleController extends Controller
      * Handle the modification of an article
      *
      * @param Request $request
+     * Done
      */
-    public function update(Request $request) {
+    public function update(Request $request)
+    {
         $validated = $request->validate([
             "id" => "required",
             "title" => "required|max:255",
-            "description" => "required|max:499",
-            "media" => "required|mimes:png,jpg,jpeg,webp"
+            "description" => "required|max:1000",
+            "media" => "nullable|mimes:png,jpg,jpeg,webp"
         ], [
             "id.required" => "The article doesn't exist",
             "title.required" => "The title is required",
             "title.max" => "The title must have a maximum of :max characters",
             "description.required" => "A description is required",
             "description.max" => "The description must have a maximum of :max characters",
-            "media.required" => "A media is required",
             "media.mimes" => "The media must have a valid format (png, jpg, jpeg, webp)"
         ]);
 
@@ -111,8 +111,13 @@ class ArticleController extends Controller
         $article->title = $validated["title"];
         $article->description = $validated["description"];
 
-        Storage::putFile('public/uploads', $request->media);
-        $article->media = "/storage/uploads/" . $request->media->hashName();
+
+        if ($request->hasFile('media')) {
+
+            Storage::putFile('public/uploads', $request->media);
+
+            $article->media = "/storage/uploads/" . $request->media->hashName();
+        }
 
         $article->save();
 
@@ -125,14 +130,16 @@ class ArticleController extends Controller
      * Handle the suppression of an article
      *
      * @param Request $request
+     * Done
      */
-    public function destroy(Request $request) {
+    public function destroy(Request $request)
+    {
         $article = Article::findOrFail($request->id);
 
         Article::destroy($article->id);
 
         return redirect()
-                ->route("admin.panel")
-                ->with("success", "Article deleted successfully");
+            ->route("admin.panel")
+            ->with("success", "Article deleted successfully");
     }
 }

@@ -45,9 +45,13 @@ sortBtn.addEventListener("click", function (e) {
 
     clearSortingOptions();
 
-    collapse_btn.style.display = "block";
     sorting_options.style.display = "flex";
     sorting_options.classList.toggle("popout");
+    if (sorting_options.classList.contains("popout")) {
+        collapse_btn.style.display = "block";
+    } else {
+        collapse_btn.style.display = "none";
+    }
 
     for (let option in options) {
         let option_element = document.createElement("input");
@@ -84,6 +88,10 @@ function clearSortingOptions() {
     const sorting_options = document.querySelector(".sorting-options");
     sorting_options.innerHTML = "";
     sorting_options.style.display = "none";
+    sorting_options.classList.remove("popout");
+
+    const collapse_btn = document.querySelector(".close");
+    collapse_btn.style.display = "none";
 }
 
 /**

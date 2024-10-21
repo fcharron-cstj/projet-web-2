@@ -21,7 +21,7 @@
             'nav-links',
             'purple-text',
         ]) href="{{ route('article.index') }}">Articles</a>
-        <a @class(['selected' => $route == '', 'nav-links', 'pink-text']) href="/#footer">Contact</a>
+        <a @class(['selected' => $route == '', 'nav-links', 'pink-text']) href="#footer">Contact</a>
         @auth
             <a class="btn-blue-pink btn-login-logout" href="{{ route('logout') }}">Logout</a>
         @else

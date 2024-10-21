@@ -8,8 +8,17 @@ $border-radius: 8px;
 $shadow: rgba(0, 0, 0, 0.5);
 $sidebar-height: 50px;
 
-
 // Admin Panel Styles
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    a {
+        color: $text-color;
+    }
+}
+
 // Header Styles (Top Sidebar)
 .header {
     display: flex;

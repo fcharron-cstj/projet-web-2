@@ -2,7 +2,11 @@
     <x-admin.layout>
         <div class="admin-panel-container">
             <div class="admin-panel">
-                <h1>Welcome {{ auth()->user()->first_name }} !</h1>
+                <div class="title">
+                    <h1>Welcome {{ auth()->user()->first_name }} !</h1> <a href="{{ route('home') }}">Go back to the site
+                        →</a>
+                </div>
+
                 <div class="header">
                     <a href="#users">Users</a>
                     <a href="#articles">Articles</a>
@@ -84,7 +88,11 @@
                                 data-date="{{ $article->date }}">
                                 <span class="id">{{ $article->id }}</span>
                                 <p>{{ $article->title }}</p>
-                                <p>{{ $article->description }}</p>
+                                <p>{{ substr($article->description, 0, 90) }}
+                                    @if (strlen($article->description) > 90)
+                                        {{ '...' }}
+                                    @endif
+                                </p>
                                 <p>{{ $article->date }}</p>
                                 <div class="buttons"> <a href="{{ route('article.edit', ['id' => $article->id]) }}"
                                         class="edit-btn"><img src="{{ asset('medias/admin-edit.svg') }}"
