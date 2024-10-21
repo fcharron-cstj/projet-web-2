@@ -126,7 +126,7 @@
                 </div>
                 <div id="ticket-total">
                     <p class="base-price">Tickets cost : </p>
-                    <p class="extra-price">days extra </p>
+                    <p class="extra-price">Extra days</p>
                     <p>Total : &nbsp; </p>
                     <p class="total-price">0$</p>
                 </div>
