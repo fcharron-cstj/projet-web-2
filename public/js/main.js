@@ -4,7 +4,7 @@ const mobileMenu = document.getElementById("mobile-menu");
 const closeMenu = document.getElementById("close-menu");
 
 // Event listener for burger menu click
-burgerMenu.addEventListener("click", () => {
+burgerMenu?.addEventListener("click", () => {
     // Toggle the 'slidein' and 'active' classes for the mobile menu
     mobileMenu.classList.toggle("slidein");
     mobileMenu.classList.toggle("active");
@@ -16,7 +16,7 @@ burgerMenu.addEventListener("click", () => {
 });
 
 // Event listener for close menu button click
-closeMenu.addEventListener("click", () => {
+closeMenu?.addEventListener("click", () => {
     // Remove 'slidein' and 'active' classes to close the mobile menu
     mobileMenu.classList.remove("slidein");
     mobileMenu.classList.remove("active");

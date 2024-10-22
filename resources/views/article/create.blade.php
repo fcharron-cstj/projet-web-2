@@ -1,11 +1,4 @@
 <x-layout>
-
-    <!-- Displays success messages -->
-    @if (session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-    @endif
     <main id="article-manage">
         <div class="article-form-container">
             <h2>Create a new article</h2>
@@ -28,7 +21,7 @@
                     <div>
                         <label for="media">Image</label>
                         <x-forms.error champ="media" />
-                        <input  id="image" name="media" type="file">
+                        <input id="image" name="media" type="file">
                     </div>
 
                     <div>

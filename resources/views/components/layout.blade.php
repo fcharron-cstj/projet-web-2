@@ -36,6 +36,7 @@
     <!-- Displays success messages -->
     @if (session('success'))
         <div class="alert alert-success">
+            <img src="medias/x-close.svg" alt="" class="close-popup">
             {{ session('success') }}
         </div>
     @endif
@@ -43,10 +44,12 @@
     <!-- Displays error messages -->
     @if (session('error'))
         <div class="alert alert-danger">
+            <img src="medias/x-close.svg" alt="" class="close-popup">
             {{ session('error') }}
         </div>
     @endif
     <script src="{{ asset('js/main.js') }}"></script>
+    <script src="{{ asset('js/popup.js') }}"></script>
 </body>
 
 </html>

@@ -11,6 +11,7 @@
                     <a href="#users">Users</a>
                     <a href="#articles">Articles</a>
                     <a href="#activities">Activities</a>
+                    <a href="#reservations">Reservations</a>
                 </div>
 
                 <div class="options">
@@ -132,6 +133,40 @@
                                         class="delete-btn">
                                         @csrf
                                         <input type="hidden" name="id" value="{{ $activity->id }}">
+                                        <button type="submit"><img src="{{ asset('medias/admin-trash.svg') }}"
+                                                alt="trash"></button>
+                                    </form>
+                                </div>
+                            </div>
+                        @endforeach
+
+                    </div>
+                </section>
+
+                <section class="reservations-admin reservations">
+                    <div class="top-bar">
+                        <h2 id="reservations">Reservations</h2>
+                    </div>
+                    <div class="content-container">
+                        @foreach ($reservations as $reservation)
+                            <div class="admin-activities content" data-id="{{ $reservation->id }}"
+                                data-name="{{ $reservation->user->first_name . ' ' . $reservation->user->last_name }}"
+                                data-arrival="{{ $reservation->arrival }}"
+                                data-departing="{{ $reservation->departing }}"
+                                data-package="{{$reservation->package->title }}"
+                                data-price="{{$reservation->package->price}}">
+
+                                <span class="id">{{ $reservation->id }}</span>
+                                <p>{{$reservation->user->first_name}} {{$reservation->user->last_name}}</p>
+                                <p>{{ $reservation->package->title }} {{ $reservation->package->price }}$</p>
+                                <p><strong>Start:</strong> {{ $reservation->arrival }}</p>
+                                <p><strong>End:</strong> {{ $reservation->departing }}</p>
+
+                                <div class="buttons">
+                                    <form action="{{ route('reservation.destroy') }}" method="post"
+                                        class="delete-btn">
+                                        @csrf
+                                        <input type="hidden" name="id" value="{{ $reservation->id }}">
                                         <button type="submit"><img src="{{ asset('medias/admin-trash.svg') }}"
                                                 alt="trash"></button>
                                     </form>

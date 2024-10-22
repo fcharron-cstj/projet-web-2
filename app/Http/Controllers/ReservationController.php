@@ -60,6 +60,12 @@ class ReservationController extends Controller
 
         Reservation::destroy($reservation->id);
 
+        if(auth()->user()->role_id == 1){
+            return redirect()
+            ->route('admin.panel')
+            ->with('success', "The reservation has been deleted successfully");
+        }
+
         return redirect()
             ->route('user.show', ['id' => $reservation->user_id])
             ->with('success', "The reservation has been deleted successfully");
