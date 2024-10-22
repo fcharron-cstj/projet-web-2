@@ -7,6 +7,12 @@
                         →</a>
                 </div>
 
+                @if (session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+
                 <div class="header">
                     <a href="#users">Users</a>
                     <a href="#articles">Articles</a>
