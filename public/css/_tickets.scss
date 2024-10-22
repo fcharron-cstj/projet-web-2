@@ -1,36 +1,35 @@
 .tickets {
     display: flex;
     flex-direction: column;
+
     h2 {
         color: $green;
         align-self: center;
         font-size: 35px;
         margin: 40px 0;
+
         @media (min-width: 768px) {
-            font-size: 38 px;
+            font-size: 38px;
             margin: 105px 0 50px;
         }
+
         @media (min-width: 1024px) {
             margin: 105px 0 50px;
         }
+
         @media (min-width: 1200px) {
             font-size: 45px;
             margin-top: 180px;
         }
+
         @media (min-width: 1920px) {
             font-size: 60px;
         }
     }
 
-    .ticket-option-1 {
-        border: 1px solid $pink;
-    }
-    .ticket-option-2 {
-        border: 1px solid $purple;
-    }
-    .ticket-option-3 {
-        border: 1px solid $green;
-    }
+    .ticket-option-1 { border: 1px solid $pink; }
+    .ticket-option-2 { border: 1px solid $purple; }
+    .ticket-option-3 { border: 1px solid $green; }
 
     .ticket-option {
         display: flex;
@@ -39,38 +38,48 @@
         width: 100%;
         border-radius: 16px;
         margin-bottom: 30px;
+
         div {
             display: flex;
             justify-content: space-between;
             align-items: center;
             gap: 0px;
         }
+
         span {
             font-size: 30px;
             color: $green;
             width: 30px;
             text-align: center;
+
+            @media (min-width: 1920px) {
+                font-size: 38px !important;
+            }
         }
     }
-    .ticket-add {
-        cursor: pointer;
-    }
+
+    .ticket-add { cursor: pointer; }
+
     #tickets-container {
         margin: 0 25px;
         align-items: stretch;
+
         @media (min-width: 768px) {
             display: flex;
             flex-direction: row;
             gap: 25px;
             margin: 0 35px;
         }
+
         @media (min-width: 1024px) {
             margin: 0 165px;
         }
+
         @media (min-width: 1200px) {
             gap: 45px;
             margin: 0 100px;
         }
+
         @media (min-width: 1920px) {
             gap: 75px;
             margin: 0 305px;
@@ -91,144 +100,150 @@
         margin-right: 15px;
         margin-top: 25px;
     }
+
     .ticket-title {
         color: $blue;
         font-size: 35px;
         margin: 10px 15px;
+
         @media (min-width: 768px) {
             font-size: 30px;
         }
+
         @media (min-width: 1024px) {
             font-size: 35px;
         }
+
         @media (min-width: 1200px) {
             font-size: 40px;
             margin: 20px 20px;
         }
+
         @media (min-width: 1920px) {
             font-size: 45px;
         }
     }
+
     .lower-ticket-section {
         margin: 0px 15px;
         height: 70px;
+
         p:first-child {
             font-family: $font-secondary;
             font-size: 17px;
             color: $green;
             margin: 0 20px 0 0;
-            @media (min-width: 1200px) {
-                font-size: 20px;
-            }
+
             @media (min-width: 1024px) {
                 margin: 0 30px 0 0;
             }
+
+            @media (min-width: 1200px) {
+                font-size: 20px;
+            }
+
             @media (min-width: 1920px) {
                 margin-right: 60px;
                 font-size: 24px;
             }
         }
+
         p:nth-of-type(2) {
             font-family: $font-primary;
             font-size: 35px;
+
             @media (min-width: 1200px) {
                 font-size: 38px;
             }
+
             @media (min-width: 1920px) {
                 font-size: 42px;
             }
         }
     }
-    span {
-        @media (min-width: 1920px) {
-            font-size: 38px !important;
-        }
-    }
+
     .cart {
         margin: 0 25px;
         align-items: stretch;
         padding-bottom: 40px;
+        .btn-pink-green {
+            display: block;
+            margin: 0 auto; 
+            margin-top: 30px;
+        
+            @media (min-width: 768px) {
+                margin-top: 15px;
+                width: 100%;
+            }
+        }
+        input {
+            border-radius: 25px;
+        }
         @media (min-width: 768px) {
-            margin: 0 35px;
             display: flex;
             justify-content: space-between;
-            align-items: center;
             flex-direction: row;
+            margin: 0 35px;
             padding-bottom: 75px;
         }
+
         @media (min-width: 1024px) {
             margin: 0 165px;
             padding-bottom: 105px;
         }
+
         @media (min-width: 1200px) {
-            padding-bottom: 180px;
             margin: 0 100px;
-        }
-        @media (min-width: 1920px) {
             padding-bottom: 180px;
-            margin: 0 305px;
         }
+
+        @media (min-width: 1920px) {
+            margin: 0 305px;
+            padding-bottom: 180px;
+        }
+
         p {
             color: $green;
             font-family: $font-secondary;
             font-size: x-large;
         }
+
         .total-price {
             color: $blue;
             font-family: $font-primary;
             font-size: x-large;
         }
-
-        #ticket-total {
-            display: flex;
-            flex-direction: column;
-            display: none;
-            flex-direction: row;
-            flex-wrap: wrap;
-        }
     }
 }
-#form-tickets {
+
+#form-tickets { display: none; }
+
+#ticket-total {
+    height: 100%;
     display: none;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    p { 
+        font-size: 18px;
+        margin: 10px 0; 
+    }
+}
+
+#cart-total-div {
+    display: flex;
+    flex-direction: row;
 }
 
 #calendar {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin: 20px 0;
 
     label {
         font-family: $font-secondary;
         font-size: 16px;
-        color: $green;
+        color: $blue;
         margin-bottom: 5px;
+        margin-top: 10px;
     }
-
-    
 }
-
-    .calendar {
-        width: 100%;
-        padding: 10px 15px;
-        font-size: 16px;
-        font-family: $font-secondary;
-        color: $green;
-        border: 1px solid $grey;
-        border-radius: 8px;
-        outline: none;
-        transition: border-color 0.3s;
-
-        &:focus {
-            border-color: $blue;
-            box-shadow: 0 0 5px rgba($blue, 0.4);
-        }
-
-        @media (min-width: 768px) {
-            width: 50%;
-        }
-
-        @media (min-width: 1024px) {
-            width: 30%;
-        }
-    }

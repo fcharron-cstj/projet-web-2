@@ -23,7 +23,7 @@
             <div>
                 @foreach ($days as $day)
                     <div class="schedule">
-                        <p class="sub-title-schedule">{{date('F jS', strtotime($day->date))}}</p>
+                        <p class="sub-title-schedule">{{ date('F jS', strtotime($day->date)) }}</p>
 
                         <p class="text-schedule">
                             @foreach ($day->Activity as $activity)
@@ -90,6 +90,14 @@
             </div>
 
             <div class="cart">
+                <div id="ticket-total">
+                    <p class="base-price">Tickets cost : </p>
+                    <p class="extra-price">Extra days</p>
+                    <div id="cart-total-div">
+                        <p>Total : &nbsp; </p>
+                        <p class="total-price">0$</p>
+                    </div>
+                </div>
                 <div id="form-tickets">
                     <!-- Display of success messages -->
                     @if (session('success'))
@@ -121,14 +129,8 @@
                         <input type="hidden" name="bought_tickets_1" value="0" id="bought-tickets-1">
                         <input type="hidden" name="bought_tickets_2" value="0" id="bought-tickets-2">
                         <input type="hidden" name="bought_tickets_3" value="0" id="bought-tickets-3">
-                        <button type="submit">Purchase Tickets</button>
+                        <button class="btn-pink-green" type="submit">Purchase Tickets</button>
                     </form>
-                </div>
-                <div id="ticket-total">
-                    <p class="base-price">Tickets cost : </p>
-                    <p class="extra-price">Extra days</p>
-                    <p>Total : &nbsp; </p>
-                    <p class="total-price">0$</p>
                 </div>
             </div>
         </section>

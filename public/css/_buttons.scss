@@ -5,8 +5,9 @@
     font-family: $font-primary;
     font-size: 28px;
     text-decoration: none;
-    position: relative; // For the sheen effect
-    overflow: hidden; // Ensure the sheen effect stays within the button
+    position: relative;
+    border: none;
+    overflow: hidden; 
     @media (min-width:768px) {
         font-size: 20px;
         .rsv .all-articles {

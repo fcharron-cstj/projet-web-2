@@ -72,7 +72,7 @@ function updateCart(option, id, add = true) {
         "Tickets cost : " + totalprice + " $";
 
     document.querySelector(".extra-price").innerHTML =
-        "days extra : " +
+        "Extra days : " +
         extraprice * (totaltickets[0] + totaltickets[1] + totaltickets[2]) +
         " $";
     document;
