@@ -94,4 +94,9 @@ function updateCart(option, id, add = true) {
     totaltickets[0] == 0 && totaltickets[1] == 0 && totaltickets[2] == 0
         ? (a.style.display = "none")
         : (a.style.display = "block");
+
+    let b = document.querySelector("#ticket-total");
+    totaltickets[0] == 0 && totaltickets[1] == 0 && totaltickets[2] == 0
+        ? (b.style.display = "none")
+        : (b.style.display = "flex");
 }

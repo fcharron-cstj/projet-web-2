@@ -7,18 +7,14 @@
     @media (min-width: 768px) {
         align-self: center;
         font-size: 55px;
-        margin-left: 35px;
     }
     @media (min-width: 1024px) {
-        margin-left: 160px;
     }
     @media (min-width: 1200px) {
-        margin-left: 95px;
         font-size: 70px;
     }
     @media (min-width: 1920px) {
         font-size: 80px;
-        margin-left: 300px;
     }
 }
 
@@ -29,12 +25,18 @@
         display: flex;
         align-items: center;
         height: 60px;
+        margin: 0 35px;
     }
     @media (min-width: 1024px) {
         display: flex;
+        margin: 0 160px;
     }
-    @media (min-width: 1200) {
+    @media (min-width: 1200px) {
         height: 70px;
+        margin: 0 95px;
+    }
+    @media (min-width: 1920px){
+        margin: 0 300px;
     }
     .nav-links::after {
         content: "";
@@ -190,21 +192,17 @@
     @media (min-width: 768px) {
         width: 21px;
         height: 22px;
-        margin-right: 35px;
         margin-bottom: 0;
     }
     @media (min-width: 1024px) {
-        margin-right: 160px;
     }
     @media (min-width: 1200px) {
         width: 25px;
         height: 27px;
-        margin-right: 95px;
     }
     @media (min-width: 1920px) {
         width: 28px;
         height: 30px;
-        margin-right: 300px;
     }
 }
 

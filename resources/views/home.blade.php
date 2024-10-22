@@ -23,7 +23,7 @@
             <div>
                 @foreach ($days as $day)
                     <div class="schedule">
-                        <p class="sub-title-schedule">{{ date_format(date_create($day->date), 'w F') }}</p>
+                        <p class="sub-title-schedule">{{date('F jS', strtotime($day->date))}}</p>
 
                         <p class="text-schedule">
                             @foreach ($day->Activity as $activity)
@@ -126,7 +126,7 @@
                 </div>
                 <div id="ticket-total">
                     <p class="base-price">Tickets cost : </p>
-                    <p class="extra-price">days extra </p>
+                    <p class="extra-price">Extra days</p>
                     <p>Total : &nbsp; </p>
                     <p class="total-price">0$</p>
                 </div>
@@ -140,11 +140,15 @@
                         <img src="{{ $article->media }}" alt="media of {{ $article->title }}">
                         <div class="article-overlay">
                             <h3>{{ $article->title }}</h3>
-                            <p> {{ substr($article->description, 0, 25) }}
-                                @if (strlen($article->description) > 25)
-                                    {{ '...' }}
-                                @endif
-                            </p>
+                            @if (strlen($article->description) > 25)
+                                <p>
+                                    {{ substr($article->description, 0, 25) }}...
+                                </p>
+                            @else
+                                <p>
+                                    {{ substr($article->description, 0, 25) }}
+                                </p>
+                            @endif
                             <a href="{{ route('article.show', ['id' => $article->id]) }}">Read more</a>
                         </div>
                     </article>
