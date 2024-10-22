@@ -1,0 +1,79 @@
+.counter {
+    display: none;
+}
+@media (min-width: 768px) {
+    .counter {
+        .seconds {
+            color: $pink;
+        }
+        .minutes {
+            color: $green;
+        }
+        .hours {
+            color: $blue;
+        }
+        .days {
+            color: $purple;
+        }
+        .separator-day {
+            color: $purple;
+            font-size: 40px;
+        }
+        .separator-hour {
+            color: $blue;
+            font-size: 40px;
+        }
+        .separator-minute {
+            color: $green;
+            font-size: 40px;
+        }
+        background: linear-gradient(
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0.7),
+            black
+        );
+        width: 100%;
+        padding-top: 40px;
+        position: absolute;
+        bottom: -52px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        justify-content: center;
+        font-family: "Kablammo", system-ui;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        font-variation-settings: "MORF" 40;
+        display: flex;
+        flex-direction: row;
+        .number {
+            width: 4rem;
+            height: 4rem;
+            font-size: 4rem;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            .num-track {
+                position: relative;
+                bottom: 16px;
+                transition: translate 1500ms cubic-bezier(0.1, 0.67, 0, 1);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                animation: vars 6s ease-in-out infinite alternate;
+            }
+        }
+    }
+
+    @keyframes vars {
+        0% {
+            font-variation-settings: "MORF" 0;
+        }
+        50% {
+            font-variation-settings: "MORF" 30;
+        }
+        100% {
+            font-variation-settings: "MORF" 60;
+        }
+    }
+}

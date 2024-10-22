@@ -1,9 +1,63 @@
 <x-layout>
     <header id="headerHome">
+
+
         <video id="videoPlayer" poster="{{ asset('medias/poster.png') }}" loop muted>
             <source src="{{ asset('medias/nova.mp4') }}" type="video/mp4">
         </video>
-
+        <div class="counter">
+            <span class="number days">
+                <div class="num-track">
+                    0 1 2 3 4 5 6 7 8 9
+                </div>
+            </span>
+            <span class="number days">
+                <div class="num-track">
+                    0 1 2 3 4 5 6 7 8 9
+                </div>
+            </span>
+            <span class="number days">
+                <div class="num-track">
+                    0 1 2 3 4 5 6 7 8 9
+                </div>
+            </span>
+            <span class="separator-day">: &nbsp;
+            </span>
+            <span class="number hours">
+                <div class="num-track">
+                    0 1 2 3 4 5 6
+                </div>
+            </span>
+            <span class="number hours">
+                <div class="num-track">
+                    0 1 2 3 4 5 6 7 8 9
+                </div>
+            </span>
+            <span class="separator-hour">: &nbsp;
+            </span>
+            <span class="number minutes">
+                <div class="num-track">
+                    0 1 2 3 4 5 6
+                </div>
+            </span>
+            <span class="number minutes">
+                <div class="num-track">
+                    0 1 2 3 4 5 6 7 8 9
+                </div>
+            </span>
+            <span class="separator-minute">: &nbsp;
+            </span>
+            <span class="number seconds">
+                <div class="num-track">
+                    0 1 2 3 4 5 6
+                </div>
+            </span>
+            <span class="number seconds">
+                <div class="num-track">
+                    0 1 2 3 4 5 6 7 8 9
+                </div>
+            </span>
+        </div>
         <button id="playPauseBtn" class="play-pause-btn">
             <i class="bi bi-play" id="playPauseIcon"></i>
         </button>
@@ -87,6 +141,7 @@
                         <p>190$</p>
                     </div>
                 </div>
+
             </div>
 
             <div class="cart">
@@ -120,6 +175,7 @@
                     </form>
                 </div>
             </div>
+
         </section>
         <section id="article-home-page" class="articles">
             <h2>Articles</h2>
@@ -153,5 +209,6 @@
     <script src="{{ asset('js/changingImage.js') }}"></script>
     <script src="{{ asset('js/video.js') }}"></script>
     <script type="module" src="{{ asset('js/reservations.js') }}"></script>
+    <script src="{{ asset('js/count.js') }}"></script>
     @vite('resources/js/calendar.js')
 </x-layout>
