@@ -52,7 +52,7 @@ class ArticleSeeder extends Seeder
             'title' => 'Meet folk singer Noah',
             'description' => "Folk singer Noah Fraser brings his soulful voice and heartfelt lyrics to the festival stage, offering a blend of acoustic melodies that speak to the heart. His songs, often inspired by nature, love, and life's unexpected turns, have a way of resonating with listeners on a deep level. Noah’s set promises to be a soothing yet powerful experience, as he shares stories through music, transporting the audience to peaceful meadows, serene riversides, and nostalgic moments of the past.
             Noah’s performance is not just about the music but the connection he builds with his listeners. With his guitar in hand and a voice that carries both warmth and wisdom, Noah's presence on stage is a reminder of the beauty of simplicity. His show is the perfect opportunity to pause and reflect, taking a break from the high-energy events to enjoy a more intimate and emotional experience.",
-            'media' => 'folk-noah-fraser.jpg',
+            'media' => 'medias/folk-noah-fraser.jpg',
             'created_by' => 1
         ]);
 
