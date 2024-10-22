@@ -43,7 +43,11 @@ class UserController extends Controller
         }
 
         $request->session()->regenerate();
-
+        if(auth()->user()->role_id == 1){
+            return redirect()
+            ->intended(route('admin.panel'))
+            ->with('success', "Welcome my favorite admin, the GOAT, the legend, the one and only, " . auth()->user()->first_name . " " . auth()->user()->last_name);
+        }
         return redirect()
             ->intended(route('home'))
             ->with('success', "Welcome back!");
