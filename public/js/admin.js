@@ -1,20 +1,18 @@
-// hide tabs on page load except the first one
-
-document.addEventListener("DOMContentLoaded", function (e) {
+// Hide tabs on page load except the first one
+document.addEventListener("DOMContentLoaded", function () {
     let tabs = document.querySelectorAll("section");
     for (let i = 1; i < tabs.length; i++) {
         tabs[i].style.display = "none";
     }
 });
 
-//TODO: add closing of sorting options
-document.querySelector(".close").addEventListener("click", function (e) {
+// Add closing functionality for sorting options
+document.querySelector(".close").addEventListener("click", function () {
     document.querySelector(".sorting-options").classList.toggle("popout");
     document.querySelector(".close").style.display = "none";
 });
 
-// add click event to each nav item
-
+// Add click event to each nav item
 let nav = document.querySelector(".header").children;
 for (let i = 0; i < nav.length; i++) {
     nav[i].addEventListener("click", function (event) {
@@ -24,16 +22,14 @@ for (let i = 0; i < nav.length; i++) {
     });
 }
 
-// add click event to order button
-
+// Add click event to the order button
 let orderBtn = document.querySelector(".order");
 orderBtn.addEventListener("click", function (e) {
     e.preventDefault();
     order(e);
 });
 
-// add click event to sort button
-
+// Add click event to the sort button
 let sortBtn = document.querySelector(".sort");
 sortBtn.addEventListener("click", function (e) {
     e.preventDefault();
@@ -47,12 +43,15 @@ sortBtn.addEventListener("click", function (e) {
 
     sorting_options.style.display = "flex";
     sorting_options.classList.toggle("popout");
+
+    // Toggle the display of the collapse button
     if (sorting_options.classList.contains("popout")) {
         collapse_btn.style.display = "block";
     } else {
         collapse_btn.style.display = "none";
     }
 
+    // Add radio inputs for sorting options
     for (let option in options) {
         let option_element = document.createElement("input");
         let option_label = document.createElement("label");
@@ -65,11 +64,12 @@ sortBtn.addEventListener("click", function (e) {
         sorting_options.appendChild(option_label);
     }
 
+    // Add event listeners for sorting options
     let sorting_options_form = document.querySelectorAll(
         ".sorting-options input[type='radio']"
     );
     sorting_options_form.forEach((option) => {
-        option.addEventListener("change", function (e) {
+        option.addEventListener("change", function () {
             if (option.checked === true) {
                 let chosen_option = option.value;
                 sort(
@@ -82,7 +82,7 @@ sortBtn.addEventListener("click", function (e) {
 });
 
 /**
- * Clears the sorting options from the DOM
+ * Clears the sorting options from the DOM.
  */
 function clearSortingOptions() {
     const sorting_options = document.querySelector(".sorting-options");
@@ -95,11 +95,10 @@ function clearSortingOptions() {
 }
 
 /**
- *  Changes the display property of the tab using the name of the nav item clicked
+ * Changes the display property of the tab based on the nav item clicked.
  *
- * @param {HTMLElement}element
+ * @param {HTMLElement} element
  */
-
 function changeTab(element) {
     let tabs = document.querySelectorAll("section");
     tabs.forEach((tab) => {
@@ -114,47 +113,49 @@ function changeTab(element) {
 }
 
 /**
- *  Filters the content of the admin panel from the search input
- *
+ * Filters the content of the admin panel from the search input.
  */
 function searchFilter() {
     let input = document.getElementById("search");
     let filter = input.value.toUpperCase();
     let containers = document.querySelectorAll(".content-container");
 
-    [...containers].forEach((container) => {
+    // Hide all elements in each container
+    containers.forEach((container) => {
         let elements = container.children;
-
         [...elements].forEach((node) => (node.style.display = "none"));
 
+        // Filter elements based on dataset matching search input
         let result = [...elements].filter((e) => {
-            let resp = false;
-
-            for (d in e.dataset) {
-                if (e.dataset[d].toUpperCase().indexOf(filter) > -1)
-                    resp = e.dataset[d].toUpperCase().indexOf(filter) > -1;
+            let match = false;
+            for (let d in e.dataset) {
+                if (e.dataset[d].toUpperCase().indexOf(filter) > -1) {
+                    match = true;
+                }
             }
-            return resp;
+            return match;
         });
 
+        // Show the matching elements
         result.forEach((node) => (node.style.display = "block"));
     });
 }
 
 /**
- *  Sorts the content of the admin panel in alphabetic or numerical order from a chosen property
+ * Sorts the content of the admin panel in alphabetic or numeric order from a chosen property.
  *
  * @param {string} option
  * @param {HTMLElement} active_tab
+ * @param {boolean} [order=true]
  */
 function sort(option, active_tab, order = true) {
     [...active_tab.children]
-        .sort((a, b) => (eval(a.dataset[option] > b.dataset[option]) ? 1 : -1))
+        .sort((a, b) => (a.dataset[option] > b.dataset[option] ? 1 : -1))
         .forEach((node) => active_tab.appendChild(node));
 }
 
 /**
- *  Changes the order of the content of the admin panel from grid to list
+ * Changes the display of the admin panel content between grid and list view.
  *
  * @param {HTMLElement} element
  */
