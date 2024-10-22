@@ -2,7 +2,7 @@ const burgerMenu = document.getElementById("burger-menu");
 const mobileMenu = document.getElementById("mobile-menu");
 const closeMenu = document.getElementById("close-menu");
 
-burgerMenu.addEventListener("click", () => {
+burgerMenu?.addEventListener("click", () => {
     mobileMenu.classList.toggle("slidein");
     mobileMenu.classList.toggle("active");
     burgerMenu.style.display = mobileMenu.classList.contains("active")
@@ -10,7 +10,7 @@ burgerMenu.addEventListener("click", () => {
         : "block";
 });
 
-closeMenu.addEventListener("click", () => {
+closeMenu?.addEventListener("click", () => {
     mobileMenu.classList.remove("slidein");
     mobileMenu.classList.remove("active");
     burgerMenu.style.display = "block";
