@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Activity;
 use App\Models\Article;
+use App\Models\Reservation;
 use App\Models\Role;
 use App\Models\Schedule;
 use App\Models\User;
@@ -20,7 +21,8 @@ class AdministratorController extends Controller
         return view("admin.admin-panel", [
             "users" => User::all(),
             "activities" => Activity::with('Day')->get()->all(),
-            "articles" => Article::all()
+            "articles" => Article::all(),
+            "reservations" => Reservation::orderBy('arrival')->get()
         ]);
     }
 
