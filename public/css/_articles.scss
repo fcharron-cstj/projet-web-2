@@ -52,13 +52,20 @@
         height: 200px;
         margin: 0;
         transition: all 0.2s ease-in-out;
+        border: solid 2px $pink;
+        border-radius: 25px;
+        backface-visibility: hidden;
+
+        &:hover {
+            border-color: $green;
+        }
 
         @media (min-width: 768px) {
             height: 265px;
         }
 
         @media (min-width: 1200px) {
-            height: 340;
+            height: 340px;
         }
 
         &:last-child {
@@ -67,7 +74,7 @@
 
         .article-overlay {
             position: absolute;
-            left: 2px;
+            /* left: 2px; */
             z-index: 2;
             background-color: rgba(0, 0, 0, 0.8);
             width: 94%;
@@ -75,7 +82,8 @@
             color: $green;
             display: flex;
             flex-direction: column;
-            bottom: -3px;
+            /* bottom: -3px; */
+            bottom: 0;
             border-radius: 0px 0px 25px 25px;
             border: none;
 
@@ -114,10 +122,10 @@
             height: 100%;
             object-fit: cover;
             border-radius: 25px;
-            border: $pink solid 2px;
-            &:hover {
+            /* border: $pink solid 2px; */
+            /* &:hover {
                 border-color: $green;
-            }
+            } */
         }
     }
 
