@@ -57,12 +57,22 @@
             gap: 185px;
         }
 
+        article:has(.article-overlay:hover) {
+            border-color: $green !important;
+            // display: none !important;
+        }
+        article:hover {
+            border-color: $green !important;
+        }
         article {
             position: relative;
             width: 100%;
             height: 200px;
             margin: 0;
             transition: all 0.2s ease-in-out;
+            border: $pink solid 2px;
+            border-radius: 25px;
+            overflow: hidden;
 
             @media (min-width: 768px) {
                 height: 330px;
@@ -78,7 +88,6 @@
 
             .article-overlay {
                 position: absolute;
-                left: 2px;
                 z-index: 2;
                 background-color: rgba(0, 0, 0, 0.8);
                 width: 94%;
@@ -100,8 +109,6 @@
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
-                border-radius: 25px;
-                border: $pink solid 2px;
             }
 
             h3 {
@@ -146,7 +153,6 @@
         border-color: $green;
     }
 }
-
 .articles:has(article:hover) article:not(:hover) {
     filter: blur(1px);
 }

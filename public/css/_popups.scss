@@ -3,17 +3,32 @@
     background-color: #f3f3f3;
     color: black;
     position: fixed;
-    height: 100px;
+    height: fit-content;
+    min-height: 70px;
     padding: 20px;
     border-radius: 25px;
     left: 0;
     bottom: 6px;
-    box-shadow: white 4px 4px;
-    animation: 0.7s ease-out slideInFromLeft forwards;
+    animation: 0.5s ease-out slideInFromLeft forwards;
     animation-delay: 0.3s;
     transform: translateX(calc(-100% - 4px));
     font-size: 20px;
     z-index: 5;
+
+    img {
+        width: 20px;
+        position: absolute;
+        right: 10px;
+    }
+}
+
+.alert-success {
+    background-color: lighten($green, 1%);
+    box-shadow: lighten($green, 16%) 4px 4px;
+}
+.alert-danger {
+    background-color: lighten($pink, 30%);
+    box-shadow: lighten($pink, 45%) 4px 4px;
 }
 @keyframes slideInFromLeft {
     0% {
@@ -21,5 +36,13 @@
     }
     100% {
         transform: translateX(0);
+    }
+}
+@keyframes slideBack {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
     }
 }

@@ -1,13 +1,6 @@
 <x-layout>
     <header>
     </header>
-
-    <!-- Displays success messages -->
-    @if (session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-    @endif
     <main id="activity-manage">
         <div class="activity-form-container">
             <h2>Create a new activity</h2>
