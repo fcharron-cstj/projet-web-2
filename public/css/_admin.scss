@@ -130,7 +130,7 @@ $sidebar-height: 50px;
         margin-bottom: 30px;
         display: none;
 
-        &:first-of-type{
+        &:first-of-type {
             display: block;
         }
 
@@ -151,6 +151,7 @@ $sidebar-height: 50px;
             border-radius: 10px;
             margin: 0;
             padding: 20px;
+            padding-bottom: 30px;
             display: grid;
             grid-template-columns: repeat(auto-fill, 240px);
             justify-items: center;
@@ -256,10 +257,11 @@ $sidebar-height: 50px;
                 .buttons {
                     padding: 0;
                     width: 100px;
-                    top: 75%;
+                    top: auto;
+                    bottom: 10px;
                     border-radius: 8px;
-                    gap: 15px;
-
+                    left: auto;
+                    right: 10px;
                     button,
                     .edit-btn {
                         width: 100%;
