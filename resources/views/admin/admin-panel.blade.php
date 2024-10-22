@@ -129,7 +129,7 @@
                                 <span class="id">{{ $activity->id }}</span>
                                 <p>{{ $activity->title }}</p>
                                 <p>{{ $activity->artists }}</p>
-                                <p>{{ date_format(date_create($activity->date), 'H:i:s') }}</p>
+                                <p>{{ date_format(date_create($activity->date), 'H:i') }}h</p>
                                 <p>{{ date_format(date_create($activity->Day[0]->date), 'Y-m-d') }}</p>
                                 <div class="buttons">
                                     <a href="{{ route('activity.edit', ['id' => $activity->id]) }}"
