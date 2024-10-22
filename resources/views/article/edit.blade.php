@@ -1,11 +1,4 @@
 <x-layout>
-
-    <!-- Displays success messages -->
-    @if (session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-    @endif
     <main id="article-manage">
         <div class="article-form-container">
             <h2>Update an article</h2>
@@ -13,12 +6,11 @@
                 <form action="{{ route('article.update') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <x-forms.error champ="id" />
-                    <input type="hidden" name="id" value="{{$article->id}}">
+                    <input type="hidden" name="id" value="{{ $article->id }}">
                     <div>
                         <label for="title">Title</label>
                         <x-forms.error champ="title" />
-                        <input name="title" type="text"
-                            value="{{ old('title', $article->title) }}" />
+                        <input name="title" type="text" value="{{ old('title', $article->title) }}" />
                     </div>
 
                     <div>

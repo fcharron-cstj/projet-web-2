@@ -6,22 +6,11 @@
 
             <h1>Account</h1>
             <p class="welcome">Welcome {{ $user->first_name }} {{ $user->last_name }}</p>
-            <!-- Display of success messages -->
-            @if (session('success'))
-                <div class="alert alert-success">
-                    {{ session('success') }}
-                </div>
-            @endif
 
             <div class="form">
                 <form action="{{ route('user.update') }}" method="POST">
                     @csrf
-                    <!-- Display of error messages -->
-                    @if (session('error'))
-                        <div class="alert alert-danger">
-                            {{ session('error') }}
-                        </div>
-                    @endif
+
                     <section class="reservations">
                         <h2>Your reservations</h2>
                         @if (count($reservations) == 0)
