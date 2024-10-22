@@ -94,6 +94,7 @@
     justify-self: end;
     margin-right: 20px;
     cursor: pointer;
+    position: fixed;
 }
 
 .div-nav-links {
@@ -112,6 +113,8 @@
     background-color: rgba(0, 0, 0, 0.753);
     border-left: 3px solid $blue;
     border-bottom: 3px solid $blue;
+    position: fixed;
+    left: 170px;
 
     &.active {
         display: flex;

@@ -168,10 +168,10 @@
                 background-color: #141010;
                 z-index: 2;
                 padding: 1rem;
-                width: calc(100% - 2px);
+                width: calc(100% - 4px);
                 box-sizing: border-box;
-                bottom: 1px;
-                left: 1px;
+                bottom: 2px;
+                left: 2px;
                 text-align: left;
 
                 @media (min-width: 768px) {
