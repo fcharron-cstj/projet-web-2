@@ -18,6 +18,17 @@
         href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/css/datepicker-foundation.min.css">
     <title>{{ $title ?? 'Nova' }}</title>
 </head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9NXJSW60MP"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-9NXJSW60MP');
+</script>
 
 <body>
     <x-nav />

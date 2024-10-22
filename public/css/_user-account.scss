@@ -81,6 +81,8 @@
         p {
             color: $green;
             font-size: 25px;
+            margin: 10px 0;
+            
         }
     }
     .form-container {
@@ -90,7 +92,7 @@
         border: 2px solid $blue;
         border-radius: 15px;
         @media (min-width: 592px) {
-            margin-top: 88px;
+            margin-top: 42px;
         }
         h2{
             color: $blue;

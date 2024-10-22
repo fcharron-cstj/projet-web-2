@@ -37,8 +37,11 @@
     }
     &:hover::after, &:focus::after {
         animation: sheen 1s forwards;
-        
     }
+    &:hover {
+        cursor: pointer;
+    }
+
     @keyframes sheen {
         100% {
             transform: rotateZ(60deg) translate(1em, -9em);
@@ -82,4 +85,8 @@
 
 .btn-nav-mobile {
     width: fit-content;
+}
+
+.btn-cancel-user-rsv {
+    margin-left: 0!important;
 }

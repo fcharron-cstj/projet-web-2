@@ -31,7 +31,7 @@
                             value="{{ $activity->artists }}">
                     </div>
                     <div class="date-time">
-                        <label for="date">Date</label>
+                        <label for="date">Date :</label>
                         <x-forms.error champ="date" />
                         <select name="date">
                             @foreach ($days as $day)
@@ -41,7 +41,7 @@
                                 </option>
                             @endforeach
                         </select>
-                        <label for="hour">Hour</label>
+                        <label for="hour">Hour :</label>
                         <x-forms.error champ="hour" />
                         <input class="hour" type="time" name="hour"
                             value="{{ date_format(date_create($activity->date), 'H:i') }}">
@@ -50,11 +50,11 @@
                     <div>
                         <label for="media">Image</label>
                         <x-forms.error champ="media" />
-                        <input id="media" name="media" type="file">
+                        <input id="media" name="media" type="file" style="color: aqua">
                     </div>
 
                     <div>
-                        <button type="submit" class="btn-green-pink">Update</button>
+                        <button type="submit" class="btn-blue-pink" >Update</button>
                     </div>
                 </form>
             </div>

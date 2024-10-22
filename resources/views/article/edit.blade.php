@@ -30,11 +30,11 @@
                     <div>
                         <label for="media">Image</label>
                         <x-forms.error champ="media" />
-                        <input name="media" type="file">
+                        <input name="media" type="file" style="color: aqua">
                     </div>
 
                     <div>
-                        <button type="submit" class="btn-green-pink">Update</button>
+                        <button type="submit" class="btn-blue-pink">Update</button>
                     </div>
                 </form>
             </div>
