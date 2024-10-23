@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Register;
 use App\Models\Reservation;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
@@ -90,7 +92,11 @@ class UserController extends Controller
 
         $user->save();
 
+
+
         Auth::login($user);
+
+        Mail::to(auth()->user()->email)->send(new Register(["user" => $request->user()]));
 
         return redirect()
             ->route('home')
