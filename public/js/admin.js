@@ -14,7 +14,7 @@ document.querySelector(".close").addEventListener("click", function (e) {
 })
 
 // Add click event to each nav item
-let nav = document.querySelector(".header").childre
+let nav = document.querySelector(".header").children
 for (let i = 0; i < nav.length; i++) {
     nav[i].addEventListener("click", function (event) {
         event.preventDefault();
