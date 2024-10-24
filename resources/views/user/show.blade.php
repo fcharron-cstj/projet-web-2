@@ -6,12 +6,6 @@
 
             <h1>Account</h1>
             <p class="welcome">Welcome {{ $user->first_name }} {{ $user->last_name }}</p>
-            <!-- Display of success messages -->
-            @if (session('success'))
-                <div class="alert alert-success">
-                    {{ session('success') }}
-                </div>
-            @endif
 
             <section class="reservations">
                 <h2>Your reservations</h2>

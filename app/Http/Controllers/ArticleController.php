@@ -48,7 +48,7 @@ class ArticleController extends Controller
     {
         $validated = $request->validate([
             "title" => "required|max:255",
-            "description" => "required|max:1000",
+            "description" => "required|max:2000",
             "media" => "required|mimes:png,jpg,jpeg,webp"
         ], [
             "title.required" => "The title is required",
