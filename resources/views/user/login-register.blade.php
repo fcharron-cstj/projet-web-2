@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout title="Login">
     <header>
     </header>
     <main class="login-register">

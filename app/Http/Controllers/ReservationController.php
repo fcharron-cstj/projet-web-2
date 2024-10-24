@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Ticket;
+use App\Models\Package;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class ReservationController extends Controller
 {
@@ -40,9 +44,13 @@ class ReservationController extends Controller
                     $reservation->package_id = $count;
                     $reservation->user_id = $request->user()->id;
                     $reservation->save();
+
+                    Mail::to(auth()->user()->email)->send(new Ticket(["user" => $request->user(), "reservation" => $reservation, "packages" => Package::get()->all()]));
                 }
             }
         }
+
+
 
         return redirect()
             ->route('user.show', ['id' => $request->user()->id])

@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout title="Schedule">
     <main>
         <section class="activity">
             <h1>Festival</h1>

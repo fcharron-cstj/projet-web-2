@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Register;
 use App\Models\Reservation;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
@@ -43,7 +45,11 @@ class UserController extends Controller
         }
 
         $request->session()->regenerate();
-
+        if (auth()->user()->role_id == 1) {
+            return redirect()
+                ->intended(route('admin.panel'))
+                ->with('success', "Welcome my favorite admin, the GOAT, the legend, the one and only, " . auth()->user()->first_name . " " . auth()->user()->last_name);
+        }
         return redirect()
             ->intended(route('home'))
             ->with('success', "Welcome back!");
@@ -86,7 +92,11 @@ class UserController extends Controller
 
         $user->save();
 
+
+
         Auth::login($user);
+
+        Mail::to(auth()->user()->email)->send(new Register(["user" => $request->user()]));
 
         return redirect()
             ->route('home')
@@ -117,17 +127,30 @@ class UserController extends Controller
             "id" => "required",
             "first_name" => "required|max:255",
             "last_name" => "required|max:255",
+            "email" => "required|email|unique:users,email," . $request->id,
+            "password" => "nullable|min:8|confirmed",
         ], [
             "id.required" => "The user doesn't exist",
             "first_name.required" => "Full name is required",
             "first_name.max" => "First name must be below :max characters",
             "last_name.required" => "Full name is required",
             "last_name.max" => "Last name must be below :max characters",
+            "email.required" => "Email is required",
+            "email.email" => "Email is invalid",
+            "email.unique" => "This email is already taken",
+            "password.min" => "Your password must be at least :min characters",
+            "password.confirmed" => "Password confirmation does not match"
         ]);
 
         $user = User::findOrFail($validated['id']);
         $user->first_name = $validated["first_name"];
         $user->last_name = $validated["last_name"];
+        $user->email = $validated["email"];
+
+        // Update the password only if it's provided
+        if ($request->filled('password')) {
+            $user->password = Hash::make($validated["password"]);
+        }
 
         $user->save();
 
@@ -135,6 +158,7 @@ class UserController extends Controller
             ->route('user.show', ['id' => $user->id])
             ->with('success', "The user " . $user->first_name . " " . $user->last_name . " has been modified");
     }
+
 
     /**
      * Handle the disconnection of an user

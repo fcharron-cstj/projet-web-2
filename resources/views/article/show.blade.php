@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout title="Article">
     <main id="article-show-page">
         <h1 id="h1-articles">Article</h1>
         <article>

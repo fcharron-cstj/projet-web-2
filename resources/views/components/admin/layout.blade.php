@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://use.typekit.net/dmc2smn.css">
     <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <title>PJWEB2</title>
+    <title>Administration</title>
 </head>
 
 <body>

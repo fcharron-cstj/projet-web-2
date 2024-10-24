@@ -1,20 +1,21 @@
 #videoPlayer {
     margin-left: 50vw;
-  transform: translate(-50%);
-    min-width: 100%;
+    transform: translate(-50%);
+    min-width: 104%;
+    overflow: hidden;
     height: 85vh;
     object-fit: cover;
-    @media (min-width:768px) {
+    @media (min-width: 768px) {
         height: 360px;
     }
-    @media (min-width:1024px) {
+    @media (min-width: 1024px) {
         height: 420px;
     }
-    @media (min-width:1200px) {
+    @media (min-width: 1200px) {
         height: 550px;
         width: 100vw;
     }
-    @media (min-width:1920px) {
+    @media (min-width: 1920px) {
         height: 730px;
     }
 }
@@ -22,6 +23,9 @@
 #headerHome {
     min-width: 100vw;
     position: relative;
+    @media (max-width: 768px) {
+        height: 85vh;
+    }
 }
 
 #playPauseBtn {
@@ -34,13 +38,15 @@
     padding: 10px 20px;
     font-size: 24px;
     cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
     border: 0;
     z-index: 10;
     &:hover {
         color: $green;
     }
-    
+
     i {
         font-size: 32px; /* Adjust icon size */
     }

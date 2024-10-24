@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout title="Articles">
     <main id="article-page">
         <h1 id="h1-articles">Articles</h1>
         <section class="article-container">

@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout title="Edit admin account">
     <main id="user-admin-manage">
         <div class="user-admin-form-container">
             <h2>Update user {{ $user->first_name }}</h2>

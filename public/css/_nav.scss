@@ -94,6 +94,7 @@
     justify-self: end;
     margin-right: 20px;
     cursor: pointer;
+    position: fixed;
 }
 
 .div-nav-links {
@@ -108,10 +109,12 @@
 #mobile-menu {
     display: none;
     align-items: center;
-    width: 80vw;
+    width: 150px;
     background-color: rgba(0, 0, 0, 0.753);
     border-left: 3px solid $blue;
     border-bottom: 3px solid $blue;
+    position: fixed;
+    left: calc(100% - 150px);
 
     &.active {
         display: flex;
@@ -126,6 +129,7 @@
 
     a {
         margin-top: 20px;
+        width: fit-content;
     }
 }
 
@@ -133,7 +137,7 @@
     height: 22px;
     width: 22px;
     align-self: flex-start;
-    margin: 20px 20px 75px 25vw;
+    margin: 20px 20px 75px 75px;
     cursor: pointer;
 }
 

@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout title="Create activity">
     <header>
     </header>
     <main id="activity-manage">
