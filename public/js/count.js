@@ -2,6 +2,7 @@ let date = new Date("4-4-2025");
 let today = new Date();
 let diff = Math.abs(date - today);
 
+
 // separate timer into days, hours, minutes, seconds
 
 function calcTimer() {
@@ -25,11 +26,24 @@ for (let i = 0; i < digits.length; i++) {
     tracks[i].style.translate = `0 ${-(digits[i] * 64 + 18 * digits[i])}px`;
 }
 
-setInterval(() => {
-    digits = calcTimer().split("");
+if(window.innerWidth > 768)
+{
+    var interval = setInterval(() => {
+        digits = calcTimer().split("");
 
-    for (let i = 0; i < digits.length; i++) {
-        tracks[i].style.transitionDuration = "1500ms";
-        tracks[i].style.translate = `0 ${-(digits[i] * 64 + 18 * digits[i])}px`;
+        for (let i = 0; i < digits.length; i++) {
+            tracks[i].style.transitionDuration = "1500ms";
+            tracks[i].style.translate = `0 ${-(digits[i] * 64 + 18 * digits[i])}px`;
+        }
+    }, 1000);
+}
+
+
+window.addEventListener('resize', function(event) {
+    let width = event.target.innerWidth
+    if(width < 768)
+    {
+       interval ? clearInterval(interval) : null;
     }
-}, 1000);
+    });
+
