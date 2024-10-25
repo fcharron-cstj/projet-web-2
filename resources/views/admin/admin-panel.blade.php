@@ -37,8 +37,9 @@
                                     data-name="{{ $user->first_name . ' ' . $user->last_name }}"
                                     data-email="{{ $user->email }}">
                                     <span class="id">{{ $user->id }}</span>
-                                    <p>{{ $user->first_name }} {{ $user->last_name }}</p>
+                                    <p class="admin-name">{{ $user->first_name }} {{ $user->last_name }}</p>
                                     <p>{{ $user->email }}</p>
+
                                     <div class="buttons"> <a href="{{ route('admin.edit', ['id' => $user->id]) }}"
                                             class="edit-btn"><img src="{{ asset('medias/admin-edit.svg') }}"
                                                 alt="edit"></a>
@@ -153,11 +154,11 @@
                                 data-name="{{ $reservation->user->first_name . ' ' . $reservation->user->last_name }}"
                                 data-arrival="{{ $reservation->arrival }}"
                                 data-departing="{{ $reservation->departing }}"
-                                data-package="{{$reservation->package->title }}"
-                                data-price="{{$reservation->package->price}}">
+                                data-package="{{ $reservation->package->title }}"
+                                data-price="{{ $reservation->package->price }}">
 
                                 <span class="id">{{ $reservation->id }}</span>
-                                <p>{{$reservation->user->first_name}} {{$reservation->user->last_name}}</p>
+                                <p>{{ $reservation->user->first_name }} {{ $reservation->user->last_name }}</p>
                                 <p>{{ $reservation->package->title }} {{ $reservation->package->price }}$</p>
                                 <p><strong>Start:</strong> {{ $reservation->arrival }}</p>
                                 <p><strong>End:</strong> {{ $reservation->departing }}</p>
