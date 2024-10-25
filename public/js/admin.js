@@ -1,17 +1,28 @@
-//TODO: add closing of sorting options
+//event dom loaded
+document.addEventListener("DOMContentLoaded", function () {
+    //get the active tab from session storage
+    let activeTab = sessionStorage.getItem('activeTab');
+    if (activeTab) {
+        changeTab(document.querySelector(`a[href="#${activeTab}"]`));
+    }
+});
+
+//sorting options
 document.querySelector(".close").addEventListener("click", function (e) {
     document.querySelector(".sorting-options").classList.toggle("popout")
     document.querySelector(".close").style.display = "none"
 })
 
 // Add click event to each nav item
-let nav = document.querySelector(".header").childre
+let nav = document.querySelector(".header").children
 for (let i = 0; i < nav.length; i++) {
     nav[i].addEventListener("click", function (event) {
-        event.preventDefault()
-        clearSortingOptions()
-        changeTab(nav[i])
-    })
+        event.preventDefault();
+        clearSortingOptions();
+        //store the active tab in session storage
+        sessionStorage.setItem('activeTab',  (event.target.href).split('#').pop());
+        changeTab(nav[i]);
+    });
 }
 
 // Add click event to the order button
@@ -92,7 +103,11 @@ function clearSortingOptions() {
  * @param {HTMLElement} element
  */
 function changeTab(element) {
-    let tabs = document.querySelectorAll("section")
+    //add styling to nav for selected tab
+    [...document.querySelector(".header").children].forEach(tab => tab.classList.remove('selected'));
+    element.classList.add('selected');
+
+    let tabs = document.querySelectorAll("section");
     tabs.forEach((tab) => {
         if (tab.classList.contains(element.innerText.toLowerCase())) {
             tab.style.display = "block"
@@ -141,6 +156,7 @@ function searchFilter() {
  * @param {boolean} [order=true]
  */
 function sort(option, active_tab, order = true) {
+    //TODO: add option to change sorting order (asc/desc)
     [...active_tab.children]
         .sort((a, b) => (a.dataset[option] > b.dataset[option] ? 1 : -1))
         .forEach((node) => active_tab.appendChild(node))

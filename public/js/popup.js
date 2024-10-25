@@ -1,10 +1,11 @@
 let popup = document.querySelector(".alert")
 let close_btn = document.querySelector(".close-popup")
 
-close_btn?.addEventListener("click", closePopup)
+close_btn?.addEventListener("click", function () { closePopup(popup) });
 
-if (popup) setInterval(closePopup, 5000)
-
-function closePopup() {
-    popup.style.animation = "none"
+if (popup) {
+    setTimeout(function () { closePopup(popup) }, 4000);
+}
+function closePopup(popup) {
+    popup.style.animation = "none";
 }

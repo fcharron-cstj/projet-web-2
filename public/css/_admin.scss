@@ -14,6 +14,7 @@ $sidebar-height: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     a {
         color: $text-color;
     }
@@ -39,6 +40,10 @@ $sidebar-height: 50px;
         &:hover {
             background-color: lighten($secondary-color, 10%);
         }
+    }
+
+    .selected {
+        background-color: darken(#1a1a1a, 3%);
     }
 }
 
@@ -69,10 +74,12 @@ $sidebar-height: 50px;
         position: relative;
     }
 }
+
 .sort-popout {
     position: relative;
     display: flex;
     flex: 2 2 50%;
+
     .sorting-options {
         color: #1a1a1a;
         display: flex;
@@ -89,9 +96,11 @@ $sidebar-height: 50px;
         transition: all 0.1s ease-in-out;
         scale: 0;
     }
+
     .popout {
         scale: 1;
     }
+
     .close {
         display: none;
         position: absolute;
@@ -99,10 +108,12 @@ $sidebar-height: 50px;
         top: 0;
 
         z-index: 3;
+
         * {
             width: 20px;
         }
     }
+
     .test­ {
         display: block;
     }
@@ -116,15 +127,13 @@ $sidebar-height: 50px;
     margin: 0;
     padding: 20px;
 
-    @media (min-width: 768px) {
-    }
+    @media (min-width: 768px) {}
 
     @media (min-width: 1200px) {
         padding: 0px 10%;
     }
 
-    @media (min-width: 1920px) {
-    }
+    @media (min-width: 1920px) {}
 
     section {
         margin-bottom: 30px;
@@ -180,6 +189,7 @@ $sidebar-height: 50px;
 
             p {
                 margin: 5px 0;
+                word-break: break-all;
             }
 
             span.id {
@@ -262,6 +272,7 @@ $sidebar-height: 50px;
                     border-radius: 8px;
                     left: auto;
                     right: 10px;
+
                     button,
                     .edit-btn {
                         width: 100%;
