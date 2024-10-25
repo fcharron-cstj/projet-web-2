@@ -33,30 +33,3 @@
     }
 }
 
-#playPauseBtn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: transparent;
-    color: white;
-    padding: 10px 20px;
-    font-size: 24px;
-    cursor: pointer;
-    transition:
-        background-color 0.3s ease,
-        color 0.3s ease;
-    border: 0;
-    z-index: 10;
-    display: none;
-    @media (min-width: 768px) {
-        display: block;
-    }
-    &:hover {
-        color: $green;
-    }
-
-    i {
-        font-size: 32px;
-    }
-}
