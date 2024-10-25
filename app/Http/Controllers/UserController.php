@@ -121,6 +121,11 @@ class UserController extends Controller
         ]);
     }
 
+    /**
+     * Updates the user's profile
+     *
+     * @param Request $request
+     */
     public function update(Request $request)
     {
         $validated = $request->validate([
