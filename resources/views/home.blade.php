@@ -1,7 +1,6 @@
 <x-layout title="Home page">
     <header id="headerHome">
 
-
         <video id="videoPlayer" loop muted autoplay>
             <source src="{{ asset('medias/nova.mp4') }}" type="video/mp4">
         </video>
@@ -58,9 +57,6 @@
                 </div>
             </span>
         </div>
-        <button id="playPauseBtn" class="play-pause-btn">
-            <i class="bi bi-play" id="playPauseIcon"></i>
-        </button>
     </header>
 
     <div class="container">

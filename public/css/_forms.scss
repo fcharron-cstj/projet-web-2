@@ -48,6 +48,9 @@ select:focus {
         color: $green;
         font-family: $font-secondary;
         margin: auto;
+        &:hover {
+            color: $blue;
+        }
     }
     button {
         display: block;

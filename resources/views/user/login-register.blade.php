@@ -21,7 +21,7 @@
                     <button type="submit" class="btn-green-pink">Log-in</button>
                 </form>
                 <p>
-                    <a href="#" id="no-account" class="form-link"> Don't have an account? </a>
+                    <a href="#" id="no-account" class="form-link account-toggle-link"> Don't have an account? </a>
                 </p>
             </div>
         </div>
@@ -63,10 +63,25 @@
                     <button type="submit" class="btn-green-pink">Create account</button>
                 </form>
                 <p>
-                    <a href="#" id="has-account" class="form-link"> Already have an account? </a>
+                    <a href="#" id="has-account" class="form-link account-toggle-link"> Already have an account? </a>
                 </p>
             </div>
         </div>
+        <!-- Displays success messages -->
+        @if (session('success'))
+            <div class="alert alert-success">
+                <img src="medias/x-close.svg" alt="" class="close-popup">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        <!-- Displays error messages -->
+        @if (session('error'))
+            <div class="alert alert-danger">
+                <img src="medias/x-close.svg" alt="" class="close-popup">
+                {{ session('error') }}
+            </div>
+        @endif
     </main>
     <script src="{{ asset('js/authform.js') }}"></script>
 </x-layout>

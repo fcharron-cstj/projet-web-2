@@ -64,5 +64,6 @@
             
         </div>
     </main>
+    <x-footer></x-footer>
     @vite('resources/js/alert_window.js')
 </x-layout>
