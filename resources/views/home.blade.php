@@ -88,13 +88,13 @@
                 @endforeach
                 <div id="btn-schedule-mobile">
                     <a class="btn-green-pink" href="{{ route('article.index') }}">Articles</a>
-                    <a class="btn-blue-pink" href="#tickets" id="buy-tickets">Buy Tickets</a>
+                    <a class="btn-blue-pink" href="#tickets">Buy Tickets</a>
                 </div>
             </div>
         </section>
         <img class="changing-img-mobile" src="{{ asset('medias/doodle_artist.jpg') }}" alt="doodle artist img">
 
-        <section class="tickets">
+        <section class="tickets"  id="buy-tickets-mobile">
             <h2 id="tickets">Tickets</h2>
             <div id="tickets-container">
                 <div class="ticket-option-1 ticket-option">
