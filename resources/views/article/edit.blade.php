@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout title="Edit article">
     <main id="article-manage">
         <div class="article-form-container">
             <h2>Update an article</h2>

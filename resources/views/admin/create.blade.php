@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout title="Create admin account">
     <main id="user-admin-manage">
         <div class="user-admin-form-container">
             <h2>Create a new User</h2>

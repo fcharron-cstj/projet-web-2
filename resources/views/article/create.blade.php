@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout title="Create article">
     <main id="article-manage">
         <div class="article-form-container">
             <h2>Create a new article</h2>

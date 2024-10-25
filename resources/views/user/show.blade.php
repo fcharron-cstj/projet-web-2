@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout title="User account">
     <header>
     </header>
     <main class="dashboard">

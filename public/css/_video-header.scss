@@ -2,10 +2,12 @@
     margin-left: 50vw;
     transform: translate(-50%);
     min-width: 104%;
-    overflow: hidden;
+    overflow-x: hidden;
     height: 85vh;
     object-fit: cover;
+    display: none;
     @media (min-width: 768px) {
+        display: block;
         height: 360px;
     }
     @media (min-width: 1024px) {
@@ -23,6 +25,9 @@
 #headerHome {
     min-width: 100vw;
     position: relative;
+    background-image: url('/medias/poster.png');
+    background-size: cover;
+    background-position: center;
     @media (max-width: 768px) {
         height: 85vh;
     }
@@ -43,11 +48,15 @@
         color 0.3s ease;
     border: 0;
     z-index: 10;
+    display: none;
+    @media (min-width: 768px) {
+        display: block;
+    }
     &:hover {
         color: $green;
     }
 
     i {
-        font-size: 32px; /* Adjust icon size */
+        font-size: 32px;
     }
 }

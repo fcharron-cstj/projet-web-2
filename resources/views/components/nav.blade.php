@@ -1,7 +1,3 @@
-<nav class="nav-mobile">
-
-</nav>
-
 @php
     $route = Route::current()->getName();
 @endphp
@@ -21,7 +17,7 @@
             'nav-links',
             'purple-text',
         ]) href="{{ route('article.index') }}">Articles</a>
-        <a @class(['selected' => $route == '', 'nav-links', 'pink-text']) href="#footer">Contact</a>
+        <a @class(['selected' => $route == '', 'nav-links', 'pink-text']) href="/#footer">Contact</a>
         @auth
             <a class="btn-blue-pink btn-login-logout" href="{{ route('logout') }}">Logout</a>
         @else
@@ -62,7 +58,7 @@
             <a class="nav-links green-text" href="{{ route('home') }}">Home</a>
             <a class="nav-links blue-text" href="{{ route('activity.index') }}">Festival</a>
             <a class="nav-links purple-text" href="{{ route('article.index') }}">Articles</a>
-            <a class="nav-links pink-text" href="#footer">Contact</a>
+            <a class="nav-links pink-text" href="/#footer">Contact</a>
             @auth
                 <a class="btn-blue-pink btn-login-logout nav-mobile-log" href="{{ route('logout') }}">Logout</a>
             @else

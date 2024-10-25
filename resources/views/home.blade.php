@@ -1,8 +1,8 @@
-<x-layout>
+<x-layout title="Home page">
     <header id="headerHome">
 
 
-        <video id="videoPlayer" poster="{{ asset('medias/poster.png') }}" loop muted autoplay>
+        <video id="videoPlayer" loop muted autoplay>
             <source src="{{ asset('medias/nova.mp4') }}" type="video/mp4">
         </video>
         <div class="counter">
