@@ -21,6 +21,7 @@
         flex-direction: row;
         justify-content: space-between;
         margin-top: 30px;
+        height: auto;
     }
     @media (min-width: 768px) {
         margin-top: 0px;
@@ -88,11 +89,15 @@
     .form-container {
         height: fit-content;
         padding: 20px;
-        padding-bottom: 0px;
+        margin-bottom: 20px;
         border: 2px solid $blue;
         border-radius: 15px;
         @media (min-width: 592px) {
+            margin-top: 90px;
+        }
+        @media (min-width: 768px) {
             margin-top: 42px;
+            margin-bottom: 60px;
         }
         h2{
             color: $blue;
