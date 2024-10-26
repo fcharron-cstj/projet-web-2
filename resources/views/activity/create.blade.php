@@ -20,18 +20,22 @@
                     </div>
 
                     <div class="date-time">
-                        <label for="date">Date</label>
                         <x-forms.error champ="date" />
-                        <select name="date">
-                            @foreach ($days as $day)
-                                <option value="{{ $day->id }}">
-                                    {{ date('F jS Y', strtotime($day->date)) }}
-                                </option>
-                            @endforeach
-                        </select>
-                        <label for="hour">Hour</label>
                         <x-forms.error champ="hour" />
-                        <input class="hour" type="time" name="hour" value="{{ old('hour') }}">
+                        <div>
+                            <label for="date">Date</label>
+                            <select name="date">
+                                @foreach ($days as $day)
+                                    <option value="{{ $day->id }}">
+                                        {{ date('F jS Y', strtotime($day->date)) }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="hour-container">
+                            <label for="hour">Hour</label>
+                            <input class="hour" type="time" name="hour" value="{{ old('hour') }}">
+                        </div>
                     </div>
 
                     <div>
