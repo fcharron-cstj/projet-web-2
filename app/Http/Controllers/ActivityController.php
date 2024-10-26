@@ -52,8 +52,8 @@ class ActivityController extends Controller
             "title.max" => "The title must have less than :max characters",
             "artists.required" => "Please enter the artist(s)",
             "artist.max" => "Artists must have less than :max characters",
-            "date.required" => "Please select a date and an hour for the activity",
-            "hour.required" => "Please select a date and an hour for the activity",
+            "date.required" => "Please select a date for the activity",
+            "hour.required" => "Please select an hour for the activity",
             "hour.date_format" => "The hour must be a valid format (H:i)",
             "media.mimes" => "The media must have a valid format (png, jpg, jpeg, webp)"
         ]);
