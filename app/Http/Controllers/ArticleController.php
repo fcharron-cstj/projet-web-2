@@ -96,7 +96,7 @@ class ArticleController extends Controller
         $validated = $request->validate([
             "id" => "required",
             "title" => "required|max:255",
-            "description" => "required|max:1000",
+            "description" => "required|max:2000",
             "media" => "nullable|mimes:png,jpg,jpeg,webp"
         ], [
             "id.required" => "The article doesn't exist",
